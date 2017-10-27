@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Reference Include="MSharp.DSL">
-      <HintPath>..\..\..\..\..\MSharp.Dsl\bin\Debug\netcoreapp2.0\MSharp.DSL.dll</HintPath>
+      <HintPath>..\lib\netcoreapp2.0\MSharp.DSL.dll</HintPath>
     </Reference>
     <Reference Include="Olive">
       <HintPath>..\lib\netcoreapp2.0\Olive.dll</HintPath>
