@@ -1,0 +1,55 @@
+var v105 =
+{
+    Name: "Header",
+    IsInUse: true,
+    IsViewComponent: true,
+    Markup: "<nav class=\"navbar navbar-inverse navbar-static-top\">\n\n    <div class=\"nav-wrapper\">\n\n        <div class=\"navbar-header\">\n            <div class=\"navbar-brand\">[#BUTTONS(Logo)#]</div>\n            [#BUTTONS(Burger)#]\n        </div>\n\n        <div class=\"collapse navbar-collapse\">\n           @(await Component.InvokeAsync<MainMenu>()))\n        </div>\n    </div>\n</nav>",
+    WrapInForm: false,
+    
+    /* ================================= Buttons ============================================ */
+    Buttons:
+    [
+        /* ----------------------  << Logo >>  ---------------------------------------------- */
+        {
+            Text: "Logo",
+            CausesValidation: true,
+            CssClass: "logo",
+            ImageUrl: "~/public/img/Logo.png",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go ~/........................................ */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go ~/",
+                        Target: "Same window",
+                        Url: "~/",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Burger >>  -------------------------------------------- */
+        {
+            Name: "Burger",
+            Text: "[#EMPTY#]",
+            CausesValidation: true,
+            ControlAttributes: "type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\"",
+            CssClass: "navbar-toggle collapsed",
+            Icon: "fa-bars",
+            Workflow:
+            {
+            },
+        },
+    ],
+    
+    /* ================================= References ========================================= */
+    References:
+    [
+        {
+            RegisteredModule: "MainMenu",
+            TagName: "MainMenu",
+        },
+    ],
+}

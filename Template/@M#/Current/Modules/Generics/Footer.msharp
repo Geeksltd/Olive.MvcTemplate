@@ -1,0 +1,199 @@
+var v105 =
+{
+    Name: "Footer",
+    RootCssClass: "website-footer",
+    IsInUse: true,
+    IsViewComponent: true,
+    Markup: "<div class=\"pull-right\">\n[#BUTTONS(Email)#] [#BUTTONS(LinkedIn)#] [#BUTTONS(Facebook)#] [#BUTTONS(Twitter)#] [#BUTTONS(GooglePlus)#]\n<br/>\n[#BUTTONS(SoftwareDevelopment)#] by [#BUTTONS(Geeks)#] \n\n</div>\n\n\n<div>[#BUTTONS(Logout)#]</div>\n<div>&copy; @LocalTime.Now.Year. All rights reserved. </div>",
+    
+    /* ================================= Buttons ============================================ */
+    Buttons:
+    [
+        /* ----------------------  << Logout >>  -------------------------------------------- */
+        {
+            Text: "Logout",
+            CausesValidation: true,
+            Icon: "fa-sign-out",
+            MarkupTemplate: "Hi @User ([#Button#])",
+            Style: "Link",
+            ValidateAntiForgeryToken: false,
+            Visibility:
+            {
+                Roles: "User",
+            },
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Log off the user............................. */
+                    {
+                        Type: "GenericActivity",
+                        Description: "Log off the user",
+                        Code: "User.LogOff();",
+                    },
+                    
+                    /* Go Login..................................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Login",
+                        Page: "Login",
+                        Target: "Same window",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Geeks >>  --------------------------------------------- */
+        {
+            Text: "Geeks",
+            CausesValidation: true,
+            Style: "Link",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go http://www.geeks.ltd.uk................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go http://www.geeks.ltd.uk",
+                        Target: "Same window",
+                        Url: "http://www.geeks.ltd.uk",
+                        WindowName: "_blank",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Email >>  --------------------------------------------- */
+        {
+            Name: "Email",
+            Text: "[#EMPTY#]",
+            CausesValidation: true,
+            Icon: "fa-envelope-square fa-3x",
+            Tooltip: "Contact Us",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* New window http://www.geeks.lt............... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "New window http://www.geeks.ltd.uk/software-development-quote.html",
+                        Target: "New browser window",
+                        Url: "http://www.geeks.ltd.uk/software-development-quote.html",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << LinkedIn >>  ------------------------------------------ */
+        {
+            Name: "LinkedIn",
+            Text: "[#EMPTY#]",
+            CausesValidation: true,
+            Icon: "fa-linkedin-square fa-3x",
+            Tooltip: "LinkedIn",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* New window http://www.linkedin............... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "New window http://www.linkedin.com/company/geeks-ltd",
+                        Target: "New browser window",
+                        Url: "http://www.linkedin.com/company/geeks-ltd",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Facebook >>  ------------------------------------------ */
+        {
+            Name: "Facebook",
+            Text: "[#EMPTY#]",
+            CausesValidation: true,
+            Icon: "fa-facebook-square fa-3x",
+            Tooltip: "Facebook",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* New window https://www.faceboo............... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "New window https://www.facebook.com/geeksltd",
+                        Target: "New browser window",
+                        Url: "https://www.facebook.com/geeksltd",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Twitter >>  ------------------------------------------- */
+        {
+            Name: "Twitter",
+            Text: "[#EMPTY#]",
+            CausesValidation: true,
+            Icon: "fa-twitter-square fa-3x",
+            Tooltip: "Twitter",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* New window https://twitter.com............... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "New window https://twitter.com/GeeksLtd",
+                        Target: "New browser window",
+                        Url: "https://twitter.com/GeeksLtd",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << GooglePlus >>  ---------------------------------------- */
+        {
+            Name: "GooglePlus",
+            Text: "[#EMPTY#]",
+            CausesValidation: true,
+            Icon: "fa-google-plus-square fa-3x",
+            Tooltip: "Google Plus",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* New window https://plus.google............... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "New window https://plus.google.com/115231904067592462573/about",
+                        Target: "New browser window",
+                        Url: "https://plus.google.com/115231904067592462573/about",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Software development >>  ------------------------------ */
+        {
+            Text: "Software development",
+            CausesValidation: true,
+            CssClass: "plain-text",
+            Style: "Link",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go http://www.geeks.ltd.uk................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go http://www.geeks.ltd.uk",
+                        Target: "Same window",
+                        Url: "http://www.geeks.ltd.uk",
+                        WindowName: "_blank",
+                    },
+                ],
+            },
+        },
+    ],
+}

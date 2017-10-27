@@ -1,0 +1,39 @@
+var v105 =
+{
+    Name: "Content block",
+    ClassName: "ContentBlock",
+    TableName: "ContentBlocks",
+    PluralName: "Content blocks",
+    Namespace: "CMS",
+    DatabaseMode: "Managed",
+    DefaultProperty: "Key",
+    GenerateInstanceAccessors: true,
+    LogEvents: true,
+    Schema: "dbo",
+    EnumRecords: "PasswordSuccessfullyReset|LoginIntro",
+    
+    Properties:
+    [
+        /* --------------------------- Key ----------------------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "Key",
+            Title: "Key",
+            Capacity: 200,
+            IsMandatory: true,
+            IsUnique: true,
+            TrimValues: true,
+        },
+        
+        /* --------------------------- Content ------------------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "Content",
+            Title: "Content",
+            IsMandatory: true,
+            NumberOfLines: 5,
+            TrimValues: true,
+        },
+        
+    ],
+}

@@ -1,0 +1,18 @@
+var v105 =
+{
+    Name: "Enter",
+    Parent: "Admin > Settings > Administrators",
+    MasterPage: "Front end Modal",
+    
+    /* ================================= Modules ============================================ */
+    Modules:
+    [
+        {
+            Module: "Administrator form",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+    },
+}

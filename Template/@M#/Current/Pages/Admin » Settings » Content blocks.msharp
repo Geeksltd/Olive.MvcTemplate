@@ -1,0 +1,18 @@
+var v105 =
+{
+    Name: "Content blocks",
+    Parent: "Admin > Settings",
+    MasterPage: "Front end",
+    
+    /* ================================= Modules ============================================ */
+    Modules:
+    [
+        {
+            Module: "Content blocks list",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+    },
+}

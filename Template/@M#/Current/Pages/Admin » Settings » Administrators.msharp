@@ -1,0 +1,18 @@
+var v105 =
+{
+    Name: "Administrators",
+    Parent: "Admin > Settings",
+    MasterPage: "Front end",
+    
+    /* ================================= Modules ============================================ */
+    Modules:
+    [
+        {
+            Module: "Administrators list",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+    },
+}

@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.6.17" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="SkiaSharp" Version="1.59.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Olive">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Entities">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Entities.Data">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Entities.Data.SqlServer">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.Data.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Mvc">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.CSV">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.CSV.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.Drawing">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.Email">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.Excel">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.Globalization">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.ImpersonationSession">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.ImpersonationSession.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.Integration">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.PDF">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.TaskAutomation">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.TaskAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Services.Testing">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Olive.Web">
+      <HintPath>bin\Debug\netcoreapp2.0\Olive.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\lib\moment\moment.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\application.page.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\webApp.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\application.urlhelper.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\base.application.page.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\collapsible.checkboxes.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\jquery.enhancements.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\typings\missingDefinitions.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\typings\alertify\alertify.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\typings\jquery\jquery.validation.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment-node.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment.d.ts" />
+  </ItemGroup> 
+</Project>

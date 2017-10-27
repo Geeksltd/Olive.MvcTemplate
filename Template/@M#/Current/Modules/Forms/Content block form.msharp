@@ -1,0 +1,74 @@
+var v105 =
+{
+    Name: "Content block form",
+    Entity: "ContentBlock",
+    ModuleHeaderText: "Content Block Details",
+    
+    /* ================================= Elements ================================= */
+    Elements:
+    [
+        /* -------------------------- [[ Key ]] ----------------------------------- */
+        {
+            Type: "StringFormElement",
+            Property: "Key",
+            AutoConfigureHtmlEditor: true,
+            IsReadOnly: true,
+        },
+        /* -------------------------- [[ Content ]] ------------------------------- */
+        {
+            Type: "StringFormElement",
+            Property: "Content",
+            AutoConfigureHtmlEditor: true,
+            SpecifiedControlType: "Html editor",
+        },
+    ],
+    
+    /* ================================= Buttons ============================================ */
+    Buttons:
+    [
+        /* ----------------------  << Cancel >>  -------------------------------------------- */
+        {
+            Text: "Cancel",
+            CausesValidation: false,
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Return to previous page...................... */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Return to previous page",
+                        Action: "Return to previous page",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Save >>  ---------------------------------------------- */
+        {
+            Text: "Save",
+            CausesValidation: true,
+            Icon: "fa-check",
+            IsDefault: true,
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Save in Database............................. */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Save in Database",
+                        Action: "Save in Database",
+                    },
+                    
+                    /* Return to previous page...................... */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Return to previous page",
+                        Action: "Return to previous page",
+                    },
+                ],
+            },
+        },
+    ],
+}

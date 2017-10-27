@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olive.Services.Drawing</name>
+    </assembly>
+    <members>
+        <member name="M:Olive.Services.Drawing.Extensions.OptimizeImage(Olive.Entities.Blob,System.Int32,System.Int32)">
+            <summary>
+            Optimizes the image based on the settings in the arguments.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Drawing.Extensions.OptimizeImage(Olive.Entities.Blob,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Optimizes the image based on the settings in the arguments.
+            </summary>
+        </member>
+        <member name="T:Olive.Services.Drawing.ImageOptimizer">
+            <summary>
+            A utility to resize and optimise image files.
+            </summary>    
+        </member>
+        <member name="M:Olive.Services.Drawing.ImageOptimizer.#ctor">
+            <summary>
+            Creates a new instance of ImageOptimizer class with default settings.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Drawing.ImageOptimizer.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of ImageOptimizer class.
+            </summary>		
+        </member>
+        <member name="T:Olive.Services.Drawing.ImageOptimizer.ImageFormat">
+            <summary>
+            Gets the available output image formats.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Drawing.ImageOptimizer.Optimize(SkiaSharp.SKBitmap)">
+            <summary>
+            Applies the settings of this instance on a specified source image, and provides an output optimized/resized image.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Drawing.ImageOptimizer.Optimize(System.Byte[],System.Boolean)">
+            <summary>
+            Optimizes the specified source image and returns the binary data of the output image.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Drawing.ImageOptimizer.Optimize(System.String,System.String)">
+            <summary>
+            Applies optimization settings on a a source image file on the disk and saves the output to another file with the specified path.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Drawing.ImageOptimizer.Optimize(System.String)">
+            <summary>
+            Applies optimization settings on a source image file.
+            Please note that the original file data is lost (overwritten) in this overload.
+            </summary>
+        </member>
+    </members>
+</doc>

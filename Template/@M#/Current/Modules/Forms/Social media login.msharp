@@ -1,0 +1,118 @@
+var v105 =
+{
+    Name: "Social media login",
+    RootCssClass: "input-form social-media-login",
+    Entity: "User",
+    ModuleHeader: "<h3>Other ways to sign in</h3>",
+    SupportsAdd: false,
+    SupportsEdit: false,
+    
+    /* ================================= Elements ================================= */
+    Elements:
+    [
+        /* -------------------------- [[ [#EMPTY#] ]] ----------------------------- */
+        {
+            Type: "GenericFormElement",
+            LabelText: "[#EMPTY#]",
+            ControlMarkup: "<p>The email address you are registered with @Model.Provider is not registered with us. Please register with us first with the same email address and then you would be able to sign in through @Model.Provider </p>",
+            Visibility:
+            {
+                Rule: "@info.Error == \"not-registered\"",
+            },
+        },
+        /* -------------------------- [[ [#EMPTY#] ]] ----------------------------- */
+        {
+            Type: "GenericFormElement",
+            LabelText: "[#EMPTY#]",
+            ControlMarkup: "<p>Although your login with @Model.Provider was successful but we cannot log you into our system because @Model.Provider did not supply us your email address. It might be due to security restrictions you have set with them.</p>",
+            Visibility:
+            {
+                Rule: "@info.Error == \"deactivated\"",
+            },
+        },
+        /* -------------------------- [[ [#EMPTY#] ]] ----------------------------- */
+        {
+            Type: "GenericFormElement",
+            LabelText: "[#EMPTY#]",
+            ControlMarkup: "<p>Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.</p>",
+            Visibility:
+            {
+                Rule: "@info.Error == \"deactivated\"",
+            },
+        },
+    ],
+    
+    /* ================================= Buttons ============================================ */
+    Buttons:
+    [
+        /* ----------------------  << LoginByGoogle >>  ------------------------------------- */
+        {
+            Name: "LoginByGoogle",
+            Text: "Login by google",
+            CausesValidation: false,
+            ControlAttributes: "formmethod=post",
+            CssClass: "btn-social btn-google",
+            Icon: "fa-google-plus",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Login by google.............................. */
+                    {
+                        Type: "GenericActivity",
+                        Description: "Login by google",
+                        Code: "UserServices.LoginBy(\"Google\");",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << LoginByFacebook >>  ----------------------------------- */
+        {
+            Name: "LoginByFacebook",
+            Text: "Login by facebook",
+            CausesValidation: false,
+            ControlAttributes: "formmethod=post",
+            CssClass: "btn-social btn-facebook",
+            Icon: "fa-facebook",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Login through facebook....................... */
+                    {
+                        Type: "GenericActivity",
+                        Description: "Login through facebook",
+                        Code: "UserServices.LoginBy(\"Facebook\");",
+                    },
+                ],
+            },
+        },
+    ],
+    
+    Code:
+    [
+        
+        /* ================================= CLASS CODE ========================================= */
+        
+        /* ---------------------- Provider property ----------------------------------------- */
+        {
+            Type: "ModuleProperty",
+            Name: "Provider",
+            Title: "Provider property",
+            Event: "Class code",
+            CustomPropertyType: "string",
+            QueryStringKey: "provider",
+        },
+        
+        /* ---------------------- Error property -------------------------------------------- */
+        {
+            Type: "ModuleProperty",
+            Name: "Error",
+            Title: "Error property",
+            Event: "Class code",
+            CustomPropertyType: "string",
+            QueryStringKey: "error",
+        },
+    ],
+}

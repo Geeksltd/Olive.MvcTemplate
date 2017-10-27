@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olive.Services.Excel</name>
+    </assembly>
+    <members>
+        <member name="M:Olive.Services.Excel.ExcelCell.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Services.Excel.ExcelCell"/> class.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCell.Text">
+            <summary>
+            Gets or sets the text of this cell.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCell.Type">
+            <summary>
+            Gets or sets the type of this cell.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelCell.MatchStyle(Olive.Services.Excel.ExcelCell)">
+            <summary>
+            Determines if this cell has the same style as the specifying one.
+            </summary>
+        </member>
+        <member name="T:Olive.Services.Excel.ExcelCellStyle">
+            <summary>
+            Provides styles for excel cells.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelCellStyle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Services.Excel.ExcelCellStyle" /> class.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.Alignment">
+            <summary>
+            Gets or sets the horizontal alignment of this style.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.VerticalAlignment">
+            <summary>
+            Gets or sets the vertical alignment of this style.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.Orientation">
+            <summary>
+            Gets or sets the cell orientation of this style.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.FontSize">
+            <summary>
+            Gets or sets the size of the font.
+            </summary>        
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.BackgroundColor">
+            <summary>
+            Gets or sets the background color of this style.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.BorderColor">
+            <summary>
+            Gets or sets the border color of this style.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.BorderWidth">
+            <summary>
+            Gets or sets the width of the border.
+            </summary>        
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.FontName">
+            <summary>
+            Gets or sets the font name of this style.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.NumberFormat">
+            <summary>
+            Gets or sets the Number format of this style.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.Bold">
+            <summary>
+            Gets or sets if font should be bold.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.WrapText">
+            <summary>
+            Gets or sets if the text should be wrapped.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.Italic">
+            <summary>
+            Gets or sets if font should be Italic.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelCellStyle.ForeColor">
+            <summary>
+            Gets or sets the background color of this style.
+            </summary>
+        </member>
+        <member name="F:Olive.Services.Excel.ExcelCellStyle.Settings">
+            <summary>
+            Gets or sets the Style of this ExcelColumn.
+            Use ExcelExporter.Style.[Item] to add styles to this.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelCellStyle.Set(System.String,System.String)">
+            <summary>
+            Use ExcelExporter.Style.[Item] to add styles.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelCellStyle.GetStyleId">
+            <summary>
+            Gets a unique ID for this style.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter.#ctor(System.String)">
+            <summary>
+            Creates a new ExcelExporter instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter.#ctor(System.Data.DataTable)">
+            <summary>
+            Creates a new ExcelExporter instance.
+            </summary>
+        </member>
+        <member name="T:Olive.Services.Excel.ExcelExporter.Output">
+            <summary>
+            Specifies the type of output file.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.UniqueId">
+            <summary>
+            Gets or sets a Workbook Unique integer ID to use for creating styles.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new ExcelColumn instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.SetRowStyle(System.Action{Olive.Services.Excel.ExcelCellStyle})">
+            <summary>
+            Sets the specified row style attribute.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.SetHeaderStyle(System.Action{Olive.Services.Excel.ExcelCellStyle})">
+            <summary>
+            Sets the specified header style attribute.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.HeaderStyle">
+            <summary>
+            Gets or sets the style of this columns's header cell.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.RowStyle">
+            <summary>
+            Gets or sets the style of this columns's data cells.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.HeaderText">
+            <summary>
+            Gets or sets the HeaderText of this ExcelColumn.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.DataType">
+            <summary>
+            Gets or sets the Type of this ExcelColumn.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.Formula">
+            <summary>
+            Gets or sets the Formula of this ExcelColumn.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.GroupName">
+            <summary>
+            Gets or sets the group name of this ExcelColumn.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.ExcelColumn`1.Customize(System.Action{Olive.Services.Excel.ExcelExporter{`0}.ExcelColumn{`1}})">
+            <summary>
+            Customizes this column.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelDropDownColumn`1.PossibleValues">
+            <summary>
+            enumeration items to select from
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcelDropDownColumn`1.EnumerationName">
+            <summary>
+            Gets or sets the Name of this ExcelDropDownColumn.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.#ctor(System.String)">
+            <summary>
+            Creates a new ExcelExporter instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.#ctor(System.Data.DataTable)">
+            <summary>
+            Creates a new ExcelExporter instance for a data table.
+            It automatically configures the exporter for all columns and rows of the data table.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.DocumentName">
+            <summary>
+            Gets or sets the DocumentName of this ExcelExporter.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.HeaderBackGroundColor">
+            <summary>
+            Gets or sets the HeaderBackGroundColor of this ExcelExporter.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.HeaderFontName">
+            <summary>
+            Gets or sets the HeaderFontName of this ExcelExporter.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.HeaderGroupBackgroundColor">
+            <summary>
+            Gets or sets the HeaderGroupBackgroundColor of this ExcelExporter.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Excel.ExcelExporter`1.ExcludeHeader">
+            <summary>
+            Gets or sets the IncludeHeader of this ExcelExporter.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.AddColumn(System.String)">
+            <summary>
+            Adds a header cell.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.AddColumn(System.String,System.String)">
+            <summary>
+            Adds a header cell.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.AddColumn(System.String,System.String,System.Func{`0,System.Object})">
+            <summary>
+            Adds a header cell.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.RemoveColumn(System.String)">
+            <summary>
+            Removes the column with the specified header text.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.RemoveColumn(System.Int32)">
+            <summary>
+            Removes the column at the specified index.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.AddRow(System.Object[])">
+            <summary>
+            Adds a data row to the excel output.
+            <param name="dataCells">Either ExcelCell instances or value objects.</param>
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.Generate(Olive.Services.Excel.ExcelExporter.Output)">
+            <summary>
+            Generates the content of the output Excel file.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.GenerateDropDownSourceSheet(Olive.Services.Excel.ExcelExporter{`0}.ExcelDropDownColumn{`0})">
+            <summary>
+            Generates Hidden Worksheets that contain Possible Values for each DropDown
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.GenerateDropDownDataValidation">
+            <summary>
+            DataValidation assigns a DropDown for each cell and restrics possible values to that drop down
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Excel.ExcelExporter`1.GetFileExtension(Olive.Services.Excel.ExcelExporter.Output)">
+            <summary>
+            Gets the file extension for a specified output format.
+            </summary>
+        </member>
+    </members>
+</doc>

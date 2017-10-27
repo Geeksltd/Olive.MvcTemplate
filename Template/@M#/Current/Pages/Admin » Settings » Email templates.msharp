@@ -1,0 +1,18 @@
+var v105 =
+{
+    Name: "Email templates",
+    Parent: "Admin > Settings",
+    MasterPage: "Front end",
+    
+    /* ================================= Modules ============================================ */
+    Modules:
+    [
+        {
+            Module: "Email templates list",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+    },
+}

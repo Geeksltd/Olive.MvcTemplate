@@ -1,0 +1,55 @@
+var v105 =
+{
+    Name: "Logon failure",
+    ClassName: "LogonFailure",
+    TableName: "LogonFailures",
+    PluralName: "Logon failures",
+    Namespace: "Users",
+    DatabaseMode: "Managed",
+    LogEvents: true,
+    Schema: "dbo",
+    
+    Properties:
+    [
+        /* --------------------------- Email --------------------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "Email",
+            Title: "Email",
+            Capacity: 200,
+            IsMandatory: true,
+            TrimValues: true,
+        },
+        
+        /* --------------------------- IP ------------------------------------------------------------------ */
+        {
+            Type: "StringProperty",
+            Name: "IP",
+            Title: "IP",
+            Capacity: 200,
+            IsMandatory: true,
+            TrimValues: true,
+        },
+        
+        /* --------------------------- Attempts ------------------------------------------------------------ */
+        {
+            Type: "NumberProperty",
+            Name: "Attempts",
+            Title: "Attempts",
+            IsMandatory: true,
+            LowerBound: "0",
+            Scale: 0,
+        },
+        
+        /* --------------------------- Date ---------------------------------------------------------------- */
+        {
+            Type: "DateTimeProperty",
+            Name: "Date",
+            Title: "Date",
+            HasDate: true,
+            HasTime: true,
+            IsMandatory: true,
+        },
+        
+    ],
+}

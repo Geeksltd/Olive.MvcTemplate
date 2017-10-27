@@ -1,0 +1,31 @@
+var v105 =
+{
+    Name: "Settings",
+    Parent: "Admin",
+    MasterPage: "Front end",
+    
+    /* ================================= Settings =========================================== */
+    Settings:
+    [
+        {
+            Key: "LeftMenu",
+            Value: "AdminSettingsMenu",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+        Do:
+        [
+            
+            /* Go General settings.......................... */
+            {
+                Type: "NavigateActivity",
+                Description: "Go General settings",
+                Page: "Admin > Settings > General",
+                Target: "Same window",
+                MustRunOnServer: true,
+            },
+        ],
+    },
+}

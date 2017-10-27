@@ -1,0 +1,82 @@
+var v105 =
+{
+    Name: "Content blocks list",
+    Entity: "ContentBlock",
+    RenderMode: "Grid",
+    ModuleHeaderText: "Content Blocks",
+    ShowHeaderRow: true,
+    Sortable: true,
+    StartUpBehaviour: "Load list",
+    WrapListItemTemplate: true,
+    
+    /* ================================= Elements ================================= */
+    Elements:
+    [
+        /* -------------------------- [[ [Content blocks list].Key ]] ------------- */
+        {
+            Type: "ListButton",
+            Name: "Key",
+            Text: "c#:item.Key",
+            CausesValidation: true,
+            DisplayMode: "Default",
+            LabelText: "Key",
+            SortKey: "Key",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go Enter {send item}......................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Enter {send item}",
+                        Page: "Admin > Settings > Content blocks > Enter",
+                        Target: "Same window",
+                        SendReturnUrl: true,
+                        
+                        Parameters:
+                        [
+                            {
+                                Key: "item",
+                                Type: "C#",
+                                Value: "item.ID",
+                            },
+                        ],
+                    },
+                ],
+            },
+        },
+        /* -------------------------- [[ Content ]] ------------------------------- */
+        {
+            Type: "ViewElement",
+            Property: "Content",
+            DisplayMarkup: "c#:item.Content.OrEmpty().RemoveHtmlTags().Summarize(80)",
+            DisplayMode: "Default",
+            IsSortable: true,
+        },
+    ],
+    
+    /* ================================= Buttons ============================================ */
+    Buttons:
+    [
+        /* ----------------------  << New Content Block >>  --------------------------------- */
+        {
+            Text: "New Content Block",
+            CausesValidation: true,
+            Icon: "fa-plus",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go Enter..................................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Enter",
+                        Page: "Admin > Settings > Content blocks > Enter",
+                        Target: "Same window",
+                        SendReturnUrl: true,
+                    },
+                ],
+            },
+        },
+    ],
+}

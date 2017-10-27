@@ -1,0 +1,18 @@
+var v105 =
+{
+    Name: "Enter",
+    Parent: "Admin > Settings > Content blocks",
+    MasterPage: "Front end",
+    
+    /* ================================= Modules ============================================ */
+    Modules:
+    [
+        {
+            Module: "Content block form",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+    },
+}

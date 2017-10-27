@@ -1,0 +1,70 @@
+var v105 =
+{
+    Name: "Login",
+    MasterPage: "Front end",
+    Route: "login\n[#EMPTY#]",
+    
+    /* ================================= Modules ============================================ */
+    Modules:
+    [
+        {
+            Module: "Login Form",
+        },
+        {
+            Module: "Social media login",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+        Do:
+        [
+            
+            /* Ensure Ajax calls do a full.................. */
+            {
+                Type: "GenericActivity",
+                Description: "Ensure Ajax calls do a full redirect",
+                Code: "return Redirect(Url.CurrentUri().OriginalString);",
+                Criteria:
+                {
+                    Rule: "Request.IsAjaxPost()",
+                },
+            },
+            
+            /* Go Dispatch.................................. */
+            {
+                Type: "NavigateActivity",
+                Description: "Go Dispatch",
+                Page: "Login > Dispatch",
+                Target: "Same window",
+                MustRunOnServer: true,
+                Criteria:
+                {
+                    Rule: "User.IsAuthenticated()",
+                },
+            },
+            
+            /* Go /login {send ReturnUrl}................... */
+            {
+                Type: "NavigateActivity",
+                Description: "Go /login {send ReturnUrl}",
+                Target: "Same window",
+                MustRunOnServer: true,
+                Url: "/login",
+                Criteria:
+                {
+                    Rule: "Url.ReturnUrl().IsEmpty()",
+                },
+                
+                Parameters:
+                [
+                    {
+                        Key: "ReturnUrl",
+                        Type: "Static",
+                        Value: "/login",
+                    },
+                ],
+            },
+        ],
+    },
+}

@@ -1,0 +1,18 @@
+var v105 =
+{
+    Name: "General",
+    Parent: "Admin > Settings",
+    MasterPage: "Front end",
+    
+    /* ================================= Modules ============================================ */
+    Modules:
+    [
+        {
+            Module: "General settings Form",
+        },
+    ],
+    
+    StartupWorkflows:
+    {
+    },
+}

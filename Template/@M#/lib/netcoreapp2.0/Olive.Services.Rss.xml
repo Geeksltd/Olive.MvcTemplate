@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olive.Services.Rss</name>
+    </assembly>
+    <members>
+        <member name="M:Olive.Services.Rss.RssChannel.#ctor">
+            <summary>
+            Creates a new RssChannel instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Rss.RssServer.GenerateXml(Olive.Services.Rss.RssChannel)">
+            <summary>
+            Generates Rss Xml document for the specified items.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Rss.RssServer.Dispatch(Olive.Services.Rss.RssChannel)">
+            <summary>
+            Dispatches an Xml document in the current http response.
+            </summary>
+        </member>
+    </members>
+</doc>

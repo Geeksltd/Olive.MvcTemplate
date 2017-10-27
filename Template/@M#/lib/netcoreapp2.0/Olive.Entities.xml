@@ -1,0 +1,1218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olive.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:Olive.Entities.AutoNumberAttribute">
+            <summary>
+            When applied to a property, indicates that such property is AutoNumber (or Identity in SQL Server).
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.AutoNumberAttribute.IsAutoNumber(System.Reflection.PropertyInfo)">
+            <summary>
+            Determines if a given property is auto number.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.CacheDependentAttribute.DependentType">
+            <summary>
+            Gets the dependent type.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.CacheDependentAttribute.#ctor(System.Type)">
+            <summary>
+            Creates a new CacheDependantAttribute instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.CacheDependentAttribute.GetDependentTypes(System.Type)">
+            <summary>
+            Gets a list of types that depend on a given entity.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.CacheDependentAttribute.FindDependentTypes(System.Type)">
+            <summary>
+            Finds a list of types that depend on a given entity.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.CacheObjectsAttribute">
+            <summary>
+            Specifies if a type is cacheable.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.CacheObjectsAttribute.#ctor(System.Boolean)">
+            <summary>
+            Creates a new CacheObjectsAttribute instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.CacheObjectsAttribute.IsEnabled(System.Type)">
+            <summary>
+            Determines if caching is enabled for a given type.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.CalculatedAttribute">
+            <summary>
+            When applied to a property, indicates that such property does not exist in the database.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.CalculatedAttribute.IsCalculated(System.Reflection.PropertyInfo)">
+            <summary>
+            Determines if a given property is calculated.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.DateOnlyAttribute">
+            <summary>
+            When applied to a property of type DateTime or Nullable[DateTime] it specifies that values are for Date only, 
+            and the time part is meant to be disregarded.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.InitializerAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.LogEventsAttribute">
+            <summary>
+            When applied to a class, indicates whether data access events should be logged for instances of that type.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.LogEventsAttribute.#ctor(System.Boolean)">
+            <summary>
+            Creates a new LogEventsAttribute instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.ManyToManyAttribute.Lazy">
+            <summary>
+            Gets or sets the Lazy of this ManyToManyAttribute.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ManyToManyAttribute.GetManyToManyProperties(System.Type)">
+            <summary>
+            Gets a list of types that depend on a given entity.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ManyToManyAttribute.GetManyToManyProperties(System.Type,System.Nullable{System.Boolean})">
+            <summary>
+            Gets a list of types that depend on a given entity.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ManyToManyAttribute.FindManyToManyProperties(System.Type,System.Nullable{System.Boolean})">
+            <summary>
+            Returns a list of types that depend on a given entity.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.PersistentAttribute">
+            <summary>
+            When applied to a class, defines its Application data accessor type.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.SoftDeleteAttribute.IsEnabled(System.Type)">
+            <summary>
+            Determines if soft delete is enabled for a given type.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.SoftDeleteAttribute.Context">
+            <summary>
+            Provides support for bypassing softdelete rule.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.SoftDeleteAttribute.Context.#ctor(System.Boolean)">
+            <summary>
+            Creates a new Context instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.SoftDeleteAttribute.Context.ShouldByPassSoftDelete">
+            <summary>
+            Determines if SoftDelete check should the bypassed in the current context.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.ApplicationEventManager">
+            <summary>
+            Provides services for application events and general logging.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ApplicationEventManager.GetChangesXml(Olive.Entities.IEntity)">
+            <summary>
+            Gets the changes XML for a specified object. That object should be in its OnSaving event state.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ApplicationEventManager.GetChanges(Olive.Entities.IEntity,Olive.Entities.IEntity)">
+            <summary>
+            Gets the changes applied to the specified object.
+            Each item in the result will be {PropertyName, { OldValue, NewValue } }.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ApplicationEventManager.RecordScheduledTask(System.String,System.DateTime)">
+            <summary>
+            Records the execution result of a scheduled task. 
+            </summary>
+            <param name="task">The name of the scheduled task.</param>
+            <param name="startTime">The time when this task was started.</param>
+        </member>
+        <member name="M:Olive.Entities.ApplicationEventManager.RecordScheduledTask(System.String,System.DateTime,System.Exception)">
+            <summary>
+            Records the execution result of a scheduled task. 
+            </summary>
+            <param name="task">The name of the scheduled task.</param>
+            <param name="startTime">The time when this task was started.</param>
+            <param name="error">The Exception that occurred during the task execution.</param>
+        </member>
+        <member name="M:Olive.Entities.ApplicationEventManager.LoadItem(Olive.Entities.IApplicationEvent)">
+            <summary>
+            Loads the item recorded in this event.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ApplicationEventManager.GetCurrentUserId(System.Security.Principal.IPrincipal)">
+            <summary>
+            Gets the current user id.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.ApplicationEventManager.GetCurrentUserIP">
+            <summary>
+            Gets the IP address of the current user.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.DefaultApplicationEventManager">
+            <summary>
+            This class provides default services for application events and general logging.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.DefaultApplicationEventManager.OnRecordingSave">
+            <summary>
+            It's fired just before the event log instance for a SAVE operation is saved in the database.
+            Handle it to modify the event log instance, add additional data, etc.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.DefaultApplicationEventManager.OnRecordingDelete">
+            <summary>
+            It's fired just before the event log instance for a delete operation is saved in the database.
+            Handle it to modify the event log instance, add additional data, etc.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.CreateApplicationEvent">
+            <summary>
+            Specifies a factory to instantiate EmailQueueItem objects.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.GetCurrentUserIP">
+            <summary>
+            Gets the IP address of the current user.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.GetCurrentUserId(System.Security.Principal.IPrincipal)">
+            <summary>
+            Gets the current user id.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.GetChanges(Olive.Entities.IEntity,Olive.Entities.IEntity)">
+            <summary>
+            Gets the changes applied to the specified object.
+            Each item in the result will be {PropertyName, { OldValue, NewValue } }.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.GetChangesXml(Olive.Entities.IEntity)">
+            <summary>
+            Gets the changes XML for a specified object. That object should be in its OnSaving event state.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.GetDataToLog(Olive.Entities.IEntity)">
+            <summary>
+            Gets the data of a specified object's properties in a dictionary.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.RecordScheduledTask(System.String,System.DateTime)">
+            <summary>
+            Records the execution result of a scheduled task. 
+            </summary>
+            <param name="task">The name of the scheduled task.</param>
+            <param name="startTime">The time when this task was started.</param>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.RecordScheduledTask(System.String,System.DateTime,System.Exception)">
+            <summary>
+            Records the execution result of a scheduled task. 
+            </summary>
+            <param name="task">The name of the scheduled task.</param>
+            <param name="startTime">The time when this task was started.</param>
+            <param name="error">The Exception that occurred during the task execution.</param>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.RecordException(System.Exception)">
+            <summary>
+            Records the provided exception in the database.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.RecordException(System.String,System.Exception)">
+            <summary>
+            Records the provided exception in the database.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.Log(System.String,System.String,Olive.Entities.IEntity,System.String,System.String)">
+            <summary>
+            Logs the specified event as a record in the ApplicationEvents database table.
+            </summary>
+            <param name="eventTitle">The event title.</param>
+            <param name="details">The details of the event.</param>
+            <param name="owner">The record for which this event is being logged (optional).</param>
+            <param name="userId">The ID of the user involved in this event (optional). If not specified, the current ASP.NET context user will be used.</param>
+            <param name="userIp">The IP address of the user involved in this event (optional). If not specified, the IP address of the current Http context (if available) will be used.</param>
+        </member>
+        <member name="M:Olive.Entities.DefaultApplicationEventManager.LoadItem(Olive.Entities.IApplicationEvent)">
+            <summary>
+            Loads the item recorded in this event.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.UndoContext.#ctor">
+            <summary>
+            Creates a new UndoContext instance.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.Blob">
+            <summary> 
+            Provides an utility for handling Binary property types.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.Blob.ShouldSuppressPersistence">
+            <summary>
+            In Test projects particularly, having files save themselves on the disk can waste space.
+            To prevent that, apply this setting in the config file.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.Blob"/> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.#ctor(System.Byte[],System.String)">
+            <summary>
+            Initializes a new Blob instance with the specified data and file name.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.#ctor(System.IO.FileInfo)">
+            <summary>
+            Initializes a new Blob instance, for the specified file on disk.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.GetOwnerPropertyReference">
+            <summary>
+            Gets the address of the property owning this blob in the format: Type/ID/Property
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.GetFileData">
+            <summary>
+            Gets the data of this blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Empty">
+            <summary>
+            Gets an empty blob object.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Blob.FallbackPaths">
+            <summary>
+            Gets all fall-back paths for this Blob
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.ToString">
+            <summary>
+            Gets the Url of this blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.GetContentText">
+            <summary>
+            Gets the content
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Olive.Entities.Blob.Url(Olive.Entities.Blob.AccessMode)">
+            <summary>
+            Gets a Url to this blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Url">
+            <summary>
+            Gets a Url to this blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.UrlOr(System.String)">
+            <summary>
+            Returns the Url of this blob, or the provided default Url if this is Empty.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.GetCacheSafeUrl">
+            <summary>
+            Gets a cache safe URL to this blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.IsEmpty">
+            <summary>
+            Determines whether this is an empty blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.HasValue">
+            <summary>
+            Determines whether this blob has any content.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Clone">
+            <summary>
+            Creates a clone of this blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Attach(Olive.Entities.Entity,System.String)">
+            <summary>
+            Attaches this Blob to a specific record's file property.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Attach(Olive.Entities.Entity,System.String,Olive.Entities.Blob.AccessMode)">
+            <summary>
+            Attaches this Blob to a specific record's file property.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Detach">
+            <summary>
+            Detaches this Blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Delete(System.EventArgs)">
+            <summary>
+            Deletes this blob from the disk.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.SaveOnDisk">
+            <summary>
+            Saves this file on the disk.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.GetMimeType">
+            <summary>
+            Gets the mime type based on the file extension.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.IsMedia">
+            <summary>Determines if this blob's file extension is for audio or video.</summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.GetPhysicalFilesRoot(Olive.Entities.Blob.AccessMode)">
+            <summary>
+            Gets the physical path root.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.FromReference(System.String)">
+            <summary>
+             This will return the blob object linked to the correct entity.
+            </summary>
+            <param name="reference">Expected format: Type/Id/Property.</param>
+        </member>
+        <member name="P:Olive.Entities.Blob.LocalPath">
+            <summary>
+            Gets the local physical path of this file.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.GetUnsafeExtensions">
+            <summary>
+            Gets a list of unsafe file extensions.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.HasUnsafeExtension">
+            <summary>
+            Determines whether the extension of this file is potentially unsafe.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.Or(Olive.Entities.Blob)">
+            <summary>
+            Gets this blob if it has a value, otherwise another specified blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.CompareTo(Olive.Entities.Blob)">
+            <summary>
+            Compares this blob versus a specified other blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Blob.CompareTo(System.Object)">
+            <summary>
+            Compares this blob versus a specified other blob.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.BlobStorageProviderFactory.Providers">
+            <summary>
+            This is to be configured in Global.asax if a different provider is needed for specific files.
+            Example: Olive.Entities.BlobStorageProviderFactory.Add("Customer.Logo", new MySpecialStorageProvider);
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.BlobStorageProviderFactory.GetProvider(System.String)">
+            <summary>
+            In the format: {type}.{property} e.g. Customer.Logo.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.IPickyBlobContainer">
+            <summary>
+            This interface can be implemented on any entity which has a property of type Blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IPickyBlobContainer.GetPhysicalFolderPath(Olive.Entities.Blob)">
+            <summary>
+            Gets the path to the physical folder containing files for the specified blob property.
+            If you don't need to implement this specific method, simply return NULL.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IPickyBlobContainer.GetVirtualFolderPath(Olive.Entities.Blob)">
+            <summary>
+            Gets the URL to the virtual folder containing files for the specified blob property.
+            If you don't need to implement this specific method, simply return NULL.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IPickyBlobContainer.GetFileNameWithoutExtension(Olive.Entities.Blob)">
+            <summary>
+            Gets the name of the file used for the specified blob property, without extension.
+            If you don't need to implement this specific method, simply return NULL.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IPickyBlobContainer.GetFallbackPaths(Olive.Entities.Blob)">
+            <summary>
+            Gets the fallback paths for the specified blob.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IPickyBlobUrlContainer.GetUrl(Olive.Entities.Blob)">
+            <summary>
+            Gets the url of the specified blob.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.CachedReference`1">
+            <summary>
+            Provides immediate access to retrieved entities. It is aware of deletes and updates.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.CachedReference`2">
+            <summary>
+            Provides immediate access to retrieved entities. It is aware of deletes and updates.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.CachedReference`2.Get(System.Nullable{`0})">
+            <summary>
+            Gets the entity record from a specified database call expression.
+            The first time it is loaded, all future calls will be immediately served.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.Criterion">
+            <summary>
+            A basic implementation of a database query criterion.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.Criterion"/> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.#ctor(System.String,Olive.Entities.FilterFunction,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.Criterion"/> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.#ctor(System.String,Olive.Entities.FilterFunction,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.Criterion"/> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.#ctor(System.String,Olive.Entities.FilterFunction,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.Criterion"/> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.#ctor(System.String,Olive.Entities.FilterFunction,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.Criterion"/> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.Criterion"/> class.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Criterion.PropertyName">
+            <summary>
+            Gets or sets the PropertyName of this Condition.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Criterion.SqlCondition">
+            <summary>
+            Gets or sets the SqlCondition of this Condition.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Criterion.FilterFunction">
+            <summary>
+            Gets or sets the Filter Option of this Condition.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Criterion.Value">
+            <summary>
+            Gets or sets the Value of this Condition.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.GetSerializedValue">
+            <summary>
+            Gets a text representation of the value.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.ToString">
+            <summary>
+            Returns a string that represents this instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.Parse(System.String)">
+            <summary>
+            Parses the specified condition string.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Criterion.GetFilterFunction(System.Linq.Expressions.ExpressionType)">
+            <summary>
+            Gets the filter option for a specified Lambda expression node type.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.DirectDatabaseCriterion">
+            <summary>
+            Enables adding a direct SQL WHERE criteria to the database query.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.DirectDatabaseCriterion.Parameters">
+            <summary>
+            Gets the parameters used in the specified custom SQL criteria.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.DirectDatabaseCriterion.SqlCriteria">
+            <summary>
+            Gets or sets the SQL criteria.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.DirectDatabaseCriterion.Value">
+            <summary>
+            N/A.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.DirectDatabaseCriterion.IsCacheSafe">
+            <summary>
+            Specifies whether this criteria is compatible with normal caching.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.DirectDatabaseCriterion.FilterFunction">
+            <summary>
+            N/A.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DirectDatabaseCriterion.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.DirectDatabaseCriterion" /> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DirectDatabaseCriterion.#ctor(System.String,System.Tuple{System.String,System.Object}[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.DirectDatabaseCriterion" /> class.
+            </summary>
+            <param name="parameters">Item1 = Parameter name (without the @ character). Item2 = parameter value.</param>
+        </member>
+        <member name="M:Olive.Entities.DirectDatabaseCriterion.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.DirectDatabaseCriterion" /> class.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.DirectDatabaseCriterion.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Olive.Entities.DirectDatabaseCriterion" /> class.
+            </summary>
+            <param name="parameters">Example: new {Parameter1 = SomeValue(), Parameter2 = AnotherValue()}</param>
+        </member>
+        <member name="M:Olive.Entities.DirectDatabaseCriterion.ToString">
+            <summary>
+            Returns a string that represents this instance.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.FilterFunction">
+            <summary>
+            Provides options for filter functions.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.FilterFunctionServices.GetDatabaseOperator(Olive.Entities.FilterFunction)">
+            <summary>
+            Gets the database operator equivalent for this filter option.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.ICriterion">
+            <summary>
+            Provides an abstraction for database query criteria.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.IDatabase.Updated">
+            <summary>
+            It's raised when any record is saved or deleted in the system.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IDatabaseQuery`1.Aggregate``2(Olive.Entities.AggregateFunction,System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Gets a list of entities of the given type from the database with the specified type matching the specified criteria.
+            If no criteria is specified, the count of all instances will be returned.
+            </summary>        
+        </member>
+        <member name="M:Olive.Entities.FullTextSearchQueryOption.#ctor">
+            <summary>
+            Creates a new FullTextIndexQueryOption instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.FullTextSearchQueryOption.Keyword">
+            <summary>
+            Gets or sets the Keywords of this FullTextIndexQueryOption.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.FullTextSearchQueryOption.Properties">
+            <summary>
+            Gets or sets the Properties of this FullTextIndexQueryOption.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.PagingQueryOption.#ctor">
+            <summary>
+            Creates a new ResultSetSizeQueryOption instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.PagingQueryOption.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates a new ResultSetSizeQueryOption instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.PagingQueryOption.OrderBy">
+            <summary>
+            The direct SQL sort expression. E.g: MyColumn DESC, Something 
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.QueryOption.FullTextSearch(System.String,System.String[])">
+            <summary>
+            Creates a FullTextSearch option for the search query.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.RangeQueryOption.#ctor">
+            <summary>
+            Creates a new ResultSetSizeQueryOption instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.SortQueryOption.#ctor">
+            <summary>
+            Creates a new SortQueryOption instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.SortQueryOption.Property">
+            <summary>
+            Gets or sets the Property of this SortQueryOption.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.SortQueryOption.Descending">
+            <summary>
+            Gets or sets the Descending of this SortQueryOption.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.TakeTopQueryOption.#ctor(System.Int32)">
+            <summary>
+            Creates a new ResultSetSizeQueryOption instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.TakeTopQueryOption.Number">
+            <summary>
+            Gets or sets the Number of this ResultSetSizeQueryOption.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.EntityFinder">
+            <summary>
+            Finds an entity with unknown type from its given id.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.EntityFinder.GetEntityType(System.String)">
+            <summary>
+            Gets the runtime type from the currently loaded assemblies.
+            </summary>
+            <param name="typeFullName">The type name (including namespace, but excluding assembly).</param>
+        </member>
+        <member name="T:Olive.Entities.IDataAccess">
+            <summary>
+            Provides direct data access to the underlying data source.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IDataProvider.GetAssociationInclusionCriteria(Olive.Entities.IDatabaseQuery,System.Reflection.PropertyInfo)">
+            <summary>
+            Returns a direct database criterion used to eager load associated objects.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IDataProvider.ReadManyToManyRelation(Olive.Entities.IEntity,System.String)">
+            <summary>
+            Reads the many to many relation and returns the IDs of the associated objects.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IDataProviderFactory.SupportsPolymorphism">
+            <summary>
+            Determines whether this data provider factory handles interface data queries.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.Entity">
+            <summary>
+            Entity, a persistent object in the application.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.#ctor">
+            <summary>
+            Base constructor (called implicitly in all typed entity classes) to initialize an object.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.GetId">
+            <summary>
+            Gets the id of this entity.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.InvalidateCachedReferences">
+            <summary>
+            Invalidates its cached references.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity.IsNew">
+            <summary>
+            Determines whether this is a newly created instace. This value will be True for new objects, and False for anything loaded from the database.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity.IsMarkedSoftDeleted">
+            <summary>
+            Determines whether this instance is "soft-deleted".
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.Entity.IsStale">
+            <summary>
+            Determines whether this object is already cloned and updated in the database without this instance being updated.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.Initialize">
+            <summary>
+            Initializes this instance.
+            This can be overridden in the business entity types to provide "construction" logic.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.GetPrimitiveProperties">
+            <summary>
+            Gets the primitive properties of this tye.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.ExtractPrimitiveProperties(System.Type)">
+            <summary>
+            Extracts the primitive properties of a specified type.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.ToString(System.String)">
+            <summary>
+            Returns a string that contains all primitive properties of this instance.
+            This should be used normally in "full text search".
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.ValidateProperties">
+            <summary>
+            Validates the data for the properties of the current instance.
+            It throws a ValidationException if an error is detected
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.Validate">
+            <summary>
+            Validates this instance to ensure it can be saved in a data repository.
+            If this finds an issue, it throws a ValidationException for that.        
+            This calls ValidateProperties(). Override this method to provide custom validation logic in a type.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity.Loaded">
+            <summary>
+            This even is raised just after this instance is loaded from the database.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity.Saving">
+            <summary>
+            This event is raised just before this instance is saved in the data repository.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity.Validating">
+            <summary>
+            This is raised just before the object is being Validated.
+            It will automatically be called in Database.Save() method before calling the Validate() method.
+            Use this to do any last-minute object modifications, such as initializing complex values.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity.Saved">
+            <summary>
+            This event is raised after this instance is saved in the database.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.OnSaved(Olive.Entities.SaveEventArgs)">
+            <summary>
+            Raises the <see cref = "E:Saved"/> event.
+            </summary>
+            <param name = "e">The <see cref = "T:Olive.Entities.SaveEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:Olive.Entities.Entity.Deleting">
+            <summary>
+            This event is raised just before this instance is deleted from the database.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity.Deleted">
+            <summary>
+            This event is raised just after this instance is deleted from the database.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.Clone">
+            <summary>
+            Creates a shallow copy of this object.
+            If you need to update an instance loaded from the database, you must create a Clone of it before applying any changes.
+            Otherwise you will be editing the "live" instance from the cache, that is used by all other threads!
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to this instance.        
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.Equals(Olive.Entities.Entity)">
+            <summary>Determines whether the specified object is equal to this instance. </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.op_Equality(Olive.Entities.Entity,System.Object)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type.
+            </summary>
+            <param name = "other">An object to compare with this instance.</param>
+        </member>
+        <member name="P:Olive.Entities.Entity`1.ID">
+            <summary>
+            Gets or sets the ID of this object.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.Entity`1.OriginalId">
+            <summary>
+            Gets the original id of this type as it was in the database.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity`1.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Olive.Entities.Entity`1.Equals(Olive.Entities.Entity)">
+            <summary>
+            Determines whether this instance is equal to another specified instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Entity`1.GetId">
+            <summary>
+            Gets the ID of this object.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.EntityManager">
+            <summary>
+            Provides services for Entity objects.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.EntityManager.IsImmutable(Olive.Entities.IEntity)">
+            <summary>
+            Determines whether the specified record is immutable, or closed for changes.        
+            An object marked as immutable is shared in the application cache. Therefore it must not be changed.        
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.EntityManager.MarkImmutable(Olive.Entities.IEntity)">
+            <summary>
+            Marks the specified object as immutable.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.EntityManager.InstanceSaving">
+            <summary>
+            This event is raised for the whole Entity type before "any" object is saved in the database.
+            You can handle this to provide global functionality/event handling scenarios.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.EntityManager.InstanceSaved">
+            <summary>
+            This event is raised for the whole Entity type after "any" object is saved in the database.
+            You can handle this to provide global functionality/event handling scenarios.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.EntityManager.InstanceDeleting">
+            <summary>
+            This event is raised for the whole Entity type before "any" object is deleted from the database.
+            You can handle this to provide global functionality/event handling scenarios.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.EntityManager.InstanceValidating">
+            <summary>
+            This event is raised for the whole Entity type before "any" object is validated.
+            You can handle this to provide global functionality/event handling scenarios.
+            This will be called as the first line of the base Entity's OnValidating method.
+            </summary>
+        </member>
+        <member name="F:Olive.Entities.EntityManager.InstanceDeleted">
+            <summary>
+            This event is raised for the whole Entity type after "any" object is deleted from the database.
+            You can handle this to provide global functionality/event handling scenarios.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.EntityManager.SetSaved(Olive.Entities.IEntity,System.Boolean)">
+            <summary>
+            Sets the state of an entity instance to saved.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.EntityManager.CloneAsNew``1(``0)">
+            <summary>
+            Creates a new clone of an entity. This will work in a polymorphic way.
+            </summary>        
+        </member>
+        <member name="M:Olive.Entities.EntityManager.CloneAsNew``1(``0,System.Action{``0})">
+            <summary>
+            Creates a new clone of an entity. This will work in a polymorphic way.
+            </summary>        
+        </member>
+        <member name="M:Olive.Entities.EntityManager.RestsetOriginalId``1(Olive.Entities.IEntity{``0})">
+            <summary>
+            Sets the ID of an object explicitly.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.EntityManager.ReadProperty(System.Object,System.String)">
+            <summary>
+            Read the value of a specified property from a specified object.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.GetRootEntityType(System.Type)">
+            <summary>
+            Gets the root entity type of this type.
+            If this type inherits directly from Entity&lt;T&gt; then it will be returned, otherwise its parent...
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.IsAnyOf``1(``0,``0[])">
+            <summary>
+            Determines if this item is in a specified list of specified items.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.IsAnyOf``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines if this item is in a specified list of specified items.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.IsNoneOf``1(``0,``0[])">
+            <summary>
+            Determines if this item is none of a list of specified items.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.IsNoneOf``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines if this item is none of a list of specified items.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.CloneAll``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Clones all items of this collection.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.IsImage(Olive.Entities.Blob)">
+            <summary>
+            Determines whether this blob is an image.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.GetFullIdentifierString(Olive.Entities.IEntity)">
+            <summary>
+            Gets the id of this entity.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.ValidateAll``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Validates all entities in this collection.
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.OnlyWhen``1(``0,System.Func{``0,System.Boolean})">
+            <summary>
+            Returns this Entity only if the given predicate evaluates to true and this is not null.
+            </summary>        
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.IDs``1(System.Collections.Generic.IEnumerable{Olive.Entities.IEntity{``0}})">
+            <summary>
+            Returns all entity Guid IDs for this collection.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.To``1(System.Nullable{System.Guid})">
+            <summary>
+            This will use Database.Get() to load the specified entity type with this ID.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.To``1(System.Guid)">
+            <summary>
+            This will use Database.Get() to load the specified entity type with this ID.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.GetFullPath(Olive.Entities.IHierarchy)">
+            <summary>
+            Gets the full path of this hirarchical entity, seperated by " > ".
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.IsRootNode(Olive.Entities.IHierarchy)">
+            <summary>
+            Gets whether this node is a root hierarchy node.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.GetFullPath(Olive.Entities.IHierarchy,System.String)">
+            <summary>
+            Gets the full path of this hirarchical entity, seperated by a specified seperation string.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.WithAllChildren(Olive.Entities.IHierarchy)">
+            <summary>
+            Gets this node as well as all its children hierarchy.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.GetAllChildren(Olive.Entities.IHierarchy)">
+            <summary>
+            Gets all children hierarchy of this node.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.WithAllParents(Olive.Entities.IHierarchy)">
+            <summary>
+            Gets this node as well as all its parents hierarchy.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.GetAllParents(Olive.Entities.IHierarchy)">
+            <summary>
+            Gets all parents hierarchy of this node.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.WithAllParents``1(``0)">
+            <summary>
+            Gets this node as well as all its parents hierarchy.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.OliveExtensions.GetAllParents``1(Olive.Entities.IHierarchy)">
+            <summary>
+            Gets all parents hierarchy of this node.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.GuidEntity">
+            <summary>Represents a base Entity with ID of type Guid.</summary>
+        </member>
+        <member name="P:Olive.Entities.GuidEntity.ID">
+            <summary>
+            Gets a unique Identifier for this instance. In the database, this will be the primary key of this object.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.GuidEntity.Clone">
+            <summary>
+            Creates a shallow copy of this object.
+            If you need to update an instance loaded from the database, you must create a Clone of it before applying any changes.
+            Otherwise you will be editing the "live" instance from the cache, that is used by all other threads!
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.IEntity">
+            <summary>
+            Represents an M# Entity.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.IEntity.IsNew">
+            <summary>
+            Determines whether this object has just been instantiated as a new object, or represent an already persisted instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IEntity.Validate">
+            <summary>
+            Validates this instance and throws ValidationException if necessary.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.IEntity.GetId">
+            <summary>
+            Gets the id of this entity.
+            </summary>        
+        </member>
+        <member name="M:Olive.Entities.IEntity.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Olive.Entities.IEntity.InvalidateCachedReferences">
+            <summary>
+            Invalidates all its cached referencers.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.IEntity`1">
+            <summary>
+            A persistent object in the application.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.IEntity`1.ID">
+            <summary>
+            Gets the ID.
+            </summary>
+        </member>
+        <member name="P:Olive.Entities.IntEntity.ID">
+            <summary>
+            Gets a unique Identifier for this instance. In the database, this will be the primary key of this object.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.ISortable">
+            <summary>
+            Represents a sortable entity type.
+            </summary>
+        </member>
+        <member name="T:Olive.Entities.Sorter">
+            <summary>
+            Provides Sorting services for all entities.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.MoveBefore(Olive.Entities.ISortable,Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Moves this item before a specified other item. If null is specified, it will be moved to the end of its siblings.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.MoveAfter(Olive.Entities.ISortable,Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Moves this item after a specified other item. If null is specified, it will be moved to the beginning of its siblings.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.MoveUp(Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Moves an item up among its siblings. Returns False if the item is already first in the list, otherwise true.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.MoveFirst(Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Moves an item up to first among its siblings. Returns False if the item is already first in the list, otherwise true.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.MoveLast(Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Moves an item up to last among its siblings. Always returns true.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.MoveDown(Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Moves an item down among its siblings. Returns False if the item is already last in the list, otherwise true.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.Swap(Olive.Entities.ISortable,Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Swaps the order of two specified items.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.JustifyOrders(Olive.Entities.ISortable,Olive.Entities.SaveBehaviour)">
+            <summary>
+            Justifies the order of a specified item and its siblings. 
+            The value of the "Order" property in those objects will be 10, 20, 30, ...
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.FindSiblings(Olive.Entities.ISortable)">
+            <summary>
+            Discovers the siblings of the specified sortable object.
+            </summary>
+        </member>
+        <member name="M:Olive.Entities.Sorter.GetNewOrder(Olive.Entities.ISortable)">
+            <summary>
+            Gets the Next order for an ISortable entity.
+            The result will be 10 plus the largest order of its siblings.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,37 @@
+﻿@import "Imports/Common.less";
+@import "Imports/bootstrap-social.less";
+
+@footer-height: 80px;
+@footer-top-margin: 30px;
+
+// main layout
+.page {
+    & {.make-row(); }
+    .side-bar { .make-md-column(2); }
+    .content { .make-md-column(10); }
+    .content.full { .make-md-column(12); }
+}
+
+h2 { margin-top: 0; }
+body { margin-bottom: (@footer-height + @footer-top-margin); overflow-y: scroll; }
+header { background: @gray-darker;
+    .navbar-brand { padding: 0; }
+    button.navbar-toggle {
+        &, &:hover, &:focus { color: #fff; }
+    }
+    .navbar-static-top .nav-wrapper { .container-fluid; }
+}
+footer { position: absolute; bottom: 0; width: 100%; background-color: @gray-darker; color: #eee; height: @footer-height; padding: 15px;
+    p { padding: 5px; .text-muted; }
+    a, a:hover { color: #ade0f1; }
+    img { margin: 0 8px; }
+    .pull-right a { color: #fff; text-decoration: underline; }
+    .plain-text {text-decoration:none !important;}
+}
+
+.social-media-login .buttons-row { text-align: left; }
+
+.captcha-image { margin-top: 10px !important; }
+.captcha-image-refresh {
+    i { margin-right: 10px; }
+}

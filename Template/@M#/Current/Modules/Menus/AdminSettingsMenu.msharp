@@ -1,0 +1,86 @@
+var v105 =
+{
+    Name: "AdminSettingsMenu",
+    RootCssClass: "navbar navbar-default",
+    GenerateLinks: true,
+    IsInUse: true,
+    IsViewComponent: true,
+    Orientation: "Vertical",
+    SpecialSelectedKeyRule: "// Example:\r\n\r\nif (Request.Has(\".category\"))\r\n    return Request.GetValue(\".category\");",
+    UlCssClass: "nav nav-stacked dropped-submenu",
+    
+    Items:
+    [
+        /* ---------------------- General settings ------------------------------------------ */
+        {
+            Text: "General settings",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go General settings.......................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go General settings",
+                        Page: "Admin > Settings > General",
+                        Target: "Same window",
+                    },
+                ],
+            },
+        },
+        
+        /* ---------------------- Administrators -------------------------------------------- */
+        {
+            Text: "Administrators",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go Administrators............................ */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Administrators",
+                        Page: "Admin > Settings > Administrators",
+                        Target: "Same window",
+                    },
+                ],
+            },
+        },
+        
+        /* ---------------------- Email templates ------------------------------------------- */
+        {
+            Text: "Email templates",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go Email templates........................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Email templates",
+                        Page: "Admin > Settings > Email templates",
+                        Target: "Same window",
+                    },
+                ],
+            },
+        },
+        
+        /* ---------------------- Content blocks -------------------------------------------- */
+        {
+            Text: "Content blocks",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go Content blocks............................ */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Content blocks",
+                        Page: "Admin > Settings > Content blocks",
+                        Target: "Same window",
+                    },
+                ],
+            },
+        },
+    ],
+}

@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Hosting;
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="refresh" content="@((30*60) + 10)">
+	<title>@ViewData["Title"]</title>
+	<link rel="shortcut icon" href="~/public/img/favicon.png" />
+
+	@if (Environment.IsDevelopment())
+	{
+		<link rel='stylesheet' href="~/Styles/FrontEnd.css?v=@Settings.ResourceVersion" type='text/css' />
+      <!--[if lt IE 11]> <script src='/bower_components/modernizr/modernizr.js'></script> <![endif]-->
+	}
+	else
+	{
+		<link rel='stylesheet' href="/public/css/FrontEnd-min.css?v=@Settings.ResourceVersion" type='text/css' />
+      <!--[if lt IE 11]> <script src='/public/js/modernizr-min.js'></script> <![endif]-->
+	}
+</head>
+<body>
+	@RenderBody()
+</body>
+</html>

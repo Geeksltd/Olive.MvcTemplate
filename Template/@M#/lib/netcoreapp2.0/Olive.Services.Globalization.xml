@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olive.Services.Globalization</name>
+    </assembly>
+    <members>
+        <member name="M:Olive.Services.Globalization.ExtensionMethods.ToString(Olive.Entities.IEntity,Olive.Services.Globalization.ILanguage)">
+            <summary>
+            Returns the translation of this object's string representation.
+            </summary>
+        </member>
+        <member name="T:Olive.Services.Globalization.GoogleAutodetectResponse">
+            <summary>
+            Response returned by Google API for each auto-detect language request
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Globalization.GoogleAutodetectResponse.ISOCode">
+            <summary>ISO Code</summary>
+        </member>
+        <member name="P:Olive.Services.Globalization.GoogleAutodetectResponse.Confidence">
+            <summary>Confidence [0;1] about the detection</summary>
+        </member>
+        <member name="M:Olive.Services.Globalization.GoogleAutodetectResponse.#ctor(System.String,System.Nullable{System.Double})">
+            <summary>
+            Initialize a new Google auto-detect response
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Globalization.GoogleAutodetectResponse.GetLanguage">
+            <summary>Language detected based on iso639-1</summary>
+        </member>
+        <member name="M:Olive.Services.Globalization.TranslationDownloadedEventArgs.#ctor(System.String,Olive.Services.Globalization.ILanguage,System.String)">
+            <summary>
+            Creates a new TranslationDownloadedEventArgs instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Globalization.TranslationDownloadedEventArgs.Word">
+            <summary>
+            Gets or sets the Word of this TranslationDownloadedEventArgs.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Globalization.TranslationDownloadedEventArgs.Language">
+            <summary>
+            Gets or sets the Language of this TranslationDownloadedEventArgs.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.Globalization.TranslationDownloadedEventArgs.Translation">
+            <summary>
+            Gets or sets the Translation of this TranslationDownloadedEventArgs.
+            </summary>
+        </member>
+        <member name="T:Olive.Services.Globalization.Translator">
+            <summary>
+            Provides translation services.
+            </summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.GOOGLE_TRANSLATE_QUERY_LENGTH">
+            <summary>Length of the query without the phrase</summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.GOOGLE_TRANSLATE_LIMIT">
+            <summary>Maximum number of characters for each request to Google API</summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.GOOGLE_PHRASE_LIMIT">
+            <summary>Maximum number of characters for each phrase that can be sent to Google Translate</summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.GOOGLE_TERMS_OF_SERVICE_ABUSE_MESSAGE">
+            <summary>Message returned by Google if suspected terms of service abuse.</summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.LINE_BREAK_HTML">
+            <summary>HTML tag for a line break</summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.LINE_BREAK_UNICODE">
+            <summary>Unicode value of a HTML line break</summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.GetCurrentLanguage">
+            <summary>
+            Gets the language of the current user from cookie.
+            If no language is specified, then the default language will be used as configured in the database.
+            </summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.TranslationRequested">
+            <summary>
+            Occurs when a translation is requested.
+            </summary>
+        </member>
+        <member name="F:Olive.Services.Globalization.Translator.TranslationDownloaded">
+            <summary>
+            Occurs when a word's translation is downloaded off the Internet.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Globalization.Translator.IsGoogleMisconfigured">
+            <summary>Check the configuration status of Google Translate</summary>
+        </member>
+        <member name="M:Olive.Services.Globalization.Translator.ReconfigureGoogleTranslate">
+            <summary>Set the status of Google Translate as well configured</summary>
+        </member>
+        <member name="M:Olive.Services.Globalization.Translator.GoogleTranslate(System.String,System.String,System.String)">
+            <summary>
+            Uses Google Translate service to translate a specified phrase to the specified language.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.Globalization.Translator.GoogleAutodetectLanguage(System.String)">
+            <summary>
+            Detect the language of a phrase.
+            The API can translate multiple piece of text in the same time, if needed create a function with parameter "params string phrase" and return a list of GoogleAutoDetectLanguage.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,93 @@
+var v105 =
+{
+    Name: "Administrator form",
+    Entity: "Administrator",
+    ModuleHeaderText: "Administrator Details",
+    
+    /* ================================= Elements ================================= */
+    Elements:
+    [
+        /* -------------------------- [[ FirstName ]] ----------------------------- */
+        {
+            Type: "StringFormElement",
+            Property: "FirstName",
+            AutoConfigureHtmlEditor: true,
+        },
+        /* -------------------------- [[ LastName ]] ------------------------------ */
+        {
+            Type: "StringFormElement",
+            Property: "LastName",
+            AutoConfigureHtmlEditor: true,
+        },
+        /* -------------------------- [[ Email ]] --------------------------------- */
+        {
+            Type: "StringFormElement",
+            Property: "Email",
+            AutoConfigureHtmlEditor: true,
+        },
+        /* -------------------------- [[ IsDeactivated ]] ------------------------- */
+        {
+            Type: "BooleanFormElement",
+            Property: "IsDeactivated",
+            SpecifiedControlType: "Vertical radio buttons",
+        },
+    ],
+    
+    /* ================================= Buttons ============================================ */
+    Buttons:
+    [
+        /* ----------------------  << Cancel >>  -------------------------------------------- */
+        {
+            Text: "Cancel",
+            CausesValidation: false,
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Close modal.................................. */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Close modal",
+                        Action: "Close modal",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Save >>  ---------------------------------------------- */
+        {
+            Text: "Save",
+            CausesValidation: true,
+            Icon: "fa-check",
+            IsDefault: true,
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Save in Database............................. */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Save in Database",
+                        Action: "Save in Database",
+                    },
+                    
+                    /* Confirm...................................... */
+                    {
+                        Type: "NotificationActivity",
+                        Text: "Saved successfully.",
+                        Description: "Confirm",
+                        UseGentleStyle: true,
+                        UseMessageBox: true,
+                    },
+                    
+                    /* Close Modal, Refresh parent.................. */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Close Modal, Refresh parent fully",
+                        Action: "Close Modal, Refresh parent fully",
+                    },
+                ],
+            },
+        },
+    ],
+}

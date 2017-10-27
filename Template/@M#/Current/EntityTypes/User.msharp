@@ -1,0 +1,91 @@
+var v105 =
+{
+    Name: "User",
+    ClassName: "User",
+    TableName: "Users",
+    PluralName: "Users",
+    Namespace: "Users",
+    DatabaseMode: "Managed",
+    DefaultProperty: "Name",
+    IsAbstract: true,
+    LogEvents: true,
+    Schema: "dbo",
+    SortProperty: "Name",
+    
+    Properties:
+    [
+        /* --------------------------- FirstName ----------------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "FirstName",
+            Title: "First name",
+            Capacity: 200,
+            IsMandatory: true,
+            TrimValues: true,
+        },
+        
+        /* --------------------------- LastName ------------------------------------------------------------ */
+        {
+            Type: "StringProperty",
+            Name: "LastName",
+            Title: "Last name",
+            Capacity: 200,
+            IsMandatory: true,
+            TrimValues: true,
+        },
+        
+        /* --------------------------- Name ---------------------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "Name",
+            Title: "Name",
+            Capacity: 200,
+            Getter: "FirstName + \" \" + LastName",
+            IsCalculated: true,
+            IsMandatory: true,
+            TrimValues: true,
+        },
+        
+        /* --------------------------- Email --------------------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "Email",
+            Title: "Email",
+            Capacity: 100,
+            IsMandatory: true,
+            IsUnique: true,
+            TextPattern: "Email address",
+            TrimValues: false,
+        },
+        
+        /* --------------------------- Password ------------------------------------------------------------ */
+        {
+            Type: "StringProperty",
+            Name: "Password",
+            Title: "Password",
+            Capacity: 100,
+            HashPassword: true,
+            SaltProperty: "Salt",
+            TextPattern: "Password",
+            TrimValues: true,
+        },
+        
+        /* --------------------------- Salt ---------------------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "Salt",
+            Title: "Salt",
+            Capacity: 200,
+            TrimValues: true,
+        },
+        
+        /* --------------------------- IsDeactivated ------------------------------------------------------- */
+        {
+            Type: "BooleanProperty",
+            Name: "IsDeactivated",
+            Title: "Is deactivated",
+            IsMandatory: true,
+        },
+        
+    ],
+}

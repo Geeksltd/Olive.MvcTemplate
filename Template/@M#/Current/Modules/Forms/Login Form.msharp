@@ -1,0 +1,256 @@
+var v105 =
+{
+    Name: "Login Form",
+    DataSource: "await User.FindByEmail(info.Email)",
+    Entity: "User",
+    ModuleHeader: "@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key=\"LoginIntro\"}))",
+    ModuleHeaderText: "Please Login",
+    SupportsAdd: false,
+    SupportsEdit: false,
+    
+    /* ================================= Elements ================================= */
+    Elements:
+    [
+        /* -------------------------- [[ Email ]] --------------------------------- */
+        {
+            Type: "StringFormElement",
+            Property: "Email",
+            AutoConfigureHtmlEditor: true,
+            WatermarkText: "Your email",
+        },
+        /* -------------------------- [[ Password ]] ------------------------------ */
+        {
+            Type: "StringFormElement",
+            Property: "Password",
+            AutoConfigureHtmlEditor: true,
+            IsMandatory: true,
+            WatermarkText: "Your password",
+        },
+        /* -------------------------- [[ Enter the code shown ]] ------------------ */
+        {
+            Type: "GenericFormElement",
+            LabelText: "Enter the code shown",
+            ControlId: "CaptchaImage",
+            ControlMarkup: "@*Html.Captcha(6, \"Captcha\", info.CaptchaSettings)*@",
+            Visibility:
+            {
+                Rule: "info.MustShowCaptcha",
+            },
+        },
+    ],
+    
+    /* ================================= Buttons ============================================ */
+    Buttons:
+    [
+        /* ----------------------  << Forgot password? >>  ---------------------------------- */
+        {
+            Text: "Forgot password?",
+            CausesValidation: true,
+            Icon: "fa-key",
+            Style: "Link",
+            Workflow:
+            {
+                Activities:
+                [
+                    /* Go Forgot password........................... */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Forgot password",
+                        Page: "Login > Forgot password",
+                        Target: "Same window",
+                    },
+                ],
+            },
+        },
+        
+        /* ----------------------  << Login >>  --------------------------------------------- */
+        {
+            Text: "Login",
+            CausesValidation: true,
+            ValidateAntiForgeryToken: false,
+            Workflow:
+            {
+                RunInTransaction: false,
+                
+                Activities:
+                [
+                    /* Show please wait............................. */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Show please wait",
+                        Action: "Show please wait",
+                    },
+                    
+                    /* Warning for invalid username................. */
+                    {
+                        Type: "NotificationActivity",
+                        Text: "Invalid username and/or password. Please try again.",
+                        Description: "Warning for invalid username / password.",
+                        Style: "error",
+                        UseMessageBox: true,
+                        Criteria:
+                        {
+                            Rule: "info.InvalidCredentials",
+                        },
+                    },
+                    
+                    /* Warning for deactivated...................... */
+                    {
+                        Type: "NotificationActivity",
+                        Text: "Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.",
+                        Description: "Warning for deactivated.",
+                        Style: "error",
+                        UseMessageBox: true,
+                        Criteria:
+                        {
+                            Rule: "info.Item.IsDeactivated",
+                            StandardRule: "Else If:",
+                        },
+                    },
+                    
+                    /* Next attempt................................. */
+                    {
+                        Type: "GenericActivity",
+                        Description: "Next attempt",
+                        Code: "info.CaptchaImage_Visible = await LogonFailure.NextAttemptNeedsCaptcha(info.Email, Request.GetIPAddress());",
+                        Criteria:
+                        {
+                            Rule: "!info.SuccessfulLogin",
+                        },
+                    },
+                    
+                    /* Return View.................................. */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Return View",
+                        Action: "Return View",
+                        Criteria:
+                        {
+                            Rule: "!info.SuccessfulLogin",
+                        },
+                    },
+                    
+                    /* Update logon history......................... */
+                    {
+                        Type: "GenericActivity",
+                        Description: "Update logon history",
+                        Code: "await LogonFailure.Remove(info.Email, Request.GetIPAddress());",
+                    },
+                    
+                    /* Log the user on.............................. */
+                    {
+                        Type: "GenericActivity",
+                        Description: "Log the user on",
+                        Code: "info.Item.LogOn();",
+                    },
+                    
+                    /* Return to previous page...................... */
+                    {
+                        Type: "CommonActivity",
+                        Description: "Return to previous page",
+                        Action: "Return to previous page",
+                        Criteria:
+                        {
+                            Rule: "Url.ReturnUrl().HasValue()",
+                        },
+                    },
+                    
+                    /* Go Dispatch.................................. */
+                    {
+                        Type: "NavigateActivity",
+                        Description: "Go Dispatch",
+                        Page: "Login > Dispatch",
+                        Target: "Same window",
+                    },
+                ],
+            },
+        },
+    ],
+    
+    Code:
+    [
+        
+        /* ================================= CLASS CODE ========================================= */
+        
+        /* ---------------------- MustShowCaptcha property ---------------------------------- */
+        {
+            Type: "ModuleProperty",
+            Name: "MustShowCaptcha",
+            Title: "MustShowCaptcha property",
+            Event: "Class code",
+            CustomPropertyType: "bool",
+            CacheValue: true,
+        },
+        
+        /* ---------------------- CaptchaSettings property ---------------------------------- */
+        {
+            Type: "ModuleProperty",
+            Name: "CaptchaSettings",
+            Title: "CaptchaSettings property",
+            Event: "Class code",
+            CustomPropertyType: "Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary",
+            Getter: "new ViewDataDictionary(new EmptyModelMetadataProvider(), new ModelStateDictionary())\r\n{\r\n    {\"RefreshButtonText\", \"Refresh the captcha image\"},\r\n    {\"RequiredMessage\", \"Enter the code shown in the image\"}\r\n}",
+            CacheValue: true,
+        },
+        
+        /* ---------------------- IsCaptchaValid property ----------------------------------- */
+        {
+            Type: "ModuleProperty",
+            Name: "IsCaptchaValid",
+            Title: "IsCaptchaValid property",
+            Event: "Class code",
+            CustomPropertyType: "bool",
+            CacheValue: true,
+        },
+        
+        /* ---------------------- SuccessfulLogin property ---------------------------------- */
+        {
+            Type: "ModuleProperty",
+            Name: "SuccessfulLogin",
+            Title: "SuccessfulLogin property",
+            Event: "Class code",
+            CustomPropertyType: "bool",
+            Getter: "if (MustShowCaptcha && !IsCaptchaValid) return false;\r\n\r\nreturn !InvalidCredentials && !Item.IsDeactivated;",
+            CacheValue: true,
+        },
+        
+        /* ---------------------- InvalidCredentials property ------------------------------- */
+        {
+            Type: "ModuleProperty",
+            Name: "InvalidCredentials",
+            Title: "InvalidCredentials property",
+            Event: "Class code",
+            CustomPropertyType: "bool",
+            Getter: "Item == null || !SecurePassword.Verify(Password, Item.Password, Item.Salt)",
+            CacheValue: true,
+        },
+        
+        /* ================================= INITIALIZATION ===================================== */
+        
+        /* ---------------------- Should show captcha? -------------------------------------- */
+        {
+            Type: "ModuleCodeExtension",
+            Title: "Should show captcha?",
+            Event: "Initialization",
+            Code: "info.MustShowCaptcha = await LogonFailure.MustShowCaptcha(info.Email, Request.GetIPAddress());",
+            Criteria: "Request.IsPost()",
+        },
+        
+        /* ---------------------- Captcha result -------------------------------------------- */
+        {
+            Type: "ModuleCodeExtension",
+            Title: "Captcha result",
+            Event: "Initialization",
+            Code: "// TODO: Find a .NET Core option for captcha:\r\n// info.IsCaptchaValid = this.IsCaptchaValid(\"Capture code was invalid\");",
+        },
+    ],
+    
+    /* ================================= References ========================================= */
+    References:
+    [
+        {
+            RegisteredModule: "Content Block View",
+            TagName: "ContentBlockView",
+        },
+    ],
+}

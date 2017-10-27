@@ -1,0 +1,25 @@
+var v105 =
+{
+    Name: "Administrator",
+    ClassName: "Administrator",
+    TableName: "Administrators",
+    PluralName: "Administrators",
+    Namespace: "Users",
+    DatabaseMode: "Managed",
+    BaseType: "User",
+    LogEvents: true,
+    Schema: "dbo",
+    
+    Properties:
+    [
+        /* --------------------------- ImpersonationToken -------------------------------------------------- */
+        {
+            Type: "StringProperty",
+            Name: "ImpersonationToken",
+            Title: "Impersonation token",
+            Capacity: 40,
+            TrimValues: true,
+        },
+        
+    ],
+}

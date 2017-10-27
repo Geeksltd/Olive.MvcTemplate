@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olive.Services.TaskAutomation</name>
+    </assembly>
+    <members>
+        <member name="T:Olive.Services.TaskAutomation.AutomatedTask">
+            <summary>
+            Represents an instance of Automated task entity type.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTask.#ctor">
+            <summary>
+            Initializes a new instance of the AutomatedTask class.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.CurrentExecutionDuration">
+            <summary>
+            Gets the CurrentExecutionDuration property.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.CurrentStartTime">
+            <summary>
+            Gets or sets the value of CurrentStartTime on this Automated task instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.LastRunDuration">
+            <summary>
+            Gets the LastRunDuration property.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.LastRunEnd">
+            <summary>
+            Gets or sets the value of LastRunEnd on this Automated task instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.LastRunStart">
+            <summary>
+            Gets or sets the value of LastRunStart on this Automated task instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.Name">
+            <summary>
+            Gets or sets the value of Name on this Automated task instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.NextTry">
+            <summary>
+            Gets or sets the value of NextTry on this Automated task instance.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.RecordFailure">
+            <summary>
+            Gets or sets a value indicating whether this Automated task instance Record failure.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.RecordSuccess">
+            <summary>
+            Gets or sets a value indicating whether this Automated task instance Record success.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.Delay">
+            <summary>
+            Gets or sets the Delay of this AutomatedTask.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTask.AsyncGroup">
+            <summary>
+            Gets or sets the SyncGroup of this AutomatedTask.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTask.ToString">
+            <summary>
+            Returns a textual representation of this Automated task.
+            </summary>
+            <returns>A string value that represents this Automated task instance.</returns>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTask.ValidateProperties">
+            <summary>
+            Validates the data for the properties of this Automated task.
+            It throws a ValidationException if an error is detected.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTask.#ctor(System.Action{Olive.Services.TaskAutomation.AutomatedTask})">
+            <summary>
+            Creates a new AutomatedTask instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTask.Start">
+            <summary>
+            Starts this automated task.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTask.Restart">
+            <summary>
+            Restarts this task.
+            </summary>
+        </member>
+        <member name="T:Olive.Services.TaskAutomation.AutomatedTaskStatus">
+            <summary>
+            Represents an instance of Automated Task Status entity type.
+            </summary>
+        </member>
+        <member name="P:Olive.Services.TaskAutomation.AutomatedTaskStatus.Name">
+            <summary>
+            Gets or sets the value of Name on this Automated Task Status instance.
+            </summary>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTaskStatus.ToString">
+            <summary>
+            Returns a textual representation of this Automated Task Status.
+            </summary>
+            <returns>A string value that represents this Automated Task Status instance.</returns>
+        </member>
+        <member name="M:Olive.Services.TaskAutomation.AutomatedTaskStatus.#ctor(System.String)">
+            <summary>
+            Creates a new AutomatedTaskStatus instance.
+            </summary>
+        </member>
+    </members>
+</doc>

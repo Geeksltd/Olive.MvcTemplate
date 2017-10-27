@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olive.Web</name>
+    </assembly>
+    <members>
+        <member name="M:Olive.Web.IUserExtensions.IsInRole(Olive.Web.IUser,System.String)">
+            <summary>
+            Determines whether this user has a specified role.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.IUserExtensions.IsAuthenticated(Olive.Web.IUser)">
+            <summary>
+            Determines if this user Is Authenticated.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveDependencies.Inject(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Inject the required dependencies.
+            <para>It should be called in Startup.ConfigureServices</para>
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveDependencies.InjectOliveDependencies(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Inject the required dependencies.
+            <para>It should be called in Startup.ConfigureServices</para>
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveDependencies.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Configure the helper classes.
+            <para>It should be called in Startup.Configure</para>
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveDependencies.ConfigureOliveDependencies(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Configure the helper classes.
+            <para>It should be called in Startup.Configure</para>
+            </summary>
+        </member>
+        <member name="F:Olive.Web.OliveExtensions.GZipStarter">
+            <summary>
+            First three bytes of GZip compressed Data
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Post(System.Net.WebClient,System.String,System.Object)">
+            <summary>
+            Posts the specified data to a url and returns the response as string.
+            All properties of the postData object will be sent as individual FORM parameters to the destination.
+            </summary>
+            <param name="postData">An anonymous object containing post data.</param>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetString(System.Net.WebResponse)">
+            <summary>
+            Gets the response data as string.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetResponseString(System.Net.HttpWebRequest)">
+            <summary>
+            Gets the response data as string.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.PostJson(System.Uri,System.Object)">
+            <summary>
+            Posts the specified object as JSON data to this URL.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Post(System.Uri,System.Object,System.Action{System.Net.WebClient})">
+            <summary>
+            Posts the specified data to this url and returns the response as string.
+            All items in the postData object will be sent as individual FORM parameters to the destination.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Post(System.Uri,System.Collections.Generic.Dictionary{System.String,System.String},System.Action{System.Net.WebClient})">
+            <summary>
+            Posts the specified data to this url and returns the response as string.
+            All items in the postData object will be sent as individual FORM parameters to the destination.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Post(System.Net.WebClient,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Posts the specified data to a url and returns the response as string.
+            All items in the postData object will be sent as individual FORM parameters to the destination.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Post(System.Net.WebClient,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Text.Encoding)">
+            <summary>
+            Posts the specified data to a url and returns the response as string.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.ToFullMessage(System.Exception,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Returns a more complete text dump of this exception, than just its text.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.AddQueryString(System.Uri,System.String,System.String)">
+            <summary>
+            Adds the specified query string setting to this Url.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetQueryString(System.Uri)">
+            <summary>
+            Gets the query string parameters of this Url.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Get``1(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Returns an object whose ID is given in query string with the key of "id".
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetCookies(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the cookies sent by the client.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Get``1(Microsoft.AspNetCore.Http.HttpRequest,System.String)">
+            <summary>
+            Gets the data with the specified type from QueryString[key].
+            If the specified type is an entity, then the ID of that record will be read from query string and then fetched from database.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetValue(Microsoft.AspNetCore.Http.HttpRequest,System.String,System.Boolean)">
+            <summary>
+            Returns a string value specified in the request context.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetValue``1(Microsoft.AspNetCore.Http.HttpRequest,System.String)">
+            <summary>
+            Returns a value specified in the request context.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetEntity``1(Microsoft.AspNetCore.Http.HttpRequest,System.String,System.Boolean)">
+            <summary>
+            Gets the record with the specified type. The ID of the record will be read from QueryString[key].
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetOrDefault``1(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the record with the specified type. The ID of the record will be read from QueryString["id"].
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetOrDefault``1(Microsoft.AspNetCore.Http.HttpRequest,System.String)">
+            <summary>
+            Gets the record with the specified type. The ID of the record will be read from QueryString[key].
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetList``1(Microsoft.AspNetCore.Http.HttpRequest,System.String,System.Char)">
+            <summary>
+            Gets a list of objects of which Ids come in query string.
+            </summary>
+            <param name="key">The key of the query string element containing ids.</param>
+            <param name="seperator">The sepeerator of Ids in the query string value. The default will be comma (",").</param>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.FindSearchKeyword(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Finds the search keywords used by this user on Google that led to the current request.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetIPAddress(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the actual IP address of the user considering the Proxy and other HTTP elements.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.IsPrivateIp(System.String)">
+            <summary>
+            Determines if the given ip address is in any of the private IP ranges
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.WriteLine(Microsoft.AspNetCore.Http.HttpResponse,System.String)">
+            <summary>
+            Writes the specified content wrapped in a DIV tag.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.RedirectPermanent(Microsoft.AspNetCore.Http.HttpResponse,System.String)">
+            <summary>
+            Redirects the client to the specified URL with a 301 status (permanent).
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.RemoveEmptyQueryParameters(System.Uri)">
+            <summary>
+            Removes the specified query string parameter.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.RemoveQueryString(System.Uri,System.String)">
+            <summary>
+            Removes the specified query string parameter.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.ReplaceQueryString(System.Uri,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Removes all query string parameters of this Url and instead adds the specified ones.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.AddList``1(Microsoft.AspNetCore.Http.ISession,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Adds the specified list to session state and returns a unique Key for that.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.AddList``1(Microsoft.AspNetCore.Http.ISession,System.Collections.Generic.IEnumerable{``0},System.TimeSpan)">
+            <summary>
+            Adds the specified list to session state and returns a unique Key for that.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetList``1(Microsoft.AspNetCore.Http.ISession,System.String)">
+            <summary>
+            Retrieves a list of objects specified by the session key which is previously generated by Session.AddList() method.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.SelectInHttpContext``2(System.Linq.ParallelQuery{``0},System.Func{``0,``1})">
+            <summary>
+            Runs the parallel select in the current HTTP context.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Has(Microsoft.AspNetCore.Http.HttpRequest,System.String)">
+            <summary>
+            Determines if the specified argument exists in the request (query string or form).
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Lacks(Microsoft.AspNetCore.Http.HttpRequest,System.String)">
+            <summary>
+            Determines if the specified argument not exists in the request (query string or form).
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetWebsiteRoot(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the root of the requested website.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.ToRawUrl(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the raw url of the request.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.ToAbsoluteUri(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the absolute Uri of the request.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetAbsoluteUrl(Microsoft.AspNetCore.Http.HttpRequest,System.String)">
+            <summary>
+            Gets the absolute URL for a specified relative url.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Download(System.Uri,System.String,System.Int32)">
+            <summary>
+            Downloads the text in this URL.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.DownloadData(System.Uri,System.String,System.Int32)">
+            <summary>
+            Downloads the data in this URL.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.DownloadBlob(System.Uri,System.String,System.Int32)">
+            <summary>
+            Downloads the data in this URL.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.ReadAllText(System.IO.Stream)">
+            <summary>
+            Reads all text in this stream as UTF8.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.HtmlEncode(System.String)">
+            <summary>
+            Gets the Html Encoded version of this text.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.HtmlDecode(System.String)">
+            <summary>
+            Gets the Html Decoded version of this text.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.UrlEncode(System.String)">
+            <summary>
+            Gets the Url Encoded version of this text.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.UrlDecode(System.String)">
+            <summary>
+            Gets the Url Decoded version of this text.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.SetQueryString(System.Uri,System.String,System.Object)">
+            <summary>
+            Properly sets a query string key value in this Uri, returning a new Uri object.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.IsAjaxRequest(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Determines whether this is an Ajax call.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.IsAjaxCall(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Determines whether this is an Ajax call.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Dispatch(Microsoft.AspNetCore.Http.HttpResponse,System.Byte[],System.String,System.String)">
+            <summary>
+            Dispatches a binary data block back to the client.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Dispatch(Microsoft.AspNetCore.Http.HttpResponse,System.String,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Dispatches a string back to the client as a file.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Dispatch(Microsoft.AspNetCore.Http.HttpResponse,System.IO.FileInfo,System.String,System.String)">
+            <summary>
+            Dispatches a file back to the client.
+            </summary>
+            <param name="fileName">If set to null, the same file name of the file will be used.</param>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.Dispatch(Microsoft.AspNetCore.Http.HttpResponse,Olive.Entities.Blob,System.String)">
+            <summary>
+            Dispatches a file back to the client.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.IsGet(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Determines if this is a GET http request.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.IsPost(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Determines if this is a POST http request.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.GetReturnUrl(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the currently specified return URL.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.EndWith(Microsoft.AspNetCore.Http.HttpResponse,System.String,System.String)">
+            <summary>
+            Writes the specified message in the response and then ends the response.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.OliveExtensions.ReadAllText(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Reads the full content of a posted text file.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.UrlRewriting.Escape(System.String)">
+            <summary>
+            Creates a suitable string for urls.
+            </summary>        
+        </member>
+        <member name="M:Olive.Web.UrlRewriting.FindRequestedResource">
+            <summary>
+            Gets the Currently requested resource.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.UrlRewriting.FindRequestedResource(System.Boolean)">
+            <summary>
+            Gets the Currently requested resource.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.UrlRewriting.Matches(Olive.Web.IWebResource,System.String)">
+            <summary>
+            Determines if this web resource's Url matches a given path.
+            </summary>
+        </member>
+        <member name="T:Olive.Web.CookieProperty">
+            <summary>
+            Provides easy access to HTTP cookie data.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Get``1">
+            <summary>
+            Gets the value of the property sent from the client browser as a cookie.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Get(System.String)">
+            <summary>
+            Gets the value of a string property sent from the client browser as a cookie.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Get``1(``0)">
+            <summary>
+            Gets the value of the property sent from the client browser as a cookie.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Get``1(System.String)">
+            <summary>
+            Gets the value of the property sent from the client browser as a cookie.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Get``1(System.String,``0)">
+            <summary>
+            Gets the value of the property sent from the client browser as a cookie.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Set``1(``0,System.Boolean)">
+            <summary>
+            Sets a specified value in the response cookie as well as request cookie.
+            </summary>
+            <param name="isHttpOnly">Specifies whether the cookie should be accessible via Javascript too, or Server (http) only.</param>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Set``1(System.String,``0,System.Boolean)">
+            <summary>
+            Sets a specified value in the response cookie as well as request cookie.
+            </summary>
+            <param name="isHttpOnly">Specifies whether the cookie should be accessible via Javascript too, or Server (http) only.</param>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.SetList``1(System.String,System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <summary>
+            Sets a specified list in the response cookie as well as request cookie.
+            </summary>
+            <param name="isHttpOnly">Specifies whether the cookie should be accessible via Javascript too, or Server (http) only.</param>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.GetList``1">
+            <summary>
+            Sets a specified list in the response cookie as well as request cookie.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.GetList``1(System.String)">
+            <summary>
+            Gets a specified list in the response cookie as well as request cookie.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Remove``1">
+            <summary>
+            Removes the specified cookie property.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Remove``1(System.String)">
+            <summary>
+            Removes the specified cookie property.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Remove(System.String)">
+            <summary>
+            Removes the specified cookie property.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Set(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Sets a specified value in the response cookie as well as request cookie.
+            </summary>
+            <param name="isHttpOnly">Specifies whether the cookie should be accessible via Javascript too, or Server (http) only.</param>
+        </member>
+        <member name="M:Olive.Web.CookieProperty.Set(System.String,System.String,System.Boolean)">
+            <summary>
+            Sets a specified value in the response cookie as well as request cookie.
+            </summary>
+            <param name="isHttpOnly">Specifies whether the cookie should be accessible via Javascript too, or Server (http) only.</param>
+        </member>
+        <member name="T:Olive.Web.HttpContextCache">
+            <summary>
+            Provides a HttpRequest level cache of objects.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.HttpContextCache.GetOrAdd``2(``0,System.Func{``1})">
+            <summary>
+            Gets a specified cached value from the current HttpContext.
+            If it doesn't exist, it will evaluate the provider expression to produce the value, adds it to cache, and returns it.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.HttpContextCache.Remove``1(``0)">
+            <summary>
+            Removes a specified cached object by its key from the current Http Context.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.SecureFileDispatcher.#ctor(System.String,Olive.Web.IUser)">
+            <summary>
+            Creates a new SecureFileDispatcher instance.
+            </summary>
+        </member>
+        <member name="F:Olive.Web.SecureFileDispatcher.UnauthorisedRequestEventArgs.Property">
+            <summary>
+            A property of type Blob which represents the requested file property.
+            </summary>
+        </member>
+        <member name="F:Olive.Web.SecureFileDispatcher.UnauthorisedRequestEventArgs.Instance">
+            <summary>
+            The object on which the blob property was requested.
+            </summary>
+        </member>
+        <member name="F:Olive.Web.SecureFileDispatcher.UnauthorisedRequestEventArgs.Exception">
+            <summary>
+            The security error raised by M# framework.
+            </summary>
+        </member>
+        <member name="T:Olive.Web.WebRequestLogService">
+            <summary>
+            Provides services to web request log objects.
+            </summary>
+        </member>
+        <member name="F:Olive.Web.WebRequestLogService.WebRequestLogFactory">
+            <summary>
+            Specifies a factory to instantiate WebRequestLog objects.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.WebRequestLogService.Record(Olive.Web.IWebRequestLog,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Records this web request log in the provided http context.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.WebRequestLogService.CountRequestsInSession(Olive.Web.IWebRequestLog)">
+            <summary>
+            Gets the number of requests made in the same session.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.WebRequestLogService.GetLastVisitedUrl(Olive.Web.IWebRequestLog)">
+            <summary>
+            Gest the last url visited in this session.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.WebRequestLogService.GetData(Olive.Web.IWebRequestLog,System.String)">
+            <summary>
+            Gets the value of a query string key.
+            </summary>
+        </member>
+        <member name="M:Olive.Web.WebRequestLogService.FindRecentSessions(System.TimeSpan)">
+            <summary>
+            Gets the first request of every session that has had an activity during the last 10 minutes.
+            </summary>
+        </member>
+    </members>
+</doc>
