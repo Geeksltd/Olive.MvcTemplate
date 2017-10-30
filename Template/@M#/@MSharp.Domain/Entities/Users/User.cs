@@ -8,18 +8,12 @@ namespace Model
         {
             Abstract();
             
-            String("First name", 200).Mandatory();
-            
-            String("Last name", 200).Mandatory();
-            
-            String("Name", 200).Calculated().Getter("FirstName + \" \" + LastName");
-            
+            String("First name").Mandatory();
+            String("Last name").Mandatory();
+            String("Name").Calculated().Getter("FirstName + \" \" + LastName");
             String("Email", 100).Mandatory().TrimValues(false).Unique().Accepts(TextPattern.EmailAddress);
-            
             String("Password", 100).HashPassword().SaltProperty("Salt").Accepts(TextPattern.Password);
-            
-            String("Salt", 200);
-            
+            String("Salt");
             Bool("Is deactivated").Mandatory();
         }
     }

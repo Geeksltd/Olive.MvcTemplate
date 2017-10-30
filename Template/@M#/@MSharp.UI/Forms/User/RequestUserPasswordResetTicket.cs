@@ -12,7 +12,6 @@ namespace Modules
                 .HeaderText("Forgot Your Password?");
             
             Field(x => x.Email);
-            
             Button("Send").IsDefault()
             .Action(x =>
             {

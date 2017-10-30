@@ -14,14 +14,12 @@ namespace Modules
                 .SecurityChecks("Request.Has(\"Ticket\")");
             
             Field(x => x.Password).Mandatory().AfterControl("<div class='password-strength'></div>");
-            
             CustomField().Label("Confirm new password")
                 .Mandatory()
                 .PropertyName("ConfirmPassword")
                 .ExtraControlAttributes("type=\"password\"")
                 .ViewModelAttributes("[System.ComponentModel.DataAnnotations.Compare(\"Password\",ErrorMessage=\"New password and Confirm password do not match. Please try again.\")]")
                 .Control(ControlType.Textbox);
-            
             Property<PasswordResetTicket>("Ticket").FromRequestParam("ticket");
             
             //================ Buttons: ================

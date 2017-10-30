@@ -18,7 +18,7 @@ namespace Modules
             
             Search(GeneralSearch.AllFields).Label("Find:");
             
-            Button("Search").Icon(FA.Search)
+            SearchButton("Search").Icon(FA.Search)
                 .Action(x => x.Reload());
             
             //================ Columns: ================

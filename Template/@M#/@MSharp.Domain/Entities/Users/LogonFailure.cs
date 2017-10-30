@@ -6,12 +6,9 @@ namespace Model
     {
         public LogonFailure()
         {
-            String("Email", 200).Mandatory();
-            
-            String("IP", 200).Mandatory();
-            
+            String("Email").Mandatory();
+            String("IP").Mandatory();
             Int("Attempts").Mandatory();
-            
             DateTime("Date").Mandatory();
         }
     }

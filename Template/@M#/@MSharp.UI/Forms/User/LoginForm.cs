@@ -14,9 +14,7 @@ namespace Modules
                 .DataSource("await User.FindByEmail(info.Email)");
             
             Field(x => x.Email).WatermarkText("Your email");
-            
             Field(x => x.Password).Mandatory().WatermarkText("Your password");
-            
             CustomField().Label("Enter the code shown").PropertyName("CaptchaImage")
                 .ControlMarkup("@*Html.Captcha(6, \"Captcha\", info.CaptchaSettings)*@")
                 .Visibility("info.MustShowCaptcha");

@@ -10,11 +10,8 @@ namespace Modules
             HeaderText("Administrator Details");
             
             Field(x => x.FirstName);
-            
             Field(x => x.LastName);
-            
             Field(x => x.Email);
-            
             Field(x => x.IsDeactivated).Control(ControlType.VerticalRadioButtons);
             
             //================ Buttons: ================

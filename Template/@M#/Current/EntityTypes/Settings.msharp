@@ -9,7 +9,7 @@ var v105 =
     GenerateInstanceAccessors: true,
     LogEvents: true,
     Schema: "dbo",
-    EnumRecords: "Current",
+    EnumRecords: "",
     
     Properties:
     [

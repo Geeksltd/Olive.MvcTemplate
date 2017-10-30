@@ -10,7 +10,7 @@ var v105 =
     GenerateInstanceAccessors: true,
     LogEvents: true,
     Schema: "dbo",
-    EnumRecords: "PasswordSuccessfullyReset|LoginIntro",
+    EnumRecords: "",
     
     Properties:
     [

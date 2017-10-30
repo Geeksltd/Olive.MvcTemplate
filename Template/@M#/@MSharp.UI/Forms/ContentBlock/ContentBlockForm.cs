@@ -8,16 +8,14 @@ namespace Modules
         public ContentBlockForm()
         {
             HeaderText("Content Block Details");
-            
+
             Field(x => x.Key).Readonly();
-            
             Field(x => x.Content).Control(ControlType.HtmlEditor);
-            
+
             //================ Buttons: ================
-            
-            Button("Cancel").CausesValidation(false)
-                .Action(x => x.ReturnToPreviousPage());
-            
+
+            Button("Cancel").Action(x => x.ReturnToPreviousPage());
+
             Button("Save").IsDefault().Icon(FA.Check)
             .Action(x =>
             {

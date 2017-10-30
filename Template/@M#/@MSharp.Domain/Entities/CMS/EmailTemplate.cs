@@ -6,15 +6,12 @@ namespace Model
     {
         public EmailTemplate()
         {
-            InstanceAccessors("RecoverPassword");
+            InstanceAccessors();
             
-            String("Key", 200).Mandatory().Unique();
-            
-            String("Subject", 200).Mandatory();
-            
-            String("Body").Mandatory().Lines(10);
-            
-            String("Mandatory placeholders", 200);
+            String("Key").Mandatory().Unique();
+            String("Subject").Mandatory();
+            BigString("Body", 10).Mandatory().Lines(10);
+            String("Mandatory placeholders");
         }
     }
 }

@@ -8,19 +8,13 @@ namespace Model
         {
             Cachable(false).Implements("IApplicationEvent");
             
-            String("User id", 200);
-            
+            String("User id");
             DateTime("Date").Mandatory().Default("c#:LocalTime.Now").DefaultFormatString("g");
-            
-            String("Event", 200).Mandatory();
-            
-            String("Item type", 200);
-            
+            String("Event").Mandatory();
+            String("Item type");
             String("Item key", 500);
-            
-            String("Data");
-            
-            String("IP", 200);
+            BigString("Data");
+            String("IP");
         }
     }
 }
