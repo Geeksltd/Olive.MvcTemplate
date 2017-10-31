@@ -6,10 +6,10 @@ namespace Model
     {
         public ContentBlock()
         {
-            InstanceAccessors();
-            
+            InstanceAccessors("PasswordSuccessfullyReset", "LoginIntro");
+
             String("Key").Mandatory().Unique();
-            BigString("Content").Mandatory().Lines(5);
+            BigString("Content").Mandatory();
         }
     }
 }

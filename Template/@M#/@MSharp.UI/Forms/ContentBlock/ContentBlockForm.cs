@@ -14,7 +14,7 @@ namespace Modules
 
             //================ Buttons: ================
 
-            Button("Cancel").Action(x => x.ReturnToPreviousPage());
+            Button("Cancel").Action().ReturnToPreviousPage();
 
             Button("Save").IsDefault().Icon(FA.Check)
             .Action(x =>

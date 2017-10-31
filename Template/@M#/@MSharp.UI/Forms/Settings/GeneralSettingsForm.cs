@@ -9,7 +9,9 @@ namespace Modules
         {
             HeaderText("Settings").DataSource("Domain.Settings.Current");
             
-            Field(x => x.PasswordResetTicketExpiryMinutes).Control(ControlType.NumericUpDown);
+            Field(x => x.PasswordResetTicketExpiryMinutes)
+                .Control(ControlType.NumericUpDown);
+
             Button("Save").IsDefault()
             .Action(x =>
             {

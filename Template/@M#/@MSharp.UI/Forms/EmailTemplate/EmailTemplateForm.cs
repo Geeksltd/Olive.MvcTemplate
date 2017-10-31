@@ -11,10 +11,12 @@ namespace Modules
 
             Box("Test", BoxTemplate.HeaderBox)
                 .Add(
-            Field(x => x.Key),
-            Field(x => x.Subject),
-            Field(x => x.Body).ExtraControlAttributes("data_toolbar=\"Compact\"").Control(ControlType.HtmlEditor),
-            Field(x => x.MandatoryPlaceholders));
+                    Field(x => x.Key),
+                    Field(x => x.Subject),
+                    Field(x => x.Body).ExtraControlAttributes("data_toolbar=\"Compact\"")
+                                      .Control(ControlType.HtmlEditor),
+                    Field(x => x.MandatoryPlaceholders)
+            );
 
             //================ Buttons: ================
 

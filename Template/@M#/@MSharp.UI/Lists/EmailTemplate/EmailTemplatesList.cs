@@ -20,7 +20,11 @@ namespace Modules
             
             Column(x => x.Subject);
             
-            Column(x => x.Body).DisplayExpression("c#:item.Body.RemoveHtmlTags().Summarize(150).Remove(\"\\r\").KeepReplacing(\"\\n\\n\", \"\\n\").ToHtmlLines()");
+            Column(x => x.Body).DisplayExpression("c#:item.Body" +
+                ".RemoveHtmlTags()" +
+                ".Summarize(150)" +
+                ".Remove(\"\\r\")" +
+                ".KeepReplacing(\"\\n\\n\", \"\\n\").ToHtmlLines()");
             
             Column(x => x.MandatoryPlaceholders);
         }

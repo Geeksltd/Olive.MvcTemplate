@@ -26,6 +26,6 @@ namespace Model
             String("Smtp host");
             Int("Smtp port");
             String("Category");
-        }
+        }        
     }
 }

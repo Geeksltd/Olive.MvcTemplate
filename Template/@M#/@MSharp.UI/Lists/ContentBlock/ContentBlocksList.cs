@@ -11,7 +11,10 @@ namespace Modules
             
             //================ Columns: ================
             
-            LinkColumn("Key").HeaderText("Key").Text("c#:item.Key").SortKey("Key")
+            LinkColumn("Key")
+                .HeaderText("Key")
+                .Text("c#:item.Key")
+                .SortKey("Key")
             .Action(x =>
             {
                 x.Go<Admin.Settings.ContentBlocks.EnterPage>().SendReturnUrl()
