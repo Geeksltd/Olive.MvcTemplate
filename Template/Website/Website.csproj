@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.6.17" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.0.0" />
     <PackageReference Include="SkiaSharp" Version="1.59.1" />
   </ItemGroup>
   <ItemGroup>
