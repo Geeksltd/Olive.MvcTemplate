@@ -7,7 +7,7 @@ namespace Model
         public EmailTemplate()
         {
             InstanceAccessors("Recover password");
-            
+
             String("Key").Mandatory().Unique();
             String("Subject").Mandatory();
             BigString("Body", 10).Mandatory().Lines(10);

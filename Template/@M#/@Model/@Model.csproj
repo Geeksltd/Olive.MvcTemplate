@@ -10,16 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entities\Main\**" />
+    <EmbeddedResource Remove="Entities\Main\**" />
+    <None Remove="Entities\Main\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="MSharp.DSL">
       <HintPath>..\lib\netcoreapp2.0\MSharp.DSL.dll</HintPath>
     </Reference>
     <Reference Include="Olive">
       <HintPath>..\lib\netcoreapp2.0\Olive.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Entities\Main\" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

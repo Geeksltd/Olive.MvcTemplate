@@ -1,0 +1,6 @@
+
+This folder is auto-generated from the M# definitions at @M#\@Domain.
+
+It can be overwritten at any time, so do not change anything manually here.
+
+If you want to customize the DB creation script, use the parent folder.

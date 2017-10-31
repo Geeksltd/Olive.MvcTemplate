@@ -280,6 +280,9 @@
             Creates a new SecureFileAccessor instance.
             </summary>
         </member>
+        <member name="M:Olive.Mvc.Startup.CreateReferenceData">
+            <summary>Invoked by the WebTestManager right after creating a new database.</summary>
+        </member>
         <member name="P:Olive.Mvc.ViewComponent.HttpContext">
             <summary>
             Gets HTTP-specific information about an individual HTTP request.
