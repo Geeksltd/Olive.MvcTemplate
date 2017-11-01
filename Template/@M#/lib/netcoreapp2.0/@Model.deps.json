@@ -1,28 +1,28 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "signature": "87ac5bbd5f7043951642e34a3e6538f7e701469f"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "@Model/1.0.0": {
         "dependencies": {
-          "MSharp.DSL": "1.0.0.0",
-          "Olive": "1.0.0.0"
+          "Olive": "1.0.2",
+          "MSharp.DSL": "1.0.0.0"
         },
         "runtime": {
           "@Model.dll": {}
         }
       },
+      "Olive/1.0.2": {
+        "runtime": {
+          "lib/netcoreapp2.0/Olive.dll": {}
+        }
+      },
       "MSharp.DSL/1.0.0.0": {
         "runtime": {
           "MSharp.DSL.dll": {}
-        }
-      },
-      "Olive/1.0.0.0": {
-        "runtime": {
-          "Olive.dll": {}
         }
       }
     }
@@ -33,12 +33,14 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MSharp.DSL/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
+    "Olive/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nFiIvD7F62eQw9Qe1gP06b9ushZhPIX3hUKHwKgLS8UrucVwQpgI9dYhb5EN4nrMMpbE9jSVoSalKoYGye4F8A==",
+      "path": "olive/1.0.2",
+      "hashPath": "olive.1.0.2.nupkg.sha512"
     },
-    "Olive/1.0.0.0": {
+    "MSharp.DSL/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

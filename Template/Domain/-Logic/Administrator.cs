@@ -9,7 +9,7 @@
     using Olive.Services.ImpersonationSession;
     using Olive.Web;
 
-    /// <summary>
+    /// <summary> 
     /// Provides the business logic for Administrator class.
     /// </summary>
     partial class Administrator : IImpersonator

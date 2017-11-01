@@ -8,7 +8,7 @@ namespace Modules
         public GeneralSettingsForm()
         {
             HeaderText("Settings").DataSource("Domain.Settings.Current");
-            
+
             Field(x => x.PasswordResetTicketExpiryMinutes)
                 .Control(ControlType.NumericUpDown);
 
