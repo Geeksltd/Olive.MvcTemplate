@@ -2,4 +2,4 @@ obj
 Template/Website/wwwroot/lib
 MSharp.exe
 bin
-obj
+Template/@M#/lib/netcoreapp2.0
