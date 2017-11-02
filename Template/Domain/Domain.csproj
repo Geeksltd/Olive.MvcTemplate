@@ -12,46 +12,15 @@
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="Olive" Version="1.0.3" />
+    <PackageReference Include="Olive.CSV" Version="1.0.3" />
+    <PackageReference Include="Olive.Drawing" Version="1.0.4" />
     <PackageReference Include="Olive.Email" Version="1.0.4" />
-    <PackageReference Include="Olive.Entities" Version="1.0.3" />
-    <PackageReference Include="Olive.Entities.Data" Version="1.0.3" />
+    <PackageReference Include="Olive.Entities" Version="1.0.4" />
+    <PackageReference Include="Olive.Entities.Data" Version="1.0.7" />
     <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.3" />
     <PackageReference Include="Olive.ImpersonationSession" Version="1.0.3" />
+    <PackageReference Include="Olive.Integration" Version="1.0.3" />
     <PackageReference Include="Olive.Web" Version="1.0.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Olive">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities.Data">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities.Data.SqlServer">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.Data.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Drawing">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Email">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Email.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.ImpersonationSession">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.ImpersonationSession.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Integration">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Integration.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Web">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Web.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y $(TargetPath) $(SolutionDir)@M#\lib\netcoreapp2.0" />
-  </Target>
 </Project>

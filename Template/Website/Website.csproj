@@ -10,8 +10,9 @@
     <PackageReference Include="Hangfire" Version="1.6.17" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.0.0" />
-    <PackageReference Include="Olive" Version="1.0.3" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.4" />
+    <PackageReference Include="Olive.Excel" Version="1.0.3" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.6" />
+    <PackageReference Include="Olive.PDF" Version="1.0.3" />
     <PackageReference Include="Olive.Testing" Version="1.0.3" />
     <PackageReference Include="SkiaSharp" Version="1.59.1" />
   </ItemGroup>
@@ -19,53 +20,11 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Olive">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities.Data">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities.Data.SqlServer">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Entities.Data.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Mvc">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.CSV">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.CSV.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Drawing">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Email">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Email.dll</HintPath>
-    </Reference>
     <Reference Include="Olive.Services.Excel">
       <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Excel.dll</HintPath>
     </Reference>
-    <Reference Include="Olive.Services.Globalization">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Globalization.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.ImpersonationSession">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.ImpersonationSession.dll</HintPath>
-    </Reference>
     <Reference Include="Olive.Services.Integration">
       <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Integration.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.PDF">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.PDF.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.TaskAutomation">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.TaskAutomation.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Testing">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Services.Testing.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Web">
-      <HintPath>bin\Debug\netcoreapp2.0\Olive.Web.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

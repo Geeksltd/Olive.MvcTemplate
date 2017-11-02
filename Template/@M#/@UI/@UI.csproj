@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Olive" Version="1.0.3" />
+    <PackageReference Include="MSharp" Version="4.1.23" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,72 +22,9 @@
     <Reference Include="MSharp.DSL">
       <HintPath>..\lib\netcoreapp2.0\MSharp.DSL.dll</HintPath>
     </Reference>
-    <Reference Include="Olive">
-      <HintPath>..\lib\netcoreapp2.0\Olive.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities.Data">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Entities.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Entities.Data.SqlServer">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Entities.Data.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Mvc">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Compression">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Compression.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.CSV">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.CSV.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Drawing">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Email">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Email.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Excel">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Excel.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.GeoLocation">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.GeoLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Globalization">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Globalization.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.ImpersonationSession">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.ImpersonationSession.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Integration">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Integration.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.IpFilter">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.IpFilter.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.PDF">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.PDF.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Rss">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Rss.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.SMS">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.SMS.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.TaskAutomation">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.TaskAutomation.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Services.Testing">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Services.Testing.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive.Web">
-      <HintPath>..\..\Domain\bin\Debug\netcoreapp2.0\Olive.Web.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)@M#\MSharp.exe /build /ui" />
+    <Exec Command="dotnet $(OutDir)msharp.dsl.dll /build /ui" />
   </Target>
 </Project>

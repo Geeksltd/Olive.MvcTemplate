@@ -1,35 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <ApplicationIcon></ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\lib\</OutputPath>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Entities\Main\**" />
     <EmbeddedResource Remove="Entities\Main\**" />
     <None Remove="Entities\Main\**" />
   </ItemGroup>
-
   <ItemGroup>
+    <PackageReference Include="MSharp" Version="4.1.23" />
     <PackageReference Include="Olive" Version="1.0.3" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="MSharp.DSL">
-      <HintPath>..\lib\netcoreapp2.0\MSharp.DSL.dll</HintPath>
-    </Reference>
-    <Reference Include="Olive">
-      <HintPath>..\lib\netcoreapp2.0\Olive.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)@M#\MSharp.exe /build /model" />
+    <Exec Command="dotnet $(OutDir)msharp.dsl.dll /build /model" />
   </Target>
-
 </Project>

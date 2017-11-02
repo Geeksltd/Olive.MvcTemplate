@@ -8,8 +8,8 @@ namespace Model
         {
             InstanceAccessors("Recover password");
 
-            String("Key").Mandatory().Unique();
             String("Subject").Mandatory();
+            String("Key").Mandatory().Unique();
             BigString("Body", 10).Mandatory().Lines(10);
             String("Mandatory placeholders");
         }
