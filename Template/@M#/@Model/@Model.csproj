@@ -13,7 +13,7 @@
     <None Remove="Entities\Main\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.23" />
+    <PackageReference Include="MSharp" Version="4.1.25" />
     <PackageReference Include="Olive" Version="1.0.3" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

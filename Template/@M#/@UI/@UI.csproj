@@ -11,17 +11,11 @@
 
   <ItemGroup>
     <PackageReference Include="Olive" Version="1.0.3" />
-    <PackageReference Include="MSharp" Version="4.1.23" />
+    <PackageReference Include="MSharp" Version="4.1.25" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="MSharp.DSL">
-      <HintPath>..\lib\netcoreapp2.0\MSharp.DSL.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
