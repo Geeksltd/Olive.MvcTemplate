@@ -4,6 +4,9 @@
     <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="_M#_TEMP\IntelliSenseTemp.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -14,13 +17,16 @@
     <PackageReference Include="Olive.Mvc" Version="1.0.6" />
     <PackageReference Include="Olive.PDF" Version="1.0.3" />
     <PackageReference Include="Olive.Testing" Version="1.0.3" />
-    <PackageReference Include="SkiaSharp" Version="1.59.1" />
+    <PackageReference Include="SkiaSharp" Version="1.59.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_M#_TEMP\IntelliSenseTemp.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\lib\moment\moment.d.ts" />

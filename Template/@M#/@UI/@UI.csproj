@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Olive" Version="1.0.3" />
-    <PackageReference Include="MSharp" Version="4.1.25" />
+    <PackageReference Include="MSharp" Version="4.1.30" />
+    <PackageReference Include="Olive" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>

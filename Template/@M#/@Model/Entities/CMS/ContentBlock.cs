@@ -10,8 +10,6 @@ namespace Model
 
             String("Key").Mandatory().Unique();
             BigString("Content").Mandatory();
-
-
         }
     }
 }
