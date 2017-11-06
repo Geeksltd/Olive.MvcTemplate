@@ -1,17 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <ApplicationIcon>
-    </ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <OutputPath>..\lib\</OutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="Entities\Main\**" />
-    <EmbeddedResource Remove="Entities\Main\**" />
-    <None Remove="Entities\Main\**" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MSharp" Version="4.1.30" />
     <PackageReference Include="Olive" Version="1.0.4" />

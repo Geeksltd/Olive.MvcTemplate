@@ -3,18 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <RootNamespace>UI</RootNamespace>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\lib\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MSharp" Version="4.1.30" />
     <PackageReference Include="Olive" Version="1.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
 
