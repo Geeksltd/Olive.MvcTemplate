@@ -22,7 +22,7 @@ namespace Modules
             //================ Buttons: ================
             
             Link("Logout").ValidateAntiForgeryToken(false).Icon(FA.SignOut).MarkupTemplate("Hi @User ([#Button#])")
-                .Visibility(Role.User)
+                .Visibility(AppRole.User)
             .Action(x =>
             {
                 x.CSharp("User.LogOff();");

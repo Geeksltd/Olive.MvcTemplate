@@ -5,7 +5,7 @@
 
 namespace MSharp
 {
-    partial class Role
+    partial class AppRole
     {
         internal static ProjectRole User => ProjectRole.Of("User");
         internal static ProjectRole Local_Request => ProjectRole.Of("Local.Request");

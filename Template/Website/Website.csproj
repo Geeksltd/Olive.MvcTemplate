@@ -4,9 +4,6 @@
     <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="_M#_TEMP\IntelliSenseTemp.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -24,9 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="_M#_TEMP\IntelliSenseTemp.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\lib\moment\moment.d.ts" />

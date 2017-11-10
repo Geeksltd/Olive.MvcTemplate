@@ -7,10 +7,10 @@ namespace Root
     {
         public AdminPage()
         {
-            Roles(Role.Administrator);
-            
+            Roles(AppRole.Administrator);
+
             Add<Modules.MainMenu>();
-            
+
             StartUp(x => x.Go<Admin.SettingsPage>().RunServerSide());
         }
     }

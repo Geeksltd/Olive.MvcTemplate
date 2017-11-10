@@ -3578,6 +3578,11 @@
             When you need to fulfil custom design or want to group related search elements<para/>
             </summary>
         </member>
+        <member name="M:MSharp.CommonFilterElement`1.NoLabel">
+            <summary>
+            Sets the label of this element to be [#EMPTY#] which means no text should be generated.
+            </summary> 
+        </member>
         <member name="M:MSharp.FilterElement`1.MemoryFilterCode(System.String)">
             <summary>
             In this field you can specify any dynamic logic scenario using C# expression. You must using &quot;result&quot; object to specify any lambda or custom expression<para/>
@@ -3847,6 +3852,11 @@
             ======== WHEN TO USE/SET IT? ====================<para/>
             When you need to fulfil custom design or want to group related search elements<para/>
             </summary>
+        </member>
+        <member name="M:MSharp.GenericFilterElement`1.NoLabel">
+            <summary>
+            Sets the label of this element to be [#EMPTY#] which means no text should be generated.
+            </summary> 
         </member>
         <member name="M:MSharp.ListButton`1.HeaderTemplate(System.String)">
             <summary>
@@ -4155,6 +4165,11 @@
             myIconFile.png  (Note: Picked up from /public/img/icons/myIconFile.png<para/>
             /my/full/path/file.png<para/>
             </summary>
+        </member>
+        <member name="M:MSharp.ListButton`1.NoHeaderText">
+            <summary>
+            Sets the header text of this element to be [#EMPTY#] which means no text should be generated.
+            </summary> 
         </member>
         <member name="M:MSharp.ListGroupingExpression`1.Title(System.String)">
             <summary>
@@ -4521,7 +4536,7 @@
             c#: (Case != null) ? &quot;case-users-grid&quot; : &quot;&quot;<para/>
             </summary>
         </member>
-        <member name="M:MSharp.ListModule`1.PagerPosition(MSharp.PagerPosition)">
+        <member name="M:MSharp.ListModule`1.PagerPosition(MSharp.PagerAt)">
             <summary>
             Pager position let&apos;s to choose the position of the pager in the list module<para/>
             ======== DEFAULT ================================<para/>
@@ -4677,7 +4692,7 @@
             Records per page:<para/>
             </summary>
         </member>
-        <member name="M:MSharp.ListModulePager.Position(MSharp.PagerPosition)">
+        <member name="M:MSharp.ListModulePager.Position(MSharp.PagerAt)">
             <summary>
             This attributes let&apos;s you choose the position of the paging options .<para/>
             Top: Pager is displayed above list header<para/>
@@ -4767,6 +4782,11 @@
             ======== WHEN TO USE/SET IT? ====================<para/>
             When you don&apos;t want to reset the selected page index. The records per page will be changed but the pager index will remain same.<para/>
             </summary>
+        </member>
+        <member name="M:MSharp.ListModulePager.NoLabel">
+            <summary>
+            Sets the label of this element to be [#EMPTY#] which means no text should be generated.
+            </summary> 
         </member>
         <member name="M:MSharp.PropertyFilterElement`1.MemoryFilterCode(System.String)">
             <summary>
@@ -4967,6 +4987,11 @@
             item.Firstname + &quot; &quot; + item.Lastname<para/>
             item.Name + &quot; (&quot; + item.Code + &quot; )&quot;<para/>
             </summary>
+        </member>
+        <member name="M:MSharp.PropertyFilterElement`1.NoLabel">
+            <summary>
+            Sets the label of this element to be [#EMPTY#] which means no text should be generated.
+            </summary> 
         </member>
         <member name="M:MSharp.Association`1.OnDelete(MSharp.CascadeAction)">
             <summary>
@@ -6408,14 +6433,19 @@
             You should only set it to True, when you are sure that you will consume the child collection fetched eagerly<para/>
             </summary>
         </member>
-        <member name="M:MSharp.EntityType.Associate``1(System.String)">
+        <member name="M:MSharp.EntityType.Associate``1(System.String,System.String,System.Int32)">
             <summary>
             Adds a many to one association to the specified type.
             </summary>
         </member>
-        <member name="M:MSharp.EntityType.AssociateMany``1(System.String)">
+        <member name="M:MSharp.EntityType.AssociateMany``1(System.String,System.String,System.Int32)">
             <summary>
             Adds a many to many association to the specified type.
+            </summary>
+        </member>
+        <member name="M:MSharp.EntityType.Property(System.String)">
+            <summary>
+            Gets a property that is already defined on this type or any of its parent types.
             </summary>
         </member>
         <member name="M:MSharp.Namespace.LogicCodeFolder(System.String)">
@@ -8601,6 +8631,11 @@
             [#GROUP#]<para/>
             </summary>
         </member>
+        <member name="M:MSharp.ModuleBox.NoText">
+            <summary>
+            Sets the text of this element to be [#EMPTY#] which means no text should be generated.
+            </summary> 
+        </member>
         <member name="M:MSharp.ModuleButton.RepeatDataSource(System.String)">
             <summary>
             This is a C# expression field. In this field you can specify a collection type data source.<para/>
@@ -9323,6 +9358,11 @@
             False<para/>
             Does not export to Excel<para/>
             </summary>
+        </member>
+        <member name="M:MSharp.ViewElement`1.NoLabelText">
+            <summary>
+            Sets the label text of this element to be [#EMPTY#] which means no text should be generated.
+            </summary> 
         </member>
         <member name="M:MSharp.ViewModule`1.Markup(System.String)">
             <summary>

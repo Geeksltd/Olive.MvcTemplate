@@ -7,7 +7,7 @@ namespace Model
         public EmailQueueItem()
         {
             Cachable(false).SoftDelete().Implements("Olive.Services.Email.IEmailQueueItem");
-            
+
             BigString("Body").Lines(5);
             DateTime("Date").Mandatory().Default("c#:LocalTime.Now").DefaultFormatString("g");
             Bool("Enable ssl").Mandatory();
@@ -26,6 +26,6 @@ namespace Model
             String("Smtp host");
             Int("Smtp port");
             String("Category");
-        }        
+        }
     }
 }
