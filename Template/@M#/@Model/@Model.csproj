@@ -6,7 +6,7 @@
     <RootNamespace>Model</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.38" />
+    <PackageReference Include="MSharp" Version="4.1.39" />
     <PackageReference Include="Olive" Version="1.0.5" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
