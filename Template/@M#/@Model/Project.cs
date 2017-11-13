@@ -40,7 +40,7 @@ namespace App
             // ------------------ Automated Tasks ------------------
 
             AutoTask("Clean old temp uploads").Every(10, TimeUnit.Minute)
-                .Run("await FileUploadService.DeleteTempFiles(olderThan: 1.Hours());");
+                .Run("await Olive.Mvc.FileUploadService.DeleteTempFiles(olderThan: 1.Hours());");
 
             AutoTask("Send email queue items").Every(1, TimeUnit.Minute)
                 .Run("await Olive.Services.Email.EmailService.SendAll();");

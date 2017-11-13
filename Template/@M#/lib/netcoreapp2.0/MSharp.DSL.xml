@@ -8423,6 +8423,17 @@
             c#: (Case != null) ? &quot;progress-list&quot; : &quot;&quot;<para/>
             </summary>
         </member>
+        <member name="M:MSharp.MenuModule.Item``1(System.String)">
+            <summary>
+            Adds a menu item that navigates to the specified page.
+            </summary>
+        </member>
+        <member name="M:MSharp.MenuModule.Item``1">
+            <summary>
+            Adds a menu item that navigates to the specified page.
+            The text of the menu item will be the same as the target page.
+            </summary>
+        </member>
         <member name="M:MSharp.Module.Footer(System.String)">
             <summary>
             In this field you can specify the footer for the module.<para/>

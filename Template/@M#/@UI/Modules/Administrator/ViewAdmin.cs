@@ -10,9 +10,7 @@ namespace Modules
             HideEmptyElements().HeaderText("@item Details");
 
             Field(x => x.Name);
-
             Field(x => x.Email);
-
             Field(x => x.IsDeactivated);
 
             //================ Buttons: ================
