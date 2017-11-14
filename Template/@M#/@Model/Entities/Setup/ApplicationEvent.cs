@@ -9,9 +9,7 @@ namespace Model
             Cachable(false).Implements("IApplicationEvent");
 
             String("User id");
-            DateTime("Date").Mandatory()
-                .Default(@"c#:LocalTime.Now ")
-                .DefaultFormatString("g");
+            DateTime("Date").Mandatory().Default("c#:LocalTime.Now").DefaultFormatString("g");
             String("Event").Mandatory();
             String("Item type");
             String("Item key", 500);
