@@ -5,8 +5,9 @@
     <OutputPath>..\lib\</OutputPath>
     <RootNamespace>Model</RootNamespace>
   </PropertyGroup>
+ 
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.43" />
+    <PackageReference Include="MSharp" Version="4.1.50" />
     <PackageReference Include="Olive" Version="1.0.7" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
