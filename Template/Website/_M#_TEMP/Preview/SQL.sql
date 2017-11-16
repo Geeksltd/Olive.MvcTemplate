@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+-- EmailTemplates Table ========================
+CREATE TABLE [EmailTemplates] (
+    [Id] uniqueidentifier PRIMARY KEY NONCLUSTERED,
+    [Subject] nvarchar(200)  NOT NULL,
+    [Key] nvarchar(200)  NOT NULL,
+    [Body] nvarchar(MAX)  NOT NULL,
+    [MandatoryPlaceholders] nvarchar(200)  NULL
+)
 
-namespace Website._M__TEMP.Preview
-{
-    public class SQL
-    {
-    }
-}
+GO
+

@@ -35,7 +35,9 @@ namespace App
             Layout("Front end").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/FrontEnd.cshtml");
             Layout("Front end Modal").Modal().VirtualPath("~/Views/Layouts/FrontEnd.Modal.cshtml");
 
-            PageSettings("LeftMenu", "SubMenu", "TopMenu");
+            PageSetting("LeftMenu");
+            PageSetting("SubMenu");
+            PageSetting("TopMenu");
 
             // ------------------ Automated Tasks ------------------
 

@@ -8,8 +8,6 @@ namespace Admin.Settings
         public AdministratorsPage()
         {
             Add<Modules.AdministratorsList>();
-
-            Add<Modules.ContentBlockForm>();
         }
     }
 }

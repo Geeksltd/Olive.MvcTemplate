@@ -7016,7 +7016,7 @@
             When you want to  generate unit test using MbUnit framework. It depends on the unit test requirement when you use which framework.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Project.AutoTask(System.String)">
+        <member name="M:MSharp.Project.AutoTask(System.String,System.String,System.Int32)">
             <summary>
              Adds an automated task plan.
             </summary>
@@ -8554,12 +8554,12 @@
             c#: (Case != null) ? &quot;progress-list&quot; : &quot;&quot;<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Module.Property``1(System.String)">
+        <member name="M:MSharp.Module.Property``1(System.String,System.String,System.Int32)">
             <summary>
             Creates a new property to be generated for this module's code.
             </summary> 
         </member>
-        <member name="M:MSharp.Module.Property(System.String,System.String)">
+        <member name="M:MSharp.Module.Property(System.String,System.String,System.String,System.Int32)">
             <summary>
             Creates a new property to be generated for this module's code.
             </summary> 
