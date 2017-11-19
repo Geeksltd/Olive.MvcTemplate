@@ -7,7 +7,7 @@
   </PropertyGroup>
  
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.54" />
+    <PackageReference Include="MSharp" Version="4.1.62" />
     <PackageReference Include="Olive" Version="1.0.7" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

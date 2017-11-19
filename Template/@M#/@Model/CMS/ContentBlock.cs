@@ -1,6 +1,6 @@
 using MSharp;
 
-namespace Model
+namespace Domain
 {
     public class ContentBlock : EntityType
     {
@@ -10,7 +10,6 @@ namespace Model
 
             String("Key").Mandatory().Unique();
             BigString("Content").Mandatory();
-            OpenFile("Attachment");
         }
     }
 }

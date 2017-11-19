@@ -5,16 +5,6 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="_M#_TEMP\Preview\Controller.cs" />
-    <Compile Remove="_M#_TEMP\Preview\DAL.cs" />
-    <Compile Remove="_M#_TEMP\Preview\Logic.cs" />
-    <Compile Remove="_M#_TEMP\Preview\MC#.cs" />
-    <Compile Remove="_M#_TEMP\Preview\Structure.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="_M#_TEMP\Preview\View.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -33,14 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="_M#_TEMP\Preview\Controller.cs" />
-    <None Include="_M#_TEMP\Preview\DAL.cs" />
-    <None Include="_M#_TEMP\Preview\Logic.cs" />
-    <None Include="_M#_TEMP\Preview\MC#.cs" />
-    <None Include="_M#_TEMP\Preview\Structure.cs" />
-    <None Include="_M#_TEMP\Preview\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\lib\moment\moment.d.ts" />

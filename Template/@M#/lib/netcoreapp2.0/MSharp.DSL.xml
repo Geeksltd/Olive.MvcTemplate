@@ -2011,7 +2011,7 @@
             On a list module.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.FormModule`1.Route_QueryKey(System.String)">
+        <member name="M:MSharp.FormModule`1.RequestParam(System.String)">
             <summary>
             In this field you can specify a QueryString key which is used to retrieve the &quot;ID&quot; of the instance which needs to be edited on the page.<para/>
             Tips:<para/>
@@ -4294,7 +4294,7 @@
             Set to False, When you don&apos;t want to generate the wrapper around each list item.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.ListModule`1.Route_QueryKey(System.String)">
+        <member name="M:MSharp.ListModule`1.RequestParam(System.String)">
             <summary>
             In this field you can specify a QueryString key which is used to fetch the record from the database<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>
@@ -9396,7 +9396,7 @@
             On a list module.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.ViewModule`1.Route_QueryKey(System.String)">
+        <member name="M:MSharp.ViewModule`1.RequestParam(System.String)">
             <summary>
             In this field you can specify a QueryString key which is used to fetch the record from the database<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>

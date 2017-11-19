@@ -12,8 +12,6 @@ namespace Modules
             Field(x => x.Key).Readonly();
             Field(x => x.Content).Control(ControlType.HtmlEditor);
 
-            Field(x => x.Attachment);
-
             //================ Buttons: ================
 
             Button("Cancel").Action().ReturnToPreviousPage();

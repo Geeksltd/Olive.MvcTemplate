@@ -16,6 +16,7 @@ namespace ViewComponents
     public abstract class ViewComponent : Olive.Mvc.ViewComponent
     {
         /// <summary>Gets the user for the current HTTP request.</summary>
+        
         public new User User
         {
             get

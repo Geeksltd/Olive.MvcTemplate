@@ -1,6 +1,6 @@
 using MSharp;
 
-namespace Model
+namespace Domain
 {
     public class PasswordResetTicket : EntityType
     {

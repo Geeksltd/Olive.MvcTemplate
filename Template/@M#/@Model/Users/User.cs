@@ -1,13 +1,13 @@
 using MSharp;
 
-namespace Model
+namespace Domain
 {
     public class User : EntityType
     {
         public User()
         {
             Abstract();
-            
+
             String("First name").Mandatory();
             String("Last name").Mandatory();
             String("Name").Calculated().Getter("FirstName + \" \" + LastName");
@@ -15,8 +15,6 @@ namespace Model
             String("Password", 100).HashPassword().SaltProperty("Salt").Accepts(TextPattern.Password);
             String("Salt");
             Bool("Is deactivated").Mandatory();
-
-            
         }
     }
 }
