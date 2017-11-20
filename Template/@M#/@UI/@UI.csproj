@@ -12,7 +12,7 @@
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="dotnet $(OutDir)msharp.dsl.dll /build /ui" />
+  <Target Name="Generate code" AfterTargets="AfterBuild">
+    <Exec Command="powershell start-process -FilePath &quot;dotnet&quot; -ArgumentList &quot;$(TargetDir)msharp.dsl.dll&quot;, &quot;/build,  &quot;/ui&quot;" />
   </Target>
 </Project>
