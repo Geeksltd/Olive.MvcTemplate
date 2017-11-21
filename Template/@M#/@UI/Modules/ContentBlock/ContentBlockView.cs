@@ -12,11 +12,9 @@ namespace Modules
 
             //================ Code Extensions: ================
 
-            Property<string>("Key");
+            ViewModelProperty<string>("Key");
 
-            Property<string>("Output").Getter(@"if (Item == null)
-            return ""No content found for key: '"" + Key + ""'"";
-            
+            ViewModelProperty<string>("Output").Getter(@"if (Item == null) return ""No content found for key: '"" + Key + ""'"";
             return Item.Content;");
         }
     }

@@ -13,12 +13,12 @@ namespace Modules
             Field(x => x.LastName);
             Field(x => x.Email);
             Field(x => x.IsDeactivated).Control(ControlType.VerticalRadioButtons);
-            
+
             Button("Cancel").CausesValidation(false)
-                .Action(x => x.CloseModal());
+                .OnClick(x => x.CloseModal());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .Action(x =>
+            .OnClick(x =>
             {
                 x.SaveInDatabase();
                 x.GentleMessage("Saved successfully.");

@@ -8,7 +8,7 @@ namespace Domain
         {
             InstanceAccessors("PasswordSuccessfullyReset", "LoginIntro");
 
-            String("Key").Mandatory().Unique();
+            DefaultToString = String("Key").Mandatory().Unique();
             BigString("Content").Mandatory();
         }
     }

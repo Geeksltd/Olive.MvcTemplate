@@ -23,7 +23,7 @@
 
             return services;
         }
-
+        
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             base.Configure(app, env);

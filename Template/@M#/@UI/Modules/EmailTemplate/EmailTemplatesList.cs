@@ -5,8 +5,6 @@ namespace Modules
 {
     public class EmailTemplatesList : ListModule<Domain.EmailTemplate>
     {
-
-
         public EmailTemplatesList()
         {
             ShowHeaderRow().Sortable().HeaderText("Email Templates");
@@ -14,7 +12,7 @@ namespace Modules
             //================ Columns: ================
 
             LinkColumn("Key").HeaderText("Key").Text("c#:item.Key").SortKey("Key")
-            .Action(x =>
+            .OnClick(x =>
             {
                 x.Go<Admin.Settings.EmailTemplates.EnterPage>().SendReturnUrl()
                     .Send("item", "item.ID");

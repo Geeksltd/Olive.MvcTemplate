@@ -12,12 +12,10 @@ namespace Modules
             Field(x => x.Key).Readonly();
             Field(x => x.Content).Control(ControlType.HtmlEditor);
 
-            //================ Buttons: ================
-
-            Button("Cancel").Action().ReturnToPreviousPage();
+            Button("Cancel").OnClick().ReturnToPreviousPage();
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .Action(x =>
+            .OnClick(x =>
             {
                 x.SaveInDatabase();
                 x.ReturnToPreviousPage();

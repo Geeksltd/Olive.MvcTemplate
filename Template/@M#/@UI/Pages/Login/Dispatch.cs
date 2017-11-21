@@ -7,7 +7,7 @@ namespace Login
     {
         public DispatchPage()
         {
-            StartUp(x =>
+            OnStart(x =>
             {
                 x.If(AppRole.Administrator).Go<Root.AdminPage>().RunServerSide();
                 x.GentleMessage("TODO: Add redirect logic here and then delete this activity!");

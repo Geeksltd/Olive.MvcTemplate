@@ -13,7 +13,7 @@ namespace Modules
                 .Control(ControlType.NumericUpDown);
 
             Button("Save").IsDefault()
-            .Action(x =>
+            .OnClick(x =>
             {
                 x.SaveInDatabase();
                 x.GentleMessage("Updated");

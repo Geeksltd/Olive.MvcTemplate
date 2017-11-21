@@ -4,18 +4,21 @@
     <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705;1998</NoWarn>
+  </PropertyGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.6.17" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.0.1" />
     <PackageReference Include="Olive.Excel" Version="1.0.4" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.8" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.15" />
     <PackageReference Include="Olive.PDF" Version="1.0.4" />
     <PackageReference Include="Olive.TaskAutomation" Version="1.0.4" />
-    <PackageReference Include="Olive.Testing" Version="1.0.4" />
+    <PackageReference Include="Olive.Testing" Version="1.0.5" />
     <PackageReference Include="SkiaSharp" Version="1.59.2" />
   </ItemGroup>
   <ItemGroup>

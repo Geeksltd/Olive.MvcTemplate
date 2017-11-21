@@ -9,7 +9,7 @@ namespace Admin
         {
             Set(PageSettings.LeftMenu, "AdminSettingsMenu");
             
-            StartUp(x => x.Go<Settings.GeneralPage>().RunServerSide());
+            OnStart(x => x.Go<Settings.GeneralPage>().RunServerSide());
         }
     }
 }

@@ -18,13 +18,10 @@ namespace Modules
                     Field(x => x.MandatoryPlaceholders)
             );
 
-            //================ Buttons: ================
-
-            Button("Cancel").CausesValidation(false)
-                .Action(x => x.ReturnToPreviousPage());
+            Button("Cancel").CausesValidation(false).OnClick(x => x.ReturnToPreviousPage());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .Action(x =>
+            .OnClick(x =>
             {
                 x.SaveInDatabase();
                 x.ReturnToPreviousPage();

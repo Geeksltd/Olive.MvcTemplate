@@ -13,7 +13,7 @@ namespace Root
             Add<Modules.LoginForm>();
             Add<Modules.SocialMediaLogin>();
             
-            StartUp(x =>
+            OnStart(x =>
             {
                 x.If("Request.IsAjaxPost()").CSharp("return Redirect(Url.CurrentUri().OriginalString);");
                 x.If("User.IsAuthenticated()").Go<Login.DispatchPage>().RunServerSide();

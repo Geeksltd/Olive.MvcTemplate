@@ -13,7 +13,7 @@ namespace Modules
             
             Field(x => x.Email);
             Button("Send").IsDefault()
-            .Action(x =>
+            .OnClick(x =>
             {
                 x.CSharp("var user = await User.FindByEmail(info.Email.Trim());");
                 x.If("user == null").MessageBox("Invalid email address. Please try again.").Exits();

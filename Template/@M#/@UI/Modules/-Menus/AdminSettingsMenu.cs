@@ -15,16 +15,16 @@ namespace Modules
                 .UlCssClass("nav nav-stacked dropped-submenu").RootCssClass("navbar navbar-default");
             
             Item("General settings")
-                .Action(x => x.Go<Admin.Settings.GeneralPage>());
+                .OnClick(x => x.Go<Admin.Settings.GeneralPage>());
             
             Item("Administrators")
-                .Action(x => x.Go<Admin.Settings.AdministratorsPage>());
+                .OnClick(x => x.Go<Admin.Settings.AdministratorsPage>());
             
             Item("Email templates")
-                .Action(x => x.Go<Admin.Settings.EmailTemplatesPage>());
+                .OnClick(x => x.Go<Admin.Settings.EmailTemplatesPage>());
             
             Item("Content blocks")
-                .Action(x => x.Go<Admin.Settings.ContentBlocksPage>());
+                .OnClick(x => x.Go<Admin.Settings.ContentBlocksPage>());
         }
     }
 }

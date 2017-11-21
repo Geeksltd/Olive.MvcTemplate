@@ -11,7 +11,7 @@ namespace Root
 
             Add<Modules.MainMenu>();
 
-            StartUp(x => x.Go<Admin.SettingsPage>().RunServerSide());
+            OnStart(x => x.Go<Admin.SettingsPage>().RunServerSide());
         }
     }
 }

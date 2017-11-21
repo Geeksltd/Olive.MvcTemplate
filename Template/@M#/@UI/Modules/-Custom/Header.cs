@@ -22,11 +22,9 @@ namespace Modules
             </div>
             </div>
             </nav>");
-            
-            //================ Buttons: ================
-            
+                        
             Image("Logo").CssClass("logo").ImageUrl("~/public/img/Logo.png")
-                .Action(x => x.Go("~/"));
+                .OnClick(x => x.Go("~/"));
             
             Link("Burger").NoText()
                 .ExtraTagAttributes("type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\"")
