@@ -13,10 +13,12 @@
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.6.17" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.0.1" />
     <PackageReference Include="Olive.Excel" Version="1.0.4" />
     <PackageReference Include="Olive.Mvc" Version="1.0.15" />
     <PackageReference Include="Olive.PDF" Version="1.0.4" />
-    <PackageReference Include="Olive.Testing" Version="1.0.5" />
+    <PackageReference Include="Olive.TaskAutomation" Version="1.0.4" />
+    <PackageReference Include="Olive.Testing" Version="1.0.6" />
     <PackageReference Include="SkiaSharp" Version="1.59.2" />
   </ItemGroup>
   <ItemGroup>
@@ -26,13 +28,11 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\lib\moment\moment.d.ts" />
+	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\application.urlhelper.ts" />
+	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\jquery.enhancements.ts" />
+	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\base.application.page.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\application.page.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\webApp.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\application.urlhelper.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\base.application.page.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\collapsible.checkboxes.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\Lib\Olive\jquery.enhancements.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\missingDefinitions.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\alertify\alertify.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\jquery\jquery.d.ts" />
