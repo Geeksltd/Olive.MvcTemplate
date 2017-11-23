@@ -8,15 +8,6 @@
     <NoWarn>1701;1702;1705;1998</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="wwwroot\Scripts\Lib\Olive\**" />
-    <Content Remove="wwwroot\Scripts\Lib\Olive\**" />
-    <EmbeddedResource Remove="wwwroot\Scripts\Lib\Olive\**" />
-    <None Remove="wwwroot\Scripts\Lib\Olive\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot\Scripts\Lib\moment.en-gb.js" />
-  </ItemGroup>
-  <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +28,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\application.urlhelper.ts" />
+	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\jquery.enhancements.ts" />
+	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\base.application.page.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\application.page.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\webApp.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\missingDefinitions.d.ts" />
