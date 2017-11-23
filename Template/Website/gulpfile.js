@@ -12,6 +12,29 @@ var uglify = require('gulp-uglify');
 var xmlpoke = require('gulp-xmlpoke');
 var rimraf = require('gulp-rimraf');
 var rename = require('gulp-rename');
+var sass = require('gulp-sass');
+
+
+// Add file watchers
+
+gulp.task("watch", function () {
+    gulp.watch("./wwwroot/Styles/**/*.scss", ["build:sass"]);
+    // Other watchers
+});
+
+// Build sass files
+
+gulp.task("build:sass", function () {
+    return gulp.src("./wwwroot/Styles/**/*.scss")
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', function (err) {
+            console.log(err.message);
+            this.emit("end");
+        }))
+        .pipe(sourcemaps.write("./"))
+        .pipe(gulp.dest("./wwwroot/Styles"));
+});
+
 // prepare LESS files
 
 var layouts = ["frontend", "frontend-modal"];

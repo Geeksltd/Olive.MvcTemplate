@@ -1,5 +1,6 @@
 @import "../../lib/fontawesome/scss/font-awesome.scss";//../../bower_components
 @import "../../lib/bootstrap/scss/bootstrap.scss";//../../bower_components
+@import "_custom-variables.scss";
 
 $bs-height-base: ($line-height-computed + $padding-base-vertical * 2);
 $bs-height-lg: (floor($font-size-large * $line-height-base) + $padding-large-vertical * 2);
