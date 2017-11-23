@@ -1,30 +1,32 @@
 {
-    "name": "project",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "bootstrap": "~3.3.4",
-        "jquery-validation": "~1.13.1",
-        "jquery-validation-unobtrusive": "~3.2.2",
-        "jqueryui": "~1.11.4",
-        "typeahead.js": "*",
-        "typeahead.js-bootstrap3.less": "*",
-        "blueimp-file-upload-node": "*",
-        "ckeditor": "#full/4.6.x",
-        "alertifyjs": "~0.3.18",
-        "alertify-bootstrap-3": "~1.1.1",
-        "modernizr": "*",
-        "bootstrap-spinedit": "*",
-        "eonasdan-bootstrap-datetimepicker": "~4.7.14",
-        "fontawesome": "*",
-        "pwstrength-bootstrap": "~1.2.7",
-        "bootstrap-filestyle": "~1.1.2",
-        "smartmenus": "1.0.0-beta1",
-        "seiyria-bootstrap-slider": "7.1.1",
-		"olive.mvc": "*"
-    },
-    "devDependencies": { },
-    "resolutions": {
-        "bootstrap": "~3.3.4"
-    }
+  "name": "project",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "jquery-validation": "~1.13.1",
+    "jquery-validation-unobtrusive": "~3.2.2",
+    "jqueryui": "~1.11.4",
+    "typeahead.js": "*",
+    "typeahead.js-bootstrap3.less": "*",
+    "blueimp-file-upload-node": "*",
+    "ckeditor": "#full/4.6.x",
+    "alertifyjs": "~0.3.18",
+    "alertify-bootstrap-3": "~1.1.1",
+    "modernizr": "*",
+    "bootstrap-spinedit": "*",
+    "eonasdan-bootstrap-datetimepicker": "~4.7.14",
+    "fontawesome": "*",
+    "pwstrength-bootstrap": "~1.2.7",
+    "bootstrap-filestyle": "~1.1.2",
+    "smartmenus": "1.0.0-beta1",
+    "seiyria-bootstrap-slider": "7.1.1",
+    "olive.mvc": "*",
+    "moment": "~1.7.2",
+    "jquery-validation-bootstrap-tooltip": "~0.10.2"
+  },
+  "devDependencies": { },
+  "resolutions": {
+    "bootstrap": "~3.3.4"
+  }
 }
