@@ -27,7 +27,7 @@
     <PackageReference Include="Olive.Mvc" Version="1.0.15" />
     <PackageReference Include="Olive.PDF" Version="1.0.4" />
     <PackageReference Include="Olive.TaskAutomation" Version="1.0.4" />
-    <PackageReference Include="Olive.Testing" Version="1.0.5" />
+    <PackageReference Include="Olive.Testing" Version="1.0.6" />
     <PackageReference Include="SkiaSharp" Version="1.59.2" />
   </ItemGroup>
   <ItemGroup>
