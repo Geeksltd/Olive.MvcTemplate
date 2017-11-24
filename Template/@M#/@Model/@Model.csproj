@@ -7,7 +7,7 @@
   </PropertyGroup>
  
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.77" />
+    <PackageReference Include="MSharp" Version="4.1.78" />
     <PackageReference Include="Olive" Version="1.0.9" />
   </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">
