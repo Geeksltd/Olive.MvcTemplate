@@ -1,0 +1,1 @@
+call node_modules\.bin\gulp minify-css

@@ -1,0 +1,7 @@
+@media print {
+  body .restart-temp-database {
+    display: none; }
+  body td.actions, body th.actions, body footer {
+    display: none; } }
+
+/*# sourceMappingURL=Print.css.map */

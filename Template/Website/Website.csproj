@@ -8,6 +8,14 @@
     <NoWarn>1701;1702;1705;1998</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="_M#_TEMP\Preview\Controller.cs" />
+    <Compile Remove="_M#_TEMP\Preview\DAL.cs" />
+    <Compile Remove="_M#_TEMP\Preview\Structure.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="_M#_TEMP\Preview\View.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -26,6 +34,12 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="_M#_TEMP\Preview\Controller.cs" />
+    <None Include="_M#_TEMP\Preview\DAL.cs" />
+    <None Include="_M#_TEMP\Preview\Structure.cs" />
+    <None Include="_M#_TEMP\Preview\View.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
 	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\application.urlhelper.ts" />
 	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\jquery.enhancements.ts" />
 	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\base.application.page.ts" />
@@ -37,8 +51,8 @@
     <TypeScriptCompile Include="wwwroot\Scripts\typings\jquery\jquery.validation.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment-node.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment.d.ts" />
-  </ItemGroup> 
+  </ItemGroup>
   <Target Name="PreBuild" AfterTargets="PreBuildEvent">
-    <Exec Command="gulp build:sass" />
+    <Exec Command="gulp build-sass" />
   </Target>
 </Project>
