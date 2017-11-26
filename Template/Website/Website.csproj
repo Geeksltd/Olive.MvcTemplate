@@ -55,7 +55,7 @@
     <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment-node.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment.d.ts" />
   </ItemGroup>
-  <Target Name="PreBuild" AfterTargets="PreBuildEvent">
+  <Target Name="BuildSass" AfterTargets="PostBuildEvent">
     <Exec Command="gulp build-sass" />
   </Target>
 </Project>
