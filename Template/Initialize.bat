@@ -5,7 +5,7 @@ dotnet build
 cd ..\..\Domain
 dotnet build
 
-cd..
+cd ..\Website
 wwwroot\Styles\build\Sass-to-css.bat
 
 cd Website
