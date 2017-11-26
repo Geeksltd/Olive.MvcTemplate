@@ -12,22 +12,18 @@ namespace Modules
                 .Sortable()
                 .UseDatabasePaging(false)
                 .HeaderText("Administrators")
-                .PageSize("10");
+                .PageSize(10);
 
             //================ Search: ================
-
-            Search(GeneralSearch.AllFields).Label("Find:");
-
-            SearchButton("Search").Icon(FA.Search)
-                .OnClick(x => x.Reload());
+            var search = SearchButton("Search").Icon(FA.Search).OnClick(x => x.Reload());
+            Search(GeneralSearch.AllFields).Label("Find:").AfterInput(search.Ref);
 
             //================ Columns: ================
 
             LinkColumn("Name").HeaderText("Name").Text("c#:item.Name").SortKey("Name")
             .OnClick(x =>
             {
-                x.Go<Admin.Settings.Administrators.ViewPage>().SendReturnUrl()
-                    .Send("item", "item.ID");
+                x.Go<Admin.Settings.Administrators.ViewPage>().SendReturnUrl().Send("item", "item.ID");
             });
 
             Column(x => x.Email);

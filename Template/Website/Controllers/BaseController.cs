@@ -1,13 +1,12 @@
-﻿using System;
-using Domain;
-using Olive;
+﻿using Domain;
+using Olive.Mvc;
 
 namespace Controllers
 {
     public class BaseController : Olive.Mvc.Controller
     {
         /// <summary>Gets the user for the current HTTP request.</summary>
-        public new User User => base.User.Extract().AwaitResult() ?? new AnonymousUser();
+        public new User User => base.User?.Identity.Extract<User>() ?? new AnonymousUser();
     }
 }
 
@@ -16,15 +15,6 @@ namespace ViewComponents
     public abstract class ViewComponent : Olive.Mvc.ViewComponent
     {
         /// <summary>Gets the user for the current HTTP request.</summary>
-        
-        public new User User
-        {
-            get
-            {
-                var id = base.User?.Identity?.Name;
-                return Database.GetOrDefault<User>(id).AwaitResult()
-                    ?? new AnonymousUser();
-            }
-        }
+        public new User User => base.User?.Identity.Extract<User>() ?? new AnonymousUser();
     }
 }
