@@ -1,4 +1,4 @@
-You should do it once:
+In case of build problems, try doing the following:
 
 	1: right click on the Website in Solution explorer and  then "Open Folder in File Explorer".
 	2: Click somewhere empty on the folder, Shift + Right click , Open Command Line Here
