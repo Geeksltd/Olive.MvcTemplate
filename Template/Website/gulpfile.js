@@ -1,5 +1,5 @@
 /// <binding ProjectOpened='watch' />
-var gulp, debug, onlyChangedFiles, path, concat, cssnano, sourcemaps, uglify, xmlpoke, rimraf, rename, sass;
+var gulp, debug, cssnano, sourcemaps, sass;
 initialize();
 
 function doRequire(service) {
@@ -15,15 +15,8 @@ function doRequire(service) {
 function initialize() {
     gulp = doRequire('gulp');
     debug = doRequire('gulp-debug');
-    onlyChangedFiles = doRequire('gulp-changed');
-    path = doRequire('path');
-    concat = doRequire('gulp-concat');
     cssnano = doRequire('gulp-cssnano');
     sourcemaps = doRequire('gulp-sourcemaps');
-    uglify = doRequire('gulp-uglify');
-    xmlpoke = doRequire('gulp-xmlpoke');
-    rimraf = doRequire('gulp-rimraf');
-    rename = doRequire('gulp-rename');
     sass = doRequire('gulp-sass');
 }
 

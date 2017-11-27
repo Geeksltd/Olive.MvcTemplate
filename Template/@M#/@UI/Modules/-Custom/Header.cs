@@ -7,29 +7,27 @@ namespace Modules
     {
         public Header()
         {
-            IsInUse().IsViewComponent().WrapInForm(false)
-                .Markup(@"<nav class=""navbar navbar-inverse navbar-static-top"">
-            
-            <div class=""nav-wrapper"">
-            
-            <div class=""navbar-header"">
-            <div class=""navbar-brand"">[#BUTTONS(Logo)#]</div>
-            [#BUTTONS(Burger)#]
-            </div>
-            
-            <div class=""collapse navbar-collapse"">
-            @(await Component.InvokeAsync<MainMenu>()))
-            </div>
-            </div>
+            IsInUse().IsViewComponent().WrapInForm(false);
+
+            var logo = Image("Logo").CssClass("logo").ImageUrl("~/public/img/Logo.png")
+                  .OnClick(x => x.Go("~/"));
+
+            var burger = Link("Burger").NoText()
+                   .ExtraTagAttributes("type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" " +
+                   "aria-expanded=\"false\" aria-controls=\".navbar-collapse\" aria-label=\"Toggle navigation\"")
+                   .CssClass("navbar-toggler collapsed").Icon(FA.Bars);
+
+            Markup($@"
+            <nav class=""navbar navbar-expand-md navbar-inverse bg-dark sticky-top"">
+                 <div class=""navbar-brand"">
+                      {logo.Ref}
+                      {burger.Ref}
+                 </div>
+                 <div class=""collapse navbar-collapse"">
+                     @(await Component.InvokeAsync<MainMenu>())
+                 </div>
             </nav>");
-                        
-            Image("Logo").CssClass("logo").ImageUrl("~/public/img/Logo.png")
-                .OnClick(x => x.Go("~/"));
-            
-            Link("Burger").NoText()
-                .ExtraTagAttributes("type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\"")
-                .CssClass("navbar-toggle collapsed").Icon(FA.Bars);
-            
+
             Reference<MainMenu>();
         }
     }

@@ -7873,6 +7873,11 @@
             /my/full/path/file.png<para/>
             </summary>
         </member>
+        <member name="P:MSharp.Button.Ref">
+            <summary>
+            Gets a reference to this button that can be used in markup injection in the form of [#BUTTONS(...)#].
+            </summary>
+        </member>
         <member name="M:MSharp.GenericModule.Markup(System.String)">
             <summary>
             In this field you should enter the HTML body of the content. All HTML and ASP.NET tags are acceptable.<para/>

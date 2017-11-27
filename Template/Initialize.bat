@@ -1,4 +1,13 @@
+
 @echo off
+
+cd @M#\@Model
+call dotnet build
+
+cd ..\..\Domain
+call dotnet build
+
+cd ..\Website
 
 ECHO Checking bower is installed globally..............
 where bower > nul
@@ -14,7 +23,13 @@ ECHO Running BOWER ..............
 call bower install
 
 ECHO Rebuilding node-sass module ..............
-npm rebuild node-sass --force
+call npm rebuild node-sass
 
 ECHO Running node-sass ..............
 call node_modules\.bin\gulp build-sass
+
+cd Website
+call dotnet build
+
+cd ..\@M#\@UI
+call dotnet build
