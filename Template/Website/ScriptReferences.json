@@ -6,6 +6,7 @@
   "/lib/jqueryui/ui/sortable.js",
   "/lib/jquery-validation/dist/jquery.validate.js",
   "/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+  "/lib/popper.js/dist/umd/popper.js",
   "/lib/bootstrap/dist/js/bootstrap.js",
   "/lib/alertifyjs/dist/js/alertify.js",
   "/lib/typeahead.js/dist/typeahead.jquery.js",

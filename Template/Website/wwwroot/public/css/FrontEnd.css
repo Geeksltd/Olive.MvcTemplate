@@ -5,7 +5,7 @@
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url(../../lib/typeahead.js-bootstrap4.scss/typeaheadjs.css);
+@import url(../../lib/typeahead.js-bootstrap3.less/typeahead.css);
 @import url(../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css);
 @import url(../../lib/bootstrap-spinedit/css/bootstrap-spinedit.css);
 @import url(../../lib/alertify/themes/alertify.core.css);
