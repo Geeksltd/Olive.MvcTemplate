@@ -4,3 +4,5 @@ MSharp.exe
 bin
 Template/@M#/lib/netcoreapp2.0
 .vs
+Template/Website/wwwroot/public/css/
+Template/Website/@Temp.File.Uploads/
