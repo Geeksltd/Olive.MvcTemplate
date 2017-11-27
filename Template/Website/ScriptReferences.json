@@ -24,6 +24,7 @@
   "/lib/olive.mvc/jquery.enhancements.js",
   "/lib/olive.mvc/application.urlhelper.js",
   "/lib/olive.mvc/base.application.page.js",
+  "/lib/chosen/chosen.jquery.js",
   "/Scripts/application.page.js",
   "/Scripts/webApp.js"
 ]

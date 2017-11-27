@@ -20,8 +20,9 @@
         "pwstrength-bootstrap": "~1.2.7",
         "bootstrap-filestyle": "~1.1.2",
         "smartmenus": "1.0.0-beta1",
-        "seiyria-bootstrap-slider": "7.1.1",        
-        "olive.mvc": "*"
+        "seiyria-bootstrap-slider": "7.1.1",
+      "olive.mvc": "*",
+      "chosen": "~1.8.2"
     },
     "devDependencies": {},
     "resolutions": {
