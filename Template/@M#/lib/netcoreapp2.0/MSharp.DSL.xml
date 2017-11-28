@@ -10324,5 +10324,10 @@
             Dismisses all M# warnings on this object.
             </summary>
         </member>
+        <member name="M:MSharp.MetaExtensions.CalculatedFrom``1(``0,System.String)">
+            <summary>
+            Sets this property to calculated. Also sets its getter expression.
+            </summary>
+        </member>
     </members>
 </doc>
