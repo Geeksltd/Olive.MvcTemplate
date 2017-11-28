@@ -9,7 +9,7 @@ namespace Modules
         {
             HeaderText("@item Details").Markup("@ContentBlock.PasswordSuccessfullyReset.Content");
 
-            Link("Proceed to the login page.").OnClick(x => x.Go<Root.LoginPage>());
+            Link("Proceed to the login page.").OnClick(x => x.Go<LoginPage>());
         }
     }
 }

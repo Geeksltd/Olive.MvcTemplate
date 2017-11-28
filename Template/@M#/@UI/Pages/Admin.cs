@@ -1,17 +1,15 @@
 using MSharp;
 using Domain;
 
-namespace Root
+
+public class AdminPage : RootPage
 {
-    public class AdminPage : RootPage
+    public AdminPage()
     {
-        public AdminPage()
-        {
-            Roles(AppRole.Administrator);
+        Roles(AppRole.Administrator);
 
-            Add<Modules.MainMenu>();
+        Add<Modules.MainMenu>();
 
-            OnStart(x => x.Go<Admin.SettingsPage>().RunServerSide());
-        }
+        OnStart(x => x.Go<Admin.SettingsPage>().RunServerSide());
     }
 }

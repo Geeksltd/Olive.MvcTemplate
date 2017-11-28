@@ -3,7 +3,7 @@ using Domain;
 
 namespace Login
 {
-    public class ForgotPasswordPage : SubPage<Root.LoginPage>
+    public class ForgotPasswordPage : SubPage<LoginPage>
     {
         public ForgotPasswordPage()
         {

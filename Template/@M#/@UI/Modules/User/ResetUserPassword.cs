@@ -23,7 +23,7 @@ namespace Modules
 
             ViewModelProperty<PasswordResetTicket>("Ticket").FromRequestParam("ticket");
 
-            Button("Cancel").CausesValidation(false).OnClick(x => x.Go<Root.LoginPage>());
+            Button("Cancel").OnClick(x => x.Go<LoginPage>());
 
             Button("Reset").IsDefault()
             .OnClick(x =>

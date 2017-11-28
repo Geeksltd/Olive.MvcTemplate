@@ -21,7 +21,7 @@ namespace Modules
 
             Link("Logout").ValidateAntiForgeryToken(false).Icon(FA.SignOut).MarkupTemplate("Hi @User ([#Button#])")
                 .Visibility(AppRole.User)
-                .OnClick(x => { x.CSharp("User.LogOff();"); x.Go<Root.LoginPage>(); });
+                .OnClick(x => { x.CSharp("User.LogOff();"); x.Go<LoginPage>(); });
 
             Link("Geeks")
                 .OnClick(x => x.Go("http://www.geeks.ltd.uk").WindowName("_blank"));

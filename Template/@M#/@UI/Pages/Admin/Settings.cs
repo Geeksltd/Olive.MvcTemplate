@@ -3,7 +3,7 @@ using Domain;
 
 namespace Admin
 {
-    public class SettingsPage : SubPage<Root.AdminPage>
+    public class SettingsPage : SubPage<AdminPage>
     {
         public SettingsPage()
         {
