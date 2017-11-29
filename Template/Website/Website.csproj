@@ -28,7 +28,7 @@
     <PackageReference Include="Hangfire" Version="1.6.17" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Olive.Excel" Version="1.0.4" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.22" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.24" />
     <PackageReference Include="Olive.PDF" Version="1.0.4" />
     <PackageReference Include="Olive.Testing" Version="1.0.11" />
     <PackageReference Include="SkiaSharp" Version="1.59.2" />
