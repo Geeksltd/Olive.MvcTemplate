@@ -28,7 +28,6 @@ call npm rebuild node-sass
 ECHO Running node-sass ..............
 call node_modules\.bin\gulp build-sass
 
-cd Website
 call dotnet build
 
 cd ..\@M#\@UI
