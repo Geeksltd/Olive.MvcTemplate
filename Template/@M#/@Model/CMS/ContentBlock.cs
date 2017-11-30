@@ -10,8 +10,6 @@ namespace Domain
 
             DefaultToString = String("Key").Mandatory().Unique();
             BigString("Content").Mandatory();
-
-            OpenFile("Myfile");
         }
     }
 }

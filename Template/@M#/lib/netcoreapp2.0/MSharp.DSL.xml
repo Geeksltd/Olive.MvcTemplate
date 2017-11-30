@@ -562,7 +562,7 @@
             You can use this property to allow / disallow initializing during postback<para/>
             </summary>
         </member>
-        <member name="M:MSharp.AutomaticPropertySetter.Criteria(System.String)">
+        <member name="M:MSharp.AutomaticPropertySetter.OnlyIf(System.String)">
             <summary>
             A c# expression which specifies a criteria in which this automatic property setting will be done.<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>
@@ -4324,7 +4324,7 @@
             It is recommended to not to set it True, because it keeping the original formatting will make it difficult to read an understand<para/>
             </summary>
         </member>
-        <member name="M:MSharp.ListModule`1.SearchBoxVisibilityCriteria(System.String)">
+        <member name="M:MSharp.ListModule`1.SearchBoxVisibleIf(System.String)">
             <summary>
             In this field you can specify the criteria in which you want the search box to be visible.<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>
