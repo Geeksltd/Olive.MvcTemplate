@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.90" />
+    <PackageReference Include="MSharp" Version="4.1.91" />
     <PackageReference Include="Olive" Version="1.0.11" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <Target Name="Generate code" AfterTargets="AfterBuild">
-    <Exec Command="powershell start-process -FilePath &quot;dotnet&quot; -ArgumentList &quot;$(TargetDir)msharp.dsl.dll&quot;, &quot;/build,  &quot;/ui&quot;" />
+    <Exec Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /ui" />
   </Target>
 </Project>
