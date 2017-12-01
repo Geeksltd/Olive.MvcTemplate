@@ -22,19 +22,8 @@ if ERRORLEVEL 1 (
 ECHO ::::::::: Installing Bower components ::::::::::::::::::::::::
 call bower install
 
-ECHO ::::::::: Ensuring Gulp is installed (globally) ::::::::::::::::::::
-where gulp > nul
-if ERRORLEVEL 1 (
-	call npm install gulp -g	
-)
-
-ECHO ::::::::: Copying Gulp locally ::::::::::::::::::::
-call npm link gulp
-call npm link gulp-debug
-call npm link gulp-cssnano
-call npm link gulp-sourcemaps
-call npm link gulp-sass
-
+ECHO ::::::::: Installing Gulp ::::::::::::::::::::
+call npm install gulp
 
 ECHO ::::::::: Rebuilding node-sass module ::::::::::::::::::::
 call npm rebuild node-sass
