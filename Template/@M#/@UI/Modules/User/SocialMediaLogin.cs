@@ -12,13 +12,13 @@ namespace Modules
 
             CustomField().NoLabel()
                 .ControlMarkup("<p>The email address you are registered with @Model.Provider is not registered with us. Please register with us first with the same email address and then you would be able to sign in through @Model.Provider </p>")
-                .Visibility("@info.Error == \"not-registered\"");
+                .Visibility("@info?.Error == \"not-registered\"");
             CustomField().NoLabel()
                 .ControlMarkup("<p>Although your login with @Model.Provider was successful but we cannot log you into our system because @Model.Provider did not supply us your email address. It might be due to security restrictions you have set with them.</p>")
-                .Visibility("@info.Error == \"deactivated\"");
+                .Visibility("@info?.Error == \"deactivated\"");
             CustomField().NoLabel()
                 .ControlMarkup("<p>Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.</p>")
-                .Visibility("@info.Error == \"deactivated\"");
+                .Visibility("@info?.Error == \"deactivated\"");
 
             //================ Code Extensions: ================
 
@@ -33,6 +33,10 @@ namespace Modules
             Button("Login by facebook").CausesValidation(false).ExtraTagAttributes("formmethod=post")
                 .CssClass("btn-social btn-facebook").Icon(FA.Facebook)
                 .OnClick(x => x.CSharp("UserServices.LoginBy(\"Facebook\");"));
+
+            Button("Login by microsoft accounts").CausesValidation(false).ExtraTagAttributes("formmethod=post")
+                .CssClass("btn-social btn-microsoft").Icon(FA.Windows)
+                .OnClick(x => x.CSharp("UserServices.LoginBy(\"Microsoft\");"));
         }
     }
 }

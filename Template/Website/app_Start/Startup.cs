@@ -23,7 +23,14 @@
 
             return services;
         }
-        
+
+        public override void ConfigureServices(IServiceCollection services)
+        {
+            base.ConfigureServices(services);
+
+            StartupAuth.Configuration(AuthenticationBuilder);
+        }        
+
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             base.Configure(app, env);
