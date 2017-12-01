@@ -45,8 +45,11 @@ namespace Modules
 
             Link("Forgot password?").Icon(FA.Key)
                 .OnClick(x => x.Go<Login.ForgotPasswordPage>());
-            
-            OnControllerClassCode("ExternalLoginCallback").Code(@"[HttpGet, Route(""ExternalLoginCallback""]
+
+            OnControllerClassCode("Constractor").Code(@"readonly Microsoft.AspNetCore.Identity.SignInManager<User> SignInManager;
+                public LoginController(Microsoft.AspNetCore.Identity.SignInManager<User> signInManager) => SignInManager = signInManager;");
+
+            OnControllerClassCode("ExternalLoginCallback").Code(@"[HttpGet, Route(""ExternalLoginCallback"")]
                 public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null, string remoteError = null)
                 {
                     if (remoteError != null)
@@ -64,9 +67,9 @@ namespace Modules
                     var email = info.Principal.Claims.FirstOrDefault(c => c.Type.EndsWith(""emailaddress""))?.Value;
                     var user = await User.FindByEmail(email);
 
-                    var error = string.Empty; ;
+                    var error = string.Empty;
 
-                    if (email.HasValue())
+                    if (email.IsEmpty())
                     {
                         error = ""no-email"";
                     }
@@ -84,12 +87,12 @@ namespace Modules
 
                     if (error.HasValue())
                     {
-                        HttpContext.Response.Redirect($""~/login?ReturnUrl=/login&email={email}&provider={info.LoginProvider}&error={error}"");
+                        HttpContext.Response.Redirect($""login?ReturnUrl=/login&email={email}&provider={info.LoginProvider}&error={error}"");
                     }
 
                     user.LogOn();
 
-                    HttpContext.Response.Redirect(""~/"");
+                    HttpContext.Response.Redirect(""login"");
 
                     return await View(info);
                 }");
