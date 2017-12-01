@@ -50,8 +50,8 @@ namespace Modules
             .OnClick(x =>
             {
                 x.ShowPleaseWait();
-                x.If("info.InvalidCredentials").MessageBox("Invalid username and/or password. Please try again.").Style("error");
-                x.If("info.Item.IsDeactivated").MessageBox("Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.").Style("error");
+                x.If("info.InvalidCredentials").MessageBox("Invalid username and/or password. Please try again.").Style("error").Exits();
+                x.If("info.Item.IsDeactivated").MessageBox("Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.").Style("error").Exits();
                 x.If("!info.SuccessfulLogin").CSharp("info.CaptchaImage_Visible = await LogonFailure.NextAttemptNeedsCaptcha(info.Email, Request.GetIPAddress());");
                 x.If("!info.SuccessfulLogin").ReturnView();
                 x.CSharp("await LogonFailure.Remove(info.Email, Request.GetIPAddress());");
