@@ -23,7 +23,7 @@
 
             return services;
         }
-        
+
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             base.Configure(app, env);
@@ -39,6 +39,12 @@
 
                 TaskManager.Run();
             }
+        }
+
+        public override void ConfigureServices(IServiceCollection services)
+        {
+            base.ConfigureServices(services);
+            services.AddHangfire(config => config.UseSqlServerStorage(Config.GetConnectionString("AppDatabase")));
         }
 
         void RegisterServiceImplementors()
