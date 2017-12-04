@@ -12,13 +12,15 @@ namespace Modules
 
             CustomField().NoLabel()
                 .ControlMarkup("<p>The email address you are registered with @Model.Provider is not registered with us. Please register with us first with the same email address and then you would be able to sign in through @Model.Provider </p>")
-                .Visibility("@info?.Error == \"not-registered\"");
+                .VisibleIf("@info?.Error == \"not-registered\"");
+
             CustomField().NoLabel()
                 .ControlMarkup("<p>Although your login with @Model.Provider was successful but we cannot log you into our system because @Model.Provider did not supply us your email address. It might be due to security restrictions you have set with them.</p>")
-                .Visibility("@info?.Error == \"deactivated\"");
+                .VisibleIf("@info?.Error == \"deactivated\"");
+
             CustomField().NoLabel()
                 .ControlMarkup("<p>Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.</p>")
-                .Visibility("@info?.Error == \"deactivated\"");
+                .VisibleIf("@info?.Error == \"deactivated\"");
 
             //================ Code Extensions: ================
 

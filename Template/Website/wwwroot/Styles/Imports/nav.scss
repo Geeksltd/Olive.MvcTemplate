@@ -13,6 +13,8 @@
     }
 }
 
-.navbar > nav.flex-column > li {
-    @extend .nav-item;
+.navbar > .nav.flex-column > li {
+    /*@extend .nav-item;*/
+    @extend .list-group-item;
+    @extend .list-group-item-action;
 }

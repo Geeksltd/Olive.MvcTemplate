@@ -20,7 +20,7 @@ namespace Modules
                 .RootCssClass("website-footer");
 
             Link("Logout").ValidateAntiForgeryToken(false).Icon(FA.SignOut).MarkupTemplate("Hi @User ([#Button#])")
-                .Visibility(AppRole.User)
+                .VisibleIf(AppRole.User)
                 .OnClick(x => { x.CSharp("User.LogOff();"); x.Go<LoginPage>(); });
 
             Link("Geeks")

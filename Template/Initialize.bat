@@ -1,35 +1,39 @@
 
 @echo off
 
+ECHO ::::::::: Building @Model ::::::::::::::::::::
 cd @M#\@Model
-call dotnet build
+call dotnet build -v q
 
+ECHO ::::::::: Building Domain ::::::::::::::::::::
 cd ..\..\Domain
-call dotnet build
-
+call dotnet build -v q
 cd ..\Website
 
-ECHO Checking bower is installed globally..............
-where bower > nul
-if ERRORLEVEL 1 (
-	echo Installing bower globally...
-	npm install bower -g	
+ECHO ::::::::: Installing NPM (globally) ::::::::::::::::::::::::::
+call npm install -g
+
+ECHO ::::::::: Ensuring bower is installed (globally) ::::::::::::::::::::
+WHERE bower > nul
+if ERRORLEVEL 1 (	
+	call npm install bower -g	
 )
 
-ECHO Running NPM ..............
-call npm install
-
-ECHO Running BOWER ..............
+ECHO ::::::::: Installing Bower components ::::::::::::::::::::::::
 call bower install
 
-ECHO Rebuilding node-sass module ..............
+ECHO ::::::::: Installing Gulp ::::::::::::::::::::
+call npm install gulp
+
+ECHO ::::::::: Rebuilding node-sass module ::::::::::::::::::::
 call npm rebuild node-sass
 
-ECHO Running node-sass ..............
-call node_modules\.bin\gulp build-sass
+ECHO ::::::::: Running node-sass :::::::::::::::::::
+call gulp build-sass
 
-cd Website
-call dotnet build
+ECHO ::::::::: Restoring Nuget packages ::::::::::::::::::::
+call dotnet restore -v q
 
+ECHO ::::::::: Building @UI ::::::::::::::::::::
 cd ..\@M#\@UI
-call dotnet build
+call dotnet build -v q

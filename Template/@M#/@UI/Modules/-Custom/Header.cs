@@ -19,10 +19,8 @@ namespace Modules
 
             Markup($@"
             <nav class=""navbar navbar-expand-md navbar-inverse bg-dark sticky-top"">
-                 <div class=""navbar-brand"">
                       {logo.Ref}
                       {burger.Ref}
-                 </div>
                  <div class=""collapse navbar-collapse"">
                      @(await Component.InvokeAsync<MainMenu>())
                  </div>

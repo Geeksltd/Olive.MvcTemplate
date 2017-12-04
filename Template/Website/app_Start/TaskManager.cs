@@ -12,7 +12,7 @@
     using Olive.Services;
     using Domain;
     using Hangfire;
-    
+
     /// <summary>Executes the scheduled tasks in independent threads automatically.</summary>
     public static partial class TaskManager
     {
@@ -22,19 +22,19 @@
         /// </summary>
         public static void Run()
         {
-            RecurringJob.AddOrUpdate("Clean old temp uploads",() => CleanOldTempUploads(), Cron.MinuteInterval(10));
-            
-            RecurringJob.AddOrUpdate("Send email queue items",() => SendEmailQueueItems(), Cron.MinuteInterval(1));
+            RecurringJob.AddOrUpdate("Clean old temp uploads", () => CleanOldTempUploads(), Cron.MinuteInterval(10));
+
+            RecurringJob.AddOrUpdate("Send email queue items", () => SendEmailQueueItems(), Cron.MinuteInterval(1));
         }
-        
+
         /// <summary>Clean old temp uploads</summary>
-        static async Task CleanOldTempUploads()
+        public static async Task CleanOldTempUploads()
         {
             await Olive.Mvc.FileUploadService.DeleteTempFiles(olderThan: 1.Hours());
         }
-        
+
         /// <summary>Send email queue items</summary>
-        static async Task SendEmailQueueItems()
+        public static async Task SendEmailQueueItems()
         {
             await Olive.Services.Email.EmailService.SendAll();
         }

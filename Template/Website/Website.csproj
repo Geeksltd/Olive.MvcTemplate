@@ -31,7 +31,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.1" />
     <PackageReference Include="Olive.Excel" Version="1.0.4" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.22" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.24" />
     <PackageReference Include="Olive.PDF" Version="1.0.4" />
     <PackageReference Include="Olive.Testing" Version="1.0.11" />
     <PackageReference Include="SkiaSharp" Version="1.59.2" />

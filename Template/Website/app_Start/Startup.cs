@@ -29,6 +29,7 @@
             base.ConfigureServices(services);
 
             StartupAuth.Configuration(AuthenticationBuilder);
+            services.AddHangfire(config => config.UseSqlServerStorage(Config.GetConnectionString("AppDatabase")));
         }        
 
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)

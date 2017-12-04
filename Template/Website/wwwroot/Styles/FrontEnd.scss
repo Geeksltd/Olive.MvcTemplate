@@ -19,6 +19,7 @@ $footer-top-margin: 30px;
     .content.full {
         @include make-column-lg(12);
     }
+    padding-top:14px;
 }
 
 h2 { margin-top: 0; }
