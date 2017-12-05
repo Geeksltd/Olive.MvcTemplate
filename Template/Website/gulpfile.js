@@ -1,5 +1,5 @@
 /// <binding ProjectOpened='watch' />
-var gulp, debug, cssnano, sourcemaps, sass;
+var gulp, debug, sourcemaps, sass;
 initialize();
 
 function doRequire(service) {
@@ -14,8 +14,7 @@ function doRequire(service) {
 
 function initialize() {
     gulp = doRequire('gulp');
-    debug = doRequire('gulp-debug');
-    cssnano = doRequire('gulp-cssnano');
+    debug = doRequire('gulp-debug');    
     sourcemaps = doRequire('gulp-sourcemaps');
     sass = doRequire('gulp-sass');
 }
@@ -39,6 +38,7 @@ gulp.task("build-sass", function () {
 });
 
 gulp.task('minify-css', function () {
+	var cssnano = doRequire('gulp-cssnano');
     return gulp
         .src('./wwwroot/public/css/*.css')
         .pipe(cssnano())

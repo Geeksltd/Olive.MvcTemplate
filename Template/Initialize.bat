@@ -35,7 +35,7 @@ call bower install
 ECHO.
 ECHO ::::::::: Installing Gulp :::::::::::::::::::::::::::::::::::::::::::::
 ECHO.
-call npm install gulp
+call npm install
 
 ECHO.
 ECHO ::::::::: Rebuilding node-sass module :::::::::::::::::::::::::::::::::
