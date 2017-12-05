@@ -22,7 +22,7 @@ namespace Modules
             .OnClick(x =>
             {
                 x.ShowPleaseWait();
-                x.CSharp("var authenticationResult = await Website.Auth0Helper.Authenticate(info.Email, info.Password);");
+                x.CSharp("var authenticationResult = await Olive.Security.Auth0.Auth0Helper.Authenticate(info.Email, info.Password);");
                 x.If("!authenticationResult.Success").CSharp(@"Notify(authenticationResult.Message, ""error"");
                     return await View(info); ");
                 x.CSharp("info.Item.LogOn();");

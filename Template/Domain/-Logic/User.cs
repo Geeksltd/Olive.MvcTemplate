@@ -8,6 +8,7 @@ namespace Domain
     using Olive;
     using Olive.Entities;
     using Olive.Web;
+    using Olive.Security;
 
     partial class User : IUser, IPrincipal, IIdentity
     {

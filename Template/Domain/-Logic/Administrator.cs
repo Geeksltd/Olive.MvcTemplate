@@ -8,6 +8,7 @@
     using Olive.Services;
     using Olive.Services.ImpersonationSession;
     using Olive.Web;
+    using Olive.Security;
 
     /// <summary> 
     /// Provides the business logic for Administrator class.

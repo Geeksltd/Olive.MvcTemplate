@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Olive;
 using Olive.Web;
+using Olive.Security;
 
 namespace Controllers
 {

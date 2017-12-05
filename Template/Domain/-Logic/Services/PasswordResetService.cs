@@ -7,6 +7,7 @@
     using Olive.Entities;
     using Olive.Web;
     using System.Threading.Tasks;
+    using Olive.Security;
 
     /// <summary>
     /// Provides the functionality to reset a user's password.
