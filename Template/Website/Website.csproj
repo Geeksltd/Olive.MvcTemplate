@@ -7,6 +7,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;1705;1998</NoWarn>
   </PropertyGroup>
+  <PropertyGroup>
+    <DefaultItemExcludes>node_modules\**;wwwroot\lib\**;$(DefaultItemExcludes)</DefaultItemExcludes>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="App_Data\**" />
     <Content Remove="App_Data\**" />
@@ -25,6 +28,7 @@
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Auth0" Version="3.6.0" />
     <PackageReference Include="Hangfire" Version="1.6.17" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.0.1" />
