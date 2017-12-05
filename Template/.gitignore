@@ -140,6 +140,7 @@ Domain/MetaDBSync.sql
 @Resources/
 
 Website/bower_components/
+Website/wwwroot/lib/
 Website/node_modules/
 
 # these are all generated
@@ -171,3 +172,6 @@ Website/Scripts/Lib/MSharp/*.js.map
 .vs/
 
 @M#\Current\Stats.json
+@M#/lib/netcoreapp2.0/msharp.exe
+@M#/lib/netcoreapp2.0/msharp.exe.ver
+@M#/lib/
