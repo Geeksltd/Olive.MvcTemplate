@@ -3,18 +3,11 @@
 @{  Layout = null; }
 
 @{
-	var data = await MapPath("/ScriptReferences.json").ReadAllText();
-	var ScriptReferences = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(data);
+    var data = await MapPath("/ScriptReferences.json").ReadAllText();
+    var ScriptReferences = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(data);
 }
 
-@if (Environment.IsDevelopment())
+@foreach (var file in ScriptReferences)
 {
-	foreach (var file in ScriptReferences)
-	{
-		<script src='@($"{file}?v={Settings.ResourceVersion}")'></script>
-	}
-}
-else
-{
-	<script src='~/public/js/app-min.js'></script>
+    <script src='@($"{file}?v={Settings.ResourceVersion}")'></script>
 }
