@@ -7,7 +7,7 @@ namespace Modules
     {
         public Footer()
         {
-            IsInUse().IsViewComponent()
+            IsInUse().IsViewComponent().Using("Olive.Security")
                 .Markup(@"<div class=""pull-right"">
             [#BUTTONS(Email)#] [#BUTTONS(LinkedIn)#] [#BUTTONS(Facebook)#] [#BUTTONS(Twitter)#] [#BUTTONS(GooglePlus)#]
             <br/>

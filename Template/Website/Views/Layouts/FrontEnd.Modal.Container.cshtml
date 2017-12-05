@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="refresh" content="@(UserServices.GetAuthenticationTimeout().TotalSeconds + 10)">
+	<meta http-equiv="refresh" content="@(Olive.Security.UserServices.GetAuthenticationTimeout().TotalSeconds + 10)">
 	<title>@ViewData["Title"]</title>
     <link rel='stylesheet' href="/public/css/FrontEnd-Modal.css?v=@Settings.ResourceVersion" type='text/css' />
     <!--[if lt IE 11]> <script src='/public/js/modernizr-min.js'></script> <![endif]-->

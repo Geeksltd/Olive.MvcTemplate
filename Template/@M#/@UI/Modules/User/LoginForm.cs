@@ -7,7 +7,7 @@ namespace Modules
     {
         public LoginForm()
         {
-            SupportsAdd(false)
+            SupportsAdd(false).Using("Olive.Security")
                 .SupportsEdit(false)
                 .Header("@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key=\"LoginIntro\"}))")
                 .HeaderText("Please Login")
