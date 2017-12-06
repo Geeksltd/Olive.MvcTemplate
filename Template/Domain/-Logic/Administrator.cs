@@ -9,6 +9,8 @@
     using Olive.Services.ImpersonationSession;
     using Olive.Web;
     using Olive.Security;
+    using System.Threading.Tasks;
+    using System.Security.Principal;
 
     /// <summary> 
     /// Provides the business logic for Administrator class.
@@ -20,6 +22,8 @@
         /// </summary>
         public override IEnumerable<string> GetRoles() => base.GetRoles().Concat("Administrator");
 
-        bool IImpersonator.CanImpersonate(IUser user) => true;
+        bool IImpersonator.CanImpersonate(IIdentity user) => true;
+
+        Task IImpersonator.LogOnAs(IIdentity user) => (user as User).LogOn();
     }
 }

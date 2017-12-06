@@ -10,7 +10,7 @@ namespace Domain
     using Olive.Web;
     using Olive.Security;
 
-    partial class User : IUser, IPrincipal, IIdentity
+    partial class User : IIdentity
     {
         /// <summary>
         /// Gets the roles of this user.
@@ -30,21 +30,19 @@ namespace Domain
                 await PasswordResetService.RequestTicket(this);
         }
 
-        #region IPrincipal
-
-        IIdentity IPrincipal.Identity => this;
-
         /// <summary>
         /// Specifies whether or not this user has a specified role.
         /// </summary>
         public bool IsInRole(string role) => GetRoles().Contains(role);
 
         string IIdentity.AuthenticationType => "ApplicationAuthentication";
-
         bool IIdentity.IsAuthenticated => true;
-
         string IIdentity.Name => ID.ToString();
 
-        #endregion
+        public async Task LogOn(bool remember = false)
+        {
+            var timeout = Config.Get("Authentication:Timeout", defaultValue: 20).Minutes();
+            await OAuth.Instance.LogOn(this, GetRoles(), timeout, remember: remember);
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Modules
                 .SupportsEdit(false)
                 .Header("@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key=\"LoginIntro\"}))")
                 .HeaderText("Please Login")
-                .DataSource("await User.FindByEmail(info.Email)");
+                .DataSource("await Domain.User.FindByEmail(info.Email)");
 
             Field(x => x.Email).WatermarkText("Your email");
             Field(x => x.Password).Mandatory().WatermarkText("Your password");

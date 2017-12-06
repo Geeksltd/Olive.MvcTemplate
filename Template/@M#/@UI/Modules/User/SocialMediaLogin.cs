@@ -8,6 +8,7 @@ namespace Modules
         public SocialMediaLogin()
         {
             SupportsAdd(false).SupportsEdit(false).Header("<h3>Other ways to sign in</h3>")
+                .Using("Olive.Security")
                 .RootCssClass("input-form social-media-login");
 
             CustomField().NoLabel()
@@ -28,17 +29,17 @@ namespace Modules
 
             ViewModelProperty<string>("Error").FromRequestParam("error");
 
-            Button("Login by google").CausesValidation(false).ExtraTagAttributes("formmethod=post")
+            Button("Login by Google").CausesValidation(false).ExtraTagAttributes("formmethod=post")
                 .CssClass("btn-social btn-google").Icon(FA.GooglePlus)
-                .OnClick(x => x.CSharp("UserServices.LoginBy(\"Google\");"));
+                .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Google\");"));
 
-            Button("Login by facebook").CausesValidation(false).ExtraTagAttributes("formmethod=post")
+            Button("Login by Facebook").CausesValidation(false).ExtraTagAttributes("formmethod=post")
                 .CssClass("btn-social btn-facebook").Icon(FA.Facebook)
-                .OnClick(x => x.CSharp("UserServices.LoginBy(\"Facebook\");"));
+                .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Facebook\");"));
 
-            Button("Login by microsoft accounts").CausesValidation(false).ExtraTagAttributes("formmethod=post")
+            Button("Login by Microsoft").CausesValidation(false).ExtraTagAttributes("formmethod=post")
                 .CssClass("btn-social btn-microsoft").Icon(FA.Windows)
-                .OnClick(x => x.CSharp("UserServices.LoginBy(\"Microsoft\");"));
+                .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Microsoft\");"));
         }
     }
 }

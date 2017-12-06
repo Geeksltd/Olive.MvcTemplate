@@ -10,12 +10,12 @@ namespace Modules
             SupportsAdd(false).SupportsEdit(false)
                 .Header("<p> Please provide your email address. You will receive an email with instructions on how to reset your password. </p>")
                 .HeaderText("Forgot Your Password?");
-            
+
             Field(x => x.Email);
             Button("Send").IsDefault()
             .OnClick(x =>
             {
-                x.CSharp("var user = await User.FindByEmail(info.Email.Trim());");
+                x.CSharp("var user = await Domain.User.FindByEmail(info.Email.Trim());");
                 x.If("user == null").MessageBox("Invalid email address. Please try again.").Exits();
                 x.CSharp("await PasswordResetService.RequestTicket(user);");
                 x.Display(@"<h2> Forgot Your Password? </h2>
