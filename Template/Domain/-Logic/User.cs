@@ -44,5 +44,7 @@ namespace Domain
             var timeout = Config.Get("Authentication:Timeout", defaultValue: 20).Minutes();
             await OAuth.Instance.LogOn(this, GetRoles(), timeout, remember: remember);
         }
+
+        public bool Is(IPrincipal loggedInUser) => loggedInUser?.Identity.Name == ID.ToString();
     }
 }
