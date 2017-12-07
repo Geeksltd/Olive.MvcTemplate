@@ -1,6 +1,6 @@
 -- EmailTemplates Table ========================
-CREATE TABLE [EmailTemplates] (
-    [Id] uniqueidentifier PRIMARY KEY NONCLUSTERED,
+CREATE TABLE [].[EmailTemplates] (
+    Id uniqueidentifier PRIMARY KEY NONCLUSTERED,
     [Subject] nvarchar(200)  NOT NULL,
     [Key] nvarchar(200)  NOT NULL,
     [Body] nvarchar(MAX)  NOT NULL,

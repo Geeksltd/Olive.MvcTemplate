@@ -1,7 +1,7 @@
 -- EmailQueueItems Table ========================
-CREATE TABLE [EmailQueueItems] (
+CREATE TABLE [].[EmailQueueItems] (
     [.Deleted] bit NOT NULL,
-    [Id] uniqueidentifier PRIMARY KEY NONCLUSTERED,
+    Id uniqueidentifier PRIMARY KEY NONCLUSTERED,
     [Body] nvarchar(MAX)  NULL,
     [Date] datetime2  NOT NULL,
     [EnableSsl] bit  NOT NULL,

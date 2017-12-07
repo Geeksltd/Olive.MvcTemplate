@@ -1,6 +1,6 @@
-ALTER TABLE [Administrators] ADD CONSTRAINT 
+ALTER TABLE [].[Administrators] ADD CONSTRAINT 
 [FK_Administrator.Id->User] FOREIGN KEY (Id) 
-REFERENCES [Users] ([ID])
+REFERENCES [].[Users] (ID)
  ON DELETE CASCADE
 
 
