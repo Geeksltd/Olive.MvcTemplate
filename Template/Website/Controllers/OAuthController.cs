@@ -4,8 +4,6 @@ using Domain;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Olive;
-using Olive.Web;
-using Olive.Security;
 
 namespace Controllers
 {
@@ -34,10 +32,15 @@ namespace Controllers
                 return ShowError(info.LoginProvider, "not-registered", email);
             }
 
-            if (user.IsDeactivated) return ShowError(info.LoginProvider, "deactivated", email);
-
-            user.LogOn();
-            return Redirect("/login");
+            if (user.IsDeactivated)
+            {
+                return ShowError(info.LoginProvider, "deactivated", email);
+            }
+            else
+            {
+                await user.LogOn();
+                return Redirect("/login");
+            }
         }
 
         RedirectResult ShowError(string loginProvider, string errorKey, string email = null)
