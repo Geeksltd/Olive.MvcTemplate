@@ -21,11 +21,12 @@ namespace Modules
             Button("Login").ValidateAntiForgeryToken(false)
             .OnClick(x =>
             {
+                x.RunInTransaction(false);
                 x.ShowPleaseWait();
                 x.CSharp("var authenticationResult = await Olive.Security.Auth0.Authenticate(info.Email, info.Password);");
                 x.If("!authenticationResult.Success").CSharp(@"Notify(authenticationResult.Message, ""error"");
                     return await View(info); ");
-                x.CSharp("info.Item.LogOn();");
+                x.CSharp("await info.Item.LogOn();");
                 x.If(CommonCriterion.RequestHas_ReturnUrl).ReturnToPreviousPage();
                 x.Go<Login.DispatchPage>();
             });
