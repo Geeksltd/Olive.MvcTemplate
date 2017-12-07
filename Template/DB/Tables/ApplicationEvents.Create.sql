@@ -1,5 +1,5 @@
 -- ApplicationEvents Table ========================
-CREATE TABLE [].[ApplicationEvents] (
+CREATE TABLE [ApplicationEvents] (
     Id uniqueidentifier PRIMARY KEY NONCLUSTERED,
     [UserId] nvarchar(200)  NULL,
     [Date] datetime2  NOT NULL,

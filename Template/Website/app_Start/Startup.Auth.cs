@@ -6,8 +6,10 @@ public class StartupAuth
 {
     // To obtain the keys See > https://github.com/Geeksltd/Olive/blob/master/Olive.Security/Config.md
 
-    public static void Configuration(AuthenticationBuilder auth)
+    public static void Configure(AuthenticationBuilder auth)
     {
+        auth.Services.AddAuthentication(config => config.DefaultScheme = "Cookies").AddCookie();
+
         #region Microsoft
         // auth.AddMicrosoftAccount(config =>
         // {

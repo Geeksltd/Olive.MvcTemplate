@@ -28,7 +28,7 @@
         {
             base.ConfigureServices(services);
 
-            StartupAuth.Configuration(AuthenticationBuilder);
+            StartupAuth.Configure(AuthenticationBuilder);
             services.AddHangfire(config => config.UseSqlServerStorage(Config.GetConnectionString("AppDatabase")));
         }        
 

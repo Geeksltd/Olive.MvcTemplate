@@ -1,5 +1,5 @@
 -- EmailQueueItems Table ========================
-CREATE TABLE [].[EmailQueueItems] (
+CREATE TABLE [EmailQueueItems] (
     [.Deleted] bit NOT NULL,
     Id uniqueidentifier PRIMARY KEY NONCLUSTERED,
     [Body] nvarchar(MAX)  NULL,
