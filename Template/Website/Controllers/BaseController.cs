@@ -18,7 +18,7 @@ namespace ViewComponents
 {
     public abstract class ViewComponent : Olive.Mvc.ViewComponent
     {
-        /// <summary>Gets the user for the current HTTP request.</summary>
-        public new User User => base.User?.Identity.Extract<User>() ?? new AnonymousUser();
+        /// <summary>Gets a Domain User object extracted from the current user principal.</summary>
+        public User GetUser() => User?.Identity.Extract<User>();
     }
 }
