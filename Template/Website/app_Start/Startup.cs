@@ -15,22 +15,13 @@
     {
         protected override CultureInfo GetRequestCulture() => new CultureInfo("en-GB");
 
-        protected override IServiceCollection AddIdentityAndStores(IServiceCollection services)
-        {
-            services.AddSingleton<IUserStore<User>, UserStore>();
-            services.AddSingleton<IRoleStore<string>, RoleStore>();
-            services.AddIdentity<User, string>();
-
-            return services;
-        }
-
         public override void ConfigureServices(IServiceCollection services)
         {
             base.ConfigureServices(services);
 
-            StartupAuth.Configure(AuthenticationBuilder);
+            AuthenticationBuilder.ConfigureSocialAuth();
             services.AddHangfire(config => config.UseSqlServerStorage(Config.GetConnectionString("AppDatabase")));
-        }        
+        }
 
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {

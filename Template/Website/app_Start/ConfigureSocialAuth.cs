@@ -2,14 +2,12 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 
-public class StartupAuth
+public static class AuthenticationBuilderExtensions
 {
     // To obtain the keys See > https://github.com/Geeksltd/Olive/blob/master/Olive.Security/Config.md
 
-    public static void Configure(AuthenticationBuilder auth)
+    public static void ConfigureSocialAuth(this AuthenticationBuilder auth)
     {
-        auth.Services.AddAuthentication(config => config.DefaultScheme = "Cookies").AddCookie();
-
         #region Microsoft
         // auth.AddMicrosoftAccount(config =>
         // {
