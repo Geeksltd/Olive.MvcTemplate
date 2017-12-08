@@ -42,7 +42,7 @@ namespace Domain
         public async Task LogOn(bool remember = false)
         {
             var timeout = Config.Get("Authentication:Timeout", defaultValue: 20).Minutes();
-            await OAuth.Instance.LogOn(this, GetRoles(), timeout, remember: remember);
+            await OAuth.Instance.LogOn(Name, ID.ToString(), Email, GetRoles(), timeout, remember: remember);
         }
 
         public bool Is(IPrincipal loggedInUser) => loggedInUser?.Identity.Name == ID.ToString();
