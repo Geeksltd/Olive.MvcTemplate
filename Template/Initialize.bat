@@ -40,7 +40,7 @@ call npm install
 ECHO.
 ECHO ::::::::: Rebuilding node-sass module :::::::::::::::::::::::::::::::::
 ECHO.
-call npm rebuild node-sass
+call npm rebuild node-sass --force
 
 ECHO.
 ECHO ::::::::: Running node-sass :::::::::::::::::::::::::::::::::::::::::::
@@ -51,6 +51,7 @@ ECHO.
 ECHO ::::::::: Restoring Nuget packages ::::::::::::::::::::::::::::::::::::
 ECHO.
 call dotnet restore -v q
+call dotnet build
 
 ECHO.
 ECHO ::::::::: Building @UI ::::::::::::::::::::::::::::::::::::::::::::::::
