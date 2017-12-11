@@ -37,5 +37,5 @@ var ApplicationPage = (function (_super) {
         return _super.prototype.executeAction.call(this, action, trigger);
     };
     return ApplicationPage;
-}(BaseApplicationPage));
+}(OlivePage));
 page = new ApplicationPage();

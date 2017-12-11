@@ -55,7 +55,9 @@ namespace Domain
             var pass = SecurePassword.Create("test");
             return Create(new Administrator
             {
+#pragma warning disable GCop646 // Email addresses should not be hard-coded. Move this to Settings table or Config file.
                 Email = "admin@uat.co",
+#pragma warning restore GCop646 // Email addresses should not be hard-coded. Move this to Settings table or Config file.
                 FirstName = "Geeks",
                 LastName = "Admin",
                 Password = pass.Password,

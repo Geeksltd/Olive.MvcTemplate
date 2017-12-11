@@ -1,4 +1,4 @@
-﻿class ApplicationPage extends BaseApplicationPage {
+﻿class ApplicationPage extends OlivePage {
     // Here you can override any of the base standard functions.
     // e.g: To use a different AutoComplete library, simply override handleAutoComplete(input).
 

@@ -50,10 +50,8 @@
     <None Include="_M#_TEMP\Preview\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
-	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\application.urlhelper.ts" />
-	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\jquery.enhancements.ts" />
-	<TypeScriptCompile Include="wwwroot\lib\olive.mvc\base.application.page.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\application.page.ts" />
+    <TypeScriptCompile Include="wwwroot\Scripts\typings\olive.mvc\OlivePage.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\webApp.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\missingDefinitions.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\alertify\alertify.d.ts" />

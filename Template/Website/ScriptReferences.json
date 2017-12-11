@@ -21,9 +21,7 @@
   "/lib/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js",
   "/lib/moment/locale/en-gb.js",
   "/lib/jquery-validation-bootstrap-tooltip/jquery-validate.bootstrap-tooltip.js",
-  "/lib/olive.mvc/jquery.enhancements.js",
-  "/lib/olive.mvc/application.urlhelper.js",
-  "/lib/olive.mvc/base.application.page.js",
+  "/lib/olive.mvc/olivepage.js",
   "/lib/chosen/chosen.jquery.js",
   "/Scripts/application.page.js",
   "/Scripts/webApp.js"
