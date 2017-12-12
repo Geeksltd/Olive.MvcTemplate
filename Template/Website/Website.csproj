@@ -60,7 +60,13 @@
     <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment-node.d.ts" />
     <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment.d.ts" />
   </ItemGroup>
-  <Target Name="BuildSass" AfterTargets="PostBuildEvent">
-    <Exec Command="node_modules\.bin\gulp build-sass" />
+  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask"/>
+  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask"/>
+
+  <Target Name="WebCompile" AfterTargets="PostBuildEvent" Condition="'$(RunWebCompiler)' != 'False'">
+    <WebCompiler.CompilerBuildTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\Sasscompilerconfig.json" />
+  </Target>
+  <Target Name="WebCompileClean" AfterTargets="CoreClean" Condition="'$(RunWebCompiler)' != 'False'">
+    <WebCompiler.CompilerCleanTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\Sasscompilerconfig.json" />
   </Target>
 </Project>
