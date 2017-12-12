@@ -15,11 +15,6 @@ call dotnet build -v q
 cd ..\Website
 
 ECHO.
-ECHO ::::::::: Installing NPM (globally) :::::::::::::::::::::::::::::::::::
-ECHO.
-call npm install -g
-
-ECHO.
 ECHO ::::::::: Ensuring bower is installed (globally) ::::::::::::::::::::::
 ECHO.
 WHERE bower > nul
@@ -32,20 +27,11 @@ ECHO ::::::::: Installing Bower components :::::::::::::::::::::::::::::::::
 ECHO.
 call bower install
 
-ECHO.
-ECHO ::::::::: Installing Gulp :::::::::::::::::::::::::::::::::::::::::::::
-ECHO.
-call npm install
 
 ECHO.
-ECHO ::::::::: Rebuilding node-sass module :::::::::::::::::::::::::::::::::
+ECHO ::::::::: Rebuilding sass files :::::::::::::::::::::::::::::::::
 ECHO.
-call npm rebuild node-sass --force
-
-ECHO.
-ECHO ::::::::: Running node-sass :::::::::::::::::::::::::::::::::::::::::::
-ECHO.
-call gulp build-sass
+call wwwroot\Styles\build\SassCompiler.exe Sasscompilerconfig.json
 
 ECHO.
 ECHO ::::::::: Restoring Nuget packages ::::::::::::::::::::::::::::::::::::

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/public/css/FrontEnd.css",
+    "inputFile": "wwwroot/Styles/FrontEnd.scss"
+  },
+  {
+    "outputFile": "wwwroot/public/css/FrontEnd-Modal.css",
+    "inputFile": "wwwroot/Styles/FrontEnd-Modal.scss"
+  }
+]
