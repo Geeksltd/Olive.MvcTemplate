@@ -4993,7 +4993,7 @@
             Sets the label of this element to be [#EMPTY#] which means no text should be generated.
             </summary> 
         </member>
-        <member name="M:MSharp.Association`1.OnDelete(MSharp.CascadeAction)">
+        <member name="M:MSharp.Association.OnDelete(MSharp.CascadeAction)">
             <summary>
             You can use this property to select delete behaviour of an instance of this entity type.<para/>
             ======== DEFAULT ================================<para/>
@@ -5005,7 +5005,7 @@
             A One to Many association between Category and Products and want to restrict deleting a category if is has  products, Use Throw Warning<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Name(System.String)">
+        <member name="M:MSharp.Association.Name(System.String)">
             <summary>
             In this Property you specify the name of the property which is generated in Modal to access this property.<para/>
             Note:<para/>
@@ -5020,7 +5020,7 @@
             IsAllowed<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.ReferencedType(System.String)">
+        <member name="M:MSharp.Association.ReferencedType(System.String)">
             <summary>
             This attribute lets you select the required entity type to create an association.<para/>
             ======== DEFAULT ================================<para/>
@@ -5032,7 +5032,7 @@
             - Changing reference type could cause data corruption<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Mandatory(System.Boolean)">
+        <member name="M:MSharp.Association.Mandatory(System.Boolean)">
             <summary>
             If set to True, a required validation rule will be generated in Modal and a required field validation control will be generated on UI to require the input.<para/>
             This behaviour can be overridden in UI using same attribute of form element. But, if the property is marked as mandatory the rule will be applied in modal even if it is set to false in UI<para/>
@@ -5042,7 +5042,7 @@
             When you need to make a field mandatory for an entity instance<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.MinCardinality(System.Int32)">
+        <member name="M:MSharp.Association.MinCardinality(System.Int32)">
             <summary>
             You can use this attribute to enforce the lower limit of cardinality on an association. M# will enforce the minimum numbers of relational records on Form module.<para/>
             Note:<para/>
@@ -5054,7 +5054,7 @@
             This attribute is useful when imposing minimum number of association relational records required at the time of saving<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Title(System.String)">
+        <member name="M:MSharp.Association.Title(System.String)">
             <summary>
             In this Property you specify the title of the property which is generated as the label in the module<para/>
             Note:<para/>
@@ -5067,7 +5067,7 @@
             Is allowed?<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.MaxCardinality(System.Nullable{System.Int32})">
+        <member name="M:MSharp.Association.MaxCardinality(System.Nullable{System.Int32})">
             <summary>
             You can use this attribute to enforce the upper limit of cardinality. M# will restrict the maximum numbers of relational record on Form module.<para/>
             Note:<para/>
@@ -5079,7 +5079,7 @@
             Use this attribute to limit the number of maximum relational records added for this association. This is useful to enforce data input restriction for underlying association.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Unique(System.Boolean)">
+        <member name="M:MSharp.Association.Unique(System.Boolean)">
             <summary>
             If set to True, a unique validation rule for this property will generated in the Modal which will prevent duplicate values.<para/>
             Also, a static method will be generated which finds and retunes an instance from the database by the property&apos;s value<para/>
@@ -5094,7 +5094,7 @@
             User IDs<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.LazyLoad(System.Boolean)">
+        <member name="M:MSharp.Association.LazyLoad(System.Boolean)">
             <summary>
             If set to &quot;True&quot; the association is loaded lazily i.e. on demand and cached afterwards<para/>
             ======== DEFAULT ================================<para/>
@@ -5103,12 +5103,12 @@
             This attribute is useful when boosting performance<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Notes(System.String)">
+        <member name="M:MSharp.Association.Notes(System.String)">
             <summary>
             A description for the property to document any notes. Make your descriptions as descriptive as possible as they will be helpful later on to understand the Business Logic.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Attributes(System.String)">
+        <member name="M:MSharp.Association.Attributes(System.String)">
             <summary>
             In this field you can specify custom C# attribute(s) for the property.<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>
@@ -5118,7 +5118,7 @@
             [XmlIgnore]<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.XmlIgnore(System.Boolean)">
+        <member name="M:MSharp.Association.XmlIgnore(System.Boolean)">
             <summary>
             When set to True, the property will not be serialized when xml serialization will be performed on the instance<para/>
             ======== DEFAULT ================================<para/>
@@ -5127,7 +5127,7 @@
             When you need to perform XML serialization and When you want to omit the property value<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Override(System.Boolean)">
+        <member name="M:MSharp.Association.Override(System.Boolean)">
             <summary>
             If set to true, Override keyword will be generated for the property<para/>
             ======== DEFAULT ================================<para/>
@@ -5136,7 +5136,7 @@
             When you have defined a virtual property in the base class and want to override the property in the derived class<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Virtual(System.Boolean)">
+        <member name="M:MSharp.Association.Virtual(System.Boolean)">
             <summary>
             If set to True, &quot;Virtual&quot; keyword will be generated in the property definition<para/>
             ======== DEFAULT ================================<para/>
@@ -5145,7 +5145,7 @@
             When you are defining a base class and want to override this property in derived classes<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.RequiredValidationMessage(System.String)">
+        <member name="M:MSharp.Association.RequiredValidationMessage(System.String)">
             <summary>
             In this field you can specify a message which is displayed when the property value is null<para/>
             ======== DEFAULT ================================<para/>
@@ -5155,7 +5155,7 @@
             When you need to display a dynamic validation message which requires business logic.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.DatabaseIndex(System.Nullable{System.Boolean})">
+        <member name="M:MSharp.Association.DatabaseIndex(System.Nullable{System.Boolean})">
             <summary>
             If set to True, database index is generated for the property. Index are created to boost up the speed of data retrieval but downgrades the data writing speed if used unnecessary.<para/>
             ======== DEFAULT ================================<para/>
@@ -5167,7 +5167,7 @@
             Identity Fields<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Calculated(System.Boolean)">
+        <member name="M:MSharp.Association.Calculated(System.Boolean)">
             <summary>
             If set to True,  the property is only generated in Modal entity class and no respective column is generated in database table<para/>
             ======== DEFAULT ================================<para/>
@@ -5179,14 +5179,14 @@
             You want to show Customer balance which required calculation you can implement a  private method to calculate the balance and call that in calculated property to display it on UI<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Documentation(System.String)">
+        <member name="M:MSharp.Association.Documentation(System.String)">
             <summary>
             In this field you can specify contents which are generated in the documentation summary tag of the poetry<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>
             It is good practice to provide documentation of properties to make it more useable for consumer of the property or the developer who are going to manipulate it later on.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.HelpText(System.String)">
+        <member name="M:MSharp.Association.HelpText(System.String)">
             <summary>
             In this property you can specify contends which are displayed as the help text for the property.<para/>
             This property is also available in form module<para/>
@@ -5195,7 +5195,7 @@
             Use Form Module element attribute &quot;help text &quot; to specify static help text with html markup.<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Getter(System.String)">
+        <member name="M:MSharp.Association.Getter(System.String)">
             <summary>
             In this field you can specify a C# expression to implement the get accessory of a calculated property<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>
@@ -5205,7 +5205,7 @@
             FirstName + &quot; &quot; + LastName<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.Default(System.String)">
+        <member name="M:MSharp.Association.Default(System.String)">
             <summary>
             In this field you can specify a static or c# expression based value which is set as the default value of the property in entity class constructor<para/>
             ======== WHEN TO USE/SET IT? ====================<para/>
@@ -5217,7 +5217,7 @@
             GenerateDiscountCode()<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.DefaultFormatString(System.String)">
+        <member name="M:MSharp.Association.DefaultFormatString(System.String)">
             <summary>
             In this field you can specify the string format for a property which will be used to format the string on UI.<para/>
             ======== S       WHEN TO USE/SET IT? ============<para/>
@@ -5231,7 +5231,7 @@
             D4<para/>
             </summary>
         </member>
-        <member name="M:MSharp.Association`1.IsReadOnlyInterfaceProperty(System.Nullable{System.Boolean})">
+        <member name="M:MSharp.Association.IsReadOnlyInterfaceProperty(System.Nullable{System.Boolean})">
             <summary>
             If set to True, only the get accessor will be generated.<para/>
             ======== DEFAULT ================================<para/>
@@ -6433,6 +6433,11 @@
             You should only set it to True, when you are sure that you will consume the child collection fetched eagerly<para/>
             </summary>
         </member>
+        <member name="M:MSharp.EntityType.Associate(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Adds a many to one association to the specified type.
+            </summary>
+        </member>
         <member name="M:MSharp.EntityType.Associate``1(System.String,System.String,System.Int32)">
             <summary>
             Adds a many to one association to the specified type.
@@ -6441,6 +6446,12 @@
         <member name="M:MSharp.EntityType.AssociateMany``1(System.String,System.String,System.Int32)">
             <summary>
             Adds a many to many association to the specified type.
+            </summary>
+        </member>
+        <member name="M:MSharp.EntityType.AssociateManyToMany``1(System.String,System.String,System.Int32)">
+            <summary>
+            Creates a junction entity with two associations: one to this type, and one to the specified target type.
+            It also creates an inverse association to that in this type with the specified display name and suffix of Links.
             </summary>
         </member>
         <member name="M:MSharp.EntityType.Property(System.String)">
