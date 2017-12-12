@@ -15,11 +15,16 @@ call dotnet build -v q
 cd ..\Website
 
 ECHO.
+ECHO ::::::::: Installing YARN (globally) :::::::::::::::::::::::::::::::::::
+ECHO.
+call yarn install
+
+ECHO.
 ECHO ::::::::: Ensuring bower is installed (globally) ::::::::::::::::::::::
 ECHO.
 WHERE bower > nul
 if ERRORLEVEL 1 (	
-	call npm install bower -g	
+	call yarn global add bower	
 )
 
 ECHO.
