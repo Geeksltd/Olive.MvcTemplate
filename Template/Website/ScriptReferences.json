@@ -9,7 +9,7 @@
   "/lib/popper.js/dist/umd/popper.js",
   "/lib/bootstrap/dist/js/bootstrap.js",
   "/lib/alertifyjs/dist/js/alertify.js",
-  "/lib/typeahead.js/dist/typeahead.jquery.js",
+  "/lib/jquery-typeahead/dist/jquery.typeahead.min.js",
   "/lib/moment/min/moment.min.js",
   "/lib/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js",
   "/lib/blueimp-file-upload-node/js/vendor/jquery.ui.widget.js",
@@ -21,7 +21,7 @@
   "/lib/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js",
   "/lib/moment/locale/en-gb.js",
   "/lib/jquery-validation-bootstrap-tooltip/jquery-validate.bootstrap-tooltip.js",
-  "/lib/olive.mvc/olivepage.js",
+  "/lib/olive.mvc/dist/olivepage.js",
   "/lib/chosen/chosen.jquery.js",
   "/Scripts/application.page.js",
   "/Scripts/webApp.js"
