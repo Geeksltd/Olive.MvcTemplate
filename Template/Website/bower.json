@@ -1,15 +1,17 @@
 {
-    "name": "project",
-    "version": "1.0.0",
-    "private": true,
+  "name": "project",
+  "version": "1.0.0",
+  "private": true,
     "dependencies": {
-        "bootstrap": "v4.0.0-beta",
+        "popper.js": "1.12.9",
+        "jquery": "3.2.1",
+        "jqueryui": "1.12.1",
+        "jquery-validation": "1.17.0",
+        "jquery-validation-unobtrusive": "3.2.6",
         "jquery-validation-bootstrap-tooltip": "*",
-        "jquery-validation": "~1.13.1",
-        "jquery-validation-unobtrusive": "~3.2.2",
-        "jqueryui": "~1.11.4",
         "jquery-typeahead": "*",
-        "blueimp-file-upload-node": "*",
+        "bootstrap": "v4.0.0-beta.2",
+        "jquery-file-upload": "*",
         "ckeditor": "#full/4.6.x",
         "alertifyjs": "~0.3.18",
         "alertify-bootstrap-3": "~1.1.1",
@@ -21,11 +23,13 @@
         "bootstrap-filestyle": "~1.1.2",
         "smartmenus": "1.0.0-beta1",
         "seiyria-bootstrap-slider": "7.1.1",
-      "olive.mvc": "*",
-      "chosen": "~1.8.2"
+        "olive.mvc": "0.3.2",
+        "chosen": "~1.8.2",
+        "requirejs": "*"
     },
-    "devDependencies": {},
-    "resolutions": {
-        "bootstrap": "v4.0.0-beta"
-    }
+  "devDependencies": {},
+  "resolutions": {
+    "bootstrap": "^v4.0.0-beta.2",
+    "jquery": "^3.2.1"
+  }
 }

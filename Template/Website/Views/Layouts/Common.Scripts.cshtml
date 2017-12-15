@@ -2,12 +2,4 @@
 
 @{  Layout = null; }
 
-@{
-    var data = await MapPath("/ScriptReferences.json").ReadAllText();
-    var ScriptReferences = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(data);
-}
-
-@foreach (var file in ScriptReferences)
-{
-    <script src='@($"{file}?v={Settings.ResourceVersion}")'></script>
-}
+<script src="/lib/requirejs/require.js" data-main="/scripts/references"></script>

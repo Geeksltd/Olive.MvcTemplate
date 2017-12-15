@@ -1,4 +1,7 @@
-﻿class ApplicationPage extends OlivePage {
+﻿
+import { OlivePage } from '../lib/olive.mvc/src/OlivePage';
+
+export default class AppPage extends OlivePage {
     // Here you can override any of the base standard functions.
     // e.g: To use a different AutoComplete library, simply override handleAutoComplete(input).
 
@@ -32,7 +35,3 @@
         return super.executeAction(action, trigger);
     }
 }
-
-// Create singleton instance:
-declare var page: ApplicationPage;
-page = new ApplicationPage();

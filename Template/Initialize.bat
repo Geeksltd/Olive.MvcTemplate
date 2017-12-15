@@ -23,6 +23,11 @@ if ERRORLEVEL 1 (
 )
 
 ECHO.
+ECHO ::::::::: Installing WebPack (globally) ::::::::::::::::::::::
+ECHO.
+npm install webpack -g
+
+ECHO.
 ECHO ::::::::: Installing Bower components :::::::::::::::::::::::::::::::::
 ECHO.
 call bower install

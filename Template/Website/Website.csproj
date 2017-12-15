@@ -8,7 +8,7 @@
     <NoWarn>1701;1702;1705;1998</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <DefaultItemExcludes>node_modules\**;wwwroot\lib\**;$(DefaultItemExcludes)</DefaultItemExcludes>
+    <DefaultItemExcludes>node_modules\**;$(DefaultItemExcludes)</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="App_Data\**" />
@@ -23,7 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="_M#_TEMP\Preview\View.cshtml" />
-  </ItemGroup>
+  </ItemGroup>  
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
@@ -34,7 +34,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.1" />
     <PackageReference Include="Olive.Excel" Version="1.0.6" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.34" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.35" />
     <PackageReference Include="Olive.PDF" Version="1.0.6" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.3" />
     <PackageReference Include="Olive.Testing" Version="1.0.13" />
@@ -44,24 +44,13 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="_M#_TEMP\Preview\Controller.cs" />
-    <None Include="_M#_TEMP\Preview\DAL.cs" />
-    <None Include="_M#_TEMP\Preview\Structure.cs" />
-    <None Include="_M#_TEMP\Preview\View.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\Scripts\application.page.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\typings\olive.mvc\OlivePage.d.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\webApp.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\typings\missingDefinitions.d.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\typings\alertify\alertify.d.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\typings\jquery\jquery.validation.d.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment-node.d.ts" />
-    <TypeScriptCompile Include="wwwroot\Scripts\typings\moment\moment.d.ts" />
-  </ItemGroup>
-  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask"/>
-  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask"/>
+    <Folder Include="wwwroot\lib\olive.mvc\dist\Components\" />
+    <Folder Include="wwwroot\lib\olive.mvc\dist\Extensions\" />
+    <Folder Include="wwwroot\lib\olive.mvc\dist\Plugins\" />
+  </ItemGroup>  
+   
+  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />
+  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask" />
 
   <Target Name="WebCompile" AfterTargets="PostBuildEvent" Condition="'$(RunWebCompiler)' != 'False'">
     <WebCompiler.CompilerBuildTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\Sasscompilerconfig.json" />

@@ -9,7 +9,7 @@ namespace Modules
         {
             IsInUse().IsViewComponent().Using("Olive.Security")
                 .Markup(@"<div class=""pull-right"">
-            [#BUTTONS(Email)#] [#BUTTONS(LinkedIn)#] [#BUTTONS(Facebook)#] [#BUTTONS(Twitter)#] [#BUTTONS(GooglePlus)#]
+            [#BUTTONS(Email)#] [#BUTTONS(LinkedIn)#] [#BUTTONS(Facebook)#] [#BUTTONS(Twitter)#]
             <br/>
             [#BUTTONS(SoftwareDevelopment)#] by [#BUTTONS(Geeks)#]
             
@@ -37,9 +37,6 @@ namespace Modules
 
             Link("Twitter").NoText().Icon(FA.TwitterSquare, 3).Tooltip("Twitter")
                 .OnClick(x => x.Go("https://twitter.com/GeeksLtd").Target(OpenIn.NewBrowserWindow));
-
-            Link("GooglePlus").NoText().Icon(FA.GooglePlusSquare, 3).Tooltip("Google Plus")
-                .OnClick(x => x.Go("https://plus.google.com/115231904067592462573/about").Target(OpenIn.NewBrowserWindow));
 
             Link("Software development").CssClass("plain-text")
                 .OnClick(x => x.Go("http://www.geeks.ltd.uk").WindowName("_blank"));
