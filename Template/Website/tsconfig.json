@@ -1,5 +1,10 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "olive-page": [ "wwwroot/lib/olive.mvc/dist/olivepage" ],
+            "olive-config": [ "wwwroot/lib/olive.mvc/dist/config" ]
+        },
         "module": "amd",
         "target": "es5",
         "sourceMap": true,
@@ -9,6 +14,7 @@
         "removeComments": false
     }, "compileOnSave": true,
     "exclude": [
+        "wwwroot/lib",
         "typings",
         "dist",
         "lib"

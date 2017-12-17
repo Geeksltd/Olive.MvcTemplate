@@ -12,7 +12,7 @@
         "alertify": "alertifyjs/dist/js/alertify",
         "smartmenus": "smartmenus/src/jquery.smartmenus",
         "file-upload": "jquery-file-upload/js/jquery.fileupload",
-        "typeahead": "typeahead.js/dist/typeahead.jquery",
+        "typeahead": "jquery-typeahead/dist/jquery.typeahead.min",
 
         // Bootstrap
         "popper": "popper.js/dist/umd/popper",
@@ -29,6 +29,7 @@
         // Olive
         "olive-ext-jquery": "olive.mvc/dist/extensions/jquery",
         "olive-page": "olive.mvc/dist/olivepage",
+        "olive-config": "olive.mvc/dist/config",
         "app-page": "../scripts/AppPage",
     },
     map: {
@@ -55,7 +56,13 @@
         "spinedit": ['jquery'],
         "password-strength": ['jquery'],
         "moment-locale": ['moment'],
-        "olive-ext-jquery": ['jquery', "jquery-validate-unobtrusive"],
+        "olive-ext-jquery": {
+            deps: ['jquery', "jquery-validate-unobtrusive"],
+            exports: '_'
+        },
+        "popper": {
+            exports: '_'
+        },
         "olive-page": ["alertify", "olive-ext-jquery"]
     }
 });
@@ -64,7 +71,7 @@
 requirejs(["app-page", "olive-page",
 
     // JQuery:
-    "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive",
+    "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive", "olive-ext-jquery",
 
     // JQuery plugins:
     "chosen", "alertify", "smartmenus", "file-upload", "typeahead",

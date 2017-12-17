@@ -1,5 +1,6 @@
 ﻿
-import { OlivePage } from '../lib/olive.mvc/src/OlivePage';
+import OlivePage from 'olive-page';
+import Config from 'olive-config';
 
 export default class AppPage extends OlivePage {
     // Here you can override any of the base standard functions.
@@ -7,7 +8,7 @@ export default class AppPage extends OlivePage {
 
     constructor() {
         super();
-        this.DISABLE_BUTTONS_DURING_AJAX = true;
+        Config.DISABLE_BUTTONS_DURING_AJAX = true;
     }
 
     initialize() {

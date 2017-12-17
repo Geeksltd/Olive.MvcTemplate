@@ -10,7 +10,7 @@
         "jquery-validation-unobtrusive": "3.2.6",
         "jquery-validation-bootstrap-tooltip": "*",
         "jquery-typeahead": "*",
-        "bootstrap": "v4.0.0-beta.2",
+        "bootstrap": "v4.0.0-beta",
         "jquery-file-upload": "*",
         "ckeditor": "#full/4.6.x",
         "alertifyjs": "~0.3.18",
@@ -23,13 +23,13 @@
         "bootstrap-filestyle": "~1.1.2",
         "smartmenus": "1.0.0-beta1",
         "seiyria-bootstrap-slider": "7.1.1",
-        "olive.mvc": "0.3.2",
+        "olive.mvc": "0.3.3",
         "chosen": "~1.8.2",
         "requirejs": "*"
     },
   "devDependencies": {},
   "resolutions": {
-    "bootstrap": "^v4.0.0-beta.2",
+    "bootstrap": "^v4.0.0-beta",
     "jquery": "^3.2.1"
   }
 }

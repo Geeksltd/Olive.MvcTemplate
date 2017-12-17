@@ -8,7 +8,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "../lib/olive.mvc/src/OlivePage"], function (require, exports, OlivePage_1) {
+define(["require", "exports", "olive-page", "olive-config"], function (require, exports, olive_page_1, olive_config_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
     var AppPage = (function (_super) {
         __extends(AppPage, _super);
@@ -16,7 +16,7 @@ define(["require", "exports", "../lib/olive.mvc/src/OlivePage"], function (requi
         // e.g: To use a different AutoComplete library, simply override handleAutoComplete(input).
         function AppPage() {
             var _this = _super.call(this) || this;
-            _this.DISABLE_BUTTONS_DURING_AJAX = true;
+            olive_config_1.default.DISABLE_BUTTONS_DURING_AJAX = true;
             return _this;
         }
         AppPage.prototype.initialize = function () {
@@ -39,7 +39,7 @@ define(["require", "exports", "../lib/olive.mvc/src/OlivePage"], function (requi
             return _super.prototype.executeAction.call(this, action, trigger);
         };
         return AppPage;
-    }(OlivePage_1.OlivePage));
+    }(olive_page_1.default));
     exports.default = AppPage;
 });
 //# sourceMappingURL=AppPage.js.map
