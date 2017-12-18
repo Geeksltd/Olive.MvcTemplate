@@ -13,6 +13,7 @@
         "smartmenus": "smartmenus/src/jquery.smartmenus",
         "file-upload": "jquery-file-upload/js/jquery.fileupload",
         "typeahead": "jquery-typeahead/dist/jquery.typeahead.min",
+        "combodate": "combodate/src/combodate",
 
         // Bootstrap
         "popper": "popper.js/dist/umd/popper",
@@ -44,6 +45,7 @@
     shim: {
         "jquery-validate": ['jquery'],
         "validation-style": ['jquery', "jquery-validate", "bootstrap"],
+        "combodate": ['jquery'],
 
         "typeahead": ['jquery'],
         "file-upload": ['jquery', 'jquery-ui'],
@@ -63,7 +65,7 @@
         "popper": {
             exports: '_'
         },
-        "olive-page": ["alertify", "olive-ext-jquery"]
+        "olive-page": ["alertify", "olive-ext-jquery", "combodate"]
     }
 });
 
