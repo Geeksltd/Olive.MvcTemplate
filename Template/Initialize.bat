@@ -1,56 +1,69 @@
 
 @echo off
 
-ECHO.
+WHERE yarn > nul
+if ERRORLEVEL 1 (
+    echo YARN is not installed! You can install it from https://yarnpkg.com/latest.msi
+	goto error
+)
+
+ECHO ::::::::: Ensuring WebPack is installed (globally) ::::::::::::::::::::::
+call yarn global add webpack
+if ERRORLEVEL 1 (goto error)
+
+ECHO ::::::::: Ensuring bower is installed (globally) ::::::::::::::::::::::
+WHERE bower > nul
+if ERRORLEVEL 1 (call yarn global add bower)
+WHERE bower > nul
+if ERRORLEVEL 1 (goto error)
+
+
 ECHO ::::::::: Building @Model :::::::::::::::::::::::::::::::::::::::::::::
-ECHO.
 cd @M#\@Model
 call dotnet build -v q
+if ERRORLEVEL 1 (goto error)
 
 ECHO.
 ECHO ::::::::: Building Domain :::::::::::::::::::::::::::::::::::::::::::::
-ECHO.
 cd ..\..\Domain
 call dotnet build -v q
+if ERRORLEVEL 1 (goto error)
+
 cd ..\Website
-
 ECHO.
-ECHO ::::::::: Installing YARN (globally) :::::::::::::::::::::::::::::::::::
-ECHO.
+ECHO ::::::::: Installing YARN :::::::::::::::::::::::::::::::::::
 call yarn install
-
-ECHO.
-ECHO ::::::::: Ensuring bower is installed (globally) ::::::::::::::::::::::
-ECHO.
-WHERE bower > nul
-if ERRORLEVEL 1 (	
-	call yarn global add bower	
-)
-
-ECHO.
-ECHO ::::::::: Installing WebPack (globally) ::::::::::::::::::::::
-ECHO.
-npm install webpack -g
+if ERRORLEVEL 1 (goto error)
 
 ECHO.
 ECHO ::::::::: Installing Bower components :::::::::::::::::::::::::::::::::
-ECHO.
 call bower install
-
+if ERRORLEVEL 1 (goto error)
 
 ECHO.
-ECHO ::::::::: Rebuilding sass files :::::::::::::::::::::::::::::::::
-ECHO.
+ECHO ::::::::: Building sass files :::::::::::::::::::::::::::::::::
 call wwwroot\Styles\build\SassCompiler.exe Sasscompilerconfig.json
+if ERRORLEVEL 1 (goto error)
 
 ECHO.
-ECHO ::::::::: Restoring Nuget packages ::::::::::::::::::::::::::::::::::::
-ECHO.
-call dotnet restore -v q
+ECHO ::::::::: Restoring Olive DLLs ::::::::::::::::::::::::::::::::::::
 call dotnet build
+if ERRORLEVEL 1 (goto error)
 
 ECHO.
 ECHO ::::::::: Building @UI ::::::::::::::::::::::::::::::::::::::::::::::::
 ECHO.
 cd ..\@M#\@UI
 call dotnet build -v q
+if ERRORLEVEL 1 (goto error)
+
+exit /b 0
+
+
+:error
+echo ##################################
+echo Error occured!!!
+echo Please run Initialize.bat again after fixing it.
+echo ##################################
+set /p cont= Press Enter to exit.
+exit /b -1
