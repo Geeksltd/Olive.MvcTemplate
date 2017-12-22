@@ -7,18 +7,19 @@ namespace Modules
     {
         public EmailTemplateForm()
         {
-            SupportsAdd(false).SupportsEdit().HeaderText("Email Template Details");
+            SupportsAdd(false).HeaderText("Email Template Details");
+
+            MasterDetail<Details>(x => x.Blocks);
 
             Box("Test", BoxTemplate.HeaderBox)
                 .Add(
                     Field(x => x.Key),
                     Field(x => x.Subject),
-                    Field(x => x.Body).ExtraControlAttributes("data_toolbar=\"Compact\"")
-                                      .Control(ControlType.HtmlEditor),
+                    Field(x => x.Body).AsHtmlEditor().ExtraControlAttributes("data_toolbar=\"Compact\""),
                     Field(x => x.MandatoryPlaceholders)
             );
 
-            Button("Cancel").CausesValidation(false).OnClick(x => x.ReturnToPreviousPage());
+            Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
             Button("Save").IsDefault().Icon(FA.Check)
             .OnClick(x =>
@@ -26,6 +27,14 @@ namespace Modules
                 x.SaveInDatabase();
                 x.ReturnToPreviousPage();
             });
+        }
+    }
+
+    public class Details : FormModule<ContentBlock>
+    {
+        public Details()
+        {
+            Field(x => x.Key);
         }
     }
 }

@@ -18,8 +18,8 @@ WHERE bower > nul
 if ERRORLEVEL 1 (goto error)
 
 
-ECHO ::::::::: Building @Model :::::::::::::::::::::::::::::::::::::::::::::
-cd @M#\@Model
+ECHO ::::::::: Building #Model :::::::::::::::::::::::::::::::::::::::::::::
+cd M#\Model
 call dotnet build -v q
 if ERRORLEVEL 1 (goto error)
 
@@ -51,9 +51,9 @@ call dotnet build
 if ERRORLEVEL 1 (goto error)
 
 ECHO.
-ECHO ::::::::: Building @UI ::::::::::::::::::::::::::::::::::::::::::::::::
+ECHO ::::::::: Building #UI ::::::::::::::::::::::::::::::::::::::::::::::::
 ECHO.
-cd ..\@M#\@UI
+cd ..\M#\UI
 call dotnet build -v q
 if ERRORLEVEL 1 (goto error)
 

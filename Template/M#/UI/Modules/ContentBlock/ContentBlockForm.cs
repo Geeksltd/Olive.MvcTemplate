@@ -10,7 +10,7 @@ namespace Modules
             HeaderText("Content Block Details");
 
             Field(x => x.Key).Readonly();
-            Field(x => x.Content).Control(ControlType.HtmlEditor);
+            Field(x => x.Content).AsHtmlEditor();
 
             Button("Cancel").OnClick().ReturnToPreviousPage();
 

@@ -29,16 +29,22 @@ namespace Modules
 
             ViewModelProperty<string>("Error").FromRequestParam("error");
 
-            Button("Login by Google").CausesValidation(false).ExtraTagAttributes("formmethod=post")
-                .CssClass("btn-social btn-google").Icon(FA.GooglePlus)
+            Button("Login by Google")
+                .ExtraTagAttributes("formmethod=post")
+                .CssClass("btn-social btn-google")
+                .Icon(FA.GooglePlus)
                 .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Google\");"));
 
-            Button("Login by Facebook").CausesValidation(false).ExtraTagAttributes("formmethod=post")
-                .CssClass("btn-social btn-facebook").Icon(FA.Facebook)
+            Button("Login by Facebook")
+                .ExtraTagAttributes("formmethod=post")
+                .CssClass("btn-social btn-facebook")
+                .Icon(FA.Facebook)
                 .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Facebook\");"));
 
-            Button("Login by Microsoft").CausesValidation(false).ExtraTagAttributes("formmethod=post")
-                .CssClass("btn-social btn-microsoft").Icon(FA.Windows)
+            Button("Login by Microsoft")
+                .ExtraTagAttributes("formmethod=post")
+                .CssClass("btn-social btn-microsoft")
+                .Icon(FA.Windows)
                 .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Microsoft\");"));
         }
     }

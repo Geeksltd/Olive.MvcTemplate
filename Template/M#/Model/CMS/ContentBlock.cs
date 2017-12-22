@@ -10,6 +10,10 @@ namespace Domain
 
             DefaultToString = String("Key").Mandatory().Unique();
             BigString("Content").Mandatory();
+
+            Associate<EmailTemplate>("Template");
+
+            
         }
     }
 }

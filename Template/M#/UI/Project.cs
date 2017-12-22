@@ -1,5 +1,5 @@
 // ********************************************************************
-// WARNING: This file is auto-generated from @Model\\Project.cs
+// WARNING: This file is auto-generated from Model\\Project.cs
 // and may be overwritten at any time. Do not change it manually.
 // ********************************************************************
 

@@ -9,8 +9,7 @@ namespace Modules
         {
             HeaderText("Settings").DataSource("Domain.Settings.Current");
 
-            Field(x => x.PasswordResetTicketExpiryMinutes)
-                .Control(ControlType.NumericUpDown);
+            Field(x => x.PasswordResetTicketExpiryMinutes).AsNumericUpDown();
 
             Button("Save").IsDefault()
             .OnClick(x =>
@@ -18,7 +17,6 @@ namespace Modules
                 x.SaveInDatabase();
                 x.GentleMessage("Updated");
             });
-
         }
     }
 }

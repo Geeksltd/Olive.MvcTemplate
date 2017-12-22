@@ -12,6 +12,8 @@ namespace Domain
             String("Key").Mandatory().Unique();
             BigString("Body", 10).Mandatory().Lines(10);
             String("Mandatory placeholders");
+
+            InverseAssociate<ContentBlock>("Blocks", "Template");
         }
     }
 }
