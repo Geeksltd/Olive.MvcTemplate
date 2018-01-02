@@ -171,6 +171,6 @@ Website/Scripts/Lib/MSharp/*.js.map
 /packages/
 .vs/
 
-M#\Current\Stats.json
+M#/Current/Stats.json
 M#/lib/*
 !M#/lib/netcoreapp2.0/MSharp.DSL.runtimeconfig.json
