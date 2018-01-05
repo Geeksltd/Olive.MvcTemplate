@@ -12,8 +12,6 @@ namespace Domain
             BigString("Content").Mandatory();
 
             Associate<EmailTemplate>("Template");
-
-            
         }
     }
 }
