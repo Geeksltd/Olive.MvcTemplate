@@ -18,3 +18,5 @@
     @extend .list-group-item;
     @extend .list-group-item-action;
 }
+
+.navbar li.active > a {color:#fff;}

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/Styles/Imports/nav.css",
+    "inputFile": "wwwroot/Styles/Imports/nav.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/FrontEnd.css",
+    "inputFile": "wwwroot/Styles/FrontEnd.scss"
+  }
+]
