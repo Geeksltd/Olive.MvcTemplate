@@ -22,6 +22,7 @@
     <Compile Remove="_M#_TEMP\Preview\Structure.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\scripts\components\CustomModule1.ts" />
     <Content Remove="_M#_TEMP\Preview\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +51,9 @@
     <Folder Include="wwwroot\lib\olive.mvc\dist\Components\" />
     <Folder Include="wwwroot\lib\olive.mvc\dist\Extensions\" />
     <Folder Include="wwwroot\lib\olive.mvc\dist\Plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\scripts\components\CustomModule1.ts" />
   </ItemGroup>  
    
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />

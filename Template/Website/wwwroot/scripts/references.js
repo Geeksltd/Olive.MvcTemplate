@@ -89,4 +89,10 @@ requirejs(["app-page", "olive-page",
 ],
     function (AppPage) {
         window.page = new AppPage.default();
+
+        // TODO:
+        // For each custom app- specific script requirement:
+        //    > Add a TS file inside ../scripts/somponents
+        //    > Add a line similar to below to invoke it.
+        //        requirejs(["../Scripts/Components/CustomModule1"], type => type.default.Run());
     });
