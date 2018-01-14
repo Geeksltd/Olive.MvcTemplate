@@ -13,15 +13,18 @@ namespace Modules
                 .HeaderText("Key")
                 .Text("c#:item.Key")
                 .SortKey("Key")
-            .OnClick(x =>
-            {
-                x.Go<Admin.Settings.ContentBlocks.EnterPage>().SendReturnUrl()
-                    /*M#:w[18]T-Prop:Key-Type:QueryStringParameter-The destination page doesn't seem to utilise Query String 'item' anywhere.*/.Send("item", "item.ID");
-            });
+                .OnClick(x =>
+                {
+                    x.Go<Admin.Settings.ContentBlocks.EnterPage>()
+                        .SendReturnUrl()
+                        .Send("item", "item.ID");
+                });
 
-            Column(x => x.Content).DisplayExpression("c#:item.Content.OrEmpty().RemoveHtmlTags().Summarize(80)");
+            Column(x => x.Content)
+                .DisplayExpression("c#:item.Content.OrEmpty().RemoveHtmlTags().Summarize(80)");
 
-            Button("New Content Block").Icon(FA.Plus)
+            Button("New Content Block")
+                .Icon(FA.Plus)
                 .OnClick(x => x.Go<Admin.Settings.ContentBlocks.EnterPage>().SendReturnUrl());
         }
     }

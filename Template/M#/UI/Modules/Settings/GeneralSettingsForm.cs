@@ -11,12 +11,13 @@ namespace Modules
 
             Field(x => x.PasswordResetTicketExpiryMinutes).AsNumericUpDown();
 
-            Button("Save").IsDefault()
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Updated");
-            });
+            Button("Save")
+                .IsDefault()
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Updated");
+                });
         }
     }
 }

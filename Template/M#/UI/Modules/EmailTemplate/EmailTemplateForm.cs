@@ -15,18 +15,22 @@ namespace Modules
                 .Add(
                     Field(x => x.Key),
                     Field(x => x.Subject),
-                    Field(x => x.Body).AsHtmlEditor().ExtraControlAttributes("data_toolbar=\"Compact\""),
+                    Field(x => x.Body)
+                         .AsHtmlEditor()
+                         .ExtraControlAttributes("data_toolbar=\"Compact\""),
                     Field(x => x.MandatoryPlaceholders)
             );
 
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
-            Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.ReturnToPreviousPage();
-            });
+            Button("Save")
+                .IsDefault()
+                .Icon(FA.Check)
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.ReturnToPreviousPage();
+                });
         }
     }
 

@@ -11,12 +11,16 @@ namespace Modules
 
             //================ Columns: ================
 
-            LinkColumn("Key").HeaderText("Key").Text("c#:item.Key").SortKey("Key")
-            .OnClick(x =>
-            {
-                x.Go<Admin.Settings.EmailTemplates.EnterPage>().SendReturnUrl()
-                    .Send("item", "item.ID");
-            });
+            LinkColumn("Key")
+                .HeaderText("Key")
+                .Text("c#:item.Key")
+                .SortKey("Key")
+                .OnClick(x =>
+                {
+                    x.Go<Admin.Settings.EmailTemplates.EnterPage>()
+                        .SendReturnUrl()
+                        .Send("item", "item.ID");
+                });
 
             Column(x => x.Subject);
 

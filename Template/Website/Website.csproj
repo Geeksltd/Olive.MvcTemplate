@@ -33,15 +33,15 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.6.17" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.1" />
-    <PackageReference Include="Olive.Excel" Version="1.0.6" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.41" />
-    <PackageReference Include="Olive.PDF" Version="1.0.6" />
+    <PackageReference Include="Olive.Excel" Version="1.0.7" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.42" />
+    <PackageReference Include="Olive.PDF" Version="1.0.7" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.3" />
-    <PackageReference Include="Olive.Testing" Version="1.0.13" />
+    <PackageReference Include="Olive.Testing" Version="1.0.15" />
     <PackageReference Include="SkiaSharp" Version="1.59.3" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +51,12 @@
     <Folder Include="wwwroot\lib\olive.mvc\dist\Components\" />
     <Folder Include="wwwroot\lib\olive.mvc\dist\Extensions\" />
     <Folder Include="wwwroot\lib\olive.mvc\dist\Plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_M#_TEMP\Preview\Controller.cs" />
+    <None Include="_M#_TEMP\Preview\DAL.cs" />
+    <None Include="_M#_TEMP\Preview\Structure.cs" />
+    <None Include="_M#_TEMP\Preview\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\scripts\components\CustomModule1.ts" />

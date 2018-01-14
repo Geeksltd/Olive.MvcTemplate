@@ -13,9 +13,17 @@ namespace Modules
             Field(x => x.Email);
             Field(x => x.IsDeactivated);
 
-            Button("Back").Icon(FA.ChevronLeft).OnClick(x => x.ReturnToPreviousPage());
+            Button("Back")
+                .Icon(FA.ChevronLeft)
+                .OnClick(x => x.ReturnToPreviousPage());
 
-            Button("Delete").Icon(FA.Remove).OnClick(x => { x.DeleteItem(); x.ReturnToPreviousPage(); });
+            Button("Delete")
+                .Icon(FA.Remove)
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.ReturnToPreviousPage();
+                });
         }
     }
 }

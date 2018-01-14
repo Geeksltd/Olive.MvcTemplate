@@ -12,14 +12,16 @@ namespace Modules
             Field(x => x.Key).Readonly();
             Field(x => x.Content).AsHtmlEditor();
 
-            Button("Cancel").OnClick().ReturnToPreviousPage();
+            Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
-            Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.ReturnToPreviousPage();
-            });
+            Button("Save")
+                .IsDefault()
+                .Icon(FA.Check)
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.ReturnToPreviousPage();
+                });
         }
     }
 }
