@@ -48,11 +48,6 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\lib\olive.mvc\dist\Components\" />
-    <Folder Include="wwwroot\lib\olive.mvc\dist\Extensions\" />
-    <Folder Include="wwwroot\lib\olive.mvc\dist\Plugins\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="_M#_TEMP\Preview\Controller.cs" />
     <None Include="_M#_TEMP\Preview\DAL.cs" />
     <None Include="_M#_TEMP\Preview\Structure.cs" />
