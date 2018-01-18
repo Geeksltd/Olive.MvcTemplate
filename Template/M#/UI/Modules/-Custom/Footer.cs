@@ -17,7 +17,7 @@ namespace Modules
                 .Using("Olive.Security")
                 .RootCssClass("website-footer")
                 .Markup(@"
-            <div class=""pull-right"">
+           <div class=""pull-right"">
                [#BUTTONS(Email)#]
                [#BUTTONS(LinkedIn)#]
                [#BUTTONS(Facebook)#]
@@ -29,10 +29,11 @@ namespace Modules
                 &copy; @LocalTime.Now.Year. All rights reserved.
             </div>");
 
-            Link("Logout").ValidateAntiForgeryToken(false)
+            Link("Logout")
+                .ValidateAntiForgeryToken(false)
                 .Icon(FA.SignOut)
                 .MarkupTemplate("Hi @GetUser() ([#Button#])")
-                .VisibleIf(AppRole.User)
+                .VisibleIf(CommonCriterion.IsUserLoggedIn)
                 .OnClick(x =>
                 {
                     x.CSharp("await OAuth.Instance.LogOff();");
@@ -42,27 +43,32 @@ namespace Modules
             Link("Geeks")
                 .OnClick(x => x.Go(DEVELOPER, OpenIn.NewBrowserWindow));
 
-            Link("Email").NoText()
+            Link("Email")
+                .NoText()
                 .Icon(FA.EnvelopeSquare, 3)
                 .Tooltip("Contact Us")
                 .OnClick(x => x.Go(EMAIL, OpenIn.NewBrowserWindow));
 
-            Link("LinkedIn").NoText()
+            Link("LinkedIn")
+                .NoText()
                 .Icon(FA.LinkedinSquare, 3)
                 .Tooltip("LinkedIn")
                 .OnClick(x => x.Go(LINKED_IN, OpenIn.NewBrowserWindow));
 
-            Link("Facebook").NoText()
+            Link("Facebook")
+                .NoText()
                 .Icon(FA.FacebookSquare, 3)
                 .Tooltip("Facebook")
                 .OnClick(x => x.Go(FACEBOOK, OpenIn.NewBrowserWindow));
 
-            Link("Twitter").NoText()
+            Link("Twitter")
+                .NoText()
                 .Icon(FA.TwitterSquare, 3)
                 .Tooltip("Twitter")
                 .OnClick(x => x.Go(TWITTER, OpenIn.NewBrowserWindow));
 
-            Link("Software development").CssClass("plain-text")
+            Link("Software development")
+                .CssClass("plain-text")
                 .OnClick(x => x.Go(DEVELOPER, OpenIn.NewBrowserWindow));
         }
     }

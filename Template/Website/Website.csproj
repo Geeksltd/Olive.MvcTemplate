@@ -38,10 +38,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.1" />
     <PackageReference Include="Olive.Excel" Version="1.0.7" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.42" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.48" />
     <PackageReference Include="Olive.PDF" Version="1.0.7" />
-    <PackageReference Include="Olive.Security.Auth0" Version="1.0.3" />
-    <PackageReference Include="Olive.Testing" Version="1.0.15" />
+    <PackageReference Include="Olive.Security.Auth0" Version="1.0.4" />
+    <PackageReference Include="Olive.Testing" Version="1.0.21" />
     <PackageReference Include="SkiaSharp" Version="1.59.3" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\scripts\components\CustomModule1.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Api\" />
   </ItemGroup>  
    
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />

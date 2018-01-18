@@ -23,20 +23,12 @@
         public static void Run()
         {
             RecurringJob.AddOrUpdate("Clean old temp uploads",() => CleanOldTempUploads(), Cron.MinuteInterval(10));
-            
-            RecurringJob.AddOrUpdate("Send email queue items",() => SendEmailQueueItems(), Cron.MinuteInterval(1));
         }
         
         /// <summary>Clean old temp uploads</summary>
         public static async Task CleanOldTempUploads()
         {
             await Olive.Mvc.FileUploadService.DeleteTempFiles(olderThan: 1.Hours());
-        }
-        
-        /// <summary>Send email queue items</summary>
-        public static async Task SendEmailQueueItems()
-        {
-            await Olive.Services.Email.EmailService.SendAll();
         }
     }
 }

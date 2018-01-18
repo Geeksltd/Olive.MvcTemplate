@@ -20,7 +20,7 @@ namespace Controllers
                 return ShowError(string.Empty, $"Error from external provider: {remoteError}");
 
             var info = await HttpContext.AuthenticateAsync();
-            if (info == null) return Redirect("/login");
+            if (info == null || !info.Succeeded) return Redirect("/login");
 
             var issuer = info.Principal.GetFirstIssuer();
             var email = info.Principal.GetEmail();

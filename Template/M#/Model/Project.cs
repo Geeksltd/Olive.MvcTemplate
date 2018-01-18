@@ -6,47 +6,22 @@ namespace App
     {
         public Project()
         {
-            AjaxRedirect()
-                .UseSqlDatetime2()
-                .AvoidColonForFormElements()
-                .AvoidColonForSearchElements()
-                .AvoidColonForViewElements()
-                .NetCore()
-                .StyleRequiredFormElements()
-                .SupportsCSharp6()
-                .Name("MY.PROJECT.NAME")
-                .DataAccessNamespace("AppData")
-                .ValidationStyle("Tooltip")
-                .Encoding("UTF-8")
-                .GeneratedDALFolder("[GEN-DAL]")
-                .GeneratedClassesFolder("[GEN-Entities]")
-                .ModelProjectFolder("Domain")
-                .PageModuleContainerCss("module")
-                .SolutionFile("MY.PROJECT.NAME.sln")
-                .DefaultDateFormat("{0:yyyy-MM-dd}")
-                .DefaultDateTimeFormat("{0:yyyy-MM-dd @ hh:mm tt}")
-                .DefaultTimeFormat("{0:hh:mm tt}")
-                .ListButtonsLocation("Top");
+            Name("MY.PROJECT.NAME").SolutionFile("MY.PROJECT.NAME.sln");
 
-            Role("User");
             Role("Local.Request");
             Role("Anonymous");
-            Role("Administrator").SkipQueryStringSecurity();
+            Role("Admin").SkipQueryStringSecurity();
 
             Layout("Front end").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/FrontEnd.cshtml");
+            Layout("Blank").AjaxRedirect().VirtualPath("~/Views/Layouts/Blank.cshtml");
             Layout("Front end Modal").Modal().VirtualPath("~/Views/Layouts/FrontEnd.Modal.cshtml");
 
             PageSetting("LeftMenu");
             PageSetting("SubMenu");
             PageSetting("TopMenu");
 
-            // ------------------ Automated Tasks ------------------
-
             AutoTask("Clean old temp uploads").Every(10, TimeUnit.Minute)
                 .Run("await Olive.Mvc.FileUploadService.DeleteTempFiles(olderThan: 1.Hours());");
-
-            AutoTask("Send email queue items").Every(1, TimeUnit.Minute)
-                .Run("await Olive.Services.Email.EmailService.SendAll();");
         }
     }
 }

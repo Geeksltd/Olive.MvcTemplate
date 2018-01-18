@@ -62,11 +62,13 @@
 
         void SendEmail()
         {
-            EmailTemplate.RecoverPassword.Send(User, new
-            {
-                UserId = User.Name,
-                Link = $"<a href='{GetResetPasswordUrl()}'> Reset Your Password </a>",
-            });
+            // TODO: Invoke the email service's API to send it.
+
+            //EmailTemplate.RecoverPassword.Send(User, new
+            //{
+            //    UserId = User.Name,
+            //    Link = $"<a href='{GetResetPasswordUrl()}'> Reset Your Password </a>",
+            //});
         }
 
         string GetResetPasswordUrl() => Context.Request.GetAbsoluteUrl("/password/reset/" + Ticket.ID);

@@ -15,24 +15,8 @@ namespace Domain
         {
             await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
 
-            await CreateEmailTemplates();
             await CreateContentBlocks();
             await CreateAdmin();
-        }
-
-        static Task CreateEmailTemplates()
-        {
-            return Create(new EmailTemplate
-            {
-                Key = nameof(EmailTemplate.RecoverPassword),
-                Subject = "Recover password",
-                MandatoryPlaceholders = "USERID, LINK",
-                Body = @"Dear [#USERID#],</br></br>
-                         Please click on the following link to reset your password.</br>
-                         If you did not request this password reset then please contact us.</br></br>
-                         <div>[#LINK#]</div><br/>
-                         Best regards"
-            });
         }
 
         static async Task CreateContentBlocks()

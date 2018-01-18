@@ -10,5 +10,9 @@
   {
     "outputFile": "wwwroot/Styles/Imports/nav.css",
     "inputFile": "wwwroot/Styles/Imports/nav.scss"
-  } 
+  },
+  {
+    "outputFile": "wwwroot/public/css/Blank.css",
+    "inputFile": "wwwroot/Styles/Blank.scss"
+  }
 ]

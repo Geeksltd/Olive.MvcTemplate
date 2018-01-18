@@ -7,10 +7,9 @@ namespace MSharp
 {
     partial class AppRole
     {
-        internal static ProjectRole User => ProjectRole.Of("User");
         internal static ProjectRole Local_Request => ProjectRole.Of("Local.Request");
         internal static ProjectRole Anonymous => ProjectRole.Of("Anonymous");
-        internal static ProjectRole Administrator => ProjectRole.Of("Administrator");
+        internal static ProjectRole Admin => ProjectRole.Of("Admin");
     }
     
     partial class Layouts

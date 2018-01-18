@@ -16,8 +16,9 @@ namespace Modules
                 .NoText()
                 .CssClass("navbar-toggler collapsed")
                 .Icon(FA.Bars)
-                .ExtraTagAttributes("type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" " +
-                   "aria-expanded=\"false\" aria-controls=\".navbar-collapse\" aria-label=\"Toggle navigation\"");
+                .ExtraTagAttributes("type=\"button\" data-toggle=\"collapse\" " +
+                "data-target=\".navbar-collapse\" aria-expanded=\"false\" " +
+                "aria-controls=\".navbar-collapse\" aria-label=\"Toggle navigation\"");
 
             Markup($@"
             <nav class=""navbar navbar-expand-md navbar-inverse bg-dark sticky-top"">

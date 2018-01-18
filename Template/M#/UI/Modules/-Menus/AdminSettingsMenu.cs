@@ -15,9 +15,6 @@ namespace Modules
             Item("Administrators")
                 .OnClick(x => x.Go<Admin.Settings.AdministratorsPage>());
 
-            Item("Email templates")
-                .OnClick(x => x.Go<Admin.Settings.EmailTemplatesPage>());
-
             Item("Content blocks")
                 .OnClick(x => x.Go<Admin.Settings.ContentBlocksPage>());
         }
