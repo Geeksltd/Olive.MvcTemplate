@@ -22,7 +22,7 @@
 	
 	@Html.RegisterDynamicScriptFiles()
 	@RenderSection("scripts", required: false)
-	@Html.ResetDatabaseLink()
+	@Html.WebTestWidget()
 	@Html.RegisterStartupActions()
 	@Html.RunJavascript("page.ensureNonModal();")
 </main>

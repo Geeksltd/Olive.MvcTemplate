@@ -14,6 +14,7 @@ namespace MSharp
     
     partial class Layouts
     {
+        internal static MasterPage Blank => MasterPage.Of("Blank");
         internal static MasterPage FrontEnd => MasterPage.Of("Front end");
         internal static MasterPage FrontEndModal => MasterPage.Of("Front end Modal");
     }

@@ -6,7 +6,7 @@ public static class AuthenticationBuilderExtensions
 {
     // To obtain the keys See > https://github.com/Geeksltd/Olive/blob/master/Olive.Security/Config.md
 
-    public static void ConfigureSocialAuth(this AuthenticationBuilder auth)
+    public static void AddSocialAuth(this AuthenticationBuilder auth)
     {
         #region Microsoft
         // auth.AddMicrosoftAccount(config =>
