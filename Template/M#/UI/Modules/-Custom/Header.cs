@@ -9,7 +9,7 @@ namespace Modules
         {
             IsInUse().IsViewComponent().WrapInForm(false);
 
-            var logo = Image("Logo").CssClass("logo").ImageUrl("~/public/img/Logo.png")
+            var logo = Image("Logo").CssClass("logo").ImageUrl("~/img/Logo.png")
                   .OnClick(x => x.Go("~/"));
 
             var burger = Link("Burger")

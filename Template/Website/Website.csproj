@@ -26,7 +26,7 @@
     <Content Remove="_M#_TEMP\Preview\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\Styles\Imports\nav.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
   </ItemGroup>  
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
@@ -56,11 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\scripts\components\CustomModule1.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\Api\" />
-  </ItemGroup>  
-   
+  </ItemGroup>     
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask" />
 

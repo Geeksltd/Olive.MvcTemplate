@@ -5,10 +5,11 @@
             <div class="content"> @RenderBody() </div>
         </div>
     </div>
-
-
+    
     @if (!Request.IsAjaxRequest())
-    {@Html.Partial("Common.Scripts")}
+    {
+        <script src="/lib/requirejs/require.js" data-main="/scripts/references"></script>
+    }
 
     @RenderSection("scripts", required: false)
 

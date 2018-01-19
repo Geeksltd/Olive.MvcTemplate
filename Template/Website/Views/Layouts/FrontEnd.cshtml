@@ -2,27 +2,29 @@
 @{ var leftMenu = ViewData["LeftMenu"].ToStringOrEmpty(); }
 
 <main>
-	<header> @await Component.InvokeAsync(typeof(Header)) </header>
+    <header> @await Component.InvokeAsync(typeof(Header)) </header>
 
-	<div class="container-fluid">
-		<div class="page">
-			@if (leftMenu.HasValue())
-			{
-				<div class="side-bar"> @await Component.InvokeAsync(ViewData["LeftMenu"].ToString()) </div>
-			}
+    <div class="container-fluid">
+        <div class="page">
+            @if (leftMenu.HasValue())
+            {
+                <div class="side-bar"> @await Component.InvokeAsync(ViewData["LeftMenu"].ToString()) </div>
+            }
 
-			<div class="content @("full".OnlyWhen(leftMenu.IsEmpty()))">@RenderBody()</div>
-		</div>
-	</div>
+            <div class="content @("full".OnlyWhen(leftMenu.IsEmpty()))">@RenderBody()</div>
+        </div>
+    </div>
 
-	<footer>@await Component.InvokeAsync(typeof(Footer))</footer>
-	
-	@if (!Request.IsAjaxCall())
-	{@Html.Partial("Common.Scripts")}
-	
-	@Html.RegisterDynamicScriptFiles()
-	@RenderSection("scripts", required: false)
-	@Html.WebTestWidget()
-	@Html.RegisterStartupActions()
-	@Html.RunJavascript("page.ensureNonModal();")
+    <footer>@await Component.InvokeAsync(typeof(Footer))</footer>
+
+    @if (!Request.IsAjaxRequest())
+    {
+        <script src="/lib/requirejs/require.js" data-main="/scripts/references"></script>
+    }
+
+    @Html.RegisterDynamicScriptFiles()
+    @RenderSection("scripts", required: false)
+    @Html.WebTestWidget()
+    @Html.RegisterStartupActions()
+    @Html.RunJavascript("page.ensureNonModal();")
 </main>
