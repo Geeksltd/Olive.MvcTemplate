@@ -36,13 +36,13 @@
     map: {
         "*": {
             "jquery-ui/ui/widget": "jquery-ui",
-            "Popper": "popper",
-            "Popper.js": "popper",
+            "popper.js": "popper",
             '../moment': 'moment',
             'olive': "olive.mvc/dist"
         }
     },
     shim: {
+        "bootstrap": ["jquery", "popper"],
         "jquery-validate": ['jquery'],
         "validation-style": ['jquery', "jquery-validate", "bootstrap"],
         "combodate": ['jquery'],
@@ -54,7 +54,6 @@
         "smartmenus": ['jquery'],
         "jquery-validate-unobtrusive": ['jquery-validate'],
         'backbone.layoutmanager': ['backbone'],
-        "bootstrap": ["jquery", "popper"],
         "spinedit": ['jquery'],
         "password-strength": ['jquery'],
         "moment-locale": ['moment'],
@@ -62,15 +61,11 @@
             deps: ['jquery', "jquery-validate-unobtrusive"],
             exports: '_'
         },
-        "popper": {
-            exports: '_'
-        },
         "olive-page": ["alertify", "olive-ext-jquery", "combodate"]
     }
 });
 
-
-requirejs(["app-page", "olive-page",
+var mainScripts = ["app-page", "olive-page",
 
     // JQuery:
     "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive", "olive-ext-jquery",
@@ -86,13 +81,24 @@ requirejs(["app-page", "olive-page",
     "spinedit", "password-strength", "slider", "file-style",
 
     // "validation-style" ------> Error
-],
-    function (AppPage) {
-        window.page = new AppPage.default();
+];
 
-        // TODO:
-        // For each custom app- specific script requirement:
-        //    > Add a TS file inside ../scripts/somponents
-        //    > Add a line similar to below to invoke it.
-        //        requirejs(["../Scripts/Components/CustomModule1"], type => type.default.Run());
-    });
+requirejs(["popper.js"], function (p) {
+    console.log(p);
+
+    window.popper = window.Popper = p;
+    requirejs(mainScripts,
+        function (AppPage) {
+            window.page = new AppPage.default();
+            loadAppScripts();
+        });
+});
+
+function loadAppScripts() {
+    // TODO:
+    // For each custom app-specific script requirement:
+    //    > Add a TS file inside ../scripts/somponents
+    //    > Add a line similar to below to invoke it.
+    //        requirejs(["../Scripts/Components/CustomModule1"], type => type.default.Run());
+}
+

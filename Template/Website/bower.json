@@ -11,7 +11,7 @@
         "jquery-validation-unobtrusive": "3.2.6",
         "jquery-validation-bootstrap-tooltip": "*",
         "jquery-typeahead": "*",
-        "bootstrap": "v4.0.0-beta",
+        "bootstrap": "v4.0.0",
         "jquery-file-upload": "*",
         "ckeditor": "#full/4.6.x",
         "alertifyjs": "~0.3.18",
@@ -30,7 +30,7 @@
     },
   "devDependencies": {},
   "resolutions": {
-    "bootstrap": "^v4.0.0-beta",
+    "bootstrap": "^v4.0.0",
     "jquery": "^3.2.1"
   }
 }
