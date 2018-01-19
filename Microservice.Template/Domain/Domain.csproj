@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\Website\bin\Debug</OutputPath>
+    <NoWarn>1701;1702;1705;1998</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="4.0.0.1334-develop" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="4.0.0.1334-develop" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Olive" Version="1.0.26" />
+    <PackageReference Include="Olive.CSV" Version="1.0.7" />
+    <PackageReference Include="Olive.Drawing" Version="1.0.8" />
+    <PackageReference Include="Olive.Email" Version="1.0.14" />
+    <PackageReference Include="Olive.Entities" Version="1.0.19" />
+    <PackageReference Include="Olive.Entities.Data" Version="1.0.27" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.10" />
+    <PackageReference Include="Olive.ImpersonationSession" Version="1.0.12" />
+    <PackageReference Include="Olive.Integration" Version="1.0.7" />
+    <PackageReference Include="Olive.Security" Version="1.0.15" />
+    <PackageReference Include="Olive.Web" Version="1.0.24" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.2" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutputPath>..\lib\</OutputPath>
+    <RootNamespace>Model</RootNamespace>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="MSharp" Version="4.1.133" />
+    <PackageReference Include="Olive" Version="1.0.26" />
+  </ItemGroup>
+  <Target Name="Generate code" AfterTargets="AfterBuild">
+    <Exec Command="powershell start-process -FilePath &quot;dotnet&quot; -ArgumentList &quot;$(TargetDir)msharp.dsl.dll&quot;, &quot;/build,  &quot;/model&quot;" />
+  </Target>
+  
+</Project>

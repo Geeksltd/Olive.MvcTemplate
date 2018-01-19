@@ -1,0 +1,6 @@
+﻿[
+    {
+        "outputFile": "wwwroot/styles/MY.MICROSERVICE.NAME.css",
+        "inputFile": "wwwroot/styles/MY.MICROSERVICE.NAME.scss"
+    }
+]

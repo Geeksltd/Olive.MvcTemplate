@@ -1,0 +1,32 @@
+{
+  "Items": [
+    {
+      "Analyzer": "LongMethodAnalyzer",
+      "OccurrenceCount": 2,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "PAYMON"
+    },
+    {
+      "Analyzer": "UnusedMethodsAnalyzer",
+      "OccurrenceCount": 5,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "PAYMON"
+    },
+    {
+      "Analyzer": "EmptyMethodAnalyzer",
+      "OccurrenceCount": 208,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "PAYMON"
+    },
+    {
+      "Analyzer": "RepeatedExpressionAnalyzer",
+      "OccurrenceCount": 1,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "PAYMON"
+    }
+  ]
+}

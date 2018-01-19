@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705;1998</NoWarn>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="App_Data\**" />
+    <Content Remove="App_Data\**" />
+    <EmbeddedResource Remove="App_Data\**" />
+    <None Remove="App_Data\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="_M#_TEMP\Preview\Controller.cs" />
+    <Compile Remove="_M#_TEMP\Preview\DAL.cs" />
+    <Compile Remove="_M#_TEMP\Preview\Structure.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="_M#_TEMP\Preview\View.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.6.17" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Olive" Version="1.0.26" />
+    <PackageReference Include="Olive.Entities" Version="1.0.19" />
+    <PackageReference Include="Olive.Excel" Version="1.0.7" />
+    <PackageReference Include="Olive.Hangfire" Version="1.0.15" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.51" />
+    <PackageReference Include="Olive.PDF" Version="1.0.7" />
+    <PackageReference Include="Olive.Testing" Version="1.0.25" />
+    <PackageReference Include="SkiaSharp" Version="1.59.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_M#_TEMP\Preview\Controller.cs" />
+    <None Include="_M#_TEMP\Preview\DAL.cs" />
+    <None Include="_M#_TEMP\Preview\Structure.cs" />
+    <None Include="_M#_TEMP\Preview\View.cshtml" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Olive.Microservices">
+      <HintPath>..\..\..\Olive\@Assemblies\netcoreapp2.0\Olive.Microservices.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup> 
+  
+   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />
+  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask" />
+
+  <Target Name="WebCompile" AfterTargets="PostBuildEvent" Condition="'$(RunWebCompiler)' != 'False'">
+    <WebCompiler.CompilerBuildTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\compilerconfig.json" />
+  </Target>
+  <Target Name="WebCompileClean" AfterTargets="CoreClean" Condition="'$(RunWebCompiler)' != 'False'">
+    <WebCompiler.CompilerCleanTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\compilerconfig.json" />
+  </Target>
+</Project>
