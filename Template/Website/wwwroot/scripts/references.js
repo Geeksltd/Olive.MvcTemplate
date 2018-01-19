@@ -66,27 +66,20 @@
 });
 
 var mainScripts = ["app-page", "olive-page",
-
     // JQuery:
     "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive", "olive-ext-jquery",
 
     // JQuery plugins:
     "chosen", "alertify", "smartmenus", "file-upload", "typeahead",
 
-    // Bootstrap:
-    "popper", "bootstrap",
-
-    // Bootstrap plugins
-    "moment", "moment-locale", "datepicker",
+    // Bootstrap and plugins:
+    "bootstrap", "moment", "moment-locale", "datepicker",
     "spinedit", "password-strength", "slider", "file-style",
 
     // "validation-style" ------> Error
 ];
 
 requirejs(["popper.js"], function (p) {
-    console.log(p);
-
-    window.popper = window.Popper = p;
     requirejs(mainScripts,
         function (AppPage) {
             window.page = new AppPage.default();
@@ -101,4 +94,3 @@ function loadAppScripts() {
     //    > Add a line similar to below to invoke it.
     //        requirejs(["../Scripts/Components/CustomModule1"], type => type.default.Run());
 }
-
