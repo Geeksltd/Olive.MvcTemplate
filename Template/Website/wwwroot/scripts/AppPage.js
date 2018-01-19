@@ -41,5 +41,6 @@ define(["require", "exports", "olive-page", "olive-config"], function (require, 
         return AppPage;
     }(olive_page_1.default));
     exports.default = AppPage;
+    window["page"] = new AppPage();
 });
 //# sourceMappingURL=AppPage.js.map

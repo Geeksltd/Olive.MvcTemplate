@@ -46,7 +46,6 @@
         "jquery-validate": ['jquery'],
         "validation-style": ['jquery', "jquery-validate", "bootstrap"],
         "combodate": ['jquery'],
-
         "typeahead": ['jquery'],
         "file-upload": ['jquery', 'jquery-ui'],
         "file-style": ["file-upload"],
@@ -65,27 +64,16 @@
     }
 });
 
-var mainScripts = ["app-page", "olive-page",
+requirejs(["app-page", "olive-page",
     // JQuery:
     "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive", "olive-ext-jquery",
-
     // JQuery plugins:
     "chosen", "alertify", "smartmenus", "file-upload", "typeahead",
-
     // Bootstrap and plugins:
-    "bootstrap", "moment", "moment-locale", "datepicker",
+    "popper", "bootstrap", "moment", "moment-locale", "datepicker",
     "spinedit", "password-strength", "slider", "file-style",
-
     // "validation-style" ------> Error
-];
-
-requirejs(["popper.js"], function (p) {
-    requirejs(mainScripts,
-        function (AppPage) {
-            window.page = new AppPage.default();
-            loadAppScripts();
-        });
-});
+], loadAppScripts);
 
 function loadAppScripts() {
     // TODO:

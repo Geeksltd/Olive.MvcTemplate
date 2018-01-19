@@ -36,3 +36,5 @@ export default class AppPage extends OlivePage {
         return super.executeAction(action, trigger);
     }
 }
+
+window["page"] = new AppPage();
