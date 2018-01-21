@@ -73,12 +73,17 @@ requirejs(["app-page", "olive-page",
     "popper", "bootstrap", "moment", "moment-locale", "datepicker",
     "spinedit", "password-strength", "slider", "file-style",
     // "validation-style" ------> Error
-], loadAppScripts);
+]);
 
-function loadAppScripts() {
-    // TODO:
-    // For each custom app-specific script requirement:
-    //    > Add a TS file inside ../scripts/somponents
-    //    > Add a line similar to below to invoke it.
-    //        requirejs(["../Scripts/Components/CustomModule1"], type => type.default.Run());
-}
+window.loadModule = function (path, onLoaded, dependencies) {
+    var moduleName = path.replace('/', '-').replace(/[^0-9a-zA-Z_-]/, '');
+    var updatedConfig = { path: {}, shim: {} };
+
+    dependencies = dependencies ? dependencies : [];
+    dependencies.push('app-page');
+
+    updatedConfig.path[moduleName] = path;
+    updatedConfig.shim[moduleName] = dependencies;
+
+    requirejs([moduleName], m => onLoaded(m));
+};
