@@ -42,7 +42,7 @@ if ERRORLEVEL 1 (goto error)
 
 ECHO.
 ECHO ::::::::: Building sass files :::::::::::::::::::::::::::::::::
-call wwwroot\Styles\build\SassCompiler.exe Sasscompilerconfig.json
+call wwwroot\Styles\build\SassCompiler.exe Compilerconfig.json
 if ERRORLEVEL 1 (goto error)
 
 ECHO.
