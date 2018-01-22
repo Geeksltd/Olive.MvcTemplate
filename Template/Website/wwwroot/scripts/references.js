@@ -85,5 +85,14 @@ window.loadModule = function (path, onLoaded, dependencies) {
     updatedConfig.path[moduleName] = path;
     updatedConfig.shim[moduleName] = dependencies;
 
+	requirejs.config(updatedConfig);
     requirejs([moduleName], m => onLoaded(m));
+};
+
+window.loadLibrary = function (name, relativePath, dependencies) {
+    var updatedConfig = { path: {}, shim: {} };
+    updatedConfig.path[name] = relativePath;
+	if (dependencies) updatedConfig.shim[moduleName] = dependencies;
+	requirejs.config(updatedConfig);
+    requirejs([name]);
 };
