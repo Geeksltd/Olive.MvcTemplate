@@ -1,4 +1,4 @@
-﻿@import "../../lib/bootstrap/scss/bootstrap.scss"; 
+﻿@import "../../lib/bootstrap/scss/bootstrap.scss";
 @import "_custom-variables.scss";
 @import "../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css";
 @import "../../lib/fontawesome/scss/font-awesome.scss";
@@ -16,186 +16,528 @@ $fa-font-path: $icon-font-path;
 .nav-link {
     color: #d6d5d5;
 }
-.restart-temp-database { position: fixed; bottom: 50%; left: -63px; transform: rotate(90deg); padding: 4px 6px; background: #003b5c; color: #fff; font-size: 13px; font-family: Arial; opacity: 0.4; }
-html { position: relative; min-height: 100%; }
-a.disabled { pointer-events: none; cursor: default; }
-.field-validation-error { color: red; }
-.navbar-static-top { z-index: auto; }
-.radio-list .radio input[type="radio"], .checkbox-list .checkbox input[type="checkbox"] { margin-left: 0; }
-*[data-sort-item] { cursor: move; }
-a .fa { color: $input-color; }
-.modal-content .modal-header .close { margin-top: -10px; }
-.empty-list { padding: 15px 0; }
 
-.buttons-row { text-align: right;
-    &.top-buttons-row { float: right; }
+.restart-temp-database {
+    position: fixed;
+    bottom: 50%;
+    left: -63px;
+    transform: rotate(90deg);
+    padding: 4px 6px;
+    background: #003b5c;
+    color: #fff;
+    font-size: 13px;
+    font-family: Arial;
+    opacity: 0.4;
 }
-.btn.loading-action-result { @extend .text-muted; }
-.alertify-log { margin-bottom: 80px; }
-.date-time-picker-container-active { margin-bottom: 280px; }
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.navbar-static-top {
+    z-index: auto;
+}
+
+.radio-list .radio input[type="radio"], .checkbox-list .checkbox input[type="checkbox"] {
+    margin-left: 0;
+}
+
+*[data-sort-item] {
+    cursor: move;
+}
+
+a .fa {
+    color: $input-color;
+}
+
+.modal-content .modal-header .close {
+    margin-top: -10px;
+}
+
+.empty-list {
+    padding: 15px 0;
+}
+
+.buttons-row {
+    text-align: right;
+
+    &.top-buttons-row {
+        float: right;
+    }
+}
+
+.btn.loading-action-result {
+    @extend .text-muted;
+}
+
+.alertify-log {
+    margin-bottom: 80px;
+}
+
+.date-time-picker-container-active {
+    margin-bottom: 280px;
+}
 
 .alertify {
-    &.error .alertify-button-ok { background-color: $btn-danger-bg; border-color: $alert-danger-border; }
-    &.warning .alertify-button-ok { background-color: $btn-warning-bg; border-color: $alert-warning-border; }
+    &.error .alertify-button-ok {
+        background-color: $btn-danger-bg;
+        border-color: $alert-danger-border;
+    }
+
+    &.warning .alertify-button-ok {
+        background-color: $btn-warning-bg;
+        border-color: $alert-warning-border;
+    }
 }
 
 // Grid sorting
-th.sort-ascending i { @include fa-icon(); margin-left: 10px;
-    &:before { content: $fa-var-sort-asc; }
-}
-th.sort-descending i { @include fa-icon(); margin-left: 10px;
-    &:before { content: $fa-var-sort-desc; }
+th.sort-ascending i {
+    @include fa-icon();
+    margin-left: 10px;
+
+    &:before {
+        content: $fa-var-sort-asc;
+    }
 }
 
-.validation-summary-errors { @extend .alert; @extend .alert-danger }
+th.sort-descending i {
+    @include fa-icon();
+    margin-left: 10px;
 
-.grid { @extend .table; @extend .table-striped; @extend .table-hover;
-    .actions { white-space: nowrap; width: 1px; text-align: center; }
-    & > tbody > tr.highlighted { background: lighten($btn-success-bg, 33.5%); }
+    &:before {
+        content: $fa-var-sort-desc;
+    }
+}
+
+.validation-summary-errors {
+    @extend .alert;
+    @extend .alert-danger
+}
+
+.grid {
+    @extend .table;
+    @extend .table-striped;
+    @extend .table-hover;
+
+    .actions {
+        white-space: nowrap;
+        width: 1px;
+        text-align: center;
+    }
+
+    & > tbody > tr.highlighted {
+        background: lighten($btn-success-bg, 33.5%);
+    }
 }
 
 .input-form, div.search {
-    .buttons-row { @include make-row();
-        .buttons { @include make-column-lg(6); }
+    .buttons-row {
+        @include make-row();
+
+        .buttons {
+            @include make-column-lg(6);
+        }
     }
 }
 
 .wait-screen {
-    .cover { display: block; background: $gray-darker; position: fixed; top: 0; left: 0; @include opacity(0.3); z-index: 10; }
-    .wait-container { position: fixed; width: 100%; z-index: 10000; display: none; top: 45%;
-        .wait-box { background: #fff; padding: 20px; text-align: center; width: 150px; border-radius: 12pt; margin: auto; }
+    .cover {
+        display: block;
+        background: $gray-darker;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include opacity(0.3);
+        z-index: 10;
+    }
+
+    .wait-container {
+        position: fixed;
+        width: 100%;
+        z-index: 10000;
+        display: none;
+        top: 45%;
+
+        .wait-box {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 150px;
+            border-radius: 12pt;
+            margin: auto;
+        }
     }
 }
 
 .select-grid-cols {
-    div.select-cols { position: absolute; z-index: 10000; display: none; border: 1px solid #cccccc; border-radius: 4px; padding: 15px; background: #fff; }
-    .cancel { @extend .btn; @extend .btn-secondary; @extend .btn-sm; }
-    .apply { @extend .btn; @extend .btn-primary; @extend .btn-sm; }
+    div.select-cols {
+        position: absolute;
+        z-index: 10000;
+        display: none;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        padding: 15px;
+        background: #fff;
+    }
+
+    .cancel {
+        @extend .btn;
+        @extend .btn-secondary;
+        @extend .btn-sm;
+    }
+
+    .apply {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .btn-sm;
+    }
 }
 
 /* Forms */
-form { 
-    .control-label { @include make-column-lg(2); text-align: left;font-weight:bold; }
-    .group-control { @include make-column-lg(4); }
-    .password-strength .progress { margin-top: 8px; }
+form {
+    .control-label {
+        @include make-column-lg(2);
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .group-control {
+        @include make-column-lg(4);
+    }
+
+    .password-strength .progress {
+        margin-top: 8px;
+    }
+
     .file-upload {
-        & { min-height: 64px; /* TODO: Fix this to be proper responsive setup. input[type=file] { float: left; }*/ }
+        & {
+            min-height: 64px; /* TODO: Fix this to be proper responsive setup. input[type=file] { float: left; }*/
+        }
+
         .current-file {
-            & { display: none; }
-            a { color: $gray-dark; }
+            & {
+                display: none;
+            }
+
+            a {
+                color: $gray-dark;
+            }
         }
 
         .progress {
-            & { min-width: 100px; height: 17px; margin-bottom: 0; margin-top:10px; }
-            .progress-bar { width: 0; }
-            input.form-control { position: relative; top: -34px; background-color: transparent; color: #fff; }
+            & {
+                min-width: 100px;
+                height: 17px;
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
+
+            .progress-bar {
+                width: 0;
+            }
+
+            input.form-control {
+                position: relative;
+                top: -34px;
+                background-color: transparent;
+                color: #fff;
+            }
         }
 
-        input[type=file] { display: inline-block; }
-        .delete-file { float: right; position: relative; top: -45px; z-index: 2; }
-        .file-target { cursor: pointer; }
+        input[type=file] {
+            display: inline-block;
+        }
+
+        .delete-file {
+            float: right;
+            position: relative;
+            top: -45px;
+            z-index: 2;
+        }
+
+        .file-target {
+            cursor: pointer;
+        }
     }
 
     .form-body {
-        .form-tabs-header { @extend .nav; @extend .nav-tabs; }
-        .tab-content { padding: 20px; }
+        .form-tabs-header {
+            @extend .nav;
+            @extend .nav-tabs;
+        }
+
+        .tab-content {
+            padding: 20px;
+        }
     }
 
     .horizontal-subform {
-        & { @include make-column-lg(6); }
+        & {
+            @include make-column-lg(6);
+        }
+
         table {
-            & { @extend .table; @extend .table-sm; @extend .table-responsive; margin-bottom: 0; }
-            thead { visibility: hidden; }
-            .group-control { width: 100%; }
-            .form-group { margin-bottom: 0; }
-            tbody > tr > td { border-top: 0; }
+            & {
+                @extend .table;
+                @extend .table-sm;
+                @extend .table-responsive;
+                margin-bottom: 0;
+            }
+
+            thead {
+                visibility: hidden;
+            }
+
+            .group-control {
+                width: 100%;
+            }
+
+            .form-group {
+                margin-bottom: 0;
+            }
+
+            tbody > tr > td {
+                border-top: 0;
+            }
         }
     }
 
     .vertical-subform {
-        .subform-item { margin-bottom: 2px; @include make-row();
-            .subform-item-body { @include make-column-lg(6);
-                & { background: #eee; border-radius: 5px; padding-top: 10px; padding-bottom: 2px; margin-bottom: 2px; }
+        .subform-item {
+            margin-bottom: 2px;
+            @include make-row();
+
+            .subform-item-body {
+                @include make-column-lg(6);
+
+                & {
+                    background: #eee;
+                    border-radius: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 2px;
+                    margin-bottom: 2px;
+                }
+
                 .form-group {
-                    label { @include make-column-lg(4); }
-                    .group-control { @include make-column-lg(8); }
+                    label {
+                        @include make-column-lg(4);
+                    }
+
+                    .group-control {
+                        @include make-column-lg(8);
+                    }
                 }
             }
-            .subform-delete-wrapper { @include make-column-lg(3); }
+
+            .subform-delete-wrapper {
+                @include make-column-lg(3);
+            }
         }
     }
 
-    .subform-item a.delete-button i { font-size: 18pt; margin-top: 4px; }
-    .input-group.unboxed .input-group-addon { border: 0; background: none; }
+    .subform-item a.delete-button i {
+        font-size: 18pt;
+        margin-top: 4px;
+    }
+
+    .input-group.unboxed .input-group-addon {
+        border: 0;
+        background: none;
+    }
 }
 
 /* make search forms a compact so that they visually look more related */
 .search {
-    .form-group { margin-bottom: 5px;
+    .form-group {
+        margin-bottom: 5px;
+
         &.range-input .group-control {
-            > .form-control, > .radio-list, > .checkbox-list { @include make-column-lg(5,12); }
-            > .input-group { @include make-column-lg(5,0); }
-            > .range-label { @include make-column-lg(2); text-align: center; line-height: 32px; }
+            > .form-control, > .radio-list, > .checkbox-list {
+                @include make-column-lg(5,12);
+            }
+
+            > .input-group {
+                @include make-column-lg(5,0);
+            }
+
+            > .range-label {
+                @include make-column-lg(2);
+                text-align: center;
+                line-height: 32px;
+            }
         }
     }
 }
 
 .form-group > .group-control:not(:first-of-type):last-of-type > * {
     margin-top: $form-group-margin-bottom;
-    @include media-breakpoint-up(lg) { margin-top: 0; }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 0;
+    }
 }
 
-.input-group *[data-control=collapsible-checkboxes] .textbox { border-bottom-right-radius: 0; border-top-right-radius: 0; }
-.twitter-typeahead .tt-dropdown-menu { cursor: pointer; max-height: 140px; overflow-y: auto; }
+.input-group *[data-control=collapsible-checkboxes] .textbox {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
 
-.bootstrap-datetimepicker-widget { display: block;
+.twitter-typeahead .tt-dropdown-menu {
+    cursor: pointer;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+.bootstrap-datetimepicker-widget {
+    display: block !important;
+    box-shadow: 0 0 15px -5px rgba(0,0,0,0.75);
+
     .picker-switch {
-        td { width: 50%;
-            .today { @include fa-icon(); font-family: Consolas; padding-top: 10px; min-width: 40px;
-                &:before { content: "Today"; }
+        td {
+            width: 50%;
+
+            .today {
+                @include fa-icon();
+                font-family: Consolas;
+                padding-top: 10px;
+                min-width: 40px;
+
+                &:before {
+                    content: "Today";
+                }
             }
         }
     }
 }
 
-input[type="text"].spinedit { width: 50%; display: inline-block; }
+input[type="text"].spinedit {
+    width: 50%;
+    display: inline-block;
+}
 
-div.spinedit {    
-    .fa fa-var-plus fa-fw { top: -4px; }
-    .fa fa-var-minus fa-fw { top: 10px; }
-    
+div.spinedit {
+    .fa fa-var-plus fa-fw {
+        top: -4px;
+    }
+
+    .fa fa-var-minus fa-fw {
+        top: 10px;
+    }
 }
 
 *[data-control=collapsible-checkboxes] {
-    & { top: 0; padding: 0; position: relative; }
-    label, a { cursor: pointer; }
+    & {
+        top: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    label, a {
+        cursor: pointer;
+    }
 
     .options-container {
-        & { background: #fff; border: solid 1px $gray-light; margin-top: -3px; width: 300px; z-index: 200; overflow: hidden; display: none; position: absolute; }
-        .toolbox { padding: 3px; }
-        .items-list { height: 130px; overflow-y: auto; padding: 3px; overflow-x: hidden; }
-        input[type="checkbox"] { margin-top: 2px; margin-right: 5px; float: left;
-            & + label { margin-left: 22px; display: block; margin-right: 20px; }
+        & {
+            background: #fff;
+            border: solid 1px $gray-light;
+            margin-top: -3px;
+            width: 300px;
+            z-index: 200;
+            overflow: hidden;
+            display: none;
+            position: absolute;
+        }
+
+        .toolbox {
+            padding: 3px;
+        }
+
+        .items-list {
+            height: 130px;
+            overflow-y: auto;
+            padding: 3px;
+            overflow-x: hidden;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 2px;
+            margin-right: 5px;
+            float: left;
+
+            & + label {
+                margin-left: 22px;
+                display: block;
+                margin-right: 20px;
+            }
         }
     }
 
-    .search-container { display: none; }
-    .textbox { @extend .form-control; }
-
-    .search-container, .caption-container { position: relative;
-        .fa { position: absolute; right: 10px; margin-top: 10px; z-index: 2; }
+    .search-container {
+        display: none;
     }
 
-    .selection-container { height: 79px; overflow-y: auto; padding: 3px; overflow-x: hidden; border-top: 1px solid $gray-light;
+    .textbox {
+        @extend .form-control;
+    }
+
+    .search-container, .caption-container {
+        position: relative;
+
+        .fa {
+            position: absolute;
+            right: 10px;
+            margin-top: 10px;
+            z-index: 2;
+        }
+    }
+
+    .selection-container {
+        height: 79px;
+        overflow-y: auto;
+        padding: 3px;
+        overflow-x: hidden;
+        border-top: 1px solid $gray-light;
 
         div.item {
-            & { line-height: 16px; float: left; margin: 2px; position: relative; border: solid 1px $gray-dark; background-color: $gray-lighter; position: relative;
-                .fa { position: absolute; left: 4px; top: 50%; margin-top: -7px; }
+            & {
+                line-height: 16px;
+                float: left;
+                margin: 2px;
+                position: relative;
+                border: solid 1px $gray-dark;
+                background-color: $gray-lighter;
+                position: relative;
+
+                .fa {
+                    position: absolute;
+                    left: 4px;
+                    top: 50%;
+                    margin-top: -7px;
+                }
             }
 
-            label { position: relative; z-index: 1; margin: 0; padding: 3px 3px 3px 20px; }
-            input[type="checkbox"] { position: absolute; z-index: 0; opacity: 0; }
+            label {
+                position: relative;
+                z-index: 1;
+                margin: 0;
+                padding: 3px 3px 3px 20px;
+            }
+
+            input[type="checkbox"] {
+                position: absolute;
+                z-index: 0;
+                opacity: 0;
+            }
         }
     }
 }
-

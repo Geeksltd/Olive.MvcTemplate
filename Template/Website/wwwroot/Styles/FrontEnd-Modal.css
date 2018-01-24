@@ -15067,7 +15067,8 @@ form .input-group.unboxed .input-group-addon {
   overflow-y: auto; }
 
 .bootstrap-datetimepicker-widget {
-  display: block; }
+  display: block !important;
+  box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.75); }
   .bootstrap-datetimepicker-widget .picker-switch td {
     width: 50%; }
     .bootstrap-datetimepicker-widget .picker-switch td .today {
