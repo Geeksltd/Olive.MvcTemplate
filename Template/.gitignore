@@ -111,7 +111,6 @@ Website/Images/TextButtons/
 Domain/App_Readme/Elmah.txt
 Domain/\[GEN-DAL\]/
 Domain/\[GEN-Entities\]/
-Domain/Mappings/
 
 Test/@World/*
 !Test/@World/Files/

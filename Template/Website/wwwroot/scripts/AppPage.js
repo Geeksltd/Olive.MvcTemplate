@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 define(["require", "exports", "olive-page", "olive-config"], function (require, exports, olive_page_1, olive_config_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    var AppPage = (function (_super) {
+    var AppPage = /** @class */ (function (_super) {
         __extends(AppPage, _super);
         // Here you can override any of the base standard functions.
         // e.g: To use a different AutoComplete library, simply override handleAutoComplete(input).
