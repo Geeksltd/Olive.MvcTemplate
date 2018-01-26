@@ -14,21 +14,21 @@
     {
         protected override CultureInfo GetRequestCulture() => new CultureInfo("en-GB");
 
-public override void ConfigureServices(IServiceCollection services)
-{
-    base.ConfigureServices(services);
+        public override void ConfigureServices(IServiceCollection services)
+        {
+            base.ConfigureServices(services);
 
-    AuthenticationBuilder.AddSocialAuth();
-    services.AddScheduledTasks();
-}
+            AuthenticationBuilder.AddSocialAuth();
+            services.AddScheduledTasks();
+        }
 
-public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    app.UseWebTest(ReferenceData.Create, config => config.AddTasks());
-    base.Configure(app, env);
+        public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            app.UseWebTest(ReferenceData.Create, config => config.AddTasks());
+            base.Configure(app, env);
 
-    if (Config.Get<bool>("Automated.Tasks:Enabled"))
-        app.UseScheduledTasks(TaskManager.Run);
-}
+            if (Config.Get<bool>("Automated.Tasks:Enabled"))
+                app.UseScheduledTasks(TaskManager.Run);
+        }
     }
 }
