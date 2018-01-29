@@ -6,3 +6,6 @@ services:
     build:
       context: .
       dockerfile: Website/Dockerfile
+
+  sql.data:
+    image: microsoft/mssql-server-linux:2017-latest
