@@ -4,7 +4,7 @@
     using System.Linq;
     using Olive;
     using Olive.Security;
-    using Olive.Services.ImpersonationSession;
+    using Olive.Security.Impersonation;
 
     /// <summary> 
     /// Provides the business logic for Administrator class.

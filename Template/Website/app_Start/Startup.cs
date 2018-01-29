@@ -7,8 +7,8 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
     using Olive;
-    using Olive.Services.Hangfire;
-    using Olive.Services.Testing;
+    using Olive.Hangfire;
+    using Olive.Mvc.Testing;
 
     public class Startup : Olive.Mvc.Startup
     {
