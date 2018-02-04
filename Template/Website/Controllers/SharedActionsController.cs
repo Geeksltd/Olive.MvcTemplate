@@ -18,7 +18,7 @@
         [Route("error/404")]
         public new async Task<ActionResult> NotFound() => await View("error-404");
 
-        [HttpPost, Route("file/upload")]
+        [HttpPost, Route("upload")]
         [Authorize]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public ActionResult UploadTempFileToServer(IFormFile[] files)
@@ -36,7 +36,7 @@
             return Json(new FileUploadService().TempSaveUploadedFile(files[0]));
         }
 
-        [Route("file/download")]
+        [Route("file")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public async Task<ActionResult> DownloadFile()
         {

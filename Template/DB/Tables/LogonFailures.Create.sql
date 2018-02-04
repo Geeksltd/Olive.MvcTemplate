@@ -5,5 +5,5 @@ CREATE TABLE LogonFailures (
     IP nvarchar(200)  NOT NULL,
     Attempts int  NOT NULL,
     [Date] datetime2  NOT NULL
-)
+);
 

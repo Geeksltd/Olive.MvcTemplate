@@ -71,8 +71,7 @@ requirejs(["app-page", "olive-page",
     "chosen", "alertify", "smartmenus", "file-upload", "typeahead",
     // Bootstrap and plugins:
     "popper", "bootstrap", "moment", "moment-locale", "datepicker",
-    "spinedit", "password-strength", "slider", "file-style",
-    // "validation-style" ------> Error
+    "spinedit", "password-strength", "slider", "file-style", "validation-style"
 ]);
 
 window.loadModule = function (path, onLoaded, dependencies) {
@@ -85,14 +84,14 @@ window.loadModule = function (path, onLoaded, dependencies) {
     updatedConfig.path[moduleName] = path;
     updatedConfig.shim[moduleName] = dependencies;
 
-	requirejs.config(updatedConfig);
+    requirejs.config(updatedConfig);
     requirejs([moduleName], m => onLoaded(m));
 };
 
 window.loadLibrary = function (name, relativePath, dependencies) {
     var updatedConfig = { path: {}, shim: {} };
     updatedConfig.path[name] = relativePath;
-	if (dependencies) updatedConfig.shim[moduleName] = dependencies;
-	requirejs.config(updatedConfig);
+    if (dependencies) updatedConfig.shim[moduleName] = dependencies;
+    requirejs.config(updatedConfig);
     requirejs([name]);
 };

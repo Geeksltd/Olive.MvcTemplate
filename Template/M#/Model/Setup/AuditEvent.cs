@@ -2,19 +2,19 @@ using MSharp;
 
 namespace Domain
 {
-    public class ApplicationEvent : EntityType
+    public class AuditEvent : EntityType
     {
-        public ApplicationEvent()
+        public AuditEvent()
         {
-            Cachable(false).Implements("IApplicationEvent");
+            Cachable(false).Implements("Olive.Audit.IAuditEvent");
 
             String("User id");
             DateTime("Date").Mandatory().Default("c#:LocalTime.Now").DefaultFormatString("g");
             String("Event").Mandatory();
             String("Item type");
-            String("Item key", 500);
-            BigString("Data");
-            String("IP");
+            String("Item id", 500);
+            BigString("Item data");
+            String("User Ip");
         }
     }
 }

@@ -7,5 +7,5 @@ CREATE TABLE Users (
     Password nvarchar(100)  NULL,
     Salt nvarchar(200)  NULL,
     IsDeactivated bit  NOT NULL
-)
+);
 

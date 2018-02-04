@@ -4,8 +4,8 @@ CREATE TABLE PasswordResetTickets (
     [User] uniqueidentifier  NOT NULL,
     DateCreated datetime2  NOT NULL,
     IsUsed bit  NOT NULL
-)
-CREATE INDEX [IX_PasswordResetTickets->User] ON PasswordResetTickets ([User])
+);
+CREATE INDEX [IX_PasswordResetTickets->User] ON PasswordResetTickets ([User]);
 
 GO
 
