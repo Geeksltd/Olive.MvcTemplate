@@ -22,7 +22,7 @@ namespace Domain
         /// </summary>
         public virtual IEnumerable<string> GetRoles()
         {
-            if (Context.Request.IsLocal()) yield return "Local.Request";
+            if (Context.Current.Request().IsLocal()) yield return "Local.Request";
             yield return "User";
         }
 

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.149" />
-    <PackageReference Include="Olive" Version="1.0.51" />
+    <PackageReference Include="MSharp" Version="4.1.150" />
+    <PackageReference Include="Olive" Version="1.0.55" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
 

@@ -71,7 +71,7 @@
             //});
         }
 
-        string GetResetPasswordUrl() => Context.Request.GetAbsoluteUrl("/password/reset/" + Ticket.ID);
+        string GetResetPasswordUrl() => Context.Current.Request().GetAbsoluteUrl("/password/reset/" + Ticket.ID);
 
         Task UpdatePassword(string clearTextPassword)
         {
