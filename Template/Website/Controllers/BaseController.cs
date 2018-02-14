@@ -2,6 +2,7 @@
 using Olive.Mvc;
 using Olive.Security;
 using Olive.Web;
+using Olive;
 
 namespace Controllers
 {
@@ -20,6 +21,6 @@ namespace ViewComponents
     public abstract class ViewComponent : Olive.Mvc.ViewComponent
     {
         /// <summary>Gets a Domain User object extracted from the current user principal.</summary>
-        public User GetUser() => Context.Http.User.Extract<User>();
+        public User GetUser() => Context.Current.Http().User.Extract<User>();
     }
 }
