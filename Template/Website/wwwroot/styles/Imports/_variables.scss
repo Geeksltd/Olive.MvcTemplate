@@ -1,4 +1,6 @@
-﻿// Mixins
+﻿@import "../../lib/fontawesome/scss/_variables.scss";
+@import "../../lib/bootstrap/scss/_variables.scss";
+@import "../../lib/bootstrap/scss/_mixins.scss"; 
 
 @mixin make-column-lg($ncol,$gutter: $grid-gutter-width) { //md in bootstrap 3 is lg in bootstrap 4
     $grid-gutter-width: $gutter;
@@ -15,7 +17,6 @@
     filter: alpha(opacity=$opacity-ie); 
 }
 //------------------------------------------
-
 
 //== Form states and alerts
 //

@@ -1,5 +1,5 @@
 ﻿@import "../../lib/bootstrap/scss/bootstrap.scss";
-@import "_custom-variables.scss";
+@import "_variables.scss";
 @import "../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css";
 @import "../../lib/fontawesome/scss/font-awesome.scss";
 @import "../../lib/bootstrap-spinedit/css/bootstrap-spinedit.css";
@@ -224,6 +224,8 @@ form {
             min-height: 64px; /* TODO: Fix this to be proper responsive setup. input[type=file] { float: left; }*/
         }
 
+        .btn{padding:4px;}
+
         .current-file {
             & {
                 display: none;
@@ -236,21 +238,21 @@ form {
 
         .progress {
             & {
-                min-width: 100px;
-                height: 17px;
+                min-width: 150px;
+                height: 34px;
                 margin-bottom: 0;
-                margin-top: 10px;
             }
 
             .progress-bar {
                 width: 0;
             }
 
-            input.form-control {
-                position: relative;
-                top: -34px;
+            input.form-control {                
                 background-color: transparent;
                 color: #fff;
+                font-size:100%;
+                border:none;
+                position:absolute;
             }
         }
 
