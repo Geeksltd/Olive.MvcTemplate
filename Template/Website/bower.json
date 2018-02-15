@@ -10,7 +10,7 @@
         "jquery-validation": "1.17.0",
         "jquery-validation-unobtrusive": "3.2.6",
         "jquery-validation-bootstrap-tooltip": "*",
-        "jquery-typeahead": "*",
+        "jquery-typeahead": "2.10.4",
         "bootstrap": "v4.0.0",
         "jquery-file-upload": "*",
         "ckeditor": "#full/4.6.x",

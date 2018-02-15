@@ -1,5 +1,6 @@
 @import "../../lib/bootstrap/scss/_variables.scss";
-$input-padding-y: 0rem;
+@import "../../lib/jquery-typeahead//dist//jquery.typeahead.min.css";
+/*$input-padding-y: 0rem;
 $font-size-root: 1px;
 
 
@@ -25,4 +26,4 @@ span.twitter-typeahead {
       top:(2 * $input-padding-y + $font-size-base*$line-height-base + 2 * $input-btn-border-width/$font-size-root) !important;
     }
   }
-}
+}*/

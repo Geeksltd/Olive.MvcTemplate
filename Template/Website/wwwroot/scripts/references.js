@@ -12,7 +12,7 @@
         "alertify": "alertifyjs/dist/js/alertify",
         "smartmenus": "smartmenus/src/jquery.smartmenus",
         "file-upload": "jquery-file-upload/js/jquery.fileupload",
-        "typeahead": "jquery-typeahead/dist/jquery.typeahead.min",
+        "jquery-typeahead": "jquery-typeahead/dist/jquery.typeahead.min",
         "combodate": "combodate/src/combodate",
 
         // Bootstrap
@@ -46,7 +46,7 @@
         "jquery-validate": ['jquery'],
         "validation-style": ['jquery', "jquery-validate", "bootstrap"],
         "combodate": ['jquery'],
-        "typeahead": ['jquery'],
+        "jquery-typeahead": ['jquery'],
         "file-upload": ['jquery', 'jquery-ui'],
         "file-style": ["file-upload"],
         "chosen": ['jquery'],
@@ -68,7 +68,7 @@ requirejs(["app-page", "olive-page",
     // JQuery:
     "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive", "olive-ext-jquery",
     // JQuery plugins:
-    "chosen", "alertify", "smartmenus", "file-upload", "typeahead",
+    "chosen", "alertify", "smartmenus", "file-upload", "jquery-typeahead",
     // Bootstrap and plugins:
     "popper", "bootstrap", "moment", "moment-locale", "datepicker",
     "spinedit", "password-strength", "slider", "file-style", "validation-style"

@@ -12,7 +12,7 @@ $footer-top-margin: 30px;
         @include make-row();
     }
     .side-bar {
-        @include make-column-lg(2);
+        @include make-column-lg(2); 
     }
     .content {
         @include make-column-lg(10);
@@ -22,7 +22,7 @@ $footer-top-margin: 30px;
     }
     padding-top:14px;
 }
-
+ 
 h2 { margin-top: 0; }
 body { margin-bottom: ($footer-height + $footer-top-margin); overflow-y: scroll; }
 
