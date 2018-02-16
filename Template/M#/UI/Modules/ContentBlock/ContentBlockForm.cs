@@ -1,5 +1,4 @@
 using MSharp;
-using Domain;
 
 namespace Modules
 {
@@ -14,9 +13,7 @@ namespace Modules
 
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
-            Button("Save")
-                .IsDefault()
-                .Icon(FA.Check)
+            Button("Save").IsDefault().Icon(FA.Check)
                 .OnClick(x =>
                 {
                     x.SaveInDatabase();

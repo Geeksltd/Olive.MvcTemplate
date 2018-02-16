@@ -1,7 +1,4 @@
-@import "../../lib/fontawesome/scss/_variables.scss";
-@import "../../lib/bootstrap/scss/_variables.scss";
-@import "../../lib/bootstrap/scss/_mixins.scss"; 
-@import "_variables.scss";
+@import "variables";
 
 $bs-height-base: ($line-height-computed + $padding-base-vertical * 2);
 $bs-height-lg: (floor($font-size-large * $line-height-base) + $padding-large-vertical * 2);

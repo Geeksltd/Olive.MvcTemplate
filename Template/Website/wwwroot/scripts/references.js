@@ -74,24 +74,7 @@ requirejs(["app-page", "olive-page",
     "spinedit", "password-strength", "slider", "file-style", "validation-style"
 ]);
 
-window.loadModule = function (path, onLoaded, dependencies) {
-    var moduleName = path.replace('/', '-').replace(/[^0-9a-zA-Z_-]/, '');
-    var updatedConfig = { path: {}, shim: {} };
-
-    dependencies = dependencies ? dependencies : [];
-    dependencies.push('app-page');
-
-    updatedConfig.path[moduleName] = path;
-    updatedConfig.shim[moduleName] = dependencies;
-
-    requirejs.config(updatedConfig);
-    requirejs([moduleName], m => onLoaded(m));
-};
-
-window.loadLibrary = function (name, relativePath, dependencies) {
-    var updatedConfig = { path: {}, shim: {} };
-    updatedConfig.path[name] = relativePath;
-    if (dependencies) updatedConfig.shim[moduleName] = dependencies;
-    requirejs.config(updatedConfig);
-    requirejs([name]);
+window.loadModule = function (path, onLoaded) {
+    if (path.indexOf("/") === 0) path = "./.." + path; // To fix baseUrl
+    requirejs([path], m => { if (onLoaded) onLoaded(m) });
 };

@@ -1,14 +1,14 @@
-﻿@import "../../lib/bootstrap/scss/bootstrap.scss";
-@import "_variables.scss";
+﻿@import "../../lib/bootstrap/scss/bootstrap";
+@import "variables";
 @import "../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css";
-@import "../../lib/fontawesome/scss/font-awesome.scss";
+@import "../../lib/fontawesome/scss/font-awesome";
 @import "../../lib/bootstrap-spinedit/css/bootstrap-spinedit.css";
 @import "../../lib/alertify/themes/alertify.core.css";
 @import "../../lib/alertify-bootstrap-3/alertify.bootstrap3.css";
 @import "../../lib/chosen/chosen.css";
-@import "bootstrap-smartmenus.scss";
-@import "typeaheadjs.scss";
-@import "Print.scss";
+@import "bootstrap-smartmenus";
+@import "typeaheadjs";
+@import "Print";
 
 $icon-font-path: '/fonts';
 $fa-font-path: $icon-font-path;

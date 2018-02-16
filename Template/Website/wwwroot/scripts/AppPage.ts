@@ -13,7 +13,6 @@ export default class AppPage extends OlivePage {
 
     initialize() {
         super.initialize();
-
         // This function is called upon every Ajax update as well as the initial page load.
         // Any custom initiation goes here.
     }

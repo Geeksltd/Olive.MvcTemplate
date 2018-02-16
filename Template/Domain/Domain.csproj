@@ -16,7 +16,7 @@
     <PackageReference Include="Olive.Audit" Version="1.0.27" />
     <PackageReference Include="Olive.CSV" Version="1.0.12" />
     <PackageReference Include="Olive.Drawing" Version="1.0.15" />
-    <PackageReference Include="Olive.Entities" Version="1.0.28" />
+    <PackageReference Include="Olive.Entities" Version="1.0.29" />
     <PackageReference Include="Olive.Entities.Data" Version="1.0.39" />
     <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.15" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
