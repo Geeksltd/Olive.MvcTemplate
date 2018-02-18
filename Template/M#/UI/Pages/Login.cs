@@ -1,7 +1,6 @@
 using MSharp;
 using Domain;
 
-
 public class LoginPage : RootPage
 {
     public LoginPage()
