@@ -1,7 +1,7 @@
 ﻿@import "../../lib/bootstrap/scss/bootstrap";
 @import "variables";
 @import "../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css";
-@import "../../lib/fontawesome/scss/font-awesome";
+@import "../../lib/fontawesome/web-fonts-with-css/scss/fontawesome";
 @import "../../lib/bootstrap-spinedit/css/bootstrap-spinedit.css";
 @import "../../lib/alertify/themes/alertify.core.css";
 @import "../../lib/alertify-bootstrap-3/alertify.bootstrap3.css";
@@ -12,6 +12,9 @@
 
 $icon-font-path: '/fonts';
 $fa-font-path: $icon-font-path;
+
+$fa-var-sort-asc: "\f0dd";
+$fa-var-sort-desc: "\f0de";
 
 .nav-link {
     color: #d6d5d5;
