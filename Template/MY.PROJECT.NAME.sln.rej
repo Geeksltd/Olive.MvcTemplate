@@ -1,0 +1,16 @@
+diff a/Template/MY.PROJECT.NAME.sln b/Template/MY.PROJECT.NAME.sln	(rejected hunks)
+@@ -12,12 +12,14 @@
+ 	EndProjectSection
+ EndProject
+ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "#Model", "M#\Model\#Model.csproj", "{90A0E952-66A9-49A7-96E7-89F63BD4F4E7}"
+ EndProject
+ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "#UI", "M#\UI\#UI.csproj", "{A864BF80-8725-43CC-BC86-8728A0F065D5}"
+ EndProject
++Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{87FBFC9F-02B7-4F0A-B0BA-5B55E2B5ED00}"
++EndProject
+ Global
+ 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+ 		Debug|Any CPU = Debug|Any CPU
+ 		Release|Any CPU = Release|Any CPU
+ 	EndGlobalSection
+ 	GlobalSection(ProjectConfigurationPlatforms) = postSolution

@@ -43,4 +43,8 @@ define(["require", "exports", "olive-page", "olive-config"], function (require, 
     exports.default = AppPage;
     window["page"] = new AppPage();
 });
+<<<<<<< HEAD:Template/Website/wwwroot/scripts/AppPage.js
+//# sourceMappingURL=appPage.js.map
+=======
 //# sourceMappingURL=AppPage.js.map
+>>>>>>> 2461181d3c0337fea9d2fe23172e4d3e2c31f869:Template/Website/wwwroot/scripts/appPage.js
