@@ -25,20 +25,15 @@
         "slider": "seiyria-bootstrap-slider/dist/bootstrap-slider.min",
         "moment": "moment/min/moment.min",
         "moment-locale": "moment/locale/en-gb",
-        "datepicker": "eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker",
-
-        // Olive
-        "olive-ext-jquery": "olive.mvc/dist/extensions/jquery",
-        "olive-page": "olive.mvc/dist/olivepage",
-        "olive-config": "olive.mvc/dist/config",
-        "app-page": "../scripts/appPage",
+        "datepicker": "eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker"
     },
     map: {
         "*": {
             "jquery-ui/ui/widget": "jquery-ui",
             "popper.js": "popper",
             '../moment': 'moment',
-            'olive': "olive.mvc/dist"
+            'olive': "olive.mvc/dist",
+            "app": "../scripts"
         }
     },
     shim: {
@@ -56,17 +51,17 @@
         "spinedit": ['jquery'],
         "password-strength": ['jquery'],
         "moment-locale": ['moment'],
-        "olive-ext-jquery": {
+        "olive/extensions/jQueryExtensions": {
             deps: ['jquery', "jquery-validate-unobtrusive"],
             exports: '_'
         },
-        "olive-page": ["alertify", "olive-ext-jquery", "combodate"]
+        "olive/olivePage": ["alertify", "olive/extensions/jQueryExtensions", "combodate"]
     }
 });
 
-requirejs(["app-page", "olive-page",
+requirejs(["app/appPage", "olive/olivePage",
     // JQuery:
-    "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive", "olive-ext-jquery",
+    "jquery", "jquery-ui", "jquery-validate", "jquery-validate-unobtrusive", "olive/extensions/jQueryExtensions",
     // JQuery plugins:
     "chosen", "alertify", "smartmenus", "file-upload", "jquery-typeahead",
     // Bootstrap and plugins:

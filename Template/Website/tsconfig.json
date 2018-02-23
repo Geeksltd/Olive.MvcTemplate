@@ -2,8 +2,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "olive-page": [ "wwwroot/lib/olive.mvc/dist/olivepage" ],
-            "olive-config": [ "wwwroot/lib/olive.mvc/dist/config" ]
+            "olive/*": [ "wwwroot/lib/olive.mvc/typings/*" ]
         },
         "module": "amd",
         "target": "es5",
@@ -14,8 +13,6 @@
         "removeComments": false
     }, "compileOnSave": true,
     "exclude": [
-        "wwwroot/lib",
-        "typings",
-        "lib"
+        "wwwroot/lib/olive.mvc/src"
     ]
 }

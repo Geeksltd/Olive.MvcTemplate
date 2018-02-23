@@ -8,43 +8,22 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "olive-page", "olive-config"], function (require, exports, olive_page_1, olive_config_1) {
+define(["require", "exports", "olive/olivePage"], function (require, exports, olivePage_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
     var AppPage = /** @class */ (function (_super) {
         __extends(AppPage, _super);
-        // Here you can override any of the base standard functions.
-        // e.g: To use a different AutoComplete library, simply override handleAutoComplete(input).
         function AppPage() {
-            var _this = _super.call(this) || this;
-            olive_config_1.default.DISABLE_BUTTONS_DURING_AJAX = true;
-            return _this;
+            return _super.call(this) || this;
+            // Any code you write here will run only once when the page is loaded.
         }
         AppPage.prototype.initialize = function () {
             _super.prototype.initialize.call(this);
             // This function is called upon every Ajax update as well as the initial page load.
             // Any custom initiation goes here.
         };
-        AppPage.prototype.executeAction = function (action, trigger) {
-            // You can define any custom actions here.
-            // --------------- EXAMPLE --------------------------------
-            if (action.MySpecialAction) {
-                // do something to handle it.
-                return true;
-            }
-            // You can also change the default framework behaviour for standard actions.
-            // --------------- EXAMPLE --------------------------------
-            //if (action.BrowserAction == "ShowPleaseWait") {
-            //    // Handle it my way...
-            //}
-            return _super.prototype.executeAction.call(this, action, trigger);
-        };
         return AppPage;
-    }(olive_page_1.default));
+    }(olivePage_1.default));
     exports.default = AppPage;
     window["page"] = new AppPage();
 });
-<<<<<<< HEAD:Template/Website/wwwroot/scripts/AppPage.js
 //# sourceMappingURL=appPage.js.map
-=======
-//# sourceMappingURL=AppPage.js.map
->>>>>>> 2461181d3c0337fea9d2fe23172e4d3e2c31f869:Template/Website/wwwroot/scripts/appPage.js
