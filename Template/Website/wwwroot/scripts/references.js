@@ -31,7 +31,7 @@
         "olive-ext-jquery": "olive.mvc/dist/extensions/jquery",
         "olive-page": "olive.mvc/dist/olivepage",
         "olive-config": "olive.mvc/dist/config",
-        "app-page": "../scripts/AppPage",
+        "app-page": "../scripts/appPage",
     },
     map: {
         "*": {
