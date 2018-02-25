@@ -16,6 +16,7 @@ M# makes development process much easier and more efficient. Check out [M# Docs]
 2. Visual Studio 2017 (latest build) with .NET Core and web development features installed.
 3. GIT for Windows ([install from here](http://gitforwindows.org/))
 4. Yarn Package Manager ([install from here](https://yarnpkg.com/latest.msi))
+5. Docker, plus Windows runtime ([install from here](https://docs.docker.com/toolbox/toolbox_install_windows/))
 
 ### Build and running the code
 1. clone the repo (or you can get the zip file which is not recommended)
