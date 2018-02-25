@@ -1,0 +1,50 @@
+﻿@model ViewModel.AdministratorForm
+@{Layout = "~/Views/Layouts/FrontEnd.Modal.cshtml".Unless(Request.IsAjaxPost());}
+<!-- «Start| AdministratorForm» -->
+<form data-module="AdministratorForm" role="form" method="post" action="@Url.Current()" data-validation-style="tooltip" class="input-form">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <h2>Administrator Details</h2>
+   <div class="form-body">
+      <div class="form-group row required-item">
+         <label for="FirstName" class="control-label">
+            First name
+         </label>
+         <div class="group-control">
+            <input type="text" asp-for="FirstName" class="form-control" autofocus="autofocus" />
+         </div>
+      </div>
+      <div class="form-group row required-item">
+         <label for="LastName" class="control-label">
+            Last name
+         </label>
+         <div class="group-control">
+            <input type="text" asp-for="LastName" class="form-control" />
+         </div>
+      </div>
+      <div class="form-group row required-item">
+         <label for="Email" class="control-label">
+            Email
+         </label>
+         <div class="group-control">
+            <input type="text" asp-for="Email" class="form-control" />
+         </div>
+      </div>
+      <div class="form-group row required-item">
+         <label for="IsDeactivated" class="control-label">
+            Is deactivated
+         </label>
+         <div class="group-control">
+            @Html.RadioButtonsFor(x => x.IsDeactivated, Model.IsDeactivated_Options, new { @class = "radio" })
+         </div>
+      </div>
+   </div>
+   <div class="buttons-row">
+      <div class="buttons">
+         <button name="Cancel" class="btn btn-secondary" onclick="parent.page.modal.close();">Cancel</button>
+         <button type="submit" name="Save" class="btn btn-primary" formaction='@Url.ActionWithQuery("AdministratorForm/Save")' default-button="true"><i class="fa-check fa"></i>
+            Save</button>
+      </div>
+   </div>
+</form>
+<!-- «End| AdministratorForm» -->

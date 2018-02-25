@@ -1,0 +1,38 @@
+﻿@using Olive.Security
+
+@model ViewModel.LoginForm
+
+<!-- «Start| LoginForm» -->
+<form data-module="LoginForm" role="form" method="post" action="@Url.Current()" data-validation-style="tooltip" class="input-form">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <h2>Please Login</h2>
+   @(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key="LoginIntro"}))
+   <div class="form-body">
+      <div class="form-group row required-item">
+         <label for="Email" class="control-label">
+            Email
+         </label>
+         <div class="group-control">
+            <input type="text" asp-for="Email" class="form-control" placeholder="Your email" />
+         </div>
+      </div>
+      <div class="form-group row required-item">
+         <label for="Password" class="control-label">
+            Password
+         </label>
+         <div class="group-control">
+            <input type="password" asp-for="Password" class="form-control" placeholder="Your password" />
+         </div>
+      </div>
+   </div>
+   <div class="buttons-row">
+      <div class="buttons">
+         <a name="ForgotPassword" href='@Url.Index("LoginForgotPassword")' data-redirect="ajax"><i class="fa-key fa"></i>
+            Forgot password?</a>
+         <button type="submit" name="Login" class="btn btn-primary" formaction='@Url.ActionWithQuery("LoginForm/Login")' default-button="true" onclick="page.waiting.show();">Login</button>
+      </div>
+   </div>
+</form>
+<!-- «End| LoginForm» -->
+

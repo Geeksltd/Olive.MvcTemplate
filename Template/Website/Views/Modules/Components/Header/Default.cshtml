@@ -1,0 +1,16 @@
+﻿@model ViewModel.Header
+@(Layout = null)
+
+<!-- «Start| Header» -->
+<div data-module="Header">
+   @Html.StartupActionsJson()
+   <nav class="navbar navbar-expand-md navbar-inverse bg-dark sticky-top">
+      <a name="Logo" class="logo" href="~/"><img src="~/img/Logo.png" alt="Logo" /></a>
+      <a name="Burger" class="navbar-toggler collapsed" href="#" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls=".navbar-collapse" aria-label="Toggle navigation"><i class="fa-bars fa"></i></a>
+      <div class="collapse navbar-collapse">
+         @(await Component.InvokeAsync<MainMenu>())
+      </div>
+   </nav>
+</div>
+<!-- «End| Header» -->
+

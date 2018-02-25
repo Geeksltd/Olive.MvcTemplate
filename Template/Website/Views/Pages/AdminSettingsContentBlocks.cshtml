@@ -1,0 +1,43 @@
+﻿@model ViewModel.ContentBlocksList
+<!-- «Start| ContentBlocksList» -->
+<form data-module="ContentBlocksList" method="get" action="@Url.Current()" data-redirect="ajax">
+   @Html.StartupActionsJson()
+   <input type="hidden" name="Current-Sort" id="Current-Sort" value="@Model.Sort" />
+   <div class="buttons-row top-buttons-row">
+      <div class="buttons">
+         <a name="NewContentBlock" class="btn btn-primary" href='@Url.Index("AdminSettingsContentBlocksEnter", new { ReturnUrl = Url.Current() })' data-redirect="ajax" default-button="true"><i class="fa-plus fa"></i>
+            New Content Block</a>
+      </div>
+   </div>
+   <h2>Content Blocks</h2>
+   @if (Model.Items.Any())
+   {
+   <div class="grid-wrapper">
+      <table class="grid">
+         <thead>
+            <tr>
+               <th data-sort="Key"><a href="@Model.Sort.Url("Key")" data-redirect="ajax">Key</a></th>
+               <th data-sort="Content"><a href="@Model.Sort.Url("Content")" data-redirect="ajax">Content</a></th>
+            </tr>
+         </thead>
+         <tbody>
+            @foreach (var listItem in Model.Items)
+            {
+            var item = listItem.Item;
+            <tr>
+               <td><a name="Key" href='@Url.Index("AdminSettingsContentBlocksEnter", new { item = item.ID, ReturnUrl = Url.Current() })' data-redirect="ajax">@item.Key</a></td>
+               <td>@item.Content.OrEmpty().RemoveHtmlTags().Summarize(80)</td>
+            </tr>
+            }
+         </tbody>
+      </table>
+   </div>
+   }
+   @if (Model.Items.None())
+   {
+   <div class="empty-list">
+      There are no content blocks to display.
+   </div>
+   }
+</form>
+<!-- «End| ContentBlocksList» -->

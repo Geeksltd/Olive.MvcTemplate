@@ -1,0 +1,23 @@
+﻿@model ViewModel.GeneralSettingsForm
+<!-- «Start| GeneralSettingsForm» -->
+<form data-module="GeneralSettingsForm" role="form" method="post" action="@Url.Current()" data-validation-style="tooltip" class="input-form">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <h2>Settings</h2>
+   <div class="form-body">
+      <div class="form-group row required-item">
+         <label for="PasswordResetTicketExpiryMinutes" class="control-label">
+            Password reset ticket expiry minutes
+         </label>
+         <div class="group-control">
+            <input type="text" asp-for="PasswordResetTicketExpiryMinutes" class="form-control" autofocus="autofocus" data-control="numeric-up-down" />
+         </div>
+      </div>
+   </div>
+   <div class="buttons-row">
+      <div class="buttons">
+         <button type="submit" name="Save" class="btn btn-primary" formaction='@Url.ActionWithQuery("GeneralSettingsForm/Save")' default-button="true">Save</button>
+      </div>
+   </div>
+</form>
+<!-- «End| GeneralSettingsForm» -->

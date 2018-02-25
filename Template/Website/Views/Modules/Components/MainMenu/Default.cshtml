@@ -1,0 +1,26 @@
+﻿@model ViewModel.MainMenu
+@(Layout = null)
+
+<!-- «Start| MainMenu» -->
+<form data-module="MainMenu" method="post" action="@Url.Current()">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <ul class="nav navbar-nav dropped-submenu">
+      @if (User.IsInRole("Anonymous"))
+      {
+         <li class="@("active".OnlyWhen(Model.ActiveItem == "Login"))">
+            <a href="@Url.Index("Login")" data-redirect="ajax"><i class="fa-unlock-alt fa"></i>
+               Login</a>
+         </li>
+      }
+@if (User.IsInRole("Admin"))
+      {
+         <li class="@("active".OnlyWhen(Model.ActiveItem == "Settings"))">
+            <a href="@Url.Index("AdminSettings")" data-redirect="ajax"><i class="fa-cog fa"></i>
+               Settings</a>
+         </li>
+      }
+   </ul>
+</form>
+<!-- «End| MainMenu» -->
+

@@ -1,0 +1,48 @@
+﻿@model ViewModel.ViewAdmin
+@{ Domain.Administrator item = Model.Item; }
+<!-- «Start| ViewAdmin» -->
+<form data-module="ViewAdmin" method="post" action="@Url.Current()">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <h2>@item Details</h2>
+   <div class="view-body">
+      @if (item.Name.HasValue())
+      {
+      <div class="form-group row">
+         <label class="control-label">
+            Name
+         </label>
+         <div class="group-control">
+            @item.Name
+         </div>
+      </div>
+      }
+      <div class="form-group row">
+         <label class="control-label">
+            Email
+         </label>
+         <div class="group-control">
+            @item.Email
+         </div>
+      </div>
+      <div class="form-group row">
+         <label class="control-label">
+            Is deactivated
+         </label>
+         <div class="group-control">
+            @if (item.IsDeactivated) {
+            <i class="fa fa-check"></i>
+            }
+         </div>
+      </div>
+   </div>
+   <div class="buttons-row">
+      <div class="buttons">
+         <button name="Back" class="btn btn-secondary" onclick="return page.goBack(this);" data-redirect="ajax"><i class="fa-chevron-left fa"></i>
+            Back</button>
+         <button type="submit" name="Delete" class="btn btn-secondary" formaction='@Url.ActionWithQuery("ViewAdmin/Delete")'><i class="fa-remove fa"></i>
+            Delete</button>
+      </div>
+   </div>
+</form>
+<!-- «End| ViewAdmin» -->

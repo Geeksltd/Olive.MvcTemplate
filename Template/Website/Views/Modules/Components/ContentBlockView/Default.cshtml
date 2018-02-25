@@ -1,0 +1,12 @@
+﻿@model ViewModel.ContentBlockView
+@(Layout = null)
+
+@{ Domain.ContentBlock item = Model.Item; }
+
+<!-- «Start| ContentBlockView» -->
+<div data-module="ContentBlockView">
+   @Html.StartupActionsJson()
+   @info.Output.Raw()
+</div>
+<!-- «End| ContentBlockView» -->
+

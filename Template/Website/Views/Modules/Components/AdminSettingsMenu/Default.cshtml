@@ -1,0 +1,20 @@
+﻿@model ViewModel.AdminSettingsMenu
+@(Layout = null)
+
+<!-- «Start| AdminSettingsMenu» -->
+<div data-module="AdminSettingsMenu" class="navbar navbar-light">
+   @Html.StartupActionsJson()
+   <ul class="nav flex-column">
+      <li class="@("active".OnlyWhen(Model.ActiveItem == "GeneralSettings"))">
+         <a href="@Url.Index("AdminSettingsGeneral")" data-redirect="ajax">General settings</a>
+      </li>
+      <li class="@("active".OnlyWhen(Model.ActiveItem == "Administrators"))">
+         <a href="@Url.Index("AdminSettingsAdministrators")" data-redirect="ajax">Administrators</a>
+      </li>
+      <li class="@("active".OnlyWhen(Model.ActiveItem == "ContentBlocks"))">
+         <a href="@Url.Index("AdminSettingsContentBlocks")" data-redirect="ajax">Content blocks</a>
+      </li>
+   </ul>
+</div>
+<!-- «End| AdminSettingsMenu» -->
+

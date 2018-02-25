@@ -1,0 +1,56 @@
+﻿@using Olive.Security
+
+@model ViewModel.SocialMediaLogin
+
+<!-- «Start| SocialMediaLogin» -->
+<form data-module="SocialMediaLogin" role="form" method="post" action="@Url.Current()" data-validation-style="tooltip" class="input-form social-media-login">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <h3>
+      Other ways to sign in
+   </h3>
+   <div class="form-body">
+      @if ((@info?.Error == "not-registered"))
+      {
+         <div class="form-group row">
+            <div class="group-control">
+               <p>
+                  The email address you are registered with @Model.Provider is not registered with us. Please register with us first with the same email address and then you would be able to sign in through @Model.Provider
+               </p>
+            </div>
+         </div>
+      }
+@if ((@info?.Error == "deactivated"))
+      {
+         <div class="form-group row">
+            <div class="group-control">
+               <p>
+                  Although your login with @Model.Provider was successful but we cannot log you into our system because @Model.Provider did not supply us your email address. It might be due to security restrictions you have set with them.
+               </p>
+            </div>
+         </div>
+      }
+@if ((@info?.Error == "deactivated"))
+      {
+         <div class="form-group row">
+            <div class="group-control">
+               <p>
+                  Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.
+               </p>
+            </div>
+         </div>
+      }
+   </div>
+   <div class="buttons-row">
+      <div class="buttons">
+         <button type="submit" name="LoginByGoogle" class="btn-social btn-google btn btn-primary" formaction='@Url.ActionWithQuery("SocialMediaLogin/LoginByGoogle")' default-button="true" formmethod=post><i class="fa-google-plus fa"></i>
+            Login by Google</button>
+         <button type="submit" name="LoginByFacebook" class="btn-social btn-facebook btn btn-secondary" formaction='@Url.ActionWithQuery("SocialMediaLogin/LoginByFacebook")' formmethod=post><i class="fa-facebook fa"></i>
+            Login by Facebook</button>
+         <button type="submit" name="LoginByMicrosoft" class="btn-social btn-microsoft btn btn-secondary" formaction='@Url.ActionWithQuery("SocialMediaLogin/LoginByMicrosoft")' formmethod=post><i class="fa-windows fa"></i>
+            Login by Microsoft</button>
+      </div>
+   </div>
+</form>
+<!-- «End| SocialMediaLogin» -->
+
