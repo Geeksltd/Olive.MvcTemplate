@@ -1,0 +1,46 @@
+﻿@import "imports/common";
+@import "imports/nav";
+@import "imports/bootstrap-social";
+@import "imports/print";
+
+$footer-height: 90px;
+$footer-top-margin: 30px;
+
+// main layout
+.page {
+    & {
+        @include make-row();
+    }
+    .side-bar {
+        @include make-column-lg(2); 
+    }
+    .content {
+        @include make-column-lg(10);
+    }
+    .content.full {
+        @include make-column-lg(12);
+    }
+    padding-top:14px;
+}
+ 
+h2 { margin-top: 0; }
+body { margin-bottom: ($footer-height + $footer-top-margin); overflow-y: scroll; }
+
+footer { position: absolute; bottom: 0; width: 100%; background-color: $gray-darker; color: #eee; height: $footer-height; padding: 15px;
+    p {
+        padding: 5px;
+        @extend .text-muted;
+        color: #334432;
+    }
+    a, a:hover { color: #ade0f1; }
+    img { margin: 0 8px; }
+    .pull-right a { color: #fff; text-decoration: underline; }
+    .plain-text { text-decoration: none !important; }
+}
+
+.social-media-login .buttons-row { text-align: left; }
+
+.captcha-image { margin-top: 10px !important; }
+.captcha-image-refresh {
+    i { margin-right: 10px; }
+}
