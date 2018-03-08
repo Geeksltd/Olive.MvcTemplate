@@ -31,11 +31,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.1" />
-    <PackageReference Include="Olive.Excel" Version="1.0.14" />
-    <PackageReference Include="Olive.Hangfire" Version="1.0.22" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.76" />
-    <PackageReference Include="Olive.PDF" Version="1.0.12" />
-    <PackageReference Include="Olive.Security.Auth0" Version="1.0.9" />
+    <PackageReference Include="Olive.Hangfire" Version="1.0.24" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.77" />
+    <PackageReference Include="Olive.PDF" Version="1.0.13" />
+    <PackageReference Include="Olive.Security.Auth0" Version="1.0.10" />
     <PackageReference Include="Olive.Testing" Version="1.0.39" />
     <PackageReference Include="SkiaSharp" Version="1.60.0" />
   </ItemGroup>
