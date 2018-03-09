@@ -35,7 +35,7 @@
     <PackageReference Include="Olive.Mvc" Version="1.0.77" />
     <PackageReference Include="Olive.PDF" Version="1.0.13" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.10" />
-    <PackageReference Include="Olive.Testing" Version="1.0.39" />
+    <PackageReference Include="Olive.Testing" Version="1.0.41" />
     <PackageReference Include="SkiaSharp" Version="1.60.0" />
   </ItemGroup>
   <ItemGroup>
