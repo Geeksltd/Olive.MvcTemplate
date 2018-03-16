@@ -16,6 +16,7 @@
 
         public override void ConfigureServices(IServiceCollection services)
         {
+           services.AddSingleton<Olive.Audit.ILogger>(new DatabaseLogger());
             base.ConfigureServices(services);
 
             AuthenticationBuilder.AddSocialAuth();
