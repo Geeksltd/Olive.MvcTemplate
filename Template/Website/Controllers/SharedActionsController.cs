@@ -1,14 +1,10 @@
 ﻿namespace Controllers
 {
-    using System;
-    using System.ComponentModel;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Authorization;
-    using Olive.Entities;
-    using Olive.Mvc;
-    using Microsoft.AspNetCore.Http;
-    using Olive;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Olive.Mvc;
 
     public class SharedActionsController : BaseController
     {
@@ -18,26 +14,13 @@
         [Route("error/404")]
         public new async Task<ActionResult> NotFound() => await View("error-404");
 
-        [HttpPost, Route("upload")]
-        [Authorize]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        public ActionResult UploadTempFileToServer(IFormFile[] files)
+        [HttpPost, Authorize, Route("upload")]
+        public async Task<IActionResult> UploadTempFileToServer(IFormFile[] files)
         {
-            // Note: This will prevent uploading of all unsafe files defined at Blob.UnsafeExtensions
-            // If you need to allow them, then comment it out.
-            if (Blob.HasUnsafeFileExtension(files[0].FileName))
-                return Json(new { Error = "Invalid file extension." });
-
-            // var file = Request.Files[0];
-            var path = System.IO.Path.Combine(FileUploadService.GetFolder(Guid.NewGuid().ToString()).FullName, files[0].FileName.ToSafeFileName());
-            if (path.Length >= 260)
-                return Json(new { Error = "File name length is too long." });
-
-            return Json(new FileUploadService().TempSaveUploadedFile(files[0]));
+            return Json(await new FileUploadService().TempSaveUploadedFile(files[0]));
         }
 
         [Route("file")]
-        [EditorBrowsable(EditorBrowsableState.Never)]
         public async Task<ActionResult> DownloadFile()
         {
             var path = Request.QueryString.ToString().TrimStart('?');
@@ -50,10 +33,6 @@
         }
 
         [Route("temp-file/{key}")]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        public Task<ActionResult> DownloadTempFile(string key)
-        {
-            return TempFileService.Download(key);
-        }
+        public Task<ActionResult> DownloadTempFile(string key) => TempFileService.Download(key);
     }
 }
