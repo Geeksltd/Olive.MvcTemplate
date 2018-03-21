@@ -1,6 +1,8 @@
 
 @echo off
 
+echo {"runtimeOptions":{"tfm":"netcoreapp2.0","framework":{"name":"Microsoft.NETCore.App","version": "2.0.0"}}} >  M#\lib\netcoreapp2.0\MSharp.DSL.runtimeconfig.json
+
 WHERE yarn > nul
 if ERRORLEVEL 1 (
     echo YARN is not installed! You can install it from https://yarnpkg.com/latest.msi
