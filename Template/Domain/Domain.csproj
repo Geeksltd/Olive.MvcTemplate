@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
-    <PackageReference Include="Olive" Version="1.0.69" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Olive" Version="1.0.71" />
     <PackageReference Include="Olive.Audit" Version="1.0.29" />
     <PackageReference Include="Olive.CSV" Version="1.0.15" />
     <PackageReference Include="Olive.Drawing" Version="1.0.17" />
