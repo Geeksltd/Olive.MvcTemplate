@@ -9,10 +9,10 @@
     public class SharedActionsController : BaseController
     {
         [Route("error")]
-        public async Task<ActionResult> Error() => await View("error");
+        public ActionResult Error() => View("error");
 
         [Route("error/404")]
-        public async Task<ActionResult> NotFound404() => await View("error-404");
+        public ActionResult NotFound404() => View("error-404");
 
         [HttpPost, Authorize, Route("upload")]
         public async Task<IActionResult> UploadTempFileToServer(IFormFile[] files)
