@@ -15,7 +15,7 @@ namespace Domain
 
         string ILoginInfo.ID => ID.ToString();
 
-        TimeSpan ILoginInfo.Timeout => Config.Get("Authentication:Timeout", defaultValue: 20).Minutes();
+        TimeSpan? ILoginInfo.Timeout => Config.Get("Authentication:Timeout", defaultValue: 20).Minutes();
 
         /// <summary>
         /// Gets the roles of this user.

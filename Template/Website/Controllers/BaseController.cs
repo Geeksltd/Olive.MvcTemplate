@@ -3,6 +3,7 @@ using Olive.Mvc;
 using Olive.Security;
 using Olive.Web;
 using Olive;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Controllers
 {
@@ -12,6 +13,7 @@ namespace Controllers
     public class BaseController : Olive.Mvc.Controller
     {
         /// <summary>Gets a Domain User object extracted from the current user principal.</summary>
+        [NonAction]
         public User GetUser() => User.Extract<User>();
     }
 }
