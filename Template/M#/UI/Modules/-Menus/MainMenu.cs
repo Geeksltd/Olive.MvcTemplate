@@ -17,7 +17,7 @@ namespace Modules
             Item("Settings")
                 .VisibleIf(AppRole.Admin)
                 .Icon(FA.Cog)
-                .OnClick(x => x.Go<Admin.SettingsPage>());
+               .OnClick(x => x.Go<Admin.SettingsPage>());
         }
     }
 }
