@@ -33,7 +33,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.3" />
     <PackageReference Include="Olive.Export" Version="1.0.18" />
     <PackageReference Include="Olive.Hangfire" Version="1.0.27" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.92" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.93" />
     <PackageReference Include="Olive.Mvc.Paging" Version="1.0.12" />
     <PackageReference Include="Olive.PDF" Version="1.0.14" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.11" />
