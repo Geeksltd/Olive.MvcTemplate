@@ -23,6 +23,5 @@
     <PackageReference Include="Olive.Security" Version="1.0.33" />
     <PackageReference Include="Olive.Security.Impersonation" Version="1.0.21" />
     <PackageReference Include="Olive.Web" Version="1.0.35" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.4.3" />
   </ItemGroup>
 </Project>
