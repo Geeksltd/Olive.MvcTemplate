@@ -7,8 +7,8 @@
   </PropertyGroup>
  
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.202" />
-    <PackageReference Include="Olive" Version="1.0.74" />
+    <PackageReference Include="MSharp" Version="4.1.203" />
+    <PackageReference Include="Olive" Version="1.0.75" />
   </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">
     <Exec Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /model" />
