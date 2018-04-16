@@ -304,7 +304,7 @@ form {
             }
 
             .group-control {
-                width: 100%;
+                @include make-column-lg(8);
             }
 
             .form-group {
