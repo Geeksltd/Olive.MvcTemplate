@@ -6,8 +6,7 @@ namespace App
     {
         public Project()
         {
-            Name("MY.PROJECT.NAME").SolutionFile("MY.PROJECT.NAME.sln");
-            // SqlDialect(MSharp.SqlDialect.SQLite);
+            Name("MY.PROJECT.NAME").SolutionFile("MY.PROJECT.NAME.sln");            
 
             Role("Local.Request");
             Role("Anonymous");

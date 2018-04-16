@@ -12,17 +12,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Olive" Version="1.0.74" />
+    <PackageReference Include="Olive" Version="1.0.75" />
     <PackageReference Include="Olive.Audit" Version="1.0.29" />
     <PackageReference Include="Olive.CSV" Version="1.0.15" />
-    <PackageReference Include="Olive.Drawing" Version="1.0.17" />
-    <PackageReference Include="Olive.Entities" Version="1.0.38" />
-    <PackageReference Include="Olive.Entities.Data" Version="1.0.41" />
-    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.17" />
+    <PackageReference Include="Olive.Drawing" Version="1.0.18" />
+    <PackageReference Include="Olive.Entities" Version="1.0.40" />
+    <PackageReference Include="Olive.Entities.Data" Version="1.0.43" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.19" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
     <PackageReference Include="Olive.Security" Version="1.0.33" />
     <PackageReference Include="Olive.Security.Impersonation" Version="1.0.21" />
     <PackageReference Include="Olive.Web" Version="1.0.35" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.4.3" />
   </ItemGroup>
 </Project>

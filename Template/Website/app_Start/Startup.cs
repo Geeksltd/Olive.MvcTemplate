@@ -7,6 +7,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
     using Olive;
+    using Olive.Entities.Data;
     using Olive.Hangfire;
     using Olive.Mvc.Testing;
 
@@ -24,7 +25,7 @@
 
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseWebTest(ReferenceData.Create, config => config.AddTasks());
+            app.UseWebTest<SqlServerManager>(ReferenceData.Create, config => config.AddTasks());
             base.Configure(app, env);
 
             if (Config.Get<bool>("Automated.Tasks:Enabled"))

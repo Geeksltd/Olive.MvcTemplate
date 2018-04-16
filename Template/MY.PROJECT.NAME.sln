@@ -6,11 +6,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{98DF91A2-8260-46AF-8973-05E870C30C06}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB802F83-E581-4C4B-9B16-7D00D66C9329}"
-	ProjectSection(SolutionItems) = preProject
-		GCop.json = GCop.json
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "#Model", "M#\Model\#Model.csproj", "{90A0E952-66A9-49A7-96E7-89F63BD4F4E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "#UI", "M#\UI\#UI.csproj", "{A864BF80-8725-43CC-BC86-8728A0F065D5}"
