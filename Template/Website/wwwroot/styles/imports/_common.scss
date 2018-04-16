@@ -227,7 +227,9 @@ form {
             min-height: 64px; /* TODO: Fix this to be proper responsive setup. input[type=file] { float: left; }*/
         }
 
-        .btn{padding:4px;}
+        .btn {
+            padding: 4px;
+        }
 
         .current-file {
             & {
@@ -250,12 +252,12 @@ form {
                 width: 0;
             }
 
-            input.form-control {                
+            input.form-control {
                 background-color: transparent;
                 color: #fff;
-                font-size:100%;
-                border:none;
-                position:absolute;
+                font-size: 100%;
+                border: none;
+                position: absolute;
             }
         }
 
@@ -297,6 +299,7 @@ form {
                 @extend .table-sm;
                 @extend .table-responsive;
                 margin-bottom: 0;
+                overflow: visible;
             }
 
             thead {
