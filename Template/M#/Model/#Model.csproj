@@ -10,6 +10,10 @@
     <PackageReference Include="MSharp" Version="4.1.205" />
     <PackageReference Include="Olive" Version="1.0.76" />
   </ItemGroup>
+ 
+  <ItemGroup>
+    <Folder Include="Domain\" />
+  </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">
     <Exec Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /model" />
   </Target>
