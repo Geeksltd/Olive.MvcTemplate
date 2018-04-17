@@ -1,25 +1,33 @@
 ﻿namespace Website
 {
+    using System;
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Logging;
+    using Olive;
 
     public class Program
     {
-        const bool RELEASE_MODE = false;
-
         public static void Main(string[] args) => BuildWebHost(args).Run();
 
         public static IWebHost BuildWebHost(string[] args)
         {
-            var builder = WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
+            var builder = WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging(ConfigureLogging)
+                .UseStartup<Startup>();
 
-            if (RELEASE_MODE)
-                builder.UseSetting("detailedErrors", "true").CaptureStartupErrors(true);
+            builder.UseSetting("detailedErrors", "true").CaptureStartupErrors(true);
 
             // Is this needed?  
             builder.UseIISIntegration();
 
             return builder.Build();
+        }
+
+        static void ConfigureLogging(ILoggingBuilder logging)
+        {
+            // You can customise logging here
+            logging.AddFile();
         }
     }
 }

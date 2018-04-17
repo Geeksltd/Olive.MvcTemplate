@@ -18,6 +18,7 @@
         public override void ConfigureServices(IServiceCollection services)
         {
             base.ConfigureServices(services);
+            services.AddDatabaseLogger();
 
             AuthenticationBuilder.AddSocialAuth();
             services.AddScheduledTasks();
