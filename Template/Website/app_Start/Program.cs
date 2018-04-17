@@ -27,7 +27,7 @@
         static void ConfigureLogging(ILoggingBuilder logging)
         {
             // You can customise logging here
-            logging.AddFile();
+            //logging.AddFile(x => x.FilePrefix = "log-");
         }
     }
 }
