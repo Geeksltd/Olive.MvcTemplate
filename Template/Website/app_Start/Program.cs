@@ -18,9 +18,6 @@
 
             builder.UseSetting("detailedErrors", "true").CaptureStartupErrors(true);
 
-            // Is this needed?  
-            builder.UseIISIntegration();
-
             return builder.Build();
         }
 
