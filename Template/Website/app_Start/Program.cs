@@ -24,10 +24,11 @@
             return builder.Build();
         }
 
-        static void ConfigureLogging(ILoggingBuilder logging)
+        static void ConfigureLogging(WebHostBuilderContext context, ILoggingBuilder logging)
         {
             // You can customise logging here
-            // logging.AddFile(x => x.FilePrefix = "log-");
+            if (!context.HostingEnvironment.IsDevelopment())
+                logging.AddFile(x => x.FilePrefix = "log-");
         }
     }
 }
