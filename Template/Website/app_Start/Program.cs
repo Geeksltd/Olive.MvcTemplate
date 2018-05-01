@@ -12,13 +12,11 @@
 
         public static IWebHost BuildWebHost(string[] args)
         {
-            var builder = WebHost.CreateDefaultBuilder(args)
+            return WebHost.CreateDefaultBuilder(args)
                 .ConfigureLogging(ConfigureLogging)
-                .UseStartup<Startup>();
-
-            builder.UseSetting("detailedErrors", "true").CaptureStartupErrors(true);
-
-            return builder.Build();
+                .UseSetting("detailedErrors", "true").CaptureStartupErrors(true)
+                .UseStartup<Startup>()
+                .Build();
         }
 
         static void ConfigureLogging(WebHostBuilderContext context, ILoggingBuilder logging)

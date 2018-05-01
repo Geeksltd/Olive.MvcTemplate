@@ -4,11 +4,12 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <OutputPath>..\lib\</OutputPath>
     <RootNamespace>Model</RootNamespace>
+	<NoWarn>1701;1702;1705;NU1701</NoWarn>
   </PropertyGroup>
  
   <ItemGroup>
     <PackageReference Include="MSharp" Version="4.1.213" />
-    <PackageReference Include="Olive" Version="1.0.78" />
+    <PackageReference Include="Olive" Version="1.0.85" />
   </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">
     <Exec Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /model" />

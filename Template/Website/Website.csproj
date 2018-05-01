@@ -5,7 +5,7 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;1705;1998</NoWarn>
+    <NoWarn>1701;1702;1705;1998;NU1701</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <DefaultItemExcludes>node_modules\**;$(DefaultItemExcludes)</DefaultItemExcludes>
@@ -34,11 +34,11 @@
     <PackageReference Include="Olive.Audit.DatabaseLogger" Version="1.0.31" />
     <PackageReference Include="Olive.Export" Version="1.0.18" />
     <PackageReference Include="Olive.Hangfire" Version="1.0.28" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.98" />
-    <PackageReference Include="Olive.Mvc.Paging" Version="1.0.12" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.104" />
+    <PackageReference Include="Olive.Mvc.Paging" Version="1.0.13" />
     <PackageReference Include="Olive.PDF" Version="1.0.14" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.11" />
-    <PackageReference Include="Olive.Testing" Version="1.0.56" />
+    <PackageReference Include="Olive.Testing" Version="1.0.57" />
     <PackageReference Include="SkiaSharp" Version="1.60.0" />
   </ItemGroup>
   <ItemGroup>
