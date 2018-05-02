@@ -24,14 +24,6 @@
             services.AddScheduledTasks();
         }
 
-        public override async Task OnStartUpAsync(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-                await app.InitializeTempDatabase<SqlServerManager>(() => ReferenceData.Create());
-
-            // Add any other initialization logic that needs the database to be ready here.
-        }
-
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             base.Configure(app, env);
@@ -39,6 +31,14 @@
 
             if (Config.Get<bool>("Automated.Tasks:Enabled"))
                 app.UseScheduledTasks(TaskManager.Run);
+        }
+
+        public override async Task OnStartUpAsync(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+                await app.InitializeTempDatabase<SqlServerManager>(() => ReferenceData.Create());
+
+            // Add any other initialization logic that needs the database to be ready here.
         }
     }
 }
