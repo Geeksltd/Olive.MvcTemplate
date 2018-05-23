@@ -1,29 +1,2 @@
 @import "variables";
 @import "../../lib/jquery-typeahead/dist/jquery.typeahead.min.css";
-/*$input-padding-y: 0rem;
-$font-size-root: 1px;
-
-
-span.twitter-typeahead {
-  width: 100%;
-
-  .tt-menu {
-    @extend .dropdown-menu;
-  }
-
-  .tt-suggestion {
-    @extend .dropdown-item;
-  }
-
-  .tt-suggestion.tt-cursor {
-     @extend .dropdown-item.active;
-  }
-
-
-  .input-group & {
-    display: block !important;
-    .tt-menu {
-      top:(2 * $input-padding-y + $font-size-base*$line-height-base + 2 * $input-btn-border-width/$font-size-root) !important;
-    }
-  }
-}*/

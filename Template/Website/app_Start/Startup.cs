@@ -26,8 +26,9 @@
 
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            base.Configure(app, env);
             if (env.IsDevelopment()) app.UseWebTest(config => config.AddTasks());
+
+            base.Configure(app, env);
 
             if (Config.Get<bool>("Automated.Tasks:Enabled"))
                 app.UseScheduledTasks(TaskManager.Run);
