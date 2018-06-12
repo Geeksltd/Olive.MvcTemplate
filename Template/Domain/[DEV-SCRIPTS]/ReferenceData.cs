@@ -10,7 +10,9 @@ namespace Domain
     public class ReferenceData
     {
         static Task<T> Create<T>(T item) where T : IEntity
-           => Database.Instance.Save(item, SaveBehaviour.BypassAll).ContinueWith(x => item);
+        {
+            return Context.Current.Database().Save(item, SaveBehaviour.BypassAll).ContinueWith(x => item);
+        }
 
         public static async Task Create()
         {

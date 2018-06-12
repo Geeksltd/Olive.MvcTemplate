@@ -2,6 +2,8 @@
 {
     using System;
     using System.Threading.Tasks;
+    using Olive;
+    using Olive.Entities;
     using Olive.Entities.Data;
 
     /// <summary>
@@ -9,10 +11,12 @@
     /// </summary>
     public class CacheSyncronizeService
     {
+        static IDatabase Database => Context.Current.Database();
+
         static CacheSyncronizeService()
         {
             // Watch every change in the database, and increase the cache version accordingly.
-            Database.Instance.Updated.Handle(e => IncreaseCacheVersion(e?.GetType()));
+            Context.Current.Database().Updated.Handle(e => IncreaseCacheVersion(e?.GetType()));
         }
 
         static async Task IncreaseCacheVersion(Type modifiedObjectType)
@@ -29,7 +33,7 @@
             Settings.Current.CacheVersion++;
 
             // Ensure the database is universally incremented, even if my version was already stale.
-            await Database.Instance.GetAccess<Settings>().ExecuteNonQuery("UPDATE Settings set CacheVersion = CacheVersion + 1");
+            await Database.GetAccess<Settings>().ExecuteNonQuery("UPDATE Settings set CacheVersion = CacheVersion + 1");
         }
 
         /// <summary>
@@ -39,13 +43,13 @@
         /// </summary>
         public static async Task ValidateCache()
         {
-            var cacheVersion = await Database.Instance.GetAccess<Settings>()
+            var cacheVersion = await Database.GetAccess<Settings>()
                 .ExecuteScalar<int>("SELECT TOP 1 CacheVersion FROM Settings");
 
             if (cacheVersion != Settings.Current.CacheVersion)
             {
                 // A change is made by another process / server.
-                await Database.Instance.Refresh();
+                await Database.Refresh();
             }
         }
     }

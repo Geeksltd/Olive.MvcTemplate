@@ -24,7 +24,7 @@
         "bootstrap-filestyle": "2.1.0",
         "smartmenus": "1.0.0-beta1",
         "seiyria-bootstrap-slider": "7.1.1",
-        "olive.mvc": "0.8.92",
+        "olive.mvc": "0.9.105",
         "chosen": "~1.8.2",
         "requirejs": "*"
     },

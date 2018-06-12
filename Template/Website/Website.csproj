@@ -5,7 +5,7 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;1705;1998</NoWarn>
+    <NoWarn>1701;1702;1705;1998;NU1701</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <DefaultItemExcludes>node_modules\**;$(DefaultItemExcludes)</DefaultItemExcludes>
@@ -28,17 +28,18 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.6.19" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.0.4" />
+    <PackageReference Include="Olive.Audit.DatabaseLogger" Version="1.0.31" />
     <PackageReference Include="Olive.Export" Version="1.0.18" />
-    <PackageReference Include="Olive.Hangfire" Version="1.0.27" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.93" />
-    <PackageReference Include="Olive.Mvc.Paging" Version="1.0.12" />
+    <PackageReference Include="Olive.Hangfire" Version="1.0.30" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.107" />
+    <PackageReference Include="Olive.Mvc.Paging" Version="1.0.13" />
     <PackageReference Include="Olive.PDF" Version="1.0.14" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.11" />
-    <PackageReference Include="Olive.Testing" Version="1.0.48" />
-    <PackageReference Include="SkiaSharp" Version="1.60.0" />
+    <PackageReference Include="Olive.Testing" Version="1.0.60" />
+    <PackageReference Include="SkiaSharp" Version="1.60.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />

@@ -16,7 +16,7 @@
     {
         User User;
         PasswordResetTicket Ticket;
-        static IDatabase Database => Olive.Entities.Data.Database.Instance;
+        static IDatabase Database => Context.Current.Database();
 
         PasswordResetService(User user) { User = user; }
 

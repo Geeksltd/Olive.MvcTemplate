@@ -4,11 +4,13 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <RootNamespace>UI</RootNamespace>
     <OutputPath>..\lib\</OutputPath>
+	<NoWarn>1701;1702;1705;NU1701</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.203" />
-    <PackageReference Include="Olive" Version="1.0.75" />
+    <PackageReference Include="MSharp" Version="4.1.221" />
+    <PackageReference Include="Olive" Version="1.0.87" />
+    <PackageReference Include="Olive.Entities" Version="1.0.43" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
 

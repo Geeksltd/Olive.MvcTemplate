@@ -311,7 +311,7 @@ form {
             }
 
             .group-control {
-                width: 100%;
+                @include make-column-lg(8);
             }
 
             .form-group {
@@ -322,6 +322,10 @@ form {
                 border-top: 0;
             }
         }
+    }
+
+    .subform-group-control {
+        @include make-column-lg(8);
     }
 
     .vertical-subform {
