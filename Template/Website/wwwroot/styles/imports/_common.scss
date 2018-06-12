@@ -172,12 +172,12 @@ th.sort-descending i {
         top: 45%;
 
         .wait-box {
-            background: #fff;
-            padding: 20px;
-            text-align: center;
-            width: 150px;
-            border-radius: 12pt;
-            margin: auto;
+            background: transparent;
+            padding: 20px; 
+            text-align: center; 
+            width: 150px; 
+            border-radius: 12pt; 
+            margin: auto; 
         }
     }
 }
@@ -435,6 +435,68 @@ form {
         }
     }
 }
+
+.w3-animate-left {
+    position: relative;
+    animation: animateleft 0.4s
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.w3-animate-right {
+    position: relative;
+    animation: animateright 0.4s
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+.w3-animate-righter {
+    position: relative;
+    animation: animaterighter 0.4s
+}
+
+@keyframes animaterighter {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.w3-animate-lefter {
+    position: relative;
+    animation: animatelefter 0.4s
+}
+
+@keyframes animatelefter {
+    from {
+        right: 0%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
 
 input[type="text"].spinedit {
     width: 50%;
