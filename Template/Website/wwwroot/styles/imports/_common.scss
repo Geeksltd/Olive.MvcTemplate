@@ -218,6 +218,10 @@ form {
         @include make-column-lg(4);
     }
 
+    .subform-group-control {
+        @include make-column-lg(8);
+    }
+
     .password-strength .progress {
         margin-top: 8px;
     }
