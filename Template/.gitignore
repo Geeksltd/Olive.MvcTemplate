@@ -172,4 +172,4 @@ Website/Scripts/Lib/MSharp/*.js.map
 
 M#/Current/Stats.json
 M#/lib/*
-!M#/lib/netcoreapp2.0/MSharp.DSL.runtimeconfig.json
+!M#/lib/netcoreapp2.1/MSharp.DSL.runtimeconfig.json

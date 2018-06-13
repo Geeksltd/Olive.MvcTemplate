@@ -1,7 +1,7 @@
 
 @echo off
 
-echo {"runtimeOptions":{"tfm":"netcoreapp2.0","framework":{"name":"Microsoft.NETCore.App","version": "2.0.0"}}} >  M#\lib\netcoreapp2.0\MSharp.DSL.runtimeconfig.json
+echo {"runtimeOptions":{"tfm":"netcoreapp2.1","framework":{"name":"Microsoft.NETCore.App","version": "2.1.0"}}} >  M#\lib\netcoreapp2.1\MSharp.DSL.runtimeconfig.json
 
 WHERE yarn > nul
 if ERRORLEVEL 1 (
