@@ -22,7 +22,7 @@
         /// </summary>
         public static void Run()
         {
-            RecurringJob.AddOrUpdate("Clean old temp uploads",() => CleanOldTempUploads(), Cron.MinuteInterval(10));
+            RecurringJob.AddOrUpdate("Clean old temp uploads", () => CleanOldTempUploads(), Cron.MinuteInterval(10));
         }
         
         /// <summary>Clean old temp uploads</summary>
