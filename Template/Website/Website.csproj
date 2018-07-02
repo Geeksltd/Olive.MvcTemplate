@@ -32,7 +32,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.1.1" />
     <PackageReference Include="Olive.Audit.DatabaseLogger" Version="1.0.32" />
-    <PackageReference Include="Olive.Entities" Version="1.0.44" />
+    <PackageReference Include="Olive.Entities" Version="1.0.45" />
     <PackageReference Include="Olive.Export" Version="1.0.19" />
     <PackageReference Include="Olive.Hangfire" Version="1.0.31" />
     <PackageReference Include="Olive.Mvc" Version="1.0.112" />
@@ -40,7 +40,7 @@
     <PackageReference Include="Olive.PDF" Version="1.0.15" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.12" />
     <PackageReference Include="Olive.Testing" Version="1.0.62" />
-    <PackageReference Include="SkiaSharp" Version="1.60.1" />
+    <PackageReference Include="SkiaSharp" Version="1.60.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
