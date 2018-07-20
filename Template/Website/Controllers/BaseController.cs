@@ -12,6 +12,9 @@ namespace Controllers
 
     public class BaseController : Olive.Mvc.Controller
     {
+		// TODO: Uncomment this if you want to use ApiClient
+		// ApiClient.FallBack.Handle(arg => Notify(arg.FriendlyMessage, false));
+		
         /// <summary>Gets a Domain User object extracted from the current user principal.</summary>
         [NonAction]
         public User GetUser() => User.Extract<User>();
