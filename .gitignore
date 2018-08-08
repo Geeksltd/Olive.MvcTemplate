@@ -2,6 +2,8 @@ obj
 Template/Website/wwwroot/lib
 MSharp.exe
 bin
+Template/M#/lib/*
+!Template/M#/lib/netcoreapp2.1/
 Template/M#/lib/netcoreapp2.1/*
 !Template/M#/lib/netcoreapp2.1/MSharp.DSL.runtimeconfig.json
 .vs
