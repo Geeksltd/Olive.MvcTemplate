@@ -24,10 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
-  </ItemGroup>  
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
-  </ItemGroup>
+  </ItemGroup> 
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.6.19" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
