@@ -3,7 +3,7 @@
     paths: {
         // JQuery:
         "jquery": "jquery/dist/jquery",
-        "jquery-ui": "jqueryui/jquery-ui",
+        "jquery-ui": "../scripts/lib/jquery-ui",
         "jquery-validate": "jquery-validation/dist/jquery.validate",
         "jquery-validate-unobtrusive": "jquery-validation-unobtrusive/jquery.validate.unobtrusive",
 
