@@ -1,17 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
-using Olive;
+﻿using Olive;
 using Olive.Entities;
 using Olive.Entities.Data;
 using Olive.Security;
+using System;
+using System.Threading.Tasks;
 
 namespace Domain
 {
     public class ReferenceData
     {
-        static Task<T> Create<T>(T item) where T : IEntity
+        static async Task<T> Create<T>(T item) where T : IEntity
         {
-            return Context.Current.Database().Save(item, SaveBehaviour.BypassAll).ContinueWith(x => item);
+            await Context.Current.Database().Save(item, SaveBehaviour.BypassAll);
+            return item;
         }
 
         public static async Task Create()
