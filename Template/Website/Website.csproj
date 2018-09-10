@@ -26,6 +26,7 @@
     <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
   </ItemGroup> 
   <ItemGroup>
+    <PackageReference Include="GCop.UAT" Version="1.2.7" />
     <PackageReference Include="Hangfire" Version="1.6.19" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.1.1" />
