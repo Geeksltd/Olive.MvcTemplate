@@ -1,8 +1,7 @@
 ﻿namespace Website
 {
-    using System.Globalization;
-    using System.Threading.Tasks;
     using Domain;
+    using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
@@ -11,6 +10,8 @@
     using Olive.Entities.Data;
     using Olive.Hangfire;
     using Olive.Mvc.Testing;
+    using System.Globalization;
+    using System.Threading.Tasks;
 
     public class Startup : Olive.Mvc.Startup
     {
@@ -22,9 +23,13 @@
         {
             base.ConfigureServices(services);
             services.AddDatabaseLogger();
-
-            AuthenticationBuilder.AddSocialAuth();
             services.AddScheduledTasks();
+        }
+
+        protected override void ConfigureAuthentication(AuthenticationBuilder auth)
+        {
+            base.ConfigureAuthentication(auth);
+            auth.AddSocialAuth();
         }
 
         public override void Configure(IApplicationBuilder app)
