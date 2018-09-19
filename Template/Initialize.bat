@@ -47,16 +47,18 @@ ECHO ::::::::: Building sass files :::::::::::::::::::::::::::::::::
 call wwwroot\Styles\build\SassCompiler.exe Compilerconfig.json
 if ERRORLEVEL 1 (goto error)
 
-ECHO.
-ECHO ::::::::: Restoring Olive DLLs ::::::::::::::::::::::::::::::::::::
-call dotnet build
-if ERRORLEVEL 1 (goto error)
 
 ECHO.
 ECHO ::::::::: Building #UI ::::::::::::::::::::::::::::::::::::::::::::::::
 ECHO.
 cd ..\M#\UI
 call dotnet build -v q
+if ERRORLEVEL 1 (goto error)
+
+ECHO.
+ECHO ::::::::: Building Website ::::::::::::::::::::::::::::::::::::
+call dotnet build
+cd ..\..\Website
 if ERRORLEVEL 1 (goto error)
 
 exit /b 0

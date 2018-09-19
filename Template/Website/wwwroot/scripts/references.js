@@ -1,5 +1,6 @@
 ﻿requirejs.config({
     baseUrl: '/lib',
+    urlArgs: "v1", // Increment with every release to refresh browser cache.
     paths: {
         // JQuery:
         "jquery": "jquery/dist/jquery",
