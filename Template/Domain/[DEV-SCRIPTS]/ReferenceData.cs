@@ -2,20 +2,22 @@
 using Olive.Entities;
 using Olive.Entities.Data;
 using Olive.Security;
-using System;
 using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class ReferenceData
+    public class ReferenceData : IReferenceData
     {
-        static async Task<T> Create<T>(T item) where T : IEntity
+        IDatabase Database;
+        public ReferenceData(IDatabase database) => Database = database;
+
+        async Task<T> Create<T>(T item) where T : IEntity
         {
             await Context.Current.Database().Save(item, SaveBehaviour.BypassAll);
             return item;
         }
 
-        public static async Task Create()
+        public async Task Create()
         {
             await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
 
@@ -23,7 +25,7 @@ namespace Domain
             await CreateAdmin();
         }
 
-        static async Task CreateContentBlocks()
+        async Task CreateContentBlocks()
         {
             await Create(new ContentBlock
             {
@@ -38,7 +40,7 @@ namespace Domain
             });
         }
 
-        static Task CreateAdmin()
+        Task CreateAdmin()
         {
             var pass = SecurePassword.Create("test");
             return Create(new Administrator

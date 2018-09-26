@@ -5,6 +5,7 @@
         // JQuery:
         "jquery": "jquery/dist/jquery",
         "jquery-ui/ui/widget": "jquery-ui/ui/widget",
+        "jquery-ui/ui/focusable": "jquery-ui/ui/focusable",
         "jquery-validate": "jquery-validation/dist/jquery.validate",
         "jquery-validate-unobtrusive": "jquery-validation-unobtrusive/jquery.validate.unobtrusive",
 
@@ -61,7 +62,7 @@
 
 requirejs(["app/appPage", "olive/olivePage",
     // JQuery:
-    "jquery", "jquery-ui/ui/widget", "jquery-validate", "jquery-validate-unobtrusive", "olive/extensions/jQueryExtensions",
+    "jquery", "jquery-ui/ui/widget", "jquery-ui/ui/focusable", "jquery-validate", "jquery-validate-unobtrusive", "olive/extensions/jQueryExtensions",
     // JQuery plugins:
     "chosen", "alertify", "smartmenus", "file-upload", "jquery-typeahead",
     // Bootstrap and plugins:
