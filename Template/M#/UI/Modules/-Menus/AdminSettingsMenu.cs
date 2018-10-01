@@ -7,7 +7,7 @@ namespace Modules
     {
         public AdminSettingsMenu()
         {
-            IsViewComponent().RootCssClass("navbar navbar-light").UlCssClass("nav flex-column");
+            IsViewComponent().RootCssClass("navbar navbar-light").UlCssClass("nav flex-column w-100");
 
             Item("General settings")
                 .OnClick(x => x.Go<Admin.Settings.GeneralPage>());

@@ -11,7 +11,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <DefaultItemExcludes>node_modules\**;$(DefaultItemExcludes)</DefaultItemExcludes>
-	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="App_Data\**" />
@@ -24,7 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
-  </ItemGroup> 
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.6.20" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
@@ -47,11 +47,12 @@
     <PackageReference Include="Olive.Mvc" Version="1.0.146" />
     <PackageReference Include="Olive.Mvc.Paging" Version="1.0.16" />
     <PackageReference Include="Olive.PDF" Version="1.0.16" />
-	<PackageReference Include="Olive.Mvc.Security" Version="2.1.47" />
+    <PackageReference Include="Olive.Mvc.Security" Version="2.1.47" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.14" />
     <PackageReference Include="Olive.Security.Impersonation" Version="1.0.29" />
     <PackageReference Include="Olive.Testing" Version="1.0.76" />
     <PackageReference Include="Olive.Web" Version="2.1.45" />
+    <PackageReference Include="Olive.GlobalSearch.Source" Version="1.0.38" />
     <PackageReference Include="SkiaSharp" Version="1.60.3" />
   </ItemGroup>
   <ItemGroup>
@@ -59,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\scripts\components\CustomModule1.ts" />
-  </ItemGroup>     
+  </ItemGroup>
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask" />
 

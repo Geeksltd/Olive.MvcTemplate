@@ -38,6 +38,8 @@
         {
             base.Configure(app);
 
+            app.UseGlobalSearch<GlobalSearchSource>();
+
             if (Config.Get<bool>("Automated.Tasks:Enabled"))
                 app.UseScheduledTasks(TaskManager.Run);
         }
