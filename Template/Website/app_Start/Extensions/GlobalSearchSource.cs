@@ -8,13 +8,15 @@ namespace Website
     {
         public override async Task Process(ClaimsPrincipal user)
         {
-            Add("Admin", "/admin");
-            Add("Admin > Setting", "/admin/setting");
-            Add("Admin > Settings > Administrators", "/admin/settings/administrators");
-            Add("Admin > Settings > Content blocks", "/admin/settings/content-blocks");
-            Add("Admin > Settings > General", "/admin/settings/general");
+            Add(new SearchResult()
+            {
+                Title = "Sample Title",
+                Description = "Description here",
+                Url = "/",
+                IconUrl = ""
+            });
 
-            //TODO: Add other pages here
+            //TODO: Please add custom search data here
         }
     }
 }
