@@ -8,7 +8,11 @@
         <div class="page">
             @if (leftMenu.HasValue())
             {
-                <div class="side-bar"> @await Component.InvokeAsync(ViewData["LeftMenu"].ToString()) </div>
+                <div class="side-bar">
+                    <input type="text" name="searcher" placeholder="Search..."
+                           class="form-control global-search"
+                           data-search-source="/api/global-search" />
+                @await Component.InvokeAsync(ViewData["LeftMenu"].ToString()) </div>
             }
 
             <div class="content @("full".OnlyWhen(leftMenu.IsEmpty()))">@RenderBody()</div>
