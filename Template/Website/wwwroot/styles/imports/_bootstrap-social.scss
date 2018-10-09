@@ -6,7 +6,7 @@ $bs-height-sm: (floor($font-size-small * 1.5) + $padding-small-vertical * 2);
 $bs-height-xs: (floor($font-size-small * 1.2) + $padding-small-vertical + 1);
 
 .btn-social { position: relative; padding-left: ($bs-height-base + $padding-base-horizontal); text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    > :first-child { position: absolute; left: 0; top: 0; bottom: 0; width: $bs-height-base; line-height: ($bs-height-base + 1); font-size: 1.6em; text-align: center; border-right: 1px solid rgba(0, 0, 0, 0.2); }
+    > :first-child { position: absolute; left: 0; top: 0; bottom: 0; width: $bs-height-base; line-height: ($bs-height-base + 0.65); font-size: 1.2em; text-align: center; border-right: 1px solid rgba(0, 0, 0, 0.2); }
     &.btn-lg { padding-left: ($bs-height-lg + $padding-large-horizontal);
         > :first-child { line-height: $bs-height-lg; width: $bs-height-lg; font-size: 1.8em; }
     }

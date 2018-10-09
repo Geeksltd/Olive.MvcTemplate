@@ -23,7 +23,7 @@
         {
             if (modifiedObjectType == null) return;
             if (modifiedObjectType == typeof(Settings)) return;
-            if (!Cache.CanCache(modifiedObjectType)) return;
+            if (!modifiedObjectType.IsCacheable()) return;
 
             // Note: If the updated version in the database was the same as my in-memory version, the job will be done.
             // But if another instance has already in the meantime increased the version, then my cache version will be behind the database's.

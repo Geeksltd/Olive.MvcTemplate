@@ -10,15 +10,13 @@ namespace Modules
             SupportsAdd(false).Using("Olive.Security")
                 .SupportsEdit(false)
                 .Header("@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key=\"LoginIntro\"}))")
-                .HeaderText("Please Login")
+                .HeaderText("Login")
                 .DataSource("await Domain.User.FindByEmail(info.Email)");
 
             Field(x => x.Email).WatermarkText("Your email");
             Field(x => x.Password).Mandatory().WatermarkText("Your password");
 
-            Link("Forgot password?").Icon(FA.Key).OnClick(x => x.Go<Login.ForgotPasswordPage>());
-
-            Button("Login").ValidateAntiForgeryToken(false)
+            Button("Login").ValidateAntiForgeryToken(false).CssClass("w-100 btn-info mb-2")
             .OnClick(x =>
             {
                 x.RunInTransaction(false);
@@ -30,6 +28,8 @@ namespace Modules
                 x.If(CommonCriterion.RequestHas_ReturnUrl).ReturnToPreviousPage();
                 x.Go<Login.DispatchPage>();
             });
+
+            Link("Forgot password?").CssClass("text-info").OnClick(x => x.Go<Login.ForgotPasswordPage>());
 
             Reference<ContentBlockView>();
         }

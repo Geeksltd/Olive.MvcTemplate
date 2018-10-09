@@ -30,7 +30,7 @@ namespace Domain
             await Create(new ContentBlock
             {
                 Key = nameof(ContentBlock.LoginIntro),
-                Content = "Welcome to our application. Please log in using the form below."
+                Content = "<p>Welcome to our application.<br/>Please log in using the form below.</p>"
             });
 
             await Create(new ContentBlock
