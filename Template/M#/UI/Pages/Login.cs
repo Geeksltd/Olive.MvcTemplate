@@ -8,8 +8,12 @@ public class LoginPage : RootPage
         Route(@"login
             [#EMPTY#]");
 
+        Layout(Layouts.Blank);
+
         Add<Modules.LoginForm>();
         Add<Modules.SocialMediaLogin>();
+
+        MarkupTemplate("<div class=\"login-content\"><div class=\"card login\"><div class=\"card-body\">[#1#][#2#]</div></div></div>");
 
         OnStart(x =>
         {

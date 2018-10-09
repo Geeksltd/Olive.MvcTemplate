@@ -1,0 +1,59 @@
+﻿@import "bootstrap-social";
+
+.login-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .card {
+        &.login {
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 0.8rem;
+            + div { text-align: center; }
+        }
+
+        .card-body { padding-bottom: 0; }
+    }
+
+    .social-media-login {
+        background-color: $gray-200;
+        margin: 25px -1.25rem 0 -1.25rem;
+        padding-bottom: 2rem;
+
+        > h3 {
+            font-size: 1em;
+            padding: 5px;
+        }
+    }
+
+    .form-group {
+        label {
+            @include make-column-lg(12);
+        }
+
+        .group-control {
+            @include make-column-lg(12);
+        }
+    }
+
+    .input-form {
+        .buttons-row {
+            @include make-row();
+
+            .buttons {
+                @include make-column-lg(12);
+                text-align: center;
+            }
+        }
+    }
+}
