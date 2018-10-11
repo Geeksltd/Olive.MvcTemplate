@@ -13,3 +13,4 @@ Template/Website/package-lock.json
 /Template/Website.zip
 *.map
 Template/DB/Tables
+Template/Website/yarn.lock

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <Target Name="Generate code" AfterTargets="AfterBuild">
-    <Exec Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /ui" />
+    <Exec Condition="'$(MSHARP_BUILD)' != 'FULL'"
+	      Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /ui" />
   </Target>
 </Project>

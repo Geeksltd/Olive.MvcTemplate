@@ -12,7 +12,8 @@
     <PackageReference Include="Olive" Version="1.0.119" />
   </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">
-    <Exec Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /model" />
+    <Exec Condition="'$(MSHARP_BUILD)' != 'FULL'"
+	      Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /model" />
   </Target>
   
 </Project>
