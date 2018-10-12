@@ -70,4 +70,10 @@
   <Target Name="WebCompileClean" AfterTargets="CoreClean" Condition="'$(RunWebCompiler)' != 'False'">
     <WebCompiler.CompilerCleanTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\compilerconfig.json" />
   </Target>
+  <Target Name="MSharpBuilding" AfterTargets="AfterBuild">
+    <CreateProperty Value="%(PackageReference.Version)" Condition="%(PackageReference.Identity) == 'MSharp.Build'">
+      <Output TaskParameter="Value" PropertyName="MSharpBuildToolsVersion" />
+    </CreateProperty>
+    <Exec Command="dotnet $(NuGetPackageRoot)msharp.build\$(MSharpBuildToolsVersion)\tools\MSharp.Build.dll -publish" />
+  </Target>
 </Project>
