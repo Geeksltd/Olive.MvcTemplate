@@ -1,5 +1,4 @@
 using MSharp;
-using Domain;
 
 namespace Modules
 {
@@ -29,23 +28,23 @@ namespace Modules
 
             ViewModelProperty<string>("Error").FromRequestParam("error");
 
-            Button("Google")
-                .ExtraTagAttributes("formmethod='post'")
-                .CssClass("btn-social btn-google")
-                .Icon(FA.GooglePlus)
-                .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Google\");"));
-
             Button("Facebook")
                 .ExtraTagAttributes("formmethod='post'")
-                .CssClass("btn-social btn-facebook")
+                .CssClass("btn-social-login btn-facebook")
                 .Icon(FA.Facebook)
                 .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Facebook\");"));
 
-            Button("Microsoft")
+            Button("Google")
                 .ExtraTagAttributes("formmethod='post'")
-                .CssClass("btn-social btn-microsoft")
-                .Icon(FA.Windows)
-                .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Microsoft\");"));
+                .CssClass("btn-social-login btn-google")
+                .Icon(FA.GooglePlus)
+                .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Google\");"));
+
+            //Button("Microsoft")
+            //    .ExtraTagAttributes("formmethod='post'")
+            //    .CssClass("btn-social btn-microsoft")
+            //    .Icon(FA.Windows)
+            //    .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Microsoft\");"));
         }
     }
 }

@@ -1,5 +1,4 @@
 using MSharp;
-using Domain;
 
 namespace Modules
 {
@@ -16,7 +15,7 @@ namespace Modules
             Field(x => x.Email).WatermarkText("Your email");
             Field(x => x.Password).Mandatory().WatermarkText("Your password");
 
-            Button("Login").ValidateAntiForgeryToken(false).CssClass("w-100 btn-info mb-2")
+            Button("Login").ValidateAntiForgeryToken(false).CssClass("w-100 btn-login mb-2")
             .OnClick(x =>
             {
                 x.RunInTransaction(false);
