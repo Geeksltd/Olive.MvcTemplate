@@ -11,9 +11,9 @@ $bs-height-base: ($line-height-computed + $padding-base-vertical * 2);
 
     .card {
         &.login {
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            border-radius: 10px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
             -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
             -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
             box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
@@ -41,13 +41,14 @@ $bs-height-base: ($line-height-computed + $padding-base-vertical * 2);
     }
 
     .input-form {
+        input { -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px; }
         .buttons-row {
             @include make-row();
             .buttons {
                 @include make-column-lg(12);
                 text-align: center;
 
-                .btn-login { background-color: #00A49E; border-color: #00938e;
+                .btn-login { background-color: #00A49E; border-color: #00938e; border-radius: 0;
                     &:hover { background-color: #00938e; border-color: #00A49E; }
                 }
             }
