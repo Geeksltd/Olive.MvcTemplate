@@ -8,12 +8,14 @@
   </PropertyGroup>
  
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.320" />
+    <PackageReference Include="MSharp" Version="4.1.324" />
     <PackageReference Include="Olive" Version="1.0.119" />
   </ItemGroup>
+
   <Target Name="Generate code" AfterTargets="AfterBuild">
     <Exec Condition="'$(MSHARP_BUILD)' != 'FULL'"
-	      Command="start /D &quot;$(TargetDir)&quot; &quot;&quot; dotnet msharp.dsl.dll /build /model" />
+        WorkingDirectory="$(TargetDir)"
+        Command="dotnet msharp.dsl.dll /build /model" />
   </Target>
   
 </Project>

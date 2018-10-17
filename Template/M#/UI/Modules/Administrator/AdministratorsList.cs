@@ -1,5 +1,5 @@
-using MSharp;
 using Domain;
+using MSharp;
 
 namespace Modules
 {
@@ -25,10 +25,7 @@ namespace Modules
 
             //================ Columns: ================
 
-            LinkColumn("Name")
-                .HeaderText("Name")
-                .Text("c#:item.Name")
-                .SortKey("Name")
+            LinkColumn(x => x.Name)
                 .OnClick(x =>
                 {
                     x.Go<Admin.Settings.Administrators.ViewPage>()

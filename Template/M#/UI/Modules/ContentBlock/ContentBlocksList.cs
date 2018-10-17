@@ -1,5 +1,5 @@
-using MSharp;
 using Domain;
+using MSharp;
 
 namespace Modules
 {
@@ -9,10 +9,7 @@ namespace Modules
         {
             ShowHeaderRow().Sortable().HeaderText("Content Blocks");
 
-            LinkColumn("Key")
-                .HeaderText("Key")
-                .Text("c#:item.Key")
-                .SortKey("Key")
+            LinkColumn(x => x.Key)
                 .OnClick(x =>
                 {
                     x.Go<Admin.Settings.ContentBlocks.EnterPage>()
