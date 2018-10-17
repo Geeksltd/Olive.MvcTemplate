@@ -7,7 +7,7 @@ namespace Domain
         public PasswordResetTicket()
         {
             Associate<User>("User").Mandatory().DatabaseIndex().OnDelete(CascadeAction.CascadeDelete);
-            DateTime("Date created").Mandatory().Default("c#:LocalTime.Now");
+            DateTime("Date created").Mandatory().Default(cs("LocalTime.Now"));
             Bool("Is used").Mandatory();
 
             Bool("Is expired").Mandatory().Calculated()

@@ -37,7 +37,7 @@ namespace Modules
 
             Column(x => x.IsDeactivated)
                 .NeedsMerging()
-                .DisplayExpression("c#:item.IsDeactivated");
+                .DisplayExpression(cs("item.IsDeactivated"));
 
             ButtonColumn("Edit")
                 .HeaderText("Actions")

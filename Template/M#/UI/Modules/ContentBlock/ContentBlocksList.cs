@@ -18,7 +18,7 @@ namespace Modules
                 });
 
             Column(x => x.Content)
-                .DisplayExpression("c#:item.Content.OrEmpty().RemoveHtmlTags().Summarize(80)");
+                .DisplayExpression(cs("item.Content.OrEmpty().RemoveHtmlTags().Summarize(80)"));
 
             Button("New Content Block")
                 .Icon(FA.Plus)

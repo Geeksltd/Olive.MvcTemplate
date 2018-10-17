@@ -9,7 +9,7 @@ namespace Domain
             Cachable(false).Implements("Olive.Audit.IAuditEvent");
 
             String("User id");
-            DateTime("Date").Mandatory().Default("c#:LocalTime.Now").DefaultFormatString("g");
+            DateTime("Date").Mandatory().Default(cs("LocalTime.Now")).DefaultFormatString("g");
             String("Event").Mandatory();
             String("Item type");
             String("Item id", 500);
