@@ -1,5 +1,6 @@
 ﻿@import "imports/common";
 @import "imports/nav";
+@import "imports/rgrid";
 @import "imports/bootstrap-social";
 @import "imports/print";
 
@@ -44,3 +45,16 @@ footer { position: absolute; bottom: 0; width: 100%; background-color: $gray-dar
 }
 
 .typeahead__container { padding : 0.5rem 1rem; }
+
+/* Responsive Grid */
+@include media-breakpoint-down(md) {
+    .r-grid {
+        @include make-r-grid-flex-card-view;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .r-grid {
+        @include make-r-grid-table-view;
+    }
+}
