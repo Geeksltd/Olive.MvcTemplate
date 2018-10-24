@@ -13,6 +13,8 @@
         "removeComments": false
     }, "compileOnSave": true,
     "exclude": [
-        "wwwroot/lib/olive.mvc/src"
+        "wwwroot/lib/olive.mvc/src",
+        "obj",
+        "bin"
     ]
 }
