@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <RootNamespace>UI</RootNamespace>
     <OutputPath>..\lib\</OutputPath>
 	<NoWarn>1701;1702;1705;NU1701</NoWarn>
