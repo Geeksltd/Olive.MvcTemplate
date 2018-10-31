@@ -5,6 +5,7 @@
     <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
     <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <TieredCompilation>true</TieredCompilation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;1705;1998;NU1701</NoWarn>
@@ -32,26 +33,26 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Olive" Version="1.0.123" />
-    <PackageReference Include="Olive.Audit" Version="1.0.35" />
-    <PackageReference Include="Olive.Audit.DatabaseLogger" Version="1.0.39" />
+    <PackageReference Include="Olive" Version="1.0.129" />
+    <PackageReference Include="Olive.Audit" Version="1.0.36" />
+    <PackageReference Include="Olive.Audit.DatabaseLogger" Version="1.0.40" />
     <PackageReference Include="Olive.CSV" Version="1.0.24" />
     <PackageReference Include="Olive.Drawing" Version="1.0.22" />
-    <PackageReference Include="Olive.Encryption" Version="2.1.46" />
-    <PackageReference Include="Olive.Entities" Version="1.0.67" />
-    <PackageReference Include="Olive.Entities.Data" Version="1.0.70" />
+    <PackageReference Include="Olive.Encryption" Version="2.1.47" />
+    <PackageReference Include="Olive.Entities" Version="1.0.69" />
+    <PackageReference Include="Olive.Entities.Data" Version="1.0.74" />
     <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.32" />
     <PackageReference Include="Olive.Export" Version="1.0.25" />
     <PackageReference Include="Olive.Hangfire" Version="1.0.39" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.153" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.159" />
     <PackageReference Include="Olive.Mvc.Paging" Version="1.0.18" />
     <PackageReference Include="Olive.PDF" Version="1.0.18" />
-    <PackageReference Include="Olive.Mvc.Security" Version="2.1.50" />
+    <PackageReference Include="Olive.Mvc.Security" Version="2.1.51" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.16" />
     <PackageReference Include="Olive.Security.Impersonation" Version="1.0.31" />
     <PackageReference Include="Olive.Testing" Version="1.0.81" />
-    <PackageReference Include="Olive.Web" Version="2.1.49" />
+    <PackageReference Include="Olive.Web" Version="2.1.50" />
     <PackageReference Include="Olive.GlobalSearch.Source" Version="1.0.38" />
     <PackageReference Include="SkiaSharp" Version="1.60.3" />
   </ItemGroup>
