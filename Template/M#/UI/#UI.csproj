@@ -1,22 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <RootNamespace>UI</RootNamespace>
     <OutputPath>..\lib\</OutputPath>
-	<NoWarn>1701;1702;1705;NU1701</NoWarn>
+    <NoWarn>1701;1702;1705;NU1701</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.351" />
-    <PackageReference Include="Olive" Version="1.0.123" />
-    <PackageReference Include="Olive.Entities" Version="1.0.67" />
+    <PackageReference Include="MSharp" Version="4.1.356" />
+    <PackageReference Include="Olive" Version="1.0.129" />
+    <PackageReference Include="Olive.Entities" Version="1.0.69" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <Target Name="Generate code" AfterTargets="AfterBuild">
     <Exec Condition="'$(MSHARP_BUILD)' != 'FULL'" WorkingDirectory="$(TargetDir)" Command="dotnet msharp.dsl.dll /build /ui" />
   </Target>
-  
+
 </Project>
