@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.2",
+    "alertify": "fabien-d/alertify.js-shim#~0.3.10",
     "alertify-bootstrap-3": "dbtek/alertify-bootstrap-3#~1.1.1",
     "alertifyjs": "alertifyjs/alertify.js#~0.3.18",
     "bootstrap": "twbs/bootstrap#>=4.0.0",
@@ -26,7 +27,7 @@
     "requirejs": "jrburke/requirejs-bower#*",
     "seiyria-bootstrap-slider": "seiyria/bootstrap-slider#7.1.1",
     "smartmenus": "vadikom/smartmenus#1.0.0-beta1",
-    "olive.mvc": "Geeksltd/Olive.MvcJs#0.9.152"
+    "olive.mvc": "Geeksltd/Olive.MvcJs#0.9.153"
   },
   "engines": {
     "yarn": ">= 1.0.0"

@@ -1,7 +1,10 @@
 ﻿@import "../../lib/bootstrap/scss/bootstrap";
 @import "variables";
 @import "../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css";
-@import "../../lib/fontawesome/scss/font-awesome";
+$fa-font-path: "/lib/@fortawesome/fontawesome-free/webfonts"; //override default fontawesome path.
+@import "../../lib/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../lib/@fortawesome/fontawesome-free/scss/brands"; // free
+@import "../../lib/@fortawesome/fontawesome-free/scss/solid"; // free
 @import "../../lib/bootstrap-spinedit/css/bootstrap-spinedit.css";
 @import "../../lib/alertify/themes/alertify.core.css";
 @import "../../lib/alertify-bootstrap-3/alertify.bootstrap3.css";
@@ -10,11 +13,8 @@
 @import "typeaheadjs";
 @import "Print";
 
-$icon-font-path: '/fonts';
-$fa-font-path: $icon-font-path;
-
-$fa-var-sort-asc: "\f0dd";
-$fa-var-sort-desc: "\f0de";
+$fa-var-sort-asc: "\f0de";
+$fa-var-sort-desc: "\f0dd";
 
 .nav-link {
     color: #d6d5d5;
