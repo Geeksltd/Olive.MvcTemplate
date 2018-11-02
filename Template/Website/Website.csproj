@@ -27,7 +27,7 @@
     <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Hangfire" Version="1.6.20" />
+    <PackageReference Include="Hangfire" Version="1.6.21" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.2" />
@@ -39,9 +39,9 @@
     <PackageReference Include="Olive.CSV" Version="1.0.24" />
     <PackageReference Include="Olive.Drawing" Version="1.0.22" />
     <PackageReference Include="Olive.Encryption" Version="2.1.47" />
-    <PackageReference Include="Olive.Entities" Version="1.0.69" />
-    <PackageReference Include="Olive.Entities.Data" Version="1.0.74" />
-    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.32" />
+    <PackageReference Include="Olive.Entities" Version="1.0.70" />
+    <PackageReference Include="Olive.Entities.Data" Version="1.0.78" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.33" />
     <PackageReference Include="Olive.Export" Version="1.0.25" />
     <PackageReference Include="Olive.Hangfire" Version="1.0.39" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />

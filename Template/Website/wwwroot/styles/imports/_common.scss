@@ -9,6 +9,8 @@ $fa-font-path: "/lib/@fortawesome/fontawesome-free/webfonts"; //override default
 @import "../../lib/alertify/themes/alertify.core.css";
 @import "../../lib/alertify-bootstrap-3/alertify.bootstrap3.css";
 @import "../../lib/chosen/chosen.css";
+@import "../../lib/bootstrap-select/sass/variables";
+@import "../../lib/bootstrap-select/sass/bootstrap-select";
 @import "bootstrap-smartmenus";
 @import "typeaheadjs";
 @import "Print";

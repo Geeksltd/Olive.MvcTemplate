@@ -27,7 +27,8 @@
     "requirejs": "jrburke/requirejs-bower#*",
     "seiyria-bootstrap-slider": "seiyria/bootstrap-slider#7.1.1",
     "smartmenus": "vadikom/smartmenus#1.0.0-beta1",
-    "olive.mvc": "Geeksltd/Olive.MvcJs#0.9.153"
+    "olive.mvc": "Geeksltd/Olive.MvcJs#0.9.154",
+    "bootstrap-select" : "1.13.3"
   },
   "engines": {
     "yarn": ">= 1.0.0"
