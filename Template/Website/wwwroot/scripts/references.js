@@ -1,6 +1,6 @@
 ﻿requirejs.config({
     baseUrl: '/lib',
-    urlArgs: "v1", // Increment with every release to refresh browser cache.
+    urlArgs: "v1.1", // Increment with every release to refresh browser cache.
     paths: {
         // JQuery:
         "jquery": "jquery/dist/jquery",
@@ -27,7 +27,8 @@
         "slider": "seiyria-bootstrap-slider/dist/bootstrap-slider.min",
         "moment": "moment/min/moment.min",
         "moment-locale": "moment/locale/en-gb",
-        "datepicker": "eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker"
+        "datepicker": "eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker",
+        "bootstrap-select": "bootstrap-select/dist/js/bootstrap-select"
     },
     map: {
         "*": {
@@ -39,6 +40,7 @@
     },
     shim: {
         "bootstrap": ["jquery", "popper"],
+        "bootstrap-select": ['jquery', 'bootstrap'],
         "jquery-validate": ['jquery'],
         "validation-style": ['jquery', "jquery-validate", "bootstrap"],
         "combodate": ['jquery'],
@@ -67,7 +69,7 @@ requirejs(["app/appPage", "olive/olivePage",
     "chosen", "alertify", "smartmenus", "file-upload", "jquery-typeahead",
     // Bootstrap and plugins:
     "popper", "bootstrap", "moment", "moment-locale", "datepicker",
-    "spinedit", "password-strength", "slider", "file-style", "validation-style"
+    "spinedit", "password-strength", "slider", "file-style", "validation-style", "bootstrap-select"
 ]);
 
 window.loadModule = function (path, onLoaded) {

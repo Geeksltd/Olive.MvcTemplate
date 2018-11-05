@@ -17,9 +17,9 @@
     <PackageReference Include="Olive.CSV" Version="1.0.24" />
     <PackageReference Include="Olive.Drawing" Version="1.0.22" />
     <PackageReference Include="Olive.Encryption" Version="2.1.47" />
-    <PackageReference Include="Olive.Entities" Version="1.0.69" />
-    <PackageReference Include="Olive.Entities.Data" Version="1.0.74" />
-    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.32" />
+    <PackageReference Include="Olive.Entities" Version="1.0.70" />
+    <PackageReference Include="Olive.Entities.Data" Version="1.0.78" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.33" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
     <PackageReference Include="Olive.Mvc.Security" Version="2.1.51" />
     <PackageReference Include="Olive.Security.Impersonation" Version="1.0.31" />
