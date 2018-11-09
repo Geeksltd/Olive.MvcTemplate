@@ -74,7 +74,7 @@ requirejs(["app/appPage", "olive/olivePage",
 
 window.loadModule = function (path, onLoaded) {
     if (path.indexOf("/") === 0) path = "./.." + path; // To fix baseUrl
-    requirejs([path], m => { if (onLoaded) onLoaded(m) });
+    requirejs([path], function(m) { if (onLoaded) onLoaded(m) });
 };
 
 // Wait until Olive scripts are fully loaded before submitting any form
