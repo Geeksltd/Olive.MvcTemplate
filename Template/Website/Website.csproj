@@ -33,19 +33,19 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Olive" Version="1.0.129" />
+    <PackageReference Include="Olive" Version="1.0.135" />
     <PackageReference Include="Olive.Audit" Version="1.0.36" />
     <PackageReference Include="Olive.Audit.DatabaseLogger" Version="1.0.40" />
     <PackageReference Include="Olive.CSV" Version="1.0.24" />
     <PackageReference Include="Olive.Drawing" Version="1.0.22" />
     <PackageReference Include="Olive.Encryption" Version="2.1.47" />
-    <PackageReference Include="Olive.Entities" Version="1.0.70" />
+    <PackageReference Include="Olive.Entities" Version="1.0.75" />
     <PackageReference Include="Olive.Entities.Data" Version="1.0.78" />
     <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.33" />
     <PackageReference Include="Olive.Export" Version="1.0.25" />
-    <PackageReference Include="Olive.Hangfire" Version="1.0.39" />
+    <PackageReference Include="Olive.Hangfire" Version="1.0.40" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.159" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.165" />
     <PackageReference Include="Olive.Mvc.Paging" Version="1.0.18" />
     <PackageReference Include="Olive.PDF" Version="1.0.18" />
     <PackageReference Include="Olive.Mvc.Security" Version="2.1.51" />

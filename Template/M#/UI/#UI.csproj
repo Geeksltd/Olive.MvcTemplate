@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.366" />
-    <PackageReference Include="Olive" Version="1.0.129" />
-    <PackageReference Include="Olive.Entities" Version="1.0.70" />
+    <PackageReference Include="MSharp" Version="4.1.375" />
+    <PackageReference Include="Olive" Version="1.0.135" />
+    <PackageReference Include="Olive.Entities" Version="1.0.75" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
 
