@@ -21,8 +21,9 @@ namespace Modules
                 x.RunInTransaction(false);
                 x.ShowPleaseWait();
                 x.CSharp("var authenticationResult = await Olive.Security.Auth0.Authenticate(info.Email, info.Password);");
-                x.If("!authenticationResult.Success").CSharp(@"Notify(authenticationResult.Message, ""error"");
-                    return View(info); ");
+                x.If("!authenticationResult.Success")
+                   .CSharp(@"Notify(authenticationResult.Message, ""error"");
+                             return View(info); ");
                 x.CSharp("await info.Item.LogOn();");
                 x.If(CommonCriterion.RequestHas_ReturnUrl).ReturnToPreviousPage();
                 x.Go<Login.DispatchPage>();
