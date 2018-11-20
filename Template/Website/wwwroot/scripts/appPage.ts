@@ -14,7 +14,9 @@ export default class AppPage extends OlivePage {
         super.initialize();
         // This function is called upon every Ajax update as well as the initial page load.
         // Any custom initiation goes here.
-    }
+		
+		//Override the 'enableCustomCheckbox' and 'enableCustomRadio' with empty methods to use the original controls.
+    }	
 }
 
 window["page"] = new AppPage();
