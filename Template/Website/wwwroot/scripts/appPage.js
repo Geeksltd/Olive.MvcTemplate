@@ -23,6 +23,7 @@ define(["require", "exports", "olive/olivePage"], function (require, exports, ol
             _super.prototype.initialize.call(this);
             // This function is called upon every Ajax update as well as the initial page load.
             // Any custom initiation goes here.
+            //Override the 'enableCustomCheckbox' and 'enableCustomRadio' with empty methods to use the original controls.
         };
         return AppPage;
     }(olivePage_1.default));
