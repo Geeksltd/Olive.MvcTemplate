@@ -32,7 +32,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.1.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Olive" Version="1.0.136" />
     <PackageReference Include="Olive.Audit" Version="1.0.36" />
     <PackageReference Include="Olive.Audit.DatabaseLogger" Version="1.0.40" />
@@ -45,13 +45,13 @@
     <PackageReference Include="Olive.Export" Version="1.0.25" />
     <PackageReference Include="Olive.Hangfire" Version="1.0.43" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
-    <PackageReference Include="Olive.Mvc" Version="1.0.167" />
+    <PackageReference Include="Olive.Mvc" Version="1.0.171" />
     <PackageReference Include="Olive.Mvc.Paging" Version="1.0.18" />
     <PackageReference Include="Olive.PDF" Version="1.0.18" />
     <PackageReference Include="Olive.Mvc.Security" Version="2.1.51" />
     <PackageReference Include="Olive.Security.Auth0" Version="1.0.16" />
     <PackageReference Include="Olive.Security.Impersonation" Version="1.0.31" />
-    <PackageReference Include="Olive.Testing" Version="1.0.81" />
+    <PackageReference Include="Olive.Testing" Version="1.0.82" />
     <PackageReference Include="Olive.Web" Version="2.1.50" />
     <PackageReference Include="Olive.GlobalSearch.Source" Version="1.0.38" />
     <PackageReference Include="SkiaSharp" Version="1.60.3" />

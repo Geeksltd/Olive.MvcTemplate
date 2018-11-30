@@ -43,5 +43,11 @@
             if (Config.Get<bool>("Automated.Tasks:Enabled"))
                 app.UseScheduledTasks(TaskManager.Run);
         }
+
+        #region Show error screen even in production?
+        // Uncomment the following:
+        // protected override void ConfigureExceptionPage(IApplicationBuilder app) 
+        //    => app.UseDeveloperExceptionPage();
+        #endregion
     }
 }
