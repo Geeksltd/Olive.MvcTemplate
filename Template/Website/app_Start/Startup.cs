@@ -11,6 +11,7 @@
     using Olive.Hangfire;
     using Olive.Mvc.Testing;
     using System.Globalization;
+    using System.Threading.Tasks;
 
     public class Startup : Olive.Mvc.Startup
     {
@@ -34,14 +35,16 @@
             auth.AddSocialAuth();
         }
 
+        public override async Task OnStartUpAsync(IApplicationBuilder app)
+        {
+            await base.OnStartUpAsync(app);
+            app.UseScheduledTasks<TaskManager>();
+        }
+
         public override void Configure(IApplicationBuilder app)
         {
             base.Configure(app);
-
             app.UseGlobalSearch<GlobalSearchSource>();
-
-            if (Config.Get<bool>("Automated.Tasks:Enabled"))
-                app.UseScheduledTasks(TaskManager.Run);
         }
 
         #region Show error screen even in production?

@@ -12,17 +12,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="Olive" Version="1.0.136" />
+    <PackageReference Include="Olive" Version="1.0.143" />
     <PackageReference Include="Olive.Audit" Version="1.0.36" />
     <PackageReference Include="Olive.CSV" Version="1.0.24" />
     <PackageReference Include="Olive.Drawing" Version="1.0.22" />
     <PackageReference Include="Olive.Encryption" Version="2.1.47" />
-    <PackageReference Include="Olive.Entities" Version="1.0.76" />
-    <PackageReference Include="Olive.Entities.Data" Version="1.0.80" />
-    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.35" />
+    <PackageReference Include="Olive.Entities" Version="1.0.83" />
+    <PackageReference Include="Olive.Entities.Data" Version="1.0.85" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="1.0.36" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
-    <PackageReference Include="Olive.Mvc.Security" Version="2.1.51" />
-    <PackageReference Include="Olive.Security.Impersonation" Version="1.0.31" />
-    <PackageReference Include="Olive.Web" Version="2.1.50" />
+    <PackageReference Include="Olive.Mvc.Security" Version="2.1.52" />
+    <PackageReference Include="Olive.Security.Impersonation" Version="1.0.32" />
+    <PackageReference Include="Olive.Web" Version="2.1.51" />
   </ItemGroup>
 </Project>

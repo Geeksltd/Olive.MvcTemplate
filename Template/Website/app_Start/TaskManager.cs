@@ -10,19 +10,15 @@
     using Olive.Entities;
     using Olive.Entities.Data;
     using Domain;
-    using Hangfire;
     
     /// <summary>Executes the scheduled tasks in independent threads automatically.</summary>
     [EscapeGCop("Auto generated code.")]
-    public static partial class TaskManager
+    public partial class TaskManager : BackgroundJobsPlan
     {
-        /// <summary>
-        /// This will start the scheduled activities.<para/>
-        /// It should be called once in Application_Start global event.<para/>
-        /// </summary>
-        public static void Run()
+        /// <summary>Registers the scheduled activities.</summary>
+        public override void Initialize()
         {
-            RecurringJob.AddOrUpdate("Clean old temp uploads", () => CleanOldTempUploads(), Cron.MinuteInterval(10));
+            Register(new BackgroundJob("Clean old temp uploads", CleanOldTempUploads, Hangfire.Cron.MinuteInterval(10)));
         }
         
         /// <summary>Clean old temp uploads</summary>
