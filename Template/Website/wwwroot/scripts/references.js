@@ -10,7 +10,6 @@
         "jquery-validate-unobtrusive": "jquery-validation-unobtrusive/jquery.validate.unobtrusive",
 
         // Jquery plugins:
-        "chosen": "chosen/chosen.jquery",
         "alertify": "alertifyjs/dist/js/alertify",
         "smartmenus": "smartmenus/src/jquery.smartmenus",
         "file-upload": "jquery-file-upload/js/jquery.fileupload",
@@ -47,7 +46,6 @@
         "jquery-typeahead": ['jquery'],
         "file-upload": ['jquery', 'jquery-ui/ui/widget'],
         "file-style": ["file-upload"],
-        "chosen": ['jquery'],
         "smartmenus": ['jquery'],
         "jquery-validate-unobtrusive": ['jquery-validate'],
         'backbone.layoutmanager': ['backbone'],
@@ -66,7 +64,7 @@ requirejs(["app/appPage", "olive/olivePage",
     // JQuery:
     "jquery", "jquery-ui/ui/widget", "jquery-ui/ui/focusable", "jquery-validate", "jquery-validate-unobtrusive", "olive/extensions/jQueryExtensions",
     // JQuery plugins:
-    "chosen", "alertify", "smartmenus", "file-upload", "jquery-typeahead",
+    "alertify", "smartmenus", "file-upload", "jquery-typeahead",
     // Bootstrap and plugins:
     "popper", "bootstrap", "moment", "moment-locale", "datepicker",
     "spinedit", "password-strength", "slider", "file-style", "validation-style", "bootstrap-select"
@@ -74,7 +72,7 @@ requirejs(["app/appPage", "olive/olivePage",
 
 window.loadModule = function (path, onLoaded) {
     if (path.indexOf("/") === 0) path = "./.." + path; // To fix baseUrl
-    requirejs([path], function(m) { if (onLoaded) onLoaded(m) });
+    requirejs([path], function (m) { if (onLoaded) onLoaded(m) });
 };
 
 // Wait until Olive scripts are fully loaded before submitting any form
