@@ -6,6 +6,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
     using Olive;
     using Olive.Entities.Data;
     using Olive.Hangfire;
@@ -15,13 +16,18 @@
 
     public class Startup : Olive.Mvc.Startup
     {
-        public Startup(IHostingEnvironment env, IConfiguration config) : base(env, config) { }
+        public Startup(IHostingEnvironment env, IConfiguration config, ILoggerFactory loggerFactory)
+            : base(env, config, loggerFactory)
+        {
+        }
 
         protected override CultureInfo GetRequestCulture() => new CultureInfo("en-GB");
 
         public override void ConfigureServices(IServiceCollection services)
         {
             base.ConfigureServices(services);
+            services.AddDataAccess(x => x.SqlServer());
+
             services.AddDatabaseLogger();
             services.AddScheduledTasks();
 

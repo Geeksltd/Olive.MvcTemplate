@@ -18,7 +18,7 @@
         /// <summary>Registers the scheduled activities.</summary>
         public override void Initialize()
         {
-            Register(new BackgroundJob("Clean old temp uploads", CleanOldTempUploads, Hangfire.Cron.MinuteInterval(10)));
+            Register(new BackgroundJob("Clean old temp uploads", () => CleanOldTempUploads(), Hangfire.Cron.MinuteInterval(10)));
         }
         
         /// <summary>Clean old temp uploads</summary>
