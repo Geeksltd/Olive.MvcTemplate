@@ -34,7 +34,8 @@
             "popper.js": "popper",
             '../moment': 'moment',
             'olive': "olive.mvc/dist",
-            "app": "../scripts"
+            "app": "../scripts",
+            "jquery-sortable": "jquery-ui/ui/widgets/sortable"
         }
     },
     shim: {
