@@ -32,7 +32,7 @@
             services.AddScheduledTasks();
 
             if (Environment.IsDevelopment())
-                services.AddDevCommands(x => x.AddTempDatabase<SqlServerManager, ReferenceData>());
+                services.AddDevCommands(Configuration, x => x.AddTempDatabase<SqlServerManager, ReferenceData>());
         }
 
         protected override void ConfigureAuthentication(AuthenticationBuilder auth)
