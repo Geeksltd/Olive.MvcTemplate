@@ -1,0 +1,43 @@
+﻿///<reference path="../../utilities/utilities">
+
+$check-box-size: 2.2rem;
+
+input[type='checkbox'].handled {
+    opacity: 0;
+    position: absolute;
+
+    &:focus + .checkbox-helper {
+        box-shadow: 0 0 0 0 #fff, 0 0 0 0.2rem adjust-color($input-border-focus, $alpha: -.5);
+        border: $border-width solid $input-border-focus;
+    }
+
+    &:checked + .checkbox-helper {
+
+        &:before {
+            outline: none;
+            display: inline-block;
+            width: $check-box-size;
+            height: $check-box-size;
+            content: '';
+            background-color: $color-primary;
+            border-radius: $input-border-radius;
+            position: relative;
+            left: $border-width;
+            top: -$border-width;
+            float: right;
+        }
+    }
+
+    & + .checkbox-helper + label {
+        padding-left: 1rem;
+    }
+}
+
+.checkbox-helper {
+    display: inline-block;
+    width: $check-box-size;
+    height: $check-box-size;
+    border: $border-width solid $border-color;
+    border-radius: $input-border-radius;
+    background-color: $input-bg;
+}

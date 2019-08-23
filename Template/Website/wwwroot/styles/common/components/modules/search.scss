@@ -1,0 +1,53 @@
+﻿///<reference path="../../utilities/utilities">
+
+/* make search forms a compact so that they visually look more related */
+.search {
+    background-color: $white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+
+    > .form-group, fieldset {
+        //flex: 0 0 32%;
+        margin-right: 3rem;
+    }
+
+    .form-group {
+
+        &.range-input .group-control {
+            > .form-control, > .radio-list, > .checkbox-list {
+                //        @include make-column-lg(5,12);
+            }
+
+            > .input-group {
+                //      @include make-column-lg(5,0);
+            }
+
+            /*> .range-label {
+                //    @include make-column-lg(2);
+                text-align: center;
+                line-height: 32px;
+            }*/
+        }
+    }
+
+    .buttons-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+
+        @include for-tablet-portrait-up {
+            flex: 1;
+        }
+
+        .buttons {
+            @include for-tablet-portrait-up {
+                flex: 1;
+                text-align: right;
+            }
+        }
+    }
+}

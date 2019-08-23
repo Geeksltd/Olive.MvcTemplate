@@ -1,0 +1,41 @@
+﻿///<reference path="../../common/utilities/utilities">
+header {
+    .header-wrapper {
+        .navbar {
+            background-color: $black-primary;
+            color: $on-color-primary;
+            height: $header-height;
+            max-height: $header-height;
+            padding:0;
+
+
+            a {
+                color: $on-color-primary;
+            }
+
+            .header-left-actions-wrapper {
+
+                .menu-toggler {
+                    @include burger-menu-toggler();
+                }
+
+                .logo {
+                    width:30%;
+                    img {
+                        max-width:100%;
+                        max-height: 4rem;
+                    }
+                }
+
+                /*@include for-tablet-portrait-up {*/
+                    flex: 0 0 $sidebar-width;
+                    text-align: center;
+                /*}*/
+            }
+
+            .header-account-wrapper {
+                padding: 0 1rem;
+            }
+        }
+    }
+}

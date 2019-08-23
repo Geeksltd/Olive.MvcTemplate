@@ -1,0 +1,129 @@
+﻿///<reference path="../../utilities/utilities">
+
+.empty-list {
+    padding: 15px 0;
+}
+
+.grid {
+    @extend .table;
+    @extend .table-hover;
+
+    .actions {
+        white-space: nowrap;
+        width: 1px;
+        text-align: center;
+    }
+
+    & > tbody > tr.highlighted {
+        background: lighten($btn-success-bg, 33.5%);
+    }
+
+    tbody {
+        tr {
+            td {
+                vertical-align: middle;
+
+                .btn {
+                    @include remove-btn-style();
+
+                    .fa {
+                        color: $input-color;
+                    }
+
+                    &:hover .fa {
+                        color: $color-primary;
+                    }
+                }
+
+                img {
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+}
+
+
+// Grid sorting
+th.sort-ascending i {
+    @extend .fas;
+    @include fa-icon();
+    margin-left: 20px;
+
+    &:before {
+        content: $fa-var-sort-asc;
+    }
+}
+
+th.sort-descending i {
+    @extend .fas;
+    @include fa-icon();
+    margin-left: 20px;
+
+    &:before {
+        content: $fa-var-sort-desc;
+    }
+}
+
+.select-grid-cols {
+    div.select-cols {
+        position: absolute;
+        z-index: 10000;
+        display: none;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        padding: 15px;
+        background: #fff;
+    }
+
+    .cancel {
+        @extend .btn;
+        @extend .btn-secondary;
+        @extend .btn-sm;
+    }
+
+    .apply {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .btn-sm;
+    }
+}
+
+
+.grid {
+    @include make-r-grid-table-view;
+
+    thead {
+        @extend .r-grid-body;
+
+        tr {
+            @extend .r-grid-head-row;
+
+            th {
+                @extend .r-grid-head-cell;
+
+                &, a {
+                    background-color: $p-dark-gray;
+                    color: $on-color-primary;
+                }
+            }
+        }
+    }
+
+    tbody {
+        @extend .r-grid-body;
+
+        tr {
+            @extend .r-grid-row;
+
+            th {
+                @extend .r-grid-cell;
+            }
+        }
+    }
+}
+
+// TODO: it does not look right at all.
+.item-archived {
+    background-color: $disabled-bg-color;
+}

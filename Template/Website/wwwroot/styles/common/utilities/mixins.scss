@@ -1,0 +1,240 @@
+﻿///<reference path="colors">
+///<reference path="bootstrap-variables">
+///Define mixins here to use universally in your style
+
+@mixin default-input-label{
+ font-size:1.4rem;
+ font-weight:400;
+ color:$black-primary;
+}
+
+@mixin default-input-control {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+@mixin default-border($color: $border-color) {
+    border: .1rem solid $color;
+    border-radius: $border-radius;
+}
+
+@mixin bb-transition($prop: all, $duration: 0.2s, $ease: ease-in-out) {
+    -moz-transition: $prop $duration $ease;
+    -o-transition: $prop $duration $ease;
+    -webkit-transition: $prop $duration $ease;
+    transition: $prop $duration $ease;
+}
+
+@mixin btn-style($color,$color-hover, $bg-color, $bg-hover, $border-color: $bg-color, $border-hover: $bg-hover, $border-width: .1rem) {
+    font-size: 1.5rem;
+    padding: .5rem 1.5rem;
+    background-color: $bg-color;
+    color: $color;
+    @include bb-transition();
+    border: $border-color solid $border-width;
+    border-radius: .4rem;
+
+    &:not([data-action]) {
+        min-width: 10rem;
+    }
+
+    &:hover, &:focus {
+        background-color: $bg-hover;
+        box-shadow: none;
+        color: $color-hover;
+        border-color: $border-hover;
+    }
+
+    &:active {
+        color: $color-hover;
+        border-color: $border-hover;
+        background-color: $bg-hover;
+        box-shadow: none;
+
+        &:hover, &:focus {
+            color: $color-hover;
+            border-color: $border-hover;
+            box-shadow: none;
+            background-color: $bg-hover;
+            box-shadow: none;
+        }
+    }
+}
+
+@mixin remove-btn-style() {
+    border: none;
+    background: inherit;
+
+    &:active {
+        background-color: inherit;
+    }
+
+    &, &:active {
+        &:hover, &:focus {
+            border-color: inherit;
+            background-color: inherit;
+            box-shadow: inherit;
+        }
+    }
+
+    i {
+        font-size: 2.5rem;
+    }
+}
+
+@mixin color-and-hover($color,$hoverColor: $color) {
+    color: $color;
+
+    &:hover, &:focus {
+        color: $hoverColor;
+    }
+
+    &:active {
+        color: $hoverColor;
+
+        &:hover, &:focus {
+            color: $hoverColor;
+        }
+    }
+}
+
+
+@mixin light-font {
+    font-weight: 300;
+}
+
+@mixin regular-font {
+    font-weight: 400;
+}
+
+@mixin medium-font {
+    font-weight: 500;
+}
+
+@mixin semi-bold-font {
+    font-weight: 600;
+}
+
+@mixin bold-font {
+    font-weight: 700;
+}
+
+@mixin burger-menu-toggler {
+    &.burger-icon {
+        position: absolute;
+        left: 0;
+        z-index: 400;
+        margin: 0;
+        margin-left: 2rem;
+        width: 11rem;
+        padding-right: 8rem;
+        -webkit-appearance: none;
+
+        &:after, &:before, i {
+            background-color: $color-primary;
+            border-radius: .3rem;
+            content: '';
+            display: block;
+            height: .3rem;
+            margin: .7rem 0;
+            transition: all .2s ease-in-out;
+        }
+
+        &.collapsed:before {
+            transform: translateY(1rem) rotate(135deg);
+        }
+
+        &.collapsed:after {
+            transform: translateY(-1rem) rotate(-135deg);
+        }
+
+        &.collapsed i {
+            transform: scale(0);
+        }
+
+        @include for-tablet-landscape-up {
+            display: none;
+        }
+    }
+}
+
+
+
+/*#region animations*/
+
+/*#region animations*/
+@keyframes menu-slide-right-anim {
+    from {
+        transform-origin: left;
+        transform: scaleX(.3);
+        //   transform: scaleX(.3);
+    }
+
+    to {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+/*#endregion*/
+.w3-animate-left {
+    position: relative;
+    animation: animateleft 0.4s
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.w3-animate-right {
+    position: relative;
+    animation: animateright 0.4s
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+.w3-animate-righter {
+    position: relative;
+    animation: animaterighter 0.4s
+}
+
+@keyframes animaterighter {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.w3-animate-lefter {
+    position: relative;
+    animation: animatelefter 0.4s
+}
+
+@keyframes animatelefter {
+    from {
+        right: 0%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+/*#endregion*/

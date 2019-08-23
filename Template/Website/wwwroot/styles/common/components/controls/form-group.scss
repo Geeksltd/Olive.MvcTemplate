@@ -1,0 +1,43 @@
+﻿///<reference path="../../utilities/utilities">
+
+.control-label, label, legend {
+    @include default-input-label;
+}
+
+.form-control {
+    @include default-input-control;
+}
+
+.form-group {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+
+    .group-control {
+        min-width: $s-control-input-min-width;
+        max-width: $control-input-width;
+        margin-bottom: 1.5rem;
+        padding-right: 0;
+        padding-left: 0;
+
+        @include for-tablet-portrait-up {
+            min-width: $control-input-width;
+        }
+    }
+
+    @include for-tablet-portrait-up {
+        &.range-input {
+            .group-control {
+                display: flex;
+
+                .form-control {
+                    border-radius: $border-radius;
+                }
+
+                .range-label {
+                    padding: 0.5rem 0.5rem 0 0.5rem;
+                }
+            }
+        }
+    }
+}

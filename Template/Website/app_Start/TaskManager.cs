@@ -13,6 +13,7 @@
     
     /// <summary>Executes the scheduled tasks in independent threads automatically.</summary>
     [EscapeGCop("Auto generated code.")]
+    #pragma warning disable
     public partial class TaskManager : BackgroundJobsPlan
     {
         /// <summary>Registers the scheduled activities.</summary>

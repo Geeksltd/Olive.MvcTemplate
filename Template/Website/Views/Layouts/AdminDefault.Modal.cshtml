@@ -1,0 +1,15 @@
+﻿@{Layout = Request.IsAjaxRequest() ? null : "~/Views/Layouts/AdminDefault.Modal.Container.cshtml";}
+<main>
+    <div class="content-wrapper">
+            @RenderBody() 
+    </div>
+    
+    @if (!Request.IsAjaxRequest())
+    {
+        <script src="/lib/requirejs/require.js" data-main="/scripts/references.js?v=1"></script>
+    }
+
+    @RenderSection("scripts", required: false)
+
+    @Html.RegisterStartupActions()
+</main>

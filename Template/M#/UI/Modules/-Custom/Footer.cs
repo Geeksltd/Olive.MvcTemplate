@@ -17,28 +17,16 @@ namespace Modules
                 .Using("Olive.Security")
                 .RootCssClass("website-footer")
                 .Markup(@"
-           <div class=""pull-right"">
+           <div>
                [#BUTTONS(Email)#]
                [#BUTTONS(LinkedIn)#]
                [#BUTTONS(Facebook)#]
                [#BUTTONS(Twitter)#] <br/>
-               [#BUTTONS(SoftwareDevelopment)#] by [#BUTTONS(Geeks)#]            
-            </div>            
-            <div>[#BUTTONS(Logout)#]</div>
-            <div>
+               [#BUTTONS(SoftwareDevelopment)#] by [#BUTTONS(Geeks)#]
                 &copy; @LocalTime.Now.Year. All rights reserved.
             </div>");
 
-            Link("Logout")
-                .ValidateAntiForgeryToken(false)
-                .Icon(FA.SignOut)
-                .MarkupTemplate("Hi @GetUser() ([#Button#])")
-                .VisibleIf(CommonCriterion.IsUserLoggedIn)
-                .OnClick(x =>
-                {
-                    x.CSharp("await OAuth.Instance.LogOff();");
-                    x.Go<LoginPage>();
-                });
+
 
             Link("Geeks")
                 .OnClick(x => x.Go(DEVELOPER, OpenIn.NewBrowserWindow));

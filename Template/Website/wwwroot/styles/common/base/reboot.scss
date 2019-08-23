@@ -1,0 +1,12 @@
+﻿html {
+    min-height: 100vh;
+    position: relative;
+    font-size: 62.5%; /*comment out this like if you like to use 10px as defualt size, you might need to go to some details and override bootstrap default "1rem" and change it to "1.5rem"*/
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-family: Roboto;
+}

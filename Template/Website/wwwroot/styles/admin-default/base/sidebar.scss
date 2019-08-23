@@ -1,0 +1,110 @@
+﻿///<reference path="../../common/utilities/utilities">
+
+@mixin left-border($color: $on-color-primary) {
+    border-left: .3rem solid $color;
+}
+
+.sidebar-wrapper {
+    height: 100%;
+
+    .sidebar-menu {
+
+        .nav {
+            li {
+
+                a {
+                    display: block;
+                    padding: 1rem 2rem;
+                    color: $black-primary;
+                    font-size: $default-font-size;
+                    @include regular-font;
+                    @include left-border;
+                    border-bottom: 0.1rem solid $border-color;
+
+                    &:hover, &:focus, &:active {
+                        background-color: $color-primary-lighten;
+                        text-decoration: none;
+                    }
+                }
+
+                &.has-submenu {
+                    ul {
+                        list-style: none;
+                        user-select: none;
+                        cursor: pointer;
+                        background-color: $gray-background;
+                        padding: 0;
+
+                        ul li a {
+                            padding-left: 4rem;
+                        }
+                    }
+                    /// add arrows to submenu parrent
+                    > a {
+                        &:after {
+                            content: "\f0da";
+                            font-family: 'Font Awesome 5 Free';
+                            padding: 0 0.5rem;
+                            font-size: 1.5rem;
+                            float: right;
+                            color: $black-primary;
+                        }
+
+                        &[aria-expanded=true] {
+                            &:after {
+                                content: "\f0d7";
+                                color: $color-primary;
+                            }
+                        }
+
+                        &[aria-expanded=true] {
+                            ::after {
+                                content: "\f0d8";
+                                font-family: 'Font Awesome 5 Free';
+                                padding: 0 0.5rem;
+                                font-size: 1.5rem;
+                                float: right;
+                            }
+                        }
+                    }
+
+                    a {
+                        @include left-border($gray-background);
+                    }
+                }
+
+                &.active-parent {
+                    > a {
+                        color: $color-primary;
+                    }
+                }
+
+                &.active {
+                    a {
+                        @include left-border($color-primary);
+                        background-color: $color-primary-lighten;
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+
+        .buttons-row {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+
+            .buttons {
+                button, a {
+                    color: $black-primary;
+                    display: block;
+                    font-size: 1.4rem;
+                    font-weight: 500; //@BB change to $semi-bold
+                    &:hover, &:focus, &:active {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

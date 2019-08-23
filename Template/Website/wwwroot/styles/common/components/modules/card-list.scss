@@ -1,0 +1,124 @@
+﻿///<reference path="../../utilities/utilities">
+
+.grid-wrapper {
+    .r-grid {
+        @include for-phone-up-to-tablet-landscape {
+            @include make-r-grid-flex-card-view;
+        }
+
+        @include for-tablet-landscape-up {
+            @include make-r-grid-table-view;
+        }
+
+        border: .1rem solid $border-color;
+
+        &.cluttered-table {
+            @include for-tablet-portrait-up {
+                @include make-r-grid-flex-card-view-horizontal()
+            }
+
+            .r-grid-body .r-grid-row {
+            }
+        }
+
+        .r-grid-head .r-grid-head-row {
+            margin: 0;
+        }
+
+        .r-grid-body {
+            font-size: 1.4rem;
+            padding: 0;
+
+            .r-grid-row {
+                transition: background-color 0.5s;
+                margin: 0;
+
+                @include for-tablet-portait-only {
+                    &:nth-of-type(even) {
+                        border-left: $border-width solid $border-color;
+                    }
+                }
+
+
+                .r-grid-cell {
+                    background-color: transparent;
+                    color: $black-primary;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    &.actions {
+                        width: auto;
+                        text-align: left;
+
+                        .cell-label {
+                            @include for-phone-up-to-tablet-landscape {
+                                display: block;
+                            }
+                        }
+
+                        .btn {
+                            min-width: unset;
+                            padding: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .cell-label {
+                        color: $black-primary;
+                        font-size: 1.2rem;
+                        @include semi-bold-font;
+                    }
+                }
+            }
+
+            &.item-archived {
+                background-color: $gray-background;
+
+                .cell-label {
+                    color: white;
+                }
+            }
+
+            .r-grid-cell {
+
+                .btn, a.btn {
+                    @include btn-style($color-primary, $color-primary-darken,transparent,transparent);
+                    @include remove-btn-style();
+
+                    .fa {
+                        color: $input-color;
+                    }
+
+                    &:hover .fa {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//List module button horizontal alignment
+.page .content-wrapper .content {
+
+    form[data-module*="List"] {
+        @include for-phone-up-to-tablet-portrait {
+            .buttons-row {
+                text-align: center;
+                float: none;
+
+                .btn {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.img-column img {
+    width: 100%;
+    max-width: 15rem;
+}

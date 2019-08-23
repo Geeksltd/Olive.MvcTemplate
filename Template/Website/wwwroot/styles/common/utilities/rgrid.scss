@@ -1,0 +1,400 @@
+﻿///<reference path="bootstrap-variables";>
+///<reference path="colors";>
+///<reference path="mixins";>
+///<reference path="devices";>
+/* 
+    Responsive Grid
+
+    Mixins:
+        - make-r-grid-table-view (display table, classic table)
+        - make-r-grid-flex-table-view (display flex)
+        - make-r-grid-card-view (display block)
+        - make-r-grid-flex-card-view (display flex, bootstrap 4 grid system)
+        - make-r-grid-flex-card-view-horizontal(display flex, Horizontal row ,bootstrap 4 grid system for cell)
+*/
+
+@mixin make-r-grid-table-view() {
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $line-height-computed;
+    background-color: $body-bg;
+
+    .r-grid-head, .r-grid-body {
+        display: table-row-group;
+
+        .r-grid-head-row, .r-grid-row {
+            display: table-row;
+
+            .r-grid-head-cell, .r-grid-cell {
+                display: table-cell;
+                line-height: $line-height-base;
+                padding: $table-cell-padding;
+                vertical-align: top;
+
+                &.actions {
+                    white-space: nowrap;
+                    width: 1px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .r-grid-head {
+        .r-grid-head-row {
+            border-bottom: 1px solid $table-border-color;
+
+            .r-grid-head-cell {
+                font-weight: 400;
+                background-color: $p-dark-gray;
+                color: $on-color-primary;
+                vertical-align: bottom;
+
+                a {
+                    color: $on-color-primary;
+                }
+            }
+        }
+    }
+
+    .r-grid-body {
+        .r-grid-row {
+            &:hover {
+                background-color: $table-hover-bg;
+            }
+
+            &:not(:first-child) .r-grid-cell {
+                border-top: 1px solid $table-border-color;
+            }
+
+            .r-grid-cell {
+
+                .cell-label {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@mixin make-r-grid-flex-table-view() {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $line-height-computed;
+    background-color: $body-bg;
+
+    .r-grid-head, .r-grid-body {
+        @include make-container;
+
+        .r-grid-head-row, .r-grid-row {
+            @include make-row;
+
+            .r-grid-head-cell, .r-grid-cell {
+                flex: 1;
+                line-height: $line-height-base;
+                padding: $table-cell-padding;
+                vertical-align: top;
+
+                &.actions {
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    white-space: nowrap;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .r-grid-head {
+        .r-grid-head-row {
+            .r-grid-head-cell {
+                border-bottom: 2px solid $table-border-color;
+                font-weight: bold;
+                vertical-align: bottom;
+            }
+        }
+    }
+
+    .r-grid-body {
+        .r-grid-row {
+            /*&:nth-of-type(odd) {
+                background-color: $table-accent-bg;
+            }*/
+
+            &:hover {
+                background-color: $table-hover-bg;
+            }
+
+            &:not(:first-child) .r-grid-cell {
+                border-top: 1px solid $table-border-color;
+            }
+
+            .r-grid-cell {
+
+                .cell-label {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@mixin make-r-grid-card-view() {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $line-height-computed;
+    background-color: $body-bg;
+    border: none;
+
+    .r-grid-head {
+        display: none;
+    }
+
+    .r-grid-body {
+        position: relative;
+        border: none;
+        display: block;
+
+        .r-grid-row {
+            border: 1px solid $table-border-color;
+            display: block;
+            float: none;
+            margin-bottom: $grid-gutter-width / 2;
+            padding: 0;
+            width: 100%;
+
+            /*&:nth-of-type(odd) {
+                background-color: $table-accent-bg;
+            }*/
+
+            &:hover {
+                background-color: $table-hover-bg;
+            }
+
+            .r-grid-cell {
+                /*border-top: 1px solid $table-border-color;*/
+                display: block;
+                line-height: $line-height-base;
+                padding: $table-cell-padding;
+                display: block;
+                width: 100%;
+
+                &:first-child {
+                    border: none;
+                }
+
+                .cell-label {
+                    display: block;
+                    font-weight: bold;
+
+                    a {
+                        color: $body-color;
+                        cursor: default;
+
+                        &:hover, &:focus, &:active {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &.actions {
+                    display: inline-block;
+                    text-align: center;
+                    white-space: nowrap;
+                    width: 100%;
+
+                    .cell-label {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin make-r-grid-flex-card-view() {
+    @include make-container;
+    background-color: $body-bg;
+    border: none;
+
+    .r-grid-head {
+        display: none;
+    }
+
+    .r-grid-body {
+        @include make-row;
+        /*margin-left: -$grid-gutter-width;
+        margin-right: -$grid-gutter-width;*/
+        position: relative;
+        border: none;
+
+        .r-grid-row {
+            padding: $grid-gutter-width/2;
+            border-bottom: 1px solid $table-border-color;
+
+            @include media-breakpoint-up(xs) {
+                @include make-col(12);
+            }
+
+            @include media-breakpoint-up(sm) {
+                @include make-col(6);
+            }
+
+            @include media-breakpoint-up(md) {
+                @include make-col(6);
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include make-col(4);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include make-col(3);
+            }
+
+            /*&:nth-of-type(odd) .r-grid-cell {
+                background-color: $table-accent-bg;
+            }*/
+
+            &:hover .r-grid-cell {
+                background-color: $table-hover-bg;
+            }
+
+            &.ui-sortable-helper {
+                float: none;
+            }
+
+            .r-grid-cell {
+                background-color: $table-bg;
+                /*border: 1px solid $table-border-color;*/
+                border-bottom: none;
+                display: block;
+                line-height: $line-height-base;
+                padding: $table-cell-padding;
+                width: 100%;
+
+                &:last-child {
+                    border-bottom: 1px solid $table-border-color;
+                }
+
+                .cell-label {
+                    display: block;
+                    font-weight: bold;
+
+                    a {
+                        color: $body-color;
+                        cursor: default;
+
+                        &:hover, &:focus, &:active {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &.actions {
+                    display: inline-block;
+                    text-align: center;
+                    white-space: nowrap;
+                    width: 100%;
+
+                    .cell-label {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin make-r-grid-flex-card-view-horizontal() {
+    @include make-container;
+    background-color: $body-bg;
+    border: none;
+
+    .r-grid-head {
+        display: none;
+    }
+
+    .r-grid-body {
+        @include make-row;
+        position: relative;
+        border: none;
+
+        .r-grid-row {
+            @include make-row;
+            padding: $grid-gutter-width/2 0;
+            border-top: .3rem solid $border-color;
+            margin-left: 0;
+            margin-right: 0;
+            flex-basis: 100%;
+            //for striped tables
+            &:nth-of-type(odd) {
+                //background-color: $table-hover-bg;
+            }
+
+            &:hover {
+                background-color: $table-hover-bg;
+            }
+
+            &.ui-sortable-helper {
+                float: none;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $table-border-color;
+            }
+
+            .r-grid-cell {
+                @include make-col(12);
+
+                @include for-tablet-portrait-up {
+                    @include make-col(6);
+                }
+
+                background-color: $table-bg;
+                border-bottom: none;
+                line-height: $line-height-base;
+                padding: $table-cell-padding;
+
+                .cell-label {
+                    display: block;
+                    font-weight: 500;
+
+                    a {
+                        color: $body-color;
+                        cursor: default;
+
+                        &:hover, &:focus, &:active {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+
+
+                &.actions {
+                    display: inline-block;
+                    text-align: right;
+                    white-space: nowrap;
+
+                    @include for-tablet-portrait-up {
+                        flex: 0 0 3%;
+                        width: 100%;
+                        max-width: none;
+                    }
+
+                    &:first-child {
+                        flex: 1;
+                    }
+
+                    .cell-label {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

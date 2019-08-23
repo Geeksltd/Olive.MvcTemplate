@@ -1,0 +1,34 @@
+﻿///<reference path="../../utilities/utilities">
+$switch-control-height: 2.6rem;
+
+.archive-button {
+    cursor: pointer;
+    display: inline-block;
+    background-color: $color-primary;
+    border-radius: calc(#{$switch-control-height} / 2);
+    width: calc(#{$switch-control-height} * 1.8);
+    height: $switch-control-height;
+    position: relative;
+    text-align: left;
+
+    &:before {
+        transition: all .3s ease-in-out;
+        background-color: white;
+        content: ' ';
+        border-radius: 50%;
+        position: relative;
+        display: inline-block;
+        top: calc(#{$switch-control-height} * .1);
+        height: calc(#{$switch-control-height} * .8);
+        width: calc(#{$switch-control-height} * .8);
+        left: calc(#{$switch-control-height} * .88);
+    }
+
+    &.item-archived {
+        background-color: $p-dark-gray;
+
+        &:before {
+            left: calc(#{$switch-control-height} * .15);
+        }
+    }
+}

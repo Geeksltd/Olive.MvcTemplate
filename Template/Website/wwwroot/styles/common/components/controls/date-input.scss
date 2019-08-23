@@ -1,0 +1,66 @@
+﻿///<reference path="../../utilities/utilities">
+
+.form-control {
+    &[data-control=date-picker],
+    &[data-control=time-picker],
+    &[data-control=date-picker\|time-picker] {
+        width: 100%;
+
+        & + .input-group-addon {
+            position: absolute;
+            left: calc(100% - 2rem);
+            top: calc(50% - 1.1rem);
+            z-index: 999;
+            color: $input-color;
+        }
+    }
+}
+
+.bootstrap-datetimepicker-widget {
+    display: block !important;
+    box-shadow: 0 0 15px -5px rgba(0,0,0,0.75);
+
+    thead {
+        .picker-switch {
+            color: $color-primary;
+            font-size: 1.4rem;
+        }
+
+        .prev, .next {
+            opacity: .7;
+            @include default-border();
+        }
+    }
+
+    .table-condensed {
+        td {
+            width: 50%;
+        }
+
+        [data-action=today] {
+            display: inline-block;
+            width: 100%;
+            border-radius: .4rem;
+
+            &:before {
+                content: "Today";
+                color: $color-primary;
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                background-color: $gray-background;
+            }
+
+            .fa {
+                display: none;
+            }
+        }
+    }
+
+    table td {
+        &.active, &.active:hover {
+            background-color: $color-primary;
+        }
+    }
+}

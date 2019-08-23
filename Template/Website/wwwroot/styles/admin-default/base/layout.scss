@@ -1,0 +1,57 @@
+﻿///<reference path="../../common/utilities/utilities">
+
+.page {
+    min-height: calc(100vh - #{$header-height});
+    display: flex;
+    flex-flow: row wrap;
+
+    .left-panel {
+        display: none;
+
+        @include for-tablet-landscape-up {
+            min-height: calc(100vh - #{$header-height});
+            flex: 0 0 $sidebar-width;
+            max-width: $sidebar-width;
+            display: block;
+            opacity: 1;
+        }
+
+        &.show {
+            position: absolute;
+            z-index:100;
+            animation-name: menu-slide-right-anim;
+            animation-duration: 0.25s;
+            animation-fill-mode: forwards;
+            display: block;
+            max-width: $sidebar-width;
+            width: $sidebar-width;
+            min-height: calc(100vh - #{$header-height});
+            background-color: $white;
+
+            li.visible-in-collapsed-only {
+                display: block;
+            }
+        }
+    }
+
+    .right-panel {
+        flex: 1;
+        display: flex;
+        flex-flow: column nowrap;
+        overflow-y: scroll;
+        background-color: $gray-background;
+        color: $black-primary;
+
+        .content-wrapper {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-flow: column wrap;
+            overflow-y: auto;
+
+            .content {
+                flex: 1;
+            }
+        }
+    }
+}

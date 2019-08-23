@@ -1,0 +1,38 @@
+﻿///<reference path="../utilities/utilities">
+
+.alertify-log {
+    margin-bottom: 80px;
+}
+
+.date-time-picker-container-active {
+    margin-bottom: 280px;
+}
+
+/*.alertify {
+    &.error .alertify-button-ok {
+        background-color: $btn-danger-bg;
+        border-color: $alert-danger-border;
+    }
+
+    &.warning .alertify-button-ok {
+        background-color: $btn-warning-bg;
+        border-color: $alert-warning-border;
+    }
+}*/
+
+.validation-summary-errors {
+    @extend .alert;
+    @extend .alert-danger
+}
+
+.alertify-button {
+    @extend .btn;
+
+    &.alertify-button-cancel {
+        @extend .btn[name=Cancel];
+    }
+
+    &.alertify-button-ok {
+        @extend .btn.btn-primary;
+    }
+}

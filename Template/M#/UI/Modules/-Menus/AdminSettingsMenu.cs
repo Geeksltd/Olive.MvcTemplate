@@ -7,7 +7,14 @@ namespace Modules
     {
         public AdminSettingsMenu()
         {
-            IsViewComponent().RootCssClass("navbar navbar-light").UlCssClass("nav flex-column w-100");
+            SubItemBehaviour(MenuSubItemBehaviour.ExpandCollapse);
+            WrapInForm(false);
+            AjaxRedirect();
+            IsViewComponent();
+            RootCssClass("sidebar-menu");
+            UlCssClass("nav flex-column");
+            Using("Olive.Security");
+
 
             Item("General settings")
                 .OnClick(x => x.Go<Admin.Settings.GeneralPage>());

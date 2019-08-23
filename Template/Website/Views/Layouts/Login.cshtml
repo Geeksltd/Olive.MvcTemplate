@@ -1,0 +1,15 @@
+﻿@{Layout = Request.IsAjaxRequest() ? null : "~/Views/Layouts/Login.Container.cshtml";}
+<main>
+    <div class="content-wrapper">
+        <div class="content"> @RenderBody() </div>
+    </div>
+    <footer>@await Component.InvokeAsync(typeof(Footer))</footer>
+    @if (!Request.IsAjaxRequest())
+    {
+        <script src="/lib/requirejs/require.js" data-main="/scripts/references.js?v=1"></script>
+    }
+    @RenderSection("scripts", required: false)
+
+    @Html.DevCommandsWidget()
+    @Html.RegisterStartupActions()
+</main>

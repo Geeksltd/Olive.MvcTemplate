@@ -8,7 +8,7 @@ public class LoginPage : RootPage
         Route(@"login
             [#EMPTY#]");
 
-        Layout(Layouts.Blank);
+        Layout(Layouts.Login);
 
         Add<Modules.LoginForm>();
         Add<Modules.SocialMediaLogin>();

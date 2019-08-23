@@ -1,9 +1,7 @@
 ﻿@{Layout = Request.IsAjaxRequest() ? null : "~/Views/Layouts/Blank.Container.cshtml";}
 <main>
-    <div class="container-fluid">
-        <div class="page">
+    <div class="content-wrapper">
             <div class="content"> @RenderBody() </div>
-        </div>
     </div>
 
     @if (!Request.IsAjaxRequest())

@@ -4,11 +4,15 @@
     "inputFile": "wwwroot/styles/Blank.scss"
   },
   {
-    "outputFile": "wwwroot/styles/FrontEnd.css",
-    "inputFile": "wwwroot/styles/FrontEnd.scss"
+    "outputFile": "wwwroot/styles/login/styles.css",
+    "inputFile": "wwwroot/styles/login/styles.scss"
   },
   {
-    "outputFile": "wwwroot/styles/FrontEnd-Modal.css",
-    "inputFile": "wwwroot/styles/FrontEnd-Modal.scss"
+    "outputFile": "wwwroot/styles/admin-default-modal/styles.css",
+    "inputFile": "wwwroot/styles/admin-default-modal/styles.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/admin-default/styles.css",
+    "inputFile": "wwwroot/styles/admin-default/styles.scss"
   }
 ]

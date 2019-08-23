@@ -1,0 +1,61 @@
+﻿///<reference path="../../common/utilities/utilities">
+
+body {
+    text-align: center;
+    background-color: $white;
+
+    .card.login {
+        border: 0;
+
+        .card-body {
+            min-height: 40rem;
+            vertical-align: central;
+
+            .form-body, .buttons-row {
+                max-width: 40rem;
+                margin: auto;
+                text-align: center;
+
+                .buttons {
+                    width: initial;
+                }
+            }
+        }
+    }
+
+    footer {
+        position: absolute;
+        left: 50%;
+        top: 100vh;
+        -ms-transform: translate(-50%, calc(-100% - 1rem));
+        transform: translate(-50%, calc(-100% - 1rem));
+    }
+}
+
+@include for-tablet-portrait-up {
+    body {
+        text-align: center;
+
+        .card.login {
+            min-height: 100vh;
+            background-color: $gray-background;
+
+            .card-body {
+                background-color: $white;
+                width: 60rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                border-radius: .4rem;
+                box-shadow: 0 0 1rem $border-color;
+
+                /*.form-body, .buttons-row {
+                    width: 40rem;
+                    margin: auto;
+                }*/
+            }
+        }
+    }
+}

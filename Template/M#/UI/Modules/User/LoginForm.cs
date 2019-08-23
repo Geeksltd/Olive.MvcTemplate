@@ -20,11 +20,20 @@ namespace Modules
             {
                 x.RunInTransaction(false);
                 x.ShowPleaseWait();
-                x.CSharp("var authenticationResult = await Olive.Security.Auth0.Authenticate(info.Email, info.Password);");
-                x.If("!authenticationResult.Success")
-                   .CSharp(@"Notify(authenticationResult.Message, ""error"");
-                             return View(info); ");
-                x.CSharp("await info.Item.LogOn();");
+                x.CSharp("User user = null;");
+                x.CSharp(@"user = await Domain.User.FindByEmail(info.Email);
+
+                if (user == null)
+                    throw new Olive.Entities.ValidationException(""Invalid username and/or password. Please try again."");
+
+                if (user.IsDeactivated)
+                    throw new Olive.Entities.ValidationException(""Your account is deactivated. Please contact an administrator."");
+
+                if (!SecurePassword.Verify(info.Password, user.Password, user.Salt))
+                    throw new Olive.Entities.ValidationException(""Invalid username and/or password. Please try again."");").ValidationError();
+                x.If("user == null")
+                   .CSharp(@" Notify(""Invalid login "", ""error""); return View(info); ");
+                x.CSharp("info.Item = user; await info.Item.LogOn();");
                 x.If(CommonCriterion.RequestHas_ReturnUrl).ReturnToPreviousPage();
                 x.Go<Login.DispatchPage>();
             });

@@ -1,0 +1,26 @@
+﻿/// ---- Order is very important here!---///
+$icon-font-path: '../../fonts';
+
+$fa-font-path: "/lib/@fortawesome/fontawesome-free/webfonts"; //override default fontawesome path.
+$fa-var-sort-asc: "\f0dd";
+$fa-var-sort-desc: "\f0de";
+
+@import "bootstrap-variables";
+
+@import "../../../lib/bootstrap/scss/bootstrap";
+
+@import "../../../lib/@fortawesome/fontawesome-free/scss/variables";
+@import "../../../lib/bootstrap-select/sass/bootstrap-select";
+@import "../../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css";
+@import "../../../lib/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../lib/@fortawesome/fontawesome-free/scss/brands"; // free
+@import "../../../lib/@fortawesome/fontawesome-free/scss/solid"; // free
+@import "../../../lib/bootstrap-spinedit/css/bootstrap-spinedit.css";
+@import "../../../lib/alertify/themes/alertify.core.css";
+@import "../../../lib/alertify-bootstrap-3/alertify.bootstrap3.css";
+@import "../../../lib/jquery-typeahead/dist/jquery.typeahead.min.css";
+
+// shim for olive font awesome upgrade
+.fas {
+    @extend .fa;
+}

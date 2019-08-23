@@ -1,0 +1,38 @@
+﻿///<reference path="../../utilities/utilities">
+
+///TODO @Bb clean up and organize
+.radio-list .radio input[type="radio"], .checkbox-list .checkbox input[type="checkbox"] {
+    margin-left: 0;
+}
+
+.input-group *[data-control=collapsible-checkboxes] .textbox {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.twitter-typeahead .tt-dropdown-menu {
+    cursor: pointer;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+input[type="text"].spinedit {
+    width: 50%;
+    display: inline-block;
+}
+
+div.spinedit {
+    .fa fa-var-plus fa-fw {
+        top: -4px;
+    }
+
+    .fa fa-var-minus fa-fw {
+        top: 10px;
+    }
+}
+
+.form-check {
+    display: flex;
+    margin-bottom: .5rem;
+    padding-left: 0;
+}

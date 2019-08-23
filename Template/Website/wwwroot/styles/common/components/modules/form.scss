@@ -1,0 +1,188 @@
+﻿///<reference path="../../utilities/utilities">
+
+/* Forms */
+form {
+    .control-label {
+        // @include make-column-lg(2);
+        flex: 1;
+        text-align: left;
+    }
+
+    .group-control {
+        @include make-column-lg(4);
+    }
+
+    .subform-group-control {
+        @include make-column-lg(8);
+    }
+
+    .password-strength .progress {
+        margin-top: 8px;
+    }
+
+    .file-upload {
+        & {
+            min-height: 64px; /* TODO: Fix this to be proper responsive setup. input[type=file] { float: left; }*/
+        }
+
+        .btn {
+            padding: 4px;
+        }
+
+        .current-file {
+            & {
+                display: none;
+            }
+
+            a {
+                color: $gray-dark;
+            }
+        }
+
+        .progress {
+            & {
+                min-width: 150px;
+                height: 34px;
+                margin-bottom: 0;
+            }
+
+            .progress-bar {
+                width: 0;
+            }
+
+            input.form-control {
+                background-color: transparent;
+                color: #fff;
+                font-size: 100%;
+                border: none;
+                position: absolute;
+            }
+        }
+
+        input[type=file] {
+            display: inline-block;
+        }
+
+        .delete-file {
+            float: right;
+            position: relative;
+            top: -45px;
+            z-index: 2;
+        }
+
+        .file-target {
+            cursor: pointer;
+        }
+    }
+
+    .form-body {
+        .form-tabs-header {
+            @extend .nav;
+            @extend .nav-tabs;
+        }
+
+        .tab-content {
+            padding: 20px;
+        }
+    }
+
+    .horizontal-subform {
+        & {
+            @include make-column-lg(6);
+        }
+
+        table {
+            & {
+                @extend .table;
+                @extend .table-sm;
+                @extend .table-responsive;
+                margin-bottom: 0;
+                overflow: visible;
+            }
+
+            thead {
+                visibility: hidden;
+            }
+
+            .group-control {
+                @include make-column-lg(8);
+            }
+
+            .form-group {
+                margin-bottom: 0;
+            }
+
+            tbody > tr > td {
+                border-top: 0;
+            }
+        }
+    }
+
+    .subform-group-control {
+        @include make-column-lg(8);
+    }
+
+    .vertical-subform {
+        .subform-item {
+            margin-bottom: 2px;
+            @include make-row();
+
+            .subform-item-body {
+                @include make-column-lg(6);
+
+                & {
+                    background: #eee;
+                    border-radius: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 2px;
+                    margin-bottom: 2px;
+                }
+
+                .form-group {
+                    label {
+                        @include make-column-lg(4);
+                    }
+
+                    .group-control {
+                        @include make-column-lg(8);
+                    }
+                }
+            }
+
+            .subform-delete-wrapper {
+                @include make-column-lg(3);
+            }
+        }
+    }
+
+    .subform-item a.delete-button i {
+        font-size: 18pt;
+        margin-top: 4px;
+    }
+
+    .input-group.unboxed .input-group-addon {
+        border: 0;
+        background: none;
+    }
+}
+
+.form-group > .group-control:not(:first-of-type):last-of-type > * {
+    margin-top: $form-group-margin-bottom;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 0;
+    }
+}
+.input-form {
+    .buttons-row {
+        /*@include make-row();*/
+        .buttons {
+            /*@include make-column-lg(6);*/
+            width: 40rem;
+
+            .btn:not(:first-child) {
+                margin-left: .3rem;
+            }
+        }
+    }
+}

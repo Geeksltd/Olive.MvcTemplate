@@ -22,7 +22,7 @@ namespace Modules
                 .ControlMarkup("<p>Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.</p>")
                 .VisibleIf("@info?.Error == \"deactivated\"");
 
-            //================ Code Extensions: ================
+            // ================ Code Extensions: ================
 
             ViewModelProperty<string>("Provider").FromRequestParam("provider");
 
@@ -40,7 +40,7 @@ namespace Modules
                 .Icon(FA.GooglePlus)
                 .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Google\");"));
 
-            //Button("Microsoft")
+            // Button("Microsoft")
             //    .ExtraTagAttributes("formmethod='post'")
             //    .CssClass("btn-social btn-microsoft")
             //    .Icon(FA.Windows)

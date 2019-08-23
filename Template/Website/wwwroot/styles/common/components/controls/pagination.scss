@@ -1,0 +1,58 @@
+﻿///<reference path="../../utilities/utilities">
+
+.pagination {
+    display: inline-block;
+    margin: auto;
+    background-color: $white;
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    @include default-border();
+    overflow: hidden;
+
+    li {
+        float: left;
+        display: inline-block;
+        padding: $input-padding-y 0;
+
+        a {
+            padding: $input-padding-y $input-padding-x * 2;
+            text-decoration: none;
+            color: $input-color;
+        }
+
+        &:not(:last-child) {
+            border-right: .1rem solid $border-color;
+        }
+
+        &:not(.disabled):not(.active):hover {
+            background-color: $color-primary-lighten;
+        }
+
+        &.disabled {
+            opacity: $disabled-opacity;
+
+            a {
+                cursor: default;
+            }
+        }
+
+        &.active {
+            background-color: $color-primary;
+
+            a {
+                color: $on-color-primary;
+            }
+        }
+    }
+}
+
+.pagination-size {
+    display: inline-block;
+    float: right;
+
+    .dropdown.bootstrap-select:not(.dummy-class-to-make-it-important) {
+        width: initial;
+    }
+}

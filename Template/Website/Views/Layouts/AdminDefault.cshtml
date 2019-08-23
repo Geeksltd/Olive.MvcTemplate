@@ -1,0 +1,38 @@
+﻿@{Layout = Request.IsAjaxCall() ? null : "~/Views/Layouts/AdminDefault.Container.cshtml";}
+@{ var leftMenu = ViewData["LeftMenu"].ToStringOrEmpty(); }
+@{ var topMenu = ViewData["TopMenu"].ToStringOrEmpty(); }
+<main>
+    <header> @await Component.InvokeAsync(typeof(Header)) </header>
+    <div class="page">
+        <div class="left-panel">
+            @if (leftMenu.HasValue())
+        {
+            <div class="sidebar-wrapper">
+                @await Component.InvokeAsync(ViewData["LeftMenu"].ToString())
+            </div>
+        }
+        </div>
+        <div class="right-panel">
+
+            <div class="content-wrapper">
+                @if (topMenu.HasValue())
+            {
+                <div class="top-menu">
+                    @await Component.InvokeAsync(ViewData["TopMenu"].ToString())
+                </div>
+            }
+                <div class="content">@RenderBody()</div>
+
+            </div>
+            <footer>@await Component.InvokeAsync(typeof(Footer))</footer>
+        </div>
+    </div>
+    @if (!Request.IsAjaxRequest())
+    {
+    <script src="/lib/requirejs/require.js" data-main="/scripts/references.js?v=1"></script>
+    }
+    @Html.RegisterDynamicScriptFiles()
+    @RenderSection("scripts", required: false)
+    @Html.DevCommandsWidget()
+    @Html.RegisterStartupActions()
+</main>

@@ -1,0 +1,30 @@
+﻿///<reference path="../utilities/utilities">
+
+.wait-screen {
+    .cover {
+        display: block;
+        background: $gray-darker;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include opacity(0.3);
+        z-index: 10;
+    }
+
+    .wait-container {
+        position: fixed;
+        width: 100%;
+        z-index: 10000;
+        display: none;
+        top: 45%;
+
+        .wait-box {
+            background: transparent;
+            padding: 20px;
+            text-align: center;
+            width: 150px;
+            border-radius: 12pt;
+            margin: auto;
+        }
+    }
+}

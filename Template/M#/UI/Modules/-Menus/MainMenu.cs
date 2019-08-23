@@ -7,17 +7,21 @@ namespace Modules
     {
         public MainMenu()
         {
-            AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
+            SubItemBehaviour(MenuSubItemBehaviour.ExpandCollapse);
+            AjaxRedirect().WrapInForm(false);
+            Using("Olive.Security");
+            IsViewComponent().UlCssClass("nav flex-column");
+            RootCssClass("sidebar-menu");
 
-            Item("Login")
-                .Icon(FA.UnlockAlt)
-                .VisibleIf(AppRole.Anonymous)
-                .OnClick(x => x.Go<LoginPage>());
-
-            Item("Settings")
-                .VisibleIf(AppRole.Admin)
-                .Icon(FA.Cog)
-               .OnClick(x => x.Go<Admin.SettingsPage>());
+            Link("Logout")
+                 .CssClass("align-bottom logout")
+                 .ValidateAntiForgeryToken(false)
+                 .VisibleIf(CommonCriterion.IsUserLoggedIn)
+                 .OnClick(x =>
+                 {
+                     x.CSharp("await OAuth.Instance.LogOff();");
+                     x.Go<LoginPage>();
+                 });
         }
     }
 }

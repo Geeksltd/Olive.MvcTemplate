@@ -8,7 +8,7 @@ namespace Admin
         public SettingsPage()
         {
             Set(PageSettings.LeftMenu, "AdminSettingsMenu");
-            
+
             OnStart(x => x.Go<Settings.GeneralPage>().RunServerSide());
         }
     }

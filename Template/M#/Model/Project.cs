@@ -12,9 +12,10 @@ namespace App
             Role("Anonymous");
             Role("Admin").SkipQueryStringSecurity();
 
-            Layout("Front end").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/FrontEnd.cshtml");
+            Layout("Admin default").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/AdminDefault.cshtml");
+            Layout("Admin default Modal").Modal().VirtualPath("~/Views/Layouts/AdminDefault.Modal.cshtml");
+            Layout("Login").AjaxRedirect().VirtualPath("~/Views/Layouts/Login.cshtml");
             Layout("Blank").AjaxRedirect().VirtualPath("~/Views/Layouts/Blank.cshtml");
-            Layout("Front end Modal").Modal().VirtualPath("~/Views/Layouts/FrontEnd.Modal.cshtml");
 
             PageSetting("LeftMenu");
             PageSetting("SubMenu");

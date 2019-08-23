@@ -1,0 +1,26 @@
+﻿///<reference path="../utilities/utilities">
+.buttons-row {
+    text-align: right;
+
+    &.top-buttons-row {
+        float: right;
+    }
+}
+
+.btn.loading-action-result {
+    @extend .text-muted;
+}
+
+.btn {
+    &:not(.dropdown-toggle) {
+        @include btn-style($color-primary,$color-primary-darken,$white,$white,$color-primary,$color-primary-darken);
+    }
+
+    &.btn-primary {
+        @include btn-style($white,$white,$color-primary, $color-primary-darken);
+    }
+
+    &[name=Cancel] {
+        @include btn-style($white,$white,$black-primary,$p-dark-gray);
+    }
+}

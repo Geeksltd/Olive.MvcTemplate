@@ -1,0 +1,19 @@
+﻿///Define project color palette here to customize and use universally.
+
+//TODO @BB try to find better name or reduce the shade if it's not special
+$color-primary: #2CB3B1;
+$color-primary-darken: #158A88;
+$color-primary-lighten: #d8eaea;
+$on-color-primary: #fff;
+$p-dark-gray: #737373;
+$black-primary: #232323;
+$gray-background: #F2F2F2;
+$border-color: #CFCFCF;
+$light-gray: #E6E6E6; 
+$black: #000000;
+$error: #FF0000;
+
+$disabled-opacity: .6;
+$disabled-bg-color: rgba(230,230,230, .4); 
+
+$primary: $color-primary;

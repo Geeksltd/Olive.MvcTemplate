@@ -1,0 +1,18 @@
+﻿///<reference path="../../utilities/utilities">
+
+.modal-content {
+    .modal-header {
+        background-color: $gray-background;
+        border: 0;
+        height: 5rem;
+
+        .close {
+            margin-top: -.4rem;
+        }
+    }
+
+    .group-control {
+        min-width: initial;
+        max-width: initial;
+    }
+}

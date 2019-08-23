@@ -1,0 +1,31 @@
+﻿///<reference path="../utilities/utilities"
+
+.restart-temp-database {
+    position: fixed;
+    bottom: 50%;
+    left: -63px;
+    transform: rotate(90deg);
+    padding: 4px 6px;
+    background: #003b5c;
+    color: #fff;
+    font-size: 13px;
+    font-family: Arial;
+    opacity: 0.4;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+legend {
+    font-size: 1rem;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+*[data-sort-item] {
+    cursor: move;
+}

@@ -7,8 +7,8 @@ namespace Admin.Settings.Administrators
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEndModal);
-            
+            Layout(Layouts.AdminDefaultModal);
+
             Add<Modules.AdministratorForm>();
         }
     }
