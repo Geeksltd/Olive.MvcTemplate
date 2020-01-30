@@ -1,7 +1,7 @@
 ﻿
 import OlivePage from 'olive/olivePage';
 import Config from 'olive/config';
-import ConfirmBox from 'olive/plugins/confirmBox';
+import { ConfirmBox } from 'olive/plugins/confirmBox';
 export default class AppPage extends OlivePage {
 
     constructor() {

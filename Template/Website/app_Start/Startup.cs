@@ -32,7 +32,7 @@
             services.AddScheduledTasks();
 
             if (Environment.IsDevelopment())
-                services.AddDevCommands(Configuration, x => x.AddTempDatabase<SqlServerManager, ReferenceData>());
+                services.AddDevCommands(x => x.AddTempDatabase<SqlServerManager, ReferenceData>());
         }
 
         protected override void ConfigureAuthentication(AuthenticationBuilder auth)
@@ -45,12 +45,6 @@
         {
             await base.OnStartUpAsync(app);
             app.UseScheduledTasks<TaskManager>();
-        }
-
-        public override void Configure(IApplicationBuilder app)
-        {
-            base.Configure(app);
-            app.UseGlobalSearch<GlobalSearchSource>();
         }
 
         #region Show error screen even in production?

@@ -22,7 +22,7 @@ define(["require", "exports", "olive/olivePage", "olive/plugins/confirmBox"], fu
                 var confirmMessage = $element.data("confirm-message");
                 var isArchived = $element.hasClass("item-archived");
                 if (confirmMessage)
-                    new confirmBox_1.default(null)
+                    new confirmBox_1.ConfirmBox(null)
                         .showConfirm(confirmMessage.replace("[#NEXT_STATUS_ACTION#]", isArchived ? "unarchive" : "archive"), toggleArchiveRequest);
                 else
                     toggleArchiveRequest();
