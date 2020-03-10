@@ -164,7 +164,7 @@ Website/wwwroot/scripts/**/*.js
 
 M#/Current/Stats.json
 M#/lib/*
-!M#/lib/netcoreapp2.1/
-M#/lib/netcoreapp2.1/*
-!M#/lib/netcoreapp2.1/MSharp.DSL.runtimeconfig.json
+!M#/lib/netcoreapp*/
+M#/lib/netcoreapp*/*
+!M#/lib/netcoreapp*/MSharp.DSL.runtimeconfig.json
 M#/UI/SchemaExtensions.cs
