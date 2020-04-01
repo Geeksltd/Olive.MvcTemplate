@@ -5,7 +5,7 @@
             "olive/*": [ "wwwroot/lib/olive.mvc/typings/*" ]
         },
         "module": "amd",
-        "target": "es6",
+        "target": "es5",
         "sourceMap": true,
         "noImplicitUseStrict": true,
         "noImplicitAny": false,
@@ -14,7 +14,11 @@
     }, "compileOnSave": true,
     "exclude": [
         "wwwroot/lib/olive.mvc/src",
+        "wwwroot/lib/ansi-styles",
+        "wwwroot/lib/find-up",
+        "wwwroot/lib/locate-path",
+        "wwwroot/lib/p-locate",
         "obj",
         "bin"
-    ]
+  ]
 }

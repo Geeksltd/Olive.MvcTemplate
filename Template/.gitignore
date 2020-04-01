@@ -123,7 +123,7 @@ TestResults/
 Website/Modules/
 Website/@Modules/
 Website/@TempImageFiles/
-Website/App_Code/TaskManager.cs
+Website/app_start/TaskManager.cs
 Website/Pages/
 Website/vwd.webinfo
 Website/Web.SiteMap
@@ -148,23 +148,15 @@ Website/Views/Modules/
 Website/Controllers/Pages/
 Website/Controllers/Modules/
 
-Website/public/css/*
-!Website/public/css/readme.txt
-Website/public/fonts/*
-!Website/public/fonts/readme.txt
-Website/public/js/*
-!Website/public/js/readme.txt
+Website/wwwroot/styles/**/*.css
+!Website/wwwroot/styles/readme.txt
+Website/wwwroot/fonts/*
+!Website/wwwroot/fonts/readme.txt
+Website/wwwroot/scripts/**/*.js
+!Website/wwwroot/scripts/readme.txt
 
-Website/Styles/**/*.css
-Website/Styles/**/*.map
-
-Website/Scripts/*.js
-Website/Scripts/*.map
-!Website/Scripts/ckeditor_config.js
-
-Website/Scripts/Lib/MSharp/*.js 
-Website/Scripts/Lib/MSharp/*.js.map 
-!Website/Scripts/Lib/MSharp/jquery-validate.bootstrap-tooltip.js
+!Website/wwwroot/scripts/ckeditor_config.js
+!Website/wwwroot/scripts/references.js
 
 
 /packages/
@@ -172,4 +164,7 @@ Website/Scripts/Lib/MSharp/*.js.map
 
 M#/Current/Stats.json
 M#/lib/*
-!M#/lib/netcoreapp2.1/MSharp.DSL.runtimeconfig.json
+!M#/lib/netcoreapp*/
+M#/lib/netcoreapp*/*
+!M#/lib/netcoreapp*/MSharp.DSL.runtimeconfig.json
+M#/UI/SchemaExtensions.cs
