@@ -8,8 +8,8 @@
   </PropertyGroup>
  
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="4.1.455" />
-    <PackageReference Include="Olive" Version="2.1.180" />
+    <PackageReference Include="MSharp" Version="4.1.478" />
+    <PackageReference Include="Olive" Version="2.1.181" />
   </ItemGroup>
 
   <Target Name="Generate code" AfterTargets="AfterBuild">

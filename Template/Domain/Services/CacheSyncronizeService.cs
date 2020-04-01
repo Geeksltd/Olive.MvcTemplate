@@ -16,7 +16,8 @@
         static CacheSyncronizeService()
         {
             // Watch every change in the database, and increase the cache version accordingly.
-            Context.Current.Database().Updated.Handle(e => IncreaseCacheVersion(e?.GetType()));
+            Context.Current.Database().Updated += 
+                ev => ev.Do(() => IncreaseCacheVersion(ev.Args?.GetType()));
         }
 
         static async Task IncreaseCacheVersion(Type modifiedObjectType)
