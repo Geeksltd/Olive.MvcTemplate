@@ -1,0 +1,136 @@
+﻿///<reference path="../../common/utilities/utilities">
+
+.top-menu
+{
+    margin-bottom: 7.5rem;
+
+    .dropped-submenu
+    {
+        margin-top: 0 !important;
+    }
+
+    ul
+    {
+        position: absolute;
+        width: 100%;
+    }
+
+    .navbar-nav
+    {
+        display: flex;
+        flex-direction: row;
+        background-color: $color-primary;
+
+        a
+        {
+            display: inline-block;
+            padding: 1rem;
+
+            &:hover
+            {
+                text-decoration: none;
+            }
+        }
+
+        > li
+        {
+            border-bottom: .1rem solid $color-primary;
+
+            a,
+            a:hover
+            {
+                color: $on-color-primary;
+
+                &[aria-expanded=true]
+                {
+                    background-color: $on-color-primary;
+                    color: $color-primary;
+                }
+            }
+
+            a[data-toggle=collapse]::after
+            {
+                content: "";
+                display: inline-block;
+                margin-left: .5rem;
+                width: 0;
+                height: 0;
+                border-top: .7rem solid $on-color-primary;
+                border-left: .5rem solid transparent;
+                border-right: .5rem solid transparent;
+                vertical-align: baseline;
+                transform: rotate(0);
+                @include bb-transition(transform);
+            }
+
+            a[data-toggle=collapse][aria-expanded=true]::after
+            {
+                border-top-color: $color-primary;
+                transform: rotate(180deg);
+            }
+
+            &.active a,
+            &.active-parent a,
+            &:hover a
+            {
+                background-color: $on-color-primary;
+                color: $color-primary;
+
+                &::after
+                {
+                    border-top-color: $color-primary;
+                }
+            }
+
+            ul
+            {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                left: 0;
+                position: absolute;
+                list-style: none;
+                background-color: $on-color-primary;
+                padding: 0;
+                margin-top: 0.1rem;
+                @include bb-transition();
+                max-height: 0;
+                overflow: hidden;
+
+                &.show
+                {
+                    max-height: 10rem;
+                }
+
+                li
+                {
+                    a
+                    {
+                        color: $black-primary;
+                    }
+
+                    &.active
+                    {
+                        a
+                        {
+                            color: $color-primary;
+                        }
+                    }
+
+                    a:hover
+                    {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include for-tablet-landscape-up
+{
+    .top-menu ul
+    {
+        width: calc(100% - #{$sidebar-width});
+    }
+}

@@ -5813,7 +5813,9 @@ button.bg-dark:focus {
   margin-top: 0.5rem !important; }
 
 .mr-2,
-.mx-2 {
+.mx-2,
+.as-buttons-input .group-control input[type=radio] + label i,
+.as-buttons-input .group-control input[type=checkbox] + label i {
   margin-right: 0.5rem !important; }
 
 .mb-2,
@@ -5821,7 +5823,9 @@ button.bg-dark:focus {
   margin-bottom: 0.5rem !important; }
 
 .ml-2,
-.mx-2 {
+.mx-2,
+.as-buttons-input .group-control input[type=radio] + label i,
+.as-buttons-input .group-control input[type=checkbox] + label i {
   margin-left: 0.5rem !important; }
 
 .m-3 {
@@ -5938,7 +5942,8 @@ button.bg-dark:focus {
 .px-2 {
   padding-left: 0.5rem !important; }
 
-.p-3 {
+.p-3, .as-buttons-input .group-control input[type=radio] + label,
+.as-buttons-input .group-control input[type=checkbox] + label {
   padding: 1rem !important; }
 
 .pt-3,
@@ -12164,7 +12169,7 @@ legend {
     border: 0.1rem solid #CFCFCF;
     border-radius: 0.4rem; }
   .bootstrap-datetimepicker-widget .table-condensed td {
-    width: 50%; }
+    width: 25%; }
   .bootstrap-datetimepicker-widget .table-condensed [data-action=today] {
     display: inline-block;
     width: 100%;
@@ -12368,6 +12373,22 @@ input[type='radio'].handled {
   float: right; }
   .pagination-size .dropdown.bootstrap-select:not(.dummy-class-to-make-it-important) {
     width: initial; }
+
+.as-buttons-input .group-control {
+  max-width: 100%; }
+  .as-buttons-input .group-control input[type=radio],
+  .as-buttons-input .group-control input[type=checkbox] {
+    opacity: 0;
+    position: absolute; }
+    .as-buttons-input .group-control input[type=radio] + label,
+    .as-buttons-input .group-control input[type=checkbox] + label {
+      cursor: pointer;
+      background-color: white;
+      border-radius: 0.4rem; }
+    .as-buttons-input .group-control input[type=radio]:checked + label,
+    .as-buttons-input .group-control input[type=checkbox]:checked + label {
+      color: white;
+      background-color: #2CB3B1; }
 
 /* Forms */
 form .control-label {
