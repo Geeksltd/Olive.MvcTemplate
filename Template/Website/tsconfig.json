@@ -18,6 +18,7 @@
         "wwwroot/lib/find-up",
         "wwwroot/lib/locate-path",
         "wwwroot/lib/p-locate",
+        "wwwroot/lib/yargs",
         "obj",
         "bin"
   ]
