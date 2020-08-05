@@ -3,7 +3,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
-    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <TieredCompilation>true</TieredCompilation>
   </PropertyGroup>
