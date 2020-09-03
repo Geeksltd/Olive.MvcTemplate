@@ -27,7 +27,7 @@
     "seiyria-bootstrap-slider": "seiyria/bootstrap-slider#7.1.1",
     "smartmenus": "vadikom/smartmenus#1.0.0-beta1",
     "olive.mvc": "Geeksltd/Olive.MvcJs#*",
-    "bootstrap-select": "1.13.3"
+    "bootstrap-select": "1.13.18"
   },
   "engines": {
     "yarn": ">= 1.0.0"
