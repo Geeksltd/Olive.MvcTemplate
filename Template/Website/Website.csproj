@@ -1,6 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
@@ -27,32 +28,31 @@
     <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Hangfire" Version="1.7.9" />
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.1.2" />
+    <PackageReference Include="Hangfire" Version="1.7.17" />    
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="3.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="3.1.10" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Olive" Version="2.1.181" />
-    <PackageReference Include="Olive.Audit" Version="2.1.103" />
-    <PackageReference Include="Olive.Audit.DatabaseLogger" Version="2.1.102" />
-    <PackageReference Include="Olive.CSV" Version="2.1.103" />
-    <PackageReference Include="Olive.Drawing" Version="2.1.103" />
-    <PackageReference Include="Olive.Encryption" Version="2.2.102" />
-    <PackageReference Include="Olive.Entities" Version="2.1.139" />
-    <PackageReference Include="Olive.Entities.Data" Version="2.1.150" />
-    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.107" />
-    <PackageReference Include="Olive.Export" Version="2.1.103" />
-    <PackageReference Include="Olive.Hangfire" Version="2.1.110" />
-    <PackageReference Include="Olive.Mvc" Version="2.1.146" />
-    <PackageReference Include="Olive.Mvc.Paging" Version="2.1.103" />
-    <PackageReference Include="Olive.PDF" Version="2.1.104" />
-    <PackageReference Include="Olive.Mvc.Security" Version="2.2.106" />
-    <PackageReference Include="Olive.Security.Auth0" Version="2.1.102" />
-    <PackageReference Include="Olive.Security.Impersonation" Version="2.1.103" />
-    <PackageReference Include="Olive.Testing" Version="2.1.115" />
-    <PackageReference Include="Olive.Web" Version="2.2.105" />
-    <PackageReference Include="SkiaSharp" Version="1.68.0" />
+    <PackageReference Include="Olive" Version="2.1.199" />
+    <PackageReference Include="Olive.Audit" Version="2.1.105" />
+    <PackageReference Include="Olive.Audit.DatabaseLogger" Version="2.1.103" />
+    <PackageReference Include="Olive.CSV" Version="2.1.105" />
+    <PackageReference Include="Olive.Drawing" Version="2.1.105" />
+    <PackageReference Include="Olive.Encryption" Version="2.2.104" />
+    <PackageReference Include="Olive.Entities" Version="2.1.148" />
+    <PackageReference Include="Olive.Entities.Data" Version="2.1.164" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.111" />
+    <PackageReference Include="Olive.Export" Version="2.1.105" />
+    <PackageReference Include="Olive.Hangfire" Version="3.1.102" />
+    <PackageReference Include="Olive.Mvc" Version="3.1.111" />
+    <PackageReference Include="Olive.Mvc.Paging" Version="3.1.102" />
+    <PackageReference Include="Olive.PDF" Version="2.1.106" />
+    <PackageReference Include="Olive.Mvc.Security" Version="3.1.102" />
+    <PackageReference Include="Olive.Security.Auth0" Version="3.1.101" />
+    <PackageReference Include="Olive.Security.Impersonation" Version="3.1.102" />
+    <PackageReference Include="Olive.Testing" Version="3.1.103" />
+    <PackageReference Include="Olive.Web" Version="3.1.104" />
+    <PackageReference Include="SkiaSharp" Version="2.80.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
@@ -62,7 +62,6 @@
   </ItemGroup>
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />
   <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask" />
-
   <Target Name="WebCompile" AfterTargets="PostBuildEvent" Condition="'$(RunWebCompiler)' != 'False'">
     <WebCompiler.CompilerBuildTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\compilerconfig.json" />
   </Target>

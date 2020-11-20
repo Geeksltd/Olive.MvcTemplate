@@ -6,6 +6,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
     using Olive;
     using Olive.Entities.Data;
@@ -16,7 +17,7 @@
 
     public class Startup : Olive.Mvc.Startup
     {
-        public Startup(IHostingEnvironment env, IConfiguration config, ILoggerFactory loggerFactory)
+        public Startup(IWebHostEnvironment env, IConfiguration config, ILoggerFactory loggerFactory)
             : base(env, config, loggerFactory)
         {
         }

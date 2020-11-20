@@ -16,8 +16,8 @@ namespace MSharp
     {
         internal static MasterPage AdminDefault => MasterPage.Of("Admin default");
         internal static MasterPage AdminDefaultModal => MasterPage.Of("Admin default Modal");
-        internal static MasterPage Blank => MasterPage.Of("Blank");
         internal static MasterPage Login => MasterPage.Of("Login");
+        internal static MasterPage Blank => MasterPage.Of("Blank");
     }
     
     partial class PageSettings
