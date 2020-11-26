@@ -8,6 +8,13 @@
 
     public class SharedActionsController : BaseController
     {
+        private readonly IFileAccessorFactory fileAccessor;
+
+        public SharedActionsController(IFileAccessorFactory fileAccessor)
+        {
+            this.fileAccessor = fileAccessor;
+        }
+
         [Route("error")]
         public ActionResult Error() => View("error");
 
@@ -17,14 +24,14 @@
         [HttpPost, Authorize, Route("upload")]
         public async Task<IActionResult> UploadTempFileToServer(IFormFile[] files)
         {
-            return Json(await new FileUploadService().TempSaveUploadedFile(files[0]));
+            return Json(await new DiskFileRequestService().TempSaveUploadedFile(files[0]));
         }
 
         [Route("file")]
         public async Task<ActionResult> DownloadFile()
         {
             var path = Request.QueryString.ToString().TrimStart('?');
-            var accessor = await FileAccessor.Create(path, User);
+            var accessor = await fileAccessor.Create(path, User);
             if (!accessor.IsAllowed()) return new UnauthorizedResult();
 
             if (accessor.Blob.IsMedia())
@@ -33,6 +40,6 @@
         }
 
         [Route("temp-file/{key}")]
-        public Task<ActionResult> DownloadTempFile(string key) => TempFileService.Download(key);
+        public Task<ActionResult> DownloadTempFile(string key) => new DiskFileRequestService().Download(key);
     }
 }

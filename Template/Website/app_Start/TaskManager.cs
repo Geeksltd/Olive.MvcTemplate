@@ -10,10 +10,10 @@
     using Olive.Entities;
     using Olive.Entities.Data;
     using Domain;
-    
+
     /// <summary>Executes the scheduled tasks in independent threads automatically.</summary>
     [EscapeGCop("Auto generated code.")]
-    #pragma warning disable
+#pragma warning disable
     public partial class TaskManager : BackgroundJobsPlan
     {
         /// <summary>Registers the scheduled activities.</summary>
@@ -21,11 +21,11 @@
         {
             Register(new BackgroundJob("Clean old temp uploads", () => CleanOldTempUploads(), Hangfire.Cron.MinuteInterval(10)));
         }
-        
+
         /// <summary>Clean old temp uploads</summary>
         public static async Task CleanOldTempUploads()
         {
-            await Olive.Mvc.FileUploadService.DeleteTempFiles(olderThan: 1.Hours());
+            await new Olive.Mvc.DiskFileRequestService().DeleteTempFiles(olderThan: 1.Hours());
         }
     }
 }

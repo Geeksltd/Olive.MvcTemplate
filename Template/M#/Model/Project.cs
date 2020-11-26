@@ -6,7 +6,7 @@ namespace App
     {
         public Project()
         {
-            Name("MY.PROJECT.NAME").SolutionFile("MY.PROJECT.NAME.sln");            
+            Name("MY.PROJECT.NAME").SolutionFile("MY.PROJECT.NAME.sln");
 
             Role("Local.Request");
             Role("Anonymous");
@@ -22,7 +22,7 @@ namespace App
             PageSetting("TopMenu");
 
             AutoTask("Clean old temp uploads").Every(10, TimeUnit.Minute)
-                .Run("await Olive.Mvc.FileUploadService.DeleteTempFiles(olderThan: 1.Hours());");
+                .Run("await new Olive.Mvc.DiskFileRequestService().DeleteTempFiles(olderThan: 1.Hours());");
         }
     }
 }
