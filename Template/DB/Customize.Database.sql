@@ -1,7 +1,7 @@
 CREATE PROCEDURE [dbo].[RebuildAllIndices]	
 	AS
 	BEGIN
-		exec sp_msforeachtable @command1 = "ALTER INDEX ALL ON ? REBUILD WITH (FILLFACTOR = 90)"
+		exec sp_msforeachtable @command1 = "SET QUOTED_IDENTIFIER ON; ALTER INDEX ALL ON ? REBUILD WITH (FILLFACTOR = 90)"
 	END
 
 GO
