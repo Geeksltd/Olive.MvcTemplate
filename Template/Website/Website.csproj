@@ -28,30 +28,30 @@
     <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Hangfire" Version="1.7.17" />    
+    <PackageReference Include="Hangfire" Version="1.7.19" />    
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="3.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.10" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="3.1.10" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Olive" Version="2.1.199" />
-    <PackageReference Include="Olive.Audit" Version="2.1.105" />
-    <PackageReference Include="Olive.Audit.DatabaseLogger" Version="2.1.103" />
-    <PackageReference Include="Olive.CSV" Version="2.1.105" />
-    <PackageReference Include="Olive.Drawing" Version="2.1.105" />
-    <PackageReference Include="Olive.Encryption" Version="2.2.104" />
-    <PackageReference Include="Olive.Entities" Version="2.1.148" />
-    <PackageReference Include="Olive.Entities.Data" Version="2.1.164" />
-    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.111" />
-    <PackageReference Include="Olive.Export" Version="2.1.105" />
-    <PackageReference Include="Olive.Hangfire" Version="3.1.102" />
-    <PackageReference Include="Olive.Mvc" Version="3.1.111" />
-    <PackageReference Include="Olive.Mvc.Paging" Version="3.1.102" />
-    <PackageReference Include="Olive.PDF" Version="2.1.106" />
-    <PackageReference Include="Olive.Mvc.Security" Version="3.1.102" />
-    <PackageReference Include="Olive.Security.Auth0" Version="3.1.101" />
-    <PackageReference Include="Olive.Security.Impersonation" Version="3.1.102" />
+    <PackageReference Include="Olive" Version="2.1.239" />
+    <PackageReference Include="Olive.Audit" Version="2.1.107" />
+    <PackageReference Include="Olive.Audit.DatabaseLogger" Version="2.1.106" />
+    <PackageReference Include="Olive.CSV" Version="2.1.107" />
+    <PackageReference Include="Olive.Drawing" Version="2.1.108" />
+    <PackageReference Include="Olive.Encryption" Version="2.2.106" />
+    <PackageReference Include="Olive.Entities" Version="2.1.152" />
+    <PackageReference Include="Olive.Entities.Data" Version="2.1.166" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.113" />
+    <PackageReference Include="Olive.Export" Version="2.1.107" />
+    <PackageReference Include="Olive.Hangfire" Version="3.1.104" />
+    <PackageReference Include="Olive.Mvc" Version="3.1.121" />
+    <PackageReference Include="Olive.Mvc.Paging" Version="3.1.103" />
+    <PackageReference Include="Olive.PDF" Version="2.1.108" />
+    <PackageReference Include="Olive.Mvc.Security" Version="3.1.106" />
+    <PackageReference Include="Olive.Security.Auth0" Version="3.1.103" />
+    <PackageReference Include="Olive.Security.Impersonation" Version="3.1.104" />
     <PackageReference Include="Olive.Testing" Version="3.1.103" />
-    <PackageReference Include="Olive.Web" Version="3.1.104" />
+    <PackageReference Include="Olive.Web" Version="3.1.106" />
     <PackageReference Include="SkiaSharp" Version="2.80.2" />
   </ItemGroup>
   <ItemGroup>
