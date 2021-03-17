@@ -1,25 +1,26 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "olive/*": [ "wwwroot/lib/olive.mvc/typings/*" ]
-        },
-        "module": "amd",
-        "target": "es5",
-        "sourceMap": true,
-        "noImplicitUseStrict": true,
-        "noImplicitAny": false,
-        "noEmitOnError": true,
-        "removeComments": false
-    }, "compileOnSave": true,
-    "exclude": [
-        "wwwroot/lib/olive.mvc/src",
-        "wwwroot/lib/ansi-styles",
-        "wwwroot/lib/find-up",
-        "wwwroot/lib/locate-path",
-        "wwwroot/lib/p-locate",
-        "wwwroot/lib/yargs",
-        "obj",
-        "bin"
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "olive/*": [ "wwwroot/lib/olive.mvc/typings/*" ]
+    },
+    "module": "amd",
+    "target": "es5",
+    "sourceMap": true,
+    "noImplicitUseStrict": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false
+  },
+  "compileOnSave": true,
+  "exclude": [
+    "wwwroot/lib/olive.mvc/src",
+    "wwwroot/lib/ansi-styles",
+    "wwwroot/lib/find-up",
+    "wwwroot/lib/locate-path",
+    "wwwroot/lib/p-locate",
+    "wwwroot/lib/yargs",
+    "obj",
+    "bin"
   ]
 }
