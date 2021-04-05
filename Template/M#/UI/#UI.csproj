@@ -8,9 +8,9 @@
     <NoWarn>1701;1702;1705;NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="5.2.162" />
-    <PackageReference Include="Olive" Version="2.1.239" />
-    <PackageReference Include="Olive.Entities" Version="2.1.152" />
+    <PackageReference Include="MSharp" Version="5.2.165" />
+    <PackageReference Include="Olive" Version="2.1.248" />
+    <PackageReference Include="Olive.Entities" Version="2.1.153" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">

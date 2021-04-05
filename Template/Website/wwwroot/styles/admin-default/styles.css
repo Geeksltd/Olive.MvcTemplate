@@ -24,10 +24,10 @@
     @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }*/
 /*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url(../../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css);
 @import url(../../../lib/bootstrap-spinedit/css/bootstrap-spinedit.css);
@@ -167,10 +167,10 @@ a {
     color: #1d7674;
     text-decoration: underline; }
 
-a:not([href]) {
+a:not([href]):not([class]) {
   color: inherit;
   text-decoration: none; }
-  a:not([href]):hover {
+  a:not([href]):not([class]):hover {
     color: inherit;
     text-decoration: none; }
 
@@ -184,7 +184,8 @@ samp {
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
-  overflow: auto; }
+  overflow: auto;
+  -ms-overflow-style: scrollbar; }
 
 figure {
   margin: 0 0 1rem; }
@@ -208,7 +209,8 @@ caption {
   caption-side: bottom; }
 
 th {
-  text-align: inherit; }
+  text-align: inherit;
+  text-align: -webkit-match-parent; }
 
 label {
   display: inline-block;
@@ -239,6 +241,9 @@ button,
 select {
   text-transform: none; }
 
+[role="button"] {
+  cursor: pointer; }
+
 select {
   word-wrap: normal; }
 
@@ -265,12 +270,6 @@ input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0; }
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox; }
 
 textarea {
   overflow: auto;
@@ -472,26 +471,12 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; }
-  @media (min-width: 576px) {
-    .container {
-      max-width: 540px; } }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 720px; } }
-  @media (min-width: 992px) {
-    .container {
-      max-width: 960px; } }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1140px; } }
-
-.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -1464,6 +1449,15 @@ pre {
     background-color: #e9ecef;
     opacity: 1; }
 
+input[type="date"].form-control, *[data-control=collapsible-checkboxes] input[type="date"].textbox,
+input[type="time"].form-control,
+*[data-control=collapsible-checkboxes] input[type="time"].textbox,
+input[type="datetime-local"].form-control,
+*[data-control=collapsible-checkboxes] input[type="datetime-local"].textbox,
+input[type="month"].form-control,
+*[data-control=collapsible-checkboxes] input[type="month"].textbox {
+  appearance: none; }
+
 select.form-control:focus::-ms-value, *[data-control=collapsible-checkboxes] select.textbox:focus::-ms-value {
   color: #555555;
   background-color: #fff; }
@@ -1581,6 +1575,7 @@ textarea.form-control, *[data-control=collapsible-checkboxes] textarea.textbox {
 .valid-tooltip {
   position: absolute;
   top: 100%;
+  left: 0;
   z-index: 5;
   display: none;
   max-width: 100%;
@@ -1661,6 +1656,7 @@ textarea.form-control, *[data-control=collapsible-checkboxes] textarea.textbox {
 .invalid-tooltip {
   position: absolute;
   top: 100%;
+  left: 0;
   z-index: 5;
   display: none;
   max-width: 100%;
@@ -1782,7 +1778,6 @@ textarea.form-control, *[data-control=collapsible-checkboxes] textarea.textbox {
   color: #212529;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
@@ -1802,6 +1797,8 @@ textarea.form-control, *[data-control=collapsible-checkboxes] textarea.textbox {
     box-shadow: 0 0 0 0.2rem rgba(51, 122, 183, 0.25); }
   .btn.disabled, .select-grid-cols .disabled.cancel, .select-grid-cols .disabled.apply, .disabled.alertify-button, .btn:disabled, .select-grid-cols .cancel:disabled, .select-grid-cols .apply:disabled, .alertify-button:disabled {
     opacity: 0.65; }
+  .btn:not(:disabled):not(.disabled), .select-grid-cols .cancel:not(:disabled):not(.disabled), .select-grid-cols .apply:not(:disabled):not(.disabled), .alertify-button:not(:disabled):not(.disabled) {
+    cursor: pointer; }
 
 a.btn.disabled, .select-grid-cols a.disabled.cancel, .select-grid-cols a.disabled.apply, a.disabled.alertify-button,
 fieldset:disabled a.btn,
@@ -2200,8 +2197,7 @@ fieldset:disabled a.alertify-button {
     color: #1d7674;
     text-decoration: underline; }
   .btn-link:focus, .btn-link.focus {
-    text-decoration: underline;
-    box-shadow: none; }
+    text-decoration: underline; }
   .btn-link:disabled, .btn-link.disabled {
     color: #777777;
     pointer-events: none; }
@@ -2588,7 +2584,8 @@ input[type="button"].btn-block {
   .input-group > .custom-select,
   .input-group > .custom-file {
     position: relative;
-    flex: 1 1 0%;
+    flex: 1 1 auto;
+    width: 1%;
     min-width: 0;
     margin-bottom: 0; }
     .input-group > .form-control + .form-control, *[data-control=collapsible-checkboxes] .input-group > .textbox + .form-control, *[data-control=collapsible-checkboxes] .input-group > .form-control + .textbox, *[data-control=collapsible-checkboxes] .input-group > .textbox + .textbox,
@@ -2813,9 +2810,11 @@ input[type="button"].btn-block {
 
 .custom-control {
   position: relative;
+  z-index: 1;
   display: block;
   min-height: 1.42857rem;
-  padding-left: 1.5rem; }
+  padding-left: 1.5rem;
+  color-adjust: exact; }
 
 .custom-control-inline {
   display: inline-flex;
@@ -3189,11 +3188,15 @@ input[type="button"].btn-block {
   color: #fff;
   background-color: #337ab7; }
 
-.nav-fill .nav-item, .nav-fill .navbar-nav > li {
+.nav-fill > .nav-link, .navbar-nav > li > li.nav-fill > a,
+.nav-fill .nav-item,
+.nav-fill .navbar-nav > li {
   flex: 1 1 auto;
   text-align: center; }
 
-.nav-justified .nav-item, .nav-justified .navbar-nav > li {
+.nav-justified > .nav-link, .navbar-nav > li > li.nav-justified > a,
+.nav-justified .nav-item,
+.nav-justified .navbar-nav > li {
   flex-basis: 0;
   flex-grow: 1;
   text-align: center; }
@@ -3463,7 +3466,7 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.1); }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 .navbar-light .navbar-text {
   color: rgba(0, 0, 0, 0.5); }
@@ -3498,7 +3501,7 @@ input[type="button"].btn-block {
   border-color: rgba(255, 255, 255, 0.1); }
 
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 .navbar-dark .navbar-text {
   color: rgba(255, 255, 255, 0.5); }
@@ -3520,12 +3523,20 @@ input[type="button"].btn-block {
   .card > hr {
     margin-right: 0;
     margin-left: 0; }
-  .card > .list-group:first-child .list-group-item:first-child, .card > .list-group:first-child .navbar > .nav.flex-column > li:first-child, .card > .list-group:first-child form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .card > .list-group:first-child .navbar > .flex-column.form-tabs-header > li:first-child {
-    border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem; }
-  .card > .list-group:last-child .list-group-item:last-child, .card > .list-group:last-child .navbar > .nav.flex-column > li:last-child, .card > .list-group:last-child form .form-body .navbar > .flex-column.form-tabs-header > li:last-child, form .form-body .card > .list-group:last-child .navbar > .flex-column.form-tabs-header > li:last-child {
-    border-bottom-right-radius: 0.4rem;
-    border-bottom-left-radius: 0.4rem; }
+  .card > .list-group {
+    border-top: inherit;
+    border-bottom: inherit; }
+    .card > .list-group:first-child {
+      border-top-width: 0;
+      border-top-left-radius: calc(0.4rem - 1px);
+      border-top-right-radius: calc(0.4rem - 1px); }
+    .card > .list-group:last-child {
+      border-bottom-width: 0;
+      border-bottom-right-radius: calc(0.4rem - 1px);
+      border-bottom-left-radius: calc(0.4rem - 1px); }
+  .card > .card-header + .list-group,
+  .card > .list-group + .card-footer {
+    border-top: 0; }
 
 .card-body {
   flex: 1 1 auto;
@@ -3555,8 +3566,6 @@ input[type="button"].btn-block {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
   .card-header:first-child {
     border-radius: calc(0.4rem - 1px) calc(0.4rem - 1px) 0 0; }
-  .card-header + .list-group .list-group-item:first-child, .card-header + .list-group .navbar > .nav.flex-column > li:first-child, .card-header + .list-group form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .card-header + .list-group .navbar > .flex-column.form-tabs-header > li:first-child {
-    border-top: 0; }
 
 .card-footer {
   padding: 0.75rem 1.25rem;
@@ -3581,7 +3590,8 @@ input[type="button"].btn-block {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1.25rem; }
+  padding: 1.25rem;
+  border-radius: calc(0.4rem - 1px); }
 
 .card-img,
 .card-img-top,
@@ -3659,18 +3669,20 @@ input[type="button"].btn-block {
       display: inline-block;
       width: 100%; } }
 
-.accordion > .card {
-  overflow: hidden; }
-  .accordion > .card:not(:last-of-type) {
-    border-bottom: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0; }
-  .accordion > .card:not(:first-of-type) {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; }
-  .accordion > .card > .card-header {
-    border-radius: 0;
-    margin-bottom: -1px; }
+.accordion {
+  overflow-anchor: none; }
+  .accordion > .card {
+    overflow: hidden; }
+    .accordion > .card:not(:last-of-type) {
+      border-bottom: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0; }
+    .accordion > .card:not(:first-of-type) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; }
+    .accordion > .card > .card-header {
+      border-radius: 0;
+      margin-bottom: -1px; }
 
 .breadcrumb {
   display: flex;
@@ -3681,22 +3693,21 @@ input[type="button"].btn-block {
   background-color: #e9ecef;
   border-radius: 0.4rem; }
 
-.breadcrumb-item + .breadcrumb-item {
-  padding-left: 0.5rem; }
-  .breadcrumb-item + .breadcrumb-item::before {
-    display: inline-block;
-    padding-right: 0.5rem;
-    color: #6c757d;
-    content: "/"; }
-
-.breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: underline; }
-
-.breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: none; }
-
-.breadcrumb-item.active {
-  color: #6c757d; }
+.breadcrumb-item {
+  display: flex; }
+  .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem; }
+    .breadcrumb-item + .breadcrumb-item::before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      color: #6c757d;
+      content: "/"; }
+  .breadcrumb-item + .breadcrumb-item:hover::before {
+    text-decoration: underline; }
+  .breadcrumb-item + .breadcrumb-item:hover::before {
+    text-decoration: none; }
+  .breadcrumb-item.active {
+    color: #6c757d; }
 
 .pagination {
   display: flex;
@@ -3913,6 +3924,7 @@ input[type="button"].btn-block {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 2;
     padding: 0.75rem 1.25rem;
     color: inherit; }
 
@@ -3998,6 +4010,7 @@ input[type="button"].btn-block {
   display: flex;
   height: 1rem;
   overflow: hidden;
+  line-height: 0;
   font-size: 0.75rem;
   background-color: #e9ecef;
   border-radius: 0.4rem; }
@@ -4037,7 +4050,8 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: column;
   padding-left: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  border-radius: 0.4rem; }
 
 .list-group-item-action, .navbar > .nav.flex-column > li, form .form-body .navbar > .flex-column.form-tabs-header > li {
   width: 100%;
@@ -4059,11 +4073,11 @@ input[type="button"].btn-block {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125); }
   .list-group-item:first-child, .navbar > .nav.flex-column > li:first-child, form .form-body .navbar > .flex-column.form-tabs-header > li:first-child {
-    border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem; }
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit; }
   .list-group-item:last-child, .navbar > .nav.flex-column > li:last-child, form .form-body .navbar > .flex-column.form-tabs-header > li:last-child {
-    border-bottom-right-radius: 0.4rem;
-    border-bottom-left-radius: 0.4rem; }
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit; }
   .list-group-item.disabled, .navbar > .nav.flex-column > li.disabled, form .form-body .navbar > .flex-column.form-tabs-header > li.disabled, .list-group-item:disabled, .navbar > .nav.flex-column > li:disabled, form .form-body .navbar > .flex-column.form-tabs-header > li:disabled {
     color: #6c757d;
     pointer-events: none;
@@ -4081,102 +4095,99 @@ input[type="button"].btn-block {
 
 .list-group-horizontal {
   flex-direction: row; }
-  .list-group-horizontal .list-group-item:first-child, .list-group-horizontal .navbar > .nav.flex-column > li:first-child, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > li:first-child {
+  .list-group-horizontal > .list-group-item:first-child, .navbar > .nav.flex-column.list-group-horizontal > li:first-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > li:first-child {
     border-bottom-left-radius: 0.4rem;
     border-top-right-radius: 0; }
-  .list-group-horizontal .list-group-item:last-child, .list-group-horizontal .navbar > .nav.flex-column > li:last-child, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > li:last-child, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > li:last-child {
+  .list-group-horizontal > .list-group-item:last-child, .navbar > .nav.flex-column.list-group-horizontal > li:last-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > li:last-child {
     border-top-right-radius: 0.4rem;
     border-bottom-left-radius: 0; }
-  .list-group-horizontal .list-group-item.active, .list-group-horizontal .navbar > .nav.flex-column > li.active, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > li.active, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > li.active {
+  .list-group-horizontal > .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal > li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > li.active {
     margin-top: 0; }
-  .list-group-horizontal .list-group-item + .list-group-item, .list-group-horizontal .navbar > .nav.flex-column > li + .list-group-item, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > li + .list-group-item, .list-group-horizontal .navbar > .nav.flex-column > .list-group-item + li, .list-group-horizontal .navbar > .nav.flex-column > li + li, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > .list-group-item + li, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > li + li, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > li + li {
+  .list-group-horizontal > .list-group-item + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal > li + .list-group-item, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > li + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal > .list-group-item + li, .navbar > .nav.flex-column.list-group-horizontal > li + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > .list-group-item + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > li + li {
     border-top-width: 1px;
     border-left-width: 0; }
-    .list-group-horizontal .list-group-item + .list-group-item.active, .list-group-horizontal .navbar > .nav.flex-column > li + .list-group-item.active, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, .list-group-horizontal .navbar > .nav.flex-column > .list-group-item + li.active, .list-group-horizontal .navbar > .nav.flex-column > li + li.active, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, .list-group-horizontal form .form-body .navbar > .flex-column.form-tabs-header > li + li.active, form .form-body .list-group-horizontal .navbar > .flex-column.form-tabs-header > li + li.active {
+    .list-group-horizontal > .list-group-item + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal > li + .list-group-item.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > li + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal > .list-group-item + li.active, .navbar > .nav.flex-column.list-group-horizontal > li + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > .list-group-item + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal > li + li.active {
       margin-left: -1px;
       border-left-width: 1px; }
 
 @media (min-width: 576px) {
   .list-group-horizontal-sm {
     flex-direction: row; }
-    .list-group-horizontal-sm .list-group-item:first-child, .list-group-horizontal-sm .navbar > .nav.flex-column > li:first-child, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > li:first-child {
+    .list-group-horizontal-sm > .list-group-item:first-child, .navbar > .nav.flex-column.list-group-horizontal-sm > li:first-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > li:first-child {
       border-bottom-left-radius: 0.4rem;
       border-top-right-radius: 0; }
-    .list-group-horizontal-sm .list-group-item:last-child, .list-group-horizontal-sm .navbar > .nav.flex-column > li:last-child, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > li:last-child, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > li:last-child {
+    .list-group-horizontal-sm > .list-group-item:last-child, .navbar > .nav.flex-column.list-group-horizontal-sm > li:last-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > li:last-child {
       border-top-right-radius: 0.4rem;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-sm .list-group-item.active, .list-group-horizontal-sm .navbar > .nav.flex-column > li.active, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > li.active, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > li.active {
+    .list-group-horizontal-sm > .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-sm > li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > li.active {
       margin-top: 0; }
-    .list-group-horizontal-sm .list-group-item + .list-group-item, .list-group-horizontal-sm .navbar > .nav.flex-column > li + .list-group-item, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > li + .list-group-item, .list-group-horizontal-sm .navbar > .nav.flex-column > .list-group-item + li, .list-group-horizontal-sm .navbar > .nav.flex-column > li + li, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > .list-group-item + li, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > li + li, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > li + li {
+    .list-group-horizontal-sm > .list-group-item + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-sm > li + .list-group-item, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > li + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-sm > .list-group-item + li, .navbar > .nav.flex-column.list-group-horizontal-sm > li + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > .list-group-item + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > li + li {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-sm .list-group-item + .list-group-item.active, .list-group-horizontal-sm .navbar > .nav.flex-column > li + .list-group-item.active, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, .list-group-horizontal-sm .navbar > .nav.flex-column > .list-group-item + li.active, .list-group-horizontal-sm .navbar > .nav.flex-column > li + li.active, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, .list-group-horizontal-sm form .form-body .navbar > .flex-column.form-tabs-header > li + li.active, form .form-body .list-group-horizontal-sm .navbar > .flex-column.form-tabs-header > li + li.active {
+      .list-group-horizontal-sm > .list-group-item + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-sm > li + .list-group-item.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > li + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-sm > .list-group-item + li.active, .navbar > .nav.flex-column.list-group-horizontal-sm > li + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > .list-group-item + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-sm > li + li.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
 @media (min-width: 768px) {
   .list-group-horizontal-md {
     flex-direction: row; }
-    .list-group-horizontal-md .list-group-item:first-child, .list-group-horizontal-md .navbar > .nav.flex-column > li:first-child, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > li:first-child {
+    .list-group-horizontal-md > .list-group-item:first-child, .navbar > .nav.flex-column.list-group-horizontal-md > li:first-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > li:first-child {
       border-bottom-left-radius: 0.4rem;
       border-top-right-radius: 0; }
-    .list-group-horizontal-md .list-group-item:last-child, .list-group-horizontal-md .navbar > .nav.flex-column > li:last-child, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > li:last-child, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > li:last-child {
+    .list-group-horizontal-md > .list-group-item:last-child, .navbar > .nav.flex-column.list-group-horizontal-md > li:last-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > li:last-child {
       border-top-right-radius: 0.4rem;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-md .list-group-item.active, .list-group-horizontal-md .navbar > .nav.flex-column > li.active, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > li.active, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > li.active {
+    .list-group-horizontal-md > .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-md > li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > li.active {
       margin-top: 0; }
-    .list-group-horizontal-md .list-group-item + .list-group-item, .list-group-horizontal-md .navbar > .nav.flex-column > li + .list-group-item, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > li + .list-group-item, .list-group-horizontal-md .navbar > .nav.flex-column > .list-group-item + li, .list-group-horizontal-md .navbar > .nav.flex-column > li + li, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > .list-group-item + li, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > li + li, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > li + li {
+    .list-group-horizontal-md > .list-group-item + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-md > li + .list-group-item, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > li + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-md > .list-group-item + li, .navbar > .nav.flex-column.list-group-horizontal-md > li + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > .list-group-item + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > li + li {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-md .list-group-item + .list-group-item.active, .list-group-horizontal-md .navbar > .nav.flex-column > li + .list-group-item.active, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, .list-group-horizontal-md .navbar > .nav.flex-column > .list-group-item + li.active, .list-group-horizontal-md .navbar > .nav.flex-column > li + li.active, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, .list-group-horizontal-md form .form-body .navbar > .flex-column.form-tabs-header > li + li.active, form .form-body .list-group-horizontal-md .navbar > .flex-column.form-tabs-header > li + li.active {
+      .list-group-horizontal-md > .list-group-item + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-md > li + .list-group-item.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > li + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-md > .list-group-item + li.active, .navbar > .nav.flex-column.list-group-horizontal-md > li + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > .list-group-item + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-md > li + li.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
 @media (min-width: 992px) {
   .list-group-horizontal-lg {
     flex-direction: row; }
-    .list-group-horizontal-lg .list-group-item:first-child, .list-group-horizontal-lg .navbar > .nav.flex-column > li:first-child, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > li:first-child {
+    .list-group-horizontal-lg > .list-group-item:first-child, .navbar > .nav.flex-column.list-group-horizontal-lg > li:first-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > li:first-child {
       border-bottom-left-radius: 0.4rem;
       border-top-right-radius: 0; }
-    .list-group-horizontal-lg .list-group-item:last-child, .list-group-horizontal-lg .navbar > .nav.flex-column > li:last-child, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > li:last-child, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > li:last-child {
+    .list-group-horizontal-lg > .list-group-item:last-child, .navbar > .nav.flex-column.list-group-horizontal-lg > li:last-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > li:last-child {
       border-top-right-radius: 0.4rem;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-lg .list-group-item.active, .list-group-horizontal-lg .navbar > .nav.flex-column > li.active, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > li.active, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > li.active {
+    .list-group-horizontal-lg > .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-lg > li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > li.active {
       margin-top: 0; }
-    .list-group-horizontal-lg .list-group-item + .list-group-item, .list-group-horizontal-lg .navbar > .nav.flex-column > li + .list-group-item, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > li + .list-group-item, .list-group-horizontal-lg .navbar > .nav.flex-column > .list-group-item + li, .list-group-horizontal-lg .navbar > .nav.flex-column > li + li, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > .list-group-item + li, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > li + li, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > li + li {
+    .list-group-horizontal-lg > .list-group-item + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-lg > li + .list-group-item, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > li + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-lg > .list-group-item + li, .navbar > .nav.flex-column.list-group-horizontal-lg > li + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > .list-group-item + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > li + li {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-lg .list-group-item + .list-group-item.active, .list-group-horizontal-lg .navbar > .nav.flex-column > li + .list-group-item.active, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, .list-group-horizontal-lg .navbar > .nav.flex-column > .list-group-item + li.active, .list-group-horizontal-lg .navbar > .nav.flex-column > li + li.active, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, .list-group-horizontal-lg form .form-body .navbar > .flex-column.form-tabs-header > li + li.active, form .form-body .list-group-horizontal-lg .navbar > .flex-column.form-tabs-header > li + li.active {
+      .list-group-horizontal-lg > .list-group-item + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-lg > li + .list-group-item.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > li + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-lg > .list-group-item + li.active, .navbar > .nav.flex-column.list-group-horizontal-lg > li + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > .list-group-item + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-lg > li + li.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
 @media (min-width: 1200px) {
   .list-group-horizontal-xl {
     flex-direction: row; }
-    .list-group-horizontal-xl .list-group-item:first-child, .list-group-horizontal-xl .navbar > .nav.flex-column > li:first-child, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > li:first-child {
+    .list-group-horizontal-xl > .list-group-item:first-child, .navbar > .nav.flex-column.list-group-horizontal-xl > li:first-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > li:first-child {
       border-bottom-left-radius: 0.4rem;
       border-top-right-radius: 0; }
-    .list-group-horizontal-xl .list-group-item:last-child, .list-group-horizontal-xl .navbar > .nav.flex-column > li:last-child, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > li:last-child, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > li:last-child {
+    .list-group-horizontal-xl > .list-group-item:last-child, .navbar > .nav.flex-column.list-group-horizontal-xl > li:last-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > li:last-child {
       border-top-right-radius: 0.4rem;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-xl .list-group-item.active, .list-group-horizontal-xl .navbar > .nav.flex-column > li.active, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > li.active, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > li.active {
+    .list-group-horizontal-xl > .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-xl > li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > li.active {
       margin-top: 0; }
-    .list-group-horizontal-xl .list-group-item + .list-group-item, .list-group-horizontal-xl .navbar > .nav.flex-column > li + .list-group-item, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > li + .list-group-item, .list-group-horizontal-xl .navbar > .nav.flex-column > .list-group-item + li, .list-group-horizontal-xl .navbar > .nav.flex-column > li + li, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > .list-group-item + li, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > li + li, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > li + li {
+    .list-group-horizontal-xl > .list-group-item + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-xl > li + .list-group-item, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > li + .list-group-item, .navbar > .nav.flex-column.list-group-horizontal-xl > .list-group-item + li, .navbar > .nav.flex-column.list-group-horizontal-xl > li + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > .list-group-item + li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > li + li {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-xl .list-group-item + .list-group-item.active, .list-group-horizontal-xl .navbar > .nav.flex-column > li + .list-group-item.active, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > li + .list-group-item.active, .list-group-horizontal-xl .navbar > .nav.flex-column > .list-group-item + li.active, .list-group-horizontal-xl .navbar > .nav.flex-column > li + li.active, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > .list-group-item + li.active, .list-group-horizontal-xl form .form-body .navbar > .flex-column.form-tabs-header > li + li.active, form .form-body .list-group-horizontal-xl .navbar > .flex-column.form-tabs-header > li + li.active {
+      .list-group-horizontal-xl > .list-group-item + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-xl > li + .list-group-item.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > li + .list-group-item.active, .navbar > .nav.flex-column.list-group-horizontal-xl > .list-group-item + li.active, .navbar > .nav.flex-column.list-group-horizontal-xl > li + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > .list-group-item + li.active, form .form-body .navbar > .flex-column.form-tabs-header.list-group-horizontal-xl > li + li.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
-.list-group-flush .list-group-item, .list-group-flush .navbar > .nav.flex-column > li, .list-group-flush form .form-body .navbar > .flex-column.form-tabs-header > li, form .form-body .list-group-flush .navbar > .flex-column.form-tabs-header > li {
-  border-right-width: 0;
-  border-left-width: 0;
+.list-group-flush {
   border-radius: 0; }
-  .list-group-flush .list-group-item:first-child, .list-group-flush .navbar > .nav.flex-column > li:first-child, .list-group-flush form .form-body .navbar > .flex-column.form-tabs-header > li:first-child, form .form-body .list-group-flush .navbar > .flex-column.form-tabs-header > li:first-child {
-    border-top-width: 0; }
-
-.list-group-flush:last-child .list-group-item:last-child, .list-group-flush:last-child .navbar > .nav.flex-column > li:last-child, .list-group-flush:last-child form .form-body .navbar > .flex-column.form-tabs-header > li:last-child, form .form-body .list-group-flush:last-child .navbar > .flex-column.form-tabs-header > li:last-child {
-  border-bottom-width: 0; }
+  .list-group-flush > .list-group-item, .navbar > .nav.flex-column.list-group-flush > li, form .form-body .navbar > .flex-column.form-tabs-header.list-group-flush > li {
+    border-width: 0 0 1px; }
+    .list-group-flush > .list-group-item:last-child, .navbar > .nav.flex-column.list-group-flush > li:last-child, form .form-body .navbar > .flex-column.form-tabs-header.list-group-flush > li:last-child {
+      border-bottom-width: 0; }
 
 .list-group-item-primary {
   color: #175d5c;
@@ -4283,21 +4294,19 @@ input[type="button"].btn-block {
 button.close {
   padding: 0;
   background-color: transparent;
-  border: 0;
-  appearance: none; }
+  border: 0; }
 
 a.close.disabled {
   pointer-events: none; }
 
 .toast {
+  flex-basis: 350px;
   max-width: 350px;
-  overflow: hidden;
   font-size: 0.875rem;
   background-color: rgba(255, 255, 255, 0.85);
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
   opacity: 0;
   border-radius: 0.25rem; }
   .toast:not(:last-child) {
@@ -4317,7 +4326,9 @@ a.close.disabled {
   color: #6c757d;
   background-color: rgba(255, 255, 255, 0.85);
   background-clip: padding-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px); }
 
 .toast-body {
   padding: 0.75rem; }
@@ -4374,6 +4385,7 @@ a.close.disabled {
   .modal-dialog-centered::before {
     display: block;
     height: calc(100vh - 1rem);
+    height: min-content;
     content: ""; }
   .modal-dialog-centered.modal-dialog-scrollable {
     flex-direction: column;
@@ -4460,7 +4472,8 @@ a.close.disabled {
   .modal-dialog-centered {
     min-height: calc(100% - 3.5rem); }
     .modal-dialog-centered::before {
-      height: calc(100vh - 3.5rem); }
+      height: calc(100vh - 3.5rem);
+      height: min-content; }
   .modal-sm {
     max-width: 300px; } }
 
@@ -4852,7 +4865,8 @@ a.close.disabled {
   0% {
     transform: scale(0); }
   50% {
-    opacity: 1; } }
+    opacity: 1;
+    transform: none; } }
 
 .spinner-grow {
   display: inline-block;
@@ -5636,6 +5650,15 @@ button.bg-dark:focus {
   .float-xl-none {
     float: none !important; } }
 
+.user-select-all {
+  user-select: all !important; }
+
+.user-select-auto {
+  user-select: auto !important; }
+
+.user-select-none {
+  user-select: none !important; }
+
 .overflow-auto {
   overflow: auto !important; }
 
@@ -5755,17 +5778,6 @@ button.bg-dark:focus {
 
 .vh-100 {
   height: 100vh !important; }
-
-.stretched-link::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: auto;
-  content: "";
-  background-color: transparent; }
 
 .m-0 {
   margin: 0 !important; }
@@ -7130,6 +7142,17 @@ button.bg-dark:focus {
   .mx-xl-auto {
     margin-left: auto !important; } }
 
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: transparent; }
+
 .text-monospace {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important; }
 
@@ -7290,7 +7313,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-break {
   word-break: break-word !important;
-  overflow-wrap: break-word !important; }
+  word-wrap: break-word !important; }
 
 .text-reset {
   color: inherit !important; }
@@ -7359,6 +7382,12 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #CFCFCF; } }
 
+@keyframes bs-notify-fadeOut {
+  0% {
+    opacity: 0.9; }
+  100% {
+    opacity: 0; } }
+
 select.bs-select-hidden,
 .bootstrap-select > select.bs-select-hidden,
 select.selectpicker {
@@ -7366,13 +7395,18 @@ select.selectpicker {
 
 .bootstrap-select {
   width: 220px \0;
-  /*IE9 and below*/ }
+  /*IE9 and below*/
+  vertical-align: middle; }
   .bootstrap-select > .dropdown-toggle {
     position: relative;
     width: 100%;
-    z-index: 1;
     text-align: right;
-    white-space: nowrap; }
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; }
+    .bootstrap-select > .dropdown-toggle:after {
+      margin-top: -1px; }
     .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
       color: #999; }
     .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-primary, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.apply, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-primary:hover, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.apply:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-primary:focus, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.apply:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-primary:active, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.apply:active, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-secondary, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.cancel, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-secondary:hover, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.cancel:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-secondary:focus, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.cancel:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-secondary:active, .select-grid-cols .bootstrap-select > .dropdown-toggle.bs-placeholder.cancel:active, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-success, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-success:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-success:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-success:active, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-danger, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-danger:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-danger:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-danger:active, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-info, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-info:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-info:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-info:active, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-dark, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-dark:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-dark:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-dark:active {
@@ -7386,20 +7420,21 @@ select.selectpicker {
     height: 100% !important;
     padding: 0 !important;
     opacity: 0 !important;
-    border: none; }
+    border: none;
+    z-index: 0 !important; }
     .bootstrap-select > select.mobile-device {
       top: 0;
       left: 0;
       display: block !important;
       width: 100% !important;
-      z-index: 2; }
+      z-index: 2 !important; }
   .has-error .bootstrap-select .dropdown-toggle,
   .error .bootstrap-select .dropdown-toggle,
   .bootstrap-select.is-invalid .dropdown-toggle,
-  .was-validated .bootstrap-select .selectpicker:invalid + .dropdown-toggle {
+  .was-validated .bootstrap-select select:invalid + .dropdown-toggle {
     border-color: #b94a48; }
   .bootstrap-select.is-valid .dropdown-toggle,
-  .was-validated .bootstrap-select .selectpicker:valid + .dropdown-toggle {
+  .was-validated .bootstrap-select select:valid + .dropdown-toggle {
     border-color: #28a745; }
   .bootstrap-select.fit-width {
     width: auto !important; }
@@ -7414,13 +7449,19 @@ select.selectpicker {
 .bootstrap-select.form-control, *[data-control=collapsible-checkboxes] .bootstrap-select.textbox {
   margin-bottom: 0;
   padding: 0;
-  border: none; }
+  border: none;
+  height: auto; }
   :not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]), *[data-control=collapsible-checkboxes] :not(.input-group) > .bootstrap-select.textbox:not([class*="col-"]) {
     width: 100%; }
   .bootstrap-select.form-control.input-group-btn, *[data-control=collapsible-checkboxes] .bootstrap-select.input-group-btn.textbox {
+    float: none;
     z-index: auto; }
-    .bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child) > .btn, *[data-control=collapsible-checkboxes] .bootstrap-select.input-group-btn.textbox:not(:first-child):not(:last-child) > .btn, .select-grid-cols .bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child) > .cancel, *[data-control=collapsible-checkboxes] .select-grid-cols .bootstrap-select.input-group-btn.textbox:not(:first-child):not(:last-child) > .cancel, .select-grid-cols *[data-control=collapsible-checkboxes] .bootstrap-select.input-group-btn.textbox:not(:first-child):not(:last-child) > .cancel, .select-grid-cols .bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child) > .apply, *[data-control=collapsible-checkboxes] .select-grid-cols .bootstrap-select.input-group-btn.textbox:not(:first-child):not(:last-child) > .apply, .select-grid-cols *[data-control=collapsible-checkboxes] .bootstrap-select.input-group-btn.textbox:not(:first-child):not(:last-child) > .apply, .bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child) > .alertify-button, *[data-control=collapsible-checkboxes] .bootstrap-select.input-group-btn.textbox:not(:first-child):not(:last-child) > .alertify-button {
-      border-radius: 0; }
+
+.form-inline .bootstrap-select,
+.form-inline .bootstrap-select.form-control:not([class*="col-"]),
+.form-inline *[data-control=collapsible-checkboxes] .bootstrap-select.textbox:not([class*="col-"]), *[data-control=collapsible-checkboxes]
+.form-inline .bootstrap-select.textbox:not([class*="col-"]) {
+  width: auto; }
 
 .bootstrap-select:not(.input-group-btn), .bootstrap-select[class*="col-"] {
   float: none;
@@ -7481,26 +7522,34 @@ select.selectpicker {
   .bootstrap-select.bs-container .dropdown-menu {
     z-index: 1060; }
 
-.bootstrap-select .dropdown-toggle:before {
-  content: '';
-  display: inline-block; }
-
 .bootstrap-select .dropdown-toggle .filter-option {
-  position: absolute;
+  position: static;
   top: 0;
   left: 0;
-  padding-top: inherit;
-  padding-right: inherit;
-  padding-bottom: inherit;
-  padding-left: inherit;
+  float: left;
   height: 100%;
   width: 100%;
-  text-align: left; }
-
-.bootstrap-select .dropdown-toggle .filter-option-inner {
-  padding-right: inherit; }
+  text-align: left;
+  overflow: hidden;
+  flex: 0 1 auto; }
+  .bs3.bootstrap-select .dropdown-toggle .filter-option {
+    padding-right: inherit; }
+  .input-group .bs3-has-addon.bootstrap-select .dropdown-toggle .filter-option {
+    position: absolute;
+    padding-top: inherit;
+    padding-bottom: inherit;
+    padding-left: inherit;
+    float: none; }
+    .input-group .bs3-has-addon.bootstrap-select .dropdown-toggle .filter-option .filter-option-inner {
+      padding-right: inherit; }
 
 .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+  overflow: hidden; }
+
+.bootstrap-select .dropdown-toggle .filter-expand {
+  width: 0 !important;
+  float: left;
+  opacity: 0 !important;
   overflow: hidden; }
 
 .bootstrap-select .dropdown-toggle .caret {
@@ -7565,6 +7614,8 @@ select.selectpicker {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
+    .bootstrap-select .dropdown-menu .notify.fadeOut {
+      animation: 300ms linear 750ms forwards bs-notify-fadeOut; }
 
 .bootstrap-select .no-results {
   padding: 3px;
@@ -7580,6 +7631,9 @@ select.selectpicker {
 .bootstrap-select.fit-width .dropdown-toggle .filter-option-inner,
 .bootstrap-select.fit-width .dropdown-toggle .filter-option-inner-inner {
   display: inline; }
+
+.bootstrap-select.fit-width .dropdown-toggle .bs-caret:before {
+  content: '\00a0'; }
 
 .bootstrap-select.fit-width .dropdown-toggle .caret {
   position: static;
@@ -7602,6 +7656,7 @@ select.selectpicker {
   height: 1em;
   border-style: solid;
   border-width: 0 0.26em 0.26em 0;
+  transform-style: preserve-3d;
   transform: rotate(45deg); }
 
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle,
