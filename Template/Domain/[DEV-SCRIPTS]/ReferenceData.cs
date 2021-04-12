@@ -8,8 +8,7 @@ namespace Domain
 {
     public class ReferenceData : IReferenceData
     {
-        IDatabase Database;
-        public ReferenceData(IDatabase database) => Database = database;
+        static IDatabase Database => Context.Current.Database();
 
         async Task<T> Create<T>(T item) where T : IEntity
         {
