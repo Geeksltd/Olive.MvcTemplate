@@ -7,7 +7,7 @@
     "alertify": "fabien-d/alertify.js-shim#~0.3.10",
     "alertify-bootstrap-3": "dbtek/alertify-bootstrap-3#~1.1.1",
     "alertifyjs": "alertifyjs/alertify.js#~0.3.18",
-    "bootstrap": "twbs/bootstrap#>=4.0.0",
+    "bootstrap": "twbs/bootstrap#=4.6.0",
     "bootstrap-spinedit": "BrandyMint/bootstrap-spinedit#*",
     "bootstrap-filestyle": "markusslima/bootstrap-filestyle#2.1.0",
     "ckeditor": "ckeditor/ckeditor-releases#full/4.6.x",
