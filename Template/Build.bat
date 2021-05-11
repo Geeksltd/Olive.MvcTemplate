@@ -1,7 +1,6 @@
 @echo off
 
-call dotnet tool install -g msharp-build
-call msharp-build %1 %2 %3 %4 %5
+call msharp-build --notools %1 %2
 
 if ERRORLEVEL 1 (    
 	echo ##################################    
