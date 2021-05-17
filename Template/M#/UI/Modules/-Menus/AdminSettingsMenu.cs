@@ -15,15 +15,15 @@ namespace Modules
             UlCssClass("nav flex-column");
             Using("Olive.Security");
 
-
-            Item("General settings")
-                .OnClick(x => x.Go<Admin.Settings.GeneralPage>());
+            Item("Contacts")
+                .OnClick(x => x.Go<ContactPage>());
 
             Item("Administrators")
                 .OnClick(x => x.Go<Admin.Settings.AdministratorsPage>());
 
-            Item("Content blocks")
-                .OnClick(x => x.Go<Admin.Settings.ContentBlocksPage>());
+            Item("General Settings")
+                .OnClick(x => x.Go<Admin.Settings.GeneralPage>());
+
         }
     }
 }

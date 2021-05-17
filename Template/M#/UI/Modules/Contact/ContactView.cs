@@ -1,27 +1,30 @@
-using MSharp;
-using Domain;
+﻿using MSharp;
 
 namespace Modules
 {
-    public class ViewAdmin : ViewModule<Domain.Administrator>
+    public class ContactView : ViewModule<Domain.Contact>
     {
-        public ViewAdmin()
+        public ContactView()
         {
-            HideEmptyElements().HeaderText("@item Details");
+            HeaderText("@item.Name Details");
 
             Field(x => x.Name);
-            Field(x => x.Email);
-            Field(x => x.IsDeactivated).DisplayExpression("c#:item.IsDeactivated ? \"Yes\" : \"No\"");
+
+            Field(x => x.PhoneNumber);
 
             Button("Back")
+                .IsDefault()
                 .Icon(FA.ChevronLeft)
                 .OnClick(x => x.ReturnToPreviousPage());
 
             Button("Delete")
+                .ConfirmQuestion("Are you sure you want to delete this Contact?")
+                .CssClass("btn-danger")
                 .Icon(FA.Remove)
                 .OnClick(x =>
                 {
                     x.DeleteItem();
+                    x.GentleMessage("Deleted successfully.");
                     x.ReturnToPreviousPage();
                 });
         }

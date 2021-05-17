@@ -8,7 +8,6 @@ namespace Modules
         {
             SupportsAdd(false).Using("Olive.Security")
                 .SupportsEdit(false)
-                .Header("@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key=\"LoginIntro\"}))")
                 .HeaderText("Login")
                 .DataSource("await Domain.User.FindByEmail(info.Email)");
 
@@ -39,8 +38,6 @@ namespace Modules
             });
 
             Link("Forgot password?").CssClass("text-info").OnClick(x => x.Go<Login.ForgotPasswordPage>());
-
-            Reference<ContentBlockView>();
         }
     }
 }
