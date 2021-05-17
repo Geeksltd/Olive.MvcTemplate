@@ -15,7 +15,7 @@ namespace Modules
             Field(x => x.PhoneNumber).Control(ControlType.Textbox);
 
             Button("Cancel").CausesValidation(false)
-                .OnClick(x => x.ReturnToPreviousPage());
+                .OnClick(x => x.CloseModal());
 
             Button("Save").IsDefault().Icon(FA.Check)
                 .OnClick(x =>
