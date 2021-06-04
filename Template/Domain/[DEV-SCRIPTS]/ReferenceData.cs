@@ -12,7 +12,7 @@ namespace Domain
 
         async Task<T> Create<T>(T item) where T : IEntity
         {
-            await Context.Current.Database().Save(item, SaveBehaviour.BypassAll);
+            await Context.Current.Database().Save(item);
             return item;
         }
 
@@ -26,16 +26,16 @@ namespace Domain
 
         async Task CreateAdmins()
         {
-            await AddAdmin("Oliver", "Jones", "jim@fakemail.com");
-            await AddAdmin("Daniel", "Williams", "jack@office.edu");
-            await AddAdmin("Thomas", "Davies", "alice2001@uat.co");
-            await AddAdmin("Harry", "Evans", "ted.smith@williams.com");
-            await AddAdmin("Jack", "Roberts", "albert@for-test.net");
-            await AddAdmin("Samuel", "Morgan", "j.anderson@college.edu");
-            await AddAdmin("James", "Edwards", "Robert.jackson@humour.org");
-            await AddAdmin("Alexander", "Smith", "jim@fakemail.com");
-            await AddAdmin("Charlie", "Phillips", "jack@office.edu");
-            await AddAdmin("Emma", "Richards", "alice2001@uat.co");
+            await AddAdmin("Oliver", "Jones", "oiver@fakemail.com");
+            await AddAdmin("Daniel", "Williams", "daniel@office.edu");
+            await AddAdmin("Thomas", "Davies", "thomas@uat.co");
+            await AddAdmin("Harry", "Evans", "harry@williams.com");
+            await AddAdmin("Jack", "Roberts", "jack@for-test.net");
+            await AddAdmin("Samuel", "Morgan", "samuel@college.edu");
+            await AddAdmin("James", "Edwards", "james@humour.org");
+            await AddAdmin("Alexander", "Smith", "alexander@fakemail.com");
+            await AddAdmin("Charlie", "Phillips", "charlie@office.edu");
+            await AddAdmin("Emma", "Richards", "emma@uat.co");
         }
 
         async Task CreateContacts()
