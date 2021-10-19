@@ -1,9 +1,11 @@
 ﻿namespace Website
 {
+    using BotDetect.Web;
     using Domain;
     using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Server.Kestrel.Core;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
@@ -34,6 +36,16 @@
 
             if (Environment.IsDevelopment())
                 services.AddDevCommands(x => x.AddTempDatabase<SqlServerManager, ReferenceData>());
+            services.AddSession(options => options.IdleTimeout = 20.Minutes());
+            services.Configure<KestrelServerOptions>(options => options.AllowSynchronousIO = true);
+            services.Configure<IISServerOptions>(options => options.AllowSynchronousIO = true);
+        }
+
+        protected override void ConfigureRequestHandlers(IApplicationBuilder app)
+        {
+            app.UseSession();
+            base.ConfigureRequestHandlers(app);
+            app.UseCaptcha(Configuration);
         }
 
         protected override void ConfigureAuthentication(AuthenticationBuilder auth)

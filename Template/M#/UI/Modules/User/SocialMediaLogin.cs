@@ -6,6 +6,8 @@ namespace Modules
     {
         public SocialMediaLogin()
         {
+            IsViewComponent();
+
             SupportsAdd(false).SupportsEdit(false).Header("<h3>Other ways to sign in</h3>")
                 .Using("Olive.Security")
                 .RootCssClass("input-form social-media-login p-4");
