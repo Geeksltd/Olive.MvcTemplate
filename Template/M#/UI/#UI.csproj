@@ -9,9 +9,9 @@
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="5.2.208" />
-    <PackageReference Include="Olive" Version="2.1.287" />
-    <PackageReference Include="Olive.Entities" Version="2.1.161" />
+    <PackageReference Include="MSharp" Version="5.2.263" />
+    <PackageReference Include="Olive" Version="2.1.322" />
+    <PackageReference Include="Olive.Entities" Version="2.1.176" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
   </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">

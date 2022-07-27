@@ -3,8 +3,11 @@
 // and may be overwritten at any time. Do not change it manually.
 // ********************************************************************
 
+using Olive;
+
 namespace MSharp
 {
+    [EscapeGCop("Auto generated code.")]
     partial class AppRole
     {
         internal static ProjectRole Local_Request => ProjectRole.Of("Local.Request");
