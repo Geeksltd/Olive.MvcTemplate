@@ -34,7 +34,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.10" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="3.1.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Olive" Version="2.1.322" />
+    <PackageReference Include="Olive" Version="2.1.324" />
     <PackageReference Include="Olive.Audit" Version="2.1.116" />
     <PackageReference Include="Olive.Audit.DatabaseLogger" Version="2.1.107" />
     <PackageReference Include="Olive.CSV" Version="2.1.111" />
@@ -45,7 +45,7 @@
     <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.118" />
     <PackageReference Include="Olive.Export" Version="2.1.109" />
     <PackageReference Include="Olive.Hangfire" Version="3.1.106" />
-    <PackageReference Include="Olive.Mvc" Version="3.1.138" />
+    <PackageReference Include="Olive.Mvc" Version="3.1.139" />
     <PackageReference Include="Olive.Mvc.Paging" Version="3.1.103" />
     <PackageReference Include="Olive.PDF" Version="2.1.110" />
     <PackageReference Include="Olive.Mvc.Security" Version="3.1.108" />
