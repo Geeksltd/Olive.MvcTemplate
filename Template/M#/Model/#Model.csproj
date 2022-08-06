@@ -10,8 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Win32.SystemEvents" Version="4.5.0" />
-    <PackageReference Include="MSharp" Version="5.2.270" />
-    <PackageReference Include="Olive" Version="2.1.322" />
+    <PackageReference Include="MSharp" Version="5.2.271" />
+    <PackageReference Include="Olive" Version="2.1.324" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
     <PackageReference Include="System.Drawing.Common" Version="4.5.1" />

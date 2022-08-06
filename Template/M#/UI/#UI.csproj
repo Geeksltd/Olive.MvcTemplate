@@ -9,7 +9,7 @@
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="5.2.270" />
+    <PackageReference Include="MSharp" Version="5.2.271" />
     <PackageReference Include="Olive" Version="2.1.324" />
     <PackageReference Include="Olive.Entities" Version="2.1.176" />
     <ProjectReference Include="..\..\Domain\Domain.csproj" />
