@@ -52,7 +52,7 @@
     <PackageReference Include="Olive.Security.Auth0" Version="3.1.104" />
     <PackageReference Include="Olive.Security.Impersonation" Version="3.1.104" />
     <PackageReference Include="Olive.Testing" Version="3.1.103" />
-    <PackageReference Include="Olive.Web" Version="3.1.107" />
+    <PackageReference Include="Olive.Web" Version="3.1.108" />
     <PackageReference Include="SkiaSharp" Version="2.80.2" />
   </ItemGroup>
   <ItemGroup>

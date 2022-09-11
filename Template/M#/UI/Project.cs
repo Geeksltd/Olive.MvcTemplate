@@ -3,6 +3,7 @@
 // and may be overwritten at any time. Do not change it manually.
 // ********************************************************************
 
+using System;
 using Olive;
 
 namespace MSharp
