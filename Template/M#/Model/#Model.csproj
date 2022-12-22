@@ -9,8 +9,8 @@
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MSharp" Version="5.2.284" />
-    <PackageReference Include="Olive" Version="2.1.324" />
+    <PackageReference Include="MSharp" Version="5.2.300" />
+    <PackageReference Include="Olive" Version="2.1.330" />
   </ItemGroup>
   <Target Name="Generate code" AfterTargets="AfterBuild">
     <Exec Condition="'$(MSHARP_BUILD)' != 'FULL'" WorkingDirectory="$(TargetDir)" Command="dotnet msharp.dsl.dll /build /model" />

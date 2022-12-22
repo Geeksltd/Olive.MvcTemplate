@@ -9,17 +9,17 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Olive" Version="2.1.324" />
-    <PackageReference Include="Olive.Audit" Version="2.1.116" />
-    <PackageReference Include="Olive.CSV" Version="2.1.111" />
-    <PackageReference Include="Olive.Drawing" Version="2.1.109" />
-    <PackageReference Include="Olive.Encryption" Version="2.2.107" />
-    <PackageReference Include="Olive.Entities" Version="2.1.176" />
-    <PackageReference Include="Olive.Entities.Data" Version="2.1.185" />
-    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.118" />
+    <PackageReference Include="Olive" Version="2.1.330" />
+    <PackageReference Include="Olive.Audit" Version="2.1.117" />
+    <PackageReference Include="Olive.CSV" Version="2.1.112" />
+    <PackageReference Include="Olive.Drawing" Version="2.1.110" />
+    <PackageReference Include="Olive.Encryption" Version="2.2.110" />
+    <PackageReference Include="Olive.Entities" Version="2.1.179" />
+    <PackageReference Include="Olive.Entities.Data" Version="2.1.187" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.119" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
-    <PackageReference Include="Olive.Mvc.Security" Version="3.1.108" />
-    <PackageReference Include="Olive.Security.Impersonation" Version="3.1.104" />
-    <PackageReference Include="Olive.Web" Version="3.1.108" />
+    <PackageReference Include="Olive.Mvc.Security" Version="3.1.109" />
+    <PackageReference Include="Olive.Security.Impersonation" Version="3.1.105" />
+    <PackageReference Include="Olive.Web" Version="3.1.109" />
   </ItemGroup>
 </Project>
