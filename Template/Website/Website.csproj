@@ -29,12 +29,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Captcha" Version="4.4.2" />
-    <PackageReference Include="Hangfire" Version="1.8.2" />
+    <PackageReference Include="Hangfire" Version="1.7.35" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="6.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="6.0.16" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Olive" Version="2.1.339" />
+    <PackageReference Include="Olive" Version="2.1.340" />
     <PackageReference Include="Olive.Audit" Version="2.1.119" />
     <PackageReference Include="Olive.Audit.DatabaseLogger" Version="2.1.107" />
     <PackageReference Include="Olive.CSV" Version="2.1.114" />
@@ -47,6 +47,7 @@
     <PackageReference Include="Olive.Hangfire" Version="3.1.109" />
     <PackageReference Include="Olive.Mvc" Version="3.1.150" />
     <PackageReference Include="Olive.Mvc.Paging" Version="3.1.106" />
+    <PackageReference Include="Olive.Mvc.Testing" Version="3.1.114" />
     <PackageReference Include="Olive.PDF" Version="2.1.113" />
     <PackageReference Include="Olive.Mvc.Security" Version="3.1.111" />
     <PackageReference Include="Olive.Security.Auth0" Version="3.1.107" />
