@@ -5,9 +5,8 @@
       "olive/*": [ "wwwroot/lib/olive.mvc/typings/*" ]
     },
     "module": "amd",
-    "target": "es5",
-    "sourceMap": true,
-    "noImplicitUseStrict": true,
+    "target": "es2015",
+    "sourceMap": true,    
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false
