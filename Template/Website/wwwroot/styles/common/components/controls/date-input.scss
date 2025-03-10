@@ -63,4 +63,28 @@
             background-color: $color-primary;
         }
     }
+    
+    .glyphicon {
+        font-family: 'Font Awesome 5 Free';
+
+        &.glyphicon-chevron-down {
+            &::before {
+                content: "\f078";
+            }
+
+            &::after {
+                content: none;
+            }
+        }
+
+        &.glyphicon-chevron-up {
+            &::before {
+                content: "\f077";
+            }
+
+            &::after {
+                content: none;
+            }
+        }
+    }
 }
